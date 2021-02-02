@@ -284,7 +284,7 @@
 
                 <ImageView
                     style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_voice_mail_white" />
+                    android:src="@mipmap/icon_voice_mail_drak" />
 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
@@ -302,7 +302,7 @@
 
                 <ImageView
                     style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_service_call_white" />
+                    android:src="@mipmap/icon_service_call_drak" />
 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
@@ -319,7 +319,7 @@
 
                 <ImageView
                     style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_sos_white" />
+                    android:src="@mipmap/icon_sos_drak" />
                 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
