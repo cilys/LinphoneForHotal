@@ -32,12 +32,13 @@ public class IncomingAc extends BaseLinphoneAc {
         final Call call = getCurrentCall();
 
         TextView tv_room = findView(R.id.tv_room);
-
-        TextView tv_custom_name = findView(R.id.tv_custom_name);
         if (call != null) {
-            setTextToView(tv_custom_name, LinphoneUtils.getAddressDisplayName(
+            setTextToView(tv_room, LinphoneUtils.getAddressDisplayName(
                     call.getRemoteAddress()));
         }
+
+        TextView tv_custom_name = findView(R.id.tv_custom_name);
+
 
         TextView tv_custom_status = findView(R.id.tv_custom_status);
 

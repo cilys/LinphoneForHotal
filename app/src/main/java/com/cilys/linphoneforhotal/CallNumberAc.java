@@ -157,6 +157,13 @@ public class CallNumberAc extends BaseLinphoneAc {
 
             }
         });
+
+        findView(R.id.ll_close).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                finish();
+            }
+        });
     }
 
 

@@ -34,11 +34,11 @@ public class CallAc extends BaseLinphoneAc {
         setBackgroundById(R.id.ll_model, R.mipmap.ic_incoming_model_bg);
 
         TextView tv_room = findView(R.id.tv_room);
+        setTextToView(tv_room, LinphoneUtils.getDisplayName(getCurrentCall()));
 
         ImageView img_avatar = findView(R.id.img_avatar);
 
         TextView tv_custom_name = findView(R.id.tv_custom_name);
-        setTextToView(tv_custom_name, LinphoneUtils.getDisplayName(getCurrentCall()));
 
         TextView tv_custom_status = findView(R.id.tv_custom_status);
 

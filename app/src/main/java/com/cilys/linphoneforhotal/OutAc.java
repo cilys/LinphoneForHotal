@@ -63,20 +63,16 @@ public class OutAc extends BaseLinphoneAc {
                 endCall();
             }
         });
-    }
-
-    @Override
-    protected void afterInit() {
-        super.afterInit();
-
 
         String phone = getIntent().getStringExtra(INTENT_CALL_NUMBER);
         if (phone == null || phone.length() < 1) {
             finish();
         }
+        setTextToView(tv_room, phone);
 
         call(phone);
     }
+
 
     @Override
     protected void onDestroy() {
