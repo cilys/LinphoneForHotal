@@ -47,7 +47,7 @@
             android:theme="@style/style_activity_fade" />
         <activity android:name=".CallNumberAc"
             android:theme="@style/style_activity_fade" />
-        <activity android:name=".HomeAc"
+        <activity android:name=".home.HomeAc"
             android:theme="@style/style_activity_fade" />
         <activity android:name=".SplashAc"
             android:theme="@style/style_activity_fade" >

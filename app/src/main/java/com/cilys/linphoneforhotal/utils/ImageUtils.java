@@ -5,7 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
+import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -22,6 +24,10 @@ public class ImageUtils {
                 targetView.setBackground(drawable);
             }
         });
+    }
+
+    public static void load(Fragment fg, @DrawableRes final int resourceId, ImageView img) {
+        Glide.with(fg).load(resourceId).into(img);
     }
 
 }

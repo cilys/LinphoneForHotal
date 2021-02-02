@@ -1,13 +1,20 @@
-package com.cilys.linphoneforhotal;
+package com.cilys.linphoneforhotal.home;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.CallNumberAc;
+import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
@@ -23,7 +30,7 @@ public class HomeAc extends BaseLinphoneAc {
 
         setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
         setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
-        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
+//        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
         setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
 
         ImageView img_room_control = findView(R.id.img_room_control);
@@ -77,6 +84,16 @@ public class HomeAc extends BaseLinphoneAc {
 
             }
         });
+
+        ViewPager vp = findView(R.id.vp);
+        List<PromFg> fgs = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            fgs.add(new PromFg());
+        }
+        VpHomeAdapter adapter = new VpHomeAdapter(getSupportFragmentManager(), fgs);
+        vp.setAdapter(adapter);
+        vp.setCurrentItem(Integer.MAX_VALUE / 2);
+
     }
 
     @Override

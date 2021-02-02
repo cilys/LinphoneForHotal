@@ -10,11 +10,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.cilys.linphoneforhotal.home.HomeAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SplashAc extends AppCompatActivity {
 
