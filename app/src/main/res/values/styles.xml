@@ -90,4 +90,25 @@
         <item name="android:layout_marginTop">@dimen/y8</item>
     </style>
 
+    <style name="style_home_head_action_ll">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@mipmap/ic_bg_home_head_action</item>
+    </style>
+    <style name="style_home_head_action_ll_img">
+        <item name="android:layout_width">@dimen/y24</item>
+        <item name="android:layout_height">@dimen/y24</item>
+    </style>
+    <style name="style_home_head_action_ll_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/y8</item>
+        <item name="android:textSize">@dimen/x15</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
 </resources>

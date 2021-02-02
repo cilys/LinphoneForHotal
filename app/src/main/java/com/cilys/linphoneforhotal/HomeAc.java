@@ -3,6 +3,7 @@ package com.cilys.linphoneforhotal;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
@@ -47,11 +48,11 @@ public class HomeAc extends BaseLinphoneAc {
 
         TextView tv_temp = findView(R.id.tv_temp);
 
-        ImageView img_donot_disturb = findView(R.id.img_donot_disturb);
+        LinearLayout ll_donot_disturb = findView(R.id.ll_donot_disturb);
 
-        ImageView img_make_up_room = findView(R.id.img_make_up_room);
+        LinearLayout ll_make_up_room = findView(R.id.ll_make_up_room);
 
-        ImageView img_service_menu = findView(R.id.img_service_menu);
+        LinearLayout ll_service_menu = findView(R.id.ll_service_menu);
 
         ImageView img_phone = findView(R.id.img_phone);
         img_phone.setOnClickListener(new SingleClickListener() {
