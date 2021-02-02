@@ -111,4 +111,13 @@
         <item name="android:ellipsize">end</item>
         <item name="android:textColor">#FFF</item>
     </style>
+
+    <style name="style_home_bottom_action_ll" parent="style_home_head_action_ll">
+        <item name="android:background">@null</item>
+    </style>
+    <style name="style_home_bottom_action_ll_img" parent="style_home_head_action_ll_img">
+    </style>
+    <style name="style_home_bottom_action_ll_tv" parent="style_home_head_action_ll_tv">
+
+    </style>
 </resources>

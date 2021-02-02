@@ -54,24 +54,24 @@ public class HomeAc extends BaseLinphoneAc {
 
         LinearLayout ll_service_menu = findView(R.id.ll_service_menu);
 
-        ImageView img_phone = findView(R.id.img_phone);
-        img_phone.setOnClickListener(new SingleClickListener() {
+        LinearLayout ll_phone = findView(R.id.ll_phone);
+        ll_phone.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
                 startActivity(new Intent(HomeAc.this, CallNumberAc.class));
             }
         });
 
-        ImageView img_service_call = findView(R.id.img_service_call);
-        img_service_call.setOnClickListener(new SingleClickListener() {
+        LinearLayout ll_service_call = findView(R.id.ll_service_call);
+        ll_service_call.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
                 startActivity(new Intent(HomeAc.this, AccountAc.class));
             }
         });
 
-        ImageView img_voice_mail = findView(R.id.img_voice_mail);
-        img_voice_mail.setOnClickListener(new SingleClickListener() {
+        LinearLayout ll_voice_mail = findView(R.id.ll_voice_mail);
+        ll_voice_mail.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
 
