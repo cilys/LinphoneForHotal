@@ -29,82 +29,82 @@ public class CallNumberAc extends BaseLinphoneAc {
 
         final TextView tv_show_number = findView(R.id.tv_show_number);
 
-        findView(R.id.img_number_1).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_1).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("1");
             }
         });
-        findView(R.id.img_number_2).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_2).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("2");
             }
         });
-        findView(R.id.img_number_3).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_3).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("3");
             }
         });
-        findView(R.id.img_number_4).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_4).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("4");
             }
         });
-        findView(R.id.img_number_5).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_5).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("5");
             }
         });
-        findView(R.id.img_number_6).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_6).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("6");
             }
         });
-        findView(R.id.img_number_7).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_7).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("7");
             }
         });
-        findView(R.id.img_number_8).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_8).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("8");
             }
         });
-        findView(R.id.img_number_9).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_9).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("9");
             }
         });
-        findView(R.id.img_number_0).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_0).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("0");
             }
         });
 
-        findView(R.id.img_number_star).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_star).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("*");
             }
         });
 
-        findView(R.id.img_number_shape).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_number_shape).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 tv_show_number.append("#");
             }
         });
 
-        findView(R.id.img_del).setOnClickListener(new SingleClickListener(TIME_INVAL) {
+        findView(R.id.ll_del).setOnClickListener(new SingleClickListener(TIME_INVAL) {
             @Override
             public void onSingleClick(View v) {
                 String s = tv_show_number.getText().toString();
@@ -139,19 +139,19 @@ public class CallNumberAc extends BaseLinphoneAc {
             }
         });
 
-        findView(R.id.img_voice_mail).setOnClickListener(new SingleClickListener() {
+        findView(R.id.ll_voice_mail).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
 
             }
         });
-        findView(R.id.img_service_call).setOnClickListener(new SingleClickListener() {
+        findView(R.id.ll_service_call).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
 
             }
         });
-        findView(R.id.img_sos).setOnClickListener(new SingleClickListener() {
+        findView(R.id.ll_sos).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
 
