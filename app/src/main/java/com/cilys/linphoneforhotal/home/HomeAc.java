@@ -1,6 +1,12 @@
 package com.cilys.linphoneforhotal.home;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +17,8 @@ import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
+import com.cilys.linphoneforhotal.service.LinphoneService;
+import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
@@ -100,4 +108,98 @@ public class HomeAc extends BaseLinphoneAc {
     protected void afterInit() {
         super.afterInit();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        requestCameraPermission();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 11) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                requestRecordPermission();
+            } else {
+                ToastUtils.show(this, "相机权限被拒绝，暂无法使用app");
+            }
+        } else if (requestCode == 12) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                requestSipPermission();
+            } else {
+                ToastUtils.show(this, "录音权限被拒绝，暂无法使用app");
+            }
+        } else if (requestCode == 13) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                start();
+            } else {
+                ToastUtils.show(this, "电话被拒绝，暂无法使用app");
+            }
+        }
+    }
+
+    private void requestCameraPermission(){
+        String p1 = Manifest.permission.CAMERA;
+
+        if (ContextCompat.checkSelfPermission(this, p1)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{p1}, 11);
+        } else {
+            //已授权
+            requestRecordPermission();
+        }
+    }
+
+    private void requestRecordPermission(){
+        String p2 = Manifest.permission.RECORD_AUDIO;
+
+        if (ContextCompat.checkSelfPermission(this, p2)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{p2}, 12);
+        } else {
+            //已授权
+            requestSipPermission();
+        }
+    }
+
+    private void requestSipPermission(){
+        String p3 = Manifest.permission.USE_SIP;
+
+
+        if (ContextCompat.checkSelfPermission(this, p3)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{p3}, 13);
+        } else {
+            //已授权
+            start();
+        }
+    }
+
+    private void start(){
+        if (LinphoneService.isReady()) {
+            onServiceReady();
+        } else {
+            startService(new Intent(this, LinphoneService.class));
+
+            final Handler mHandler = new Handler();
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (!LinphoneService.isReady()) {
+                        mHandler.postDelayed(this, 30);
+                    } else {
+                        onServiceReady();
+                    }
+                }
+            }, 30);
+        }
+    }
+
+    private void onServiceReady(){
+
+    }
+
 }

@@ -17,6 +17,11 @@
     <style name="style_activity_fade" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/fade</item>
     </style>
+    <style name="style_launcher" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 
     <style name="style_call_number_ll">
         <item name="android:layout_width">0dp</item>
