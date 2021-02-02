@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    tools:context=".CallNumberAc">
+
+    <LinearLayout
+        android:id="@+id/ll_number_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1062"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/y216"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y94"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/y54" >
+
+            <View
+                android:layout_width="@dimen/x12"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/tv_show_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/x40"
+                android:textColor="#19192A"
+                android:text=""/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_split_line_light_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y40"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_1"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_1"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_2"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_3"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_3"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y86"
+            android:layout_marginTop="@dimen/y30"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_4"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_4"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_5"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_6"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_6"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y30"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_7"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_7"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll" >
+                <ImageView
+                    android:id="@+id/img_number_8"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_8"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_9"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_9"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y30"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_star"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_star"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_0"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_call_number_ll">
+                <ImageView
+                    android:id="@+id/img_number_shape"
+                    style="@style/style_call_number_img"
+                    android:src="@mipmap/icon_number_shape"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y120"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/img_call"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/y120"
+                    android:src="@mipmap/icon_call_accept"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/img_del"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y30"
+                    android:src="@mipmap/icon_delete"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_split_line_light_gray"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_marginBottom="@dimen/y20"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_voice_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_voice_mail_white" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="@dimen/x20"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_service_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_service_call_white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/x20"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_sos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_sos_white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

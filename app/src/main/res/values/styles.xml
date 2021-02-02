@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="fade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="style_activity_fade" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/fade</item>
+    </style>
+
+    <style name="style_call_number_ll">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="style_call_number_img">
+        <item name="android:layout_width">@dimen/x74</item>
+        <item name="android:layout_height">@dimen/y70</item>
+    </style>
+
+    <style name="style_call_action_parent">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/y100</item>
+        <item name="android:padding">@dimen/y22</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/selector_call_action_bg_parent</item>
+    </style>
+
+    <style name="style_call_action_img">
+        <item name="android:layout_width">@dimen/y24</item>
+        <item name="android:layout_height">@dimen/y24</item>
+    </style>
+
+    <style name="style_call_action_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/x22</item>
+        <item name="android:textColor">@drawable/selector_call_action_text_color</item>
+    </style>
+
+
+    <style name="style_splite_line_h_light_gray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:background">@color/color_split_line_light_gray</item>
+    </style>
+
+</resources>

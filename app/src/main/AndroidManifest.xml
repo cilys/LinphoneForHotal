@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cilys.linphoneforhotal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-feature
+        android:name="android.hardware.sip.voip"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".AccountAc"
+            android:theme="@style/style_activity_fade" />
+
+        <service android:name=".service.LinphoneService" />
+
+        <activity android:name=".OutAc"
+            android:theme="@style/style_activity_fade" />
+        <activity
+            android:name=".CallAc"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/style_activity_fade" />
+        <activity android:name=".IncomingAc"
+            android:theme="@style/style_activity_fade" />
+        <activity android:name=".CallNumberAc"
+            android:theme="@style/style_activity_fade" />
+        <activity android:name=".HomeAc"
+            android:theme="@style/style_activity_fade" />
+        <activity android:name=".SplashAc"
+            android:theme="@style/style_activity_fade" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
