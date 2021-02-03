@@ -2,21 +2,17 @@ package com.cilys.linphoneforhotal.base;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.util.SparseArray;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
+import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallAc;
 import com.cilys.linphoneforhotal.IncomingAc;
 import com.cilys.linphoneforhotal.OutAc;
-import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.event.Event;
-import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.event.LinPhoneBean;
 import com.cilys.linphoneforhotal.service.LinphoneService;
@@ -25,9 +21,7 @@ import com.cilys.linphoneforhotal.utils.L;
 
 import org.linphone.core.Call;
 import org.linphone.core.Core;
-import org.linphone.core.CoreListenerStub;
 import org.linphone.core.ProxyConfig;
-import org.linphone.core.RegistrationState;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -79,6 +73,8 @@ public abstract class BaseLinphoneAc extends BaseAc {
         if (call != null) {
             call.terminate();
         }
+
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
     }
 
     protected Core getLinphoneCore(){
@@ -110,23 +106,51 @@ public abstract class BaseLinphoneAc extends BaseAc {
         View v = viewCache.get(viewId);
         if (v == null) {
             v = findView(viewId);
+
+            if (v != null) {
+                viewCache.put(viewId, v);
+            }
         }
 
         if (v != null) {
-            viewCache.put(viewId, v);
-
             ImageUtils.load(this, resourceId, v);
         }
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        isResume = true;
+
+
+
+    }
+
+    private boolean isResume = false;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isResume = false;
+    }
+
+    @Override
     protected void onEvent(final Event e) {
         super.onEvent(e);
+
+//        if (!isResume) {
+//            L.v(TAG, "isResume = " + isResume);
+//            return;
+//        }
+
         if (e.what == EventImpl.CALL_STATE_CHANGED) {
             if (e.obj instanceof LinPhoneBean) {
                 LinPhoneBean bean = (LinPhoneBean) e.obj;
                 if (bean.getCallState() == Call.State.IncomingReceived) {
-                    L.i(TAG, "getCurrentCall 0 = " + bean.getCall());
+
+                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
+                        return;
+                    }
 
                     if (this instanceof IncomingAc) {
 
@@ -135,9 +159,17 @@ public abstract class BaseLinphoneAc extends BaseAc {
                         startActivity(i);
                     }
                 } else if (bean.getCallState() == Call.State.Connected) {
-                    Intent i = new Intent(this, CallAc.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
+                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_INCOMING
+                        || App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
+
+                        Intent i = new Intent(this, CallAc.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
+                    } else {
+                        endCall();
+                    }
+
+
 //                    if (this instanceof IncomingAc || this instanceof OutAc) {
 //                        finish();
 //                    }

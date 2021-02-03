@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/x75"
             android:paddingRight="@dimen/x75"
-            android:layout_marginTop="@dimen/y20"
+            android:layout_marginTop="@dimen/y45"
             android:orientation="horizontal" >
 
             <LinearLayout

@@ -57,6 +57,9 @@ public class IncomingAc extends BaseLinphoneAc {
                 if (getLinphoneCore() != null && call != null) {
                     CallParams params = getLinphoneCore().createCallParams(call);
                     params.enableVideo(false);
+
+                    App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_INCOMING);
+
                     call.acceptWithParams(params);
                 }
             }
@@ -89,5 +92,8 @@ public class IncomingAc extends BaseLinphoneAc {
         } else {
             core.terminateAllCalls();
         }
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
+
+        finish();
     }
 }

@@ -22,6 +22,7 @@ allprojects {
             // Replace snapshots by releases for releases !
             url "https://linphone.org/maven_repository"
         }
+        maven { url 'https://jitpack.io' }
     }
 }
 

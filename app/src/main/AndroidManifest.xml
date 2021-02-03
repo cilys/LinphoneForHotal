@@ -23,32 +23,28 @@
         android:required="true" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".AccountAc"
-            android:theme="@style/style_activity_fade" />
+        android:theme="@style/style_launcher">
+        <activity android:name=".AccountAc" />
 
         <service android:name=".service.LinphoneService" />
 
-        <activity android:name=".OutAc"
-            android:theme="@style/style_activity_fade" />
+        <activity android:name=".OutAc" />
         <activity
             android:name=".CallAc"
             android:launchMode="singleInstance"
             android:noHistory="true"
             android:resizeableActivity="true"
-            android:supportsPictureInPicture="true"
-            android:theme="@style/style_activity_fade" />
-        <activity android:name=".IncomingAc"
-            android:theme="@style/style_activity_fade" />
-        <activity android:name=".CallNumberAc"
-            android:theme="@style/style_activity_fade" />
+            android:supportsPictureInPicture="true" />
+        <activity android:name=".IncomingAc" />
+        <activity android:name=".CallNumberAc" />
         <activity android:name=".home.HomeAc"
-            android:theme="@style/style_launcher" >
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

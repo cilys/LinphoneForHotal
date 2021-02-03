@@ -3,8 +3,10 @@ package com.cilys.linphoneforhotal.home;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -14,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
@@ -94,6 +97,29 @@ public class HomeAc extends BaseLinphoneAc {
         });
 
         ViewPager vp = findView(R.id.vp);
+//        vp.setPageMargin((int)getResources().getDimension(R.dimen.x50));
+//        vp.setPageTransformer(false, new ViewPager.PageTransformer() {
+//            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+//            @Override
+//            public void transformPage(@NonNull View page, float position) {
+//                if (position < -1 || position> 1) {
+//                    page.setScaleX(0.5f);
+//                    page.setScaleY(0.5f);
+//                } else {
+//                    float curScale = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
+//                    curScale = Math.max(curScale, 0.5f);
+//                    float curAlpha = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
+//                    curAlpha = Math.max(curScale, curAlpha);
+//                    page.setAlpha(curAlpha);
+//                    page.setScaleX(curScale);
+//                    page.setScaleY(curScale);
+//                    float curTranZ = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
+//                    curAlpha = Math.max(curTranZ, 0.5f);
+////                    page.setTranslationZ(curTranZ);
+//                }
+//            }
+//        });
+
         List<PromFg> fgs = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             fgs.add(new PromFg());
@@ -202,4 +228,11 @@ public class HomeAc extends BaseLinphoneAc {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
+
+    }
 }

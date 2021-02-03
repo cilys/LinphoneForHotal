@@ -10,6 +10,8 @@
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y756"
+        android:paddingLeft="@dimen/x76"
+        android:paddingRight="@dimen/x76"
         >
 
         <ImageView
@@ -19,23 +21,20 @@
             android:layout_marginTop="@dimen/y40"
             android:src="@mipmap/icon_room"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x76"/>
+            />
 
         <ImageView
             android:id="@+id/img_tv_remote"
             android:layout_width="@dimen/x225"
             android:layout_height="@dimen/y58"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x76"
             android:layout_marginTop="@dimen/y108"
             android:src="@mipmap/icon_tv"/>
 
         <RelativeLayout
-            android:layout_width="@dimen/x688"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/y320"
-            android:layout_marginLeft="@dimen/x56"
-            android:layout_marginRight="@dimen/x56"
-            android:layout_marginTop="@dimen/y326"
+            android:layout_marginTop="@dimen/y296"
             android:id="@+id/rl_head_weather"
             android:paddingLeft="@dimen/x28"
             android:paddingRight="@dimen/x28"
@@ -226,7 +225,7 @@
         android:id="@+id/home_promo"
         android:orientation="vertical"
         android:background="@drawable/shape_top_round_white_bg"
-        android:paddingTop="@dimen/x36"
+        android:paddingTop="@dimen/x20"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -234,22 +233,20 @@
             android:text="Our Promotions"
             android:textColor="#19191B"
             android:textSize="@dimen/x25"
-            android:layout_marginLeft="@dimen/x36" />
+            android:layout_marginLeft="@dimen/x20" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
-            android:padding="0dp"
-            android:clipChildren="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="@dimen/y300" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y270"
+        android:layout_height="@dimen/y250"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:paddingTop="@dimen/y30"
+        android:paddingTop="@dimen/y20"
         android:id="@+id/ll_bottom">
 
         <LinearLayout
@@ -295,7 +292,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="@dimen/y40"
             >
             <LinearLayout
                 android:id="@+id/ll_phone"

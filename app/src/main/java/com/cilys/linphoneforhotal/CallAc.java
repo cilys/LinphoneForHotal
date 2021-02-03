@@ -30,6 +30,8 @@ public class CallAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_CALL);
+
         setBackgroundById(R.id.root, R.mipmap.ic_call_bg);
         setBackgroundById(R.id.ll_model, R.mipmap.ic_incoming_model_bg);
 
@@ -86,6 +88,7 @@ public class CallAc extends BaseLinphoneAc {
     protected void onDestroy() {
         super.onDestroy();
 
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
 //        endCall();
     }
 

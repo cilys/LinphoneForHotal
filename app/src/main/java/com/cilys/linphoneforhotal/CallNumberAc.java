@@ -131,8 +131,6 @@ public class CallNumberAc extends BaseLinphoneAc {
                     return;
                 }
 
-
-
                 Intent i = new Intent(CallNumberAc.this, OutAc.class);
                 i.putExtra(INTENT_CALL_NUMBER, phone);
                 startActivity(i);
@@ -166,5 +164,10 @@ public class CallNumberAc extends BaseLinphoneAc {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
+    }
 }
