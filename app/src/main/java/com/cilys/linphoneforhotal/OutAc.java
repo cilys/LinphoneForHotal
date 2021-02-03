@@ -39,7 +39,6 @@ public class OutAc extends BaseLinphoneAc {
 
         TextView tv_custom_status = findView(R.id.tv_custom_status);
 
-
         LinearLayout ll_mute = findView(R.id.ll_mute);
         ll_mute.setOnClickListener(new SingleClickListener() {
             @Override
@@ -61,6 +60,7 @@ public class OutAc extends BaseLinphoneAc {
             @Override
             public void onSingleClick(View v) {
                 endCall();
+                finish();
             }
         });
 
@@ -105,7 +105,6 @@ public class OutAc extends BaseLinphoneAc {
                 addressToCall.setDisplayName(phone);
 
                 core.inviteAddressWithParams(addressToCall, params);
-
 //                finish();
             }
         }
