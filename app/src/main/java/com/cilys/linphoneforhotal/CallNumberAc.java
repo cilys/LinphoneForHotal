@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 
+import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 
@@ -131,8 +132,10 @@ public class CallNumberAc extends BaseLinphoneAc {
                     return;
                 }
 
-                Intent i = new Intent(CallNumberAc.this, OutAc.class);
+                Intent i = new Intent(CallNumberAc.this, PhoneAc.class);
                 i.putExtra(INTENT_CALL_NUMBER, phone);
+                i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_OUT);
+
                 startActivity(i);
             }
         });

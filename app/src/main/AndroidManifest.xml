@@ -30,6 +30,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/style_launcher">
+        <activity android:name=".call.PhoneAc"></activity>
         <activity android:name=".AccountAc" />
 
         <service android:name=".service.LinphoneService" />
@@ -43,15 +44,13 @@
             android:supportsPictureInPicture="true" />
         <activity android:name=".IncomingAc" />
         <activity android:name=".CallNumberAc" />
-        <activity android:name=".home.HomeAc"
-             >
+        <activity android:name=".home.HomeAc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

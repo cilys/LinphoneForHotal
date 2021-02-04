@@ -97,7 +97,19 @@ public abstract class BaseLinphoneAc extends BaseAc {
     }
 
     private Map<Integer, View> viewCache;
-
+    protected <V extends View> V getViewFromCache(@IdRes int id){
+        if (viewCache != null) {
+            try{
+                V v = (V)viewCache.get(id);
+                if (v != null) {
+                    return v;
+                }
+            }catch (Exception e) {
+                L.printException(e);
+            }
+        }
+        return findView(id);
+    }
     protected void setBackgroundById(@IdRes int viewId, @DrawableRes int resourceId) {
         if (viewCache == null) {
             viewCache = new HashMap<>();
@@ -121,9 +133,6 @@ public abstract class BaseLinphoneAc extends BaseAc {
     protected void onResume() {
         super.onResume();
         isResume = true;
-
-
-
     }
 
     private boolean isResume = false;
