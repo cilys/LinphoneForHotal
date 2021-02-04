@@ -250,6 +250,13 @@ public class PhoneAc extends BaseLinphoneAc {
             if (e.obj instanceof LinPhoneBean) {
                 LinPhoneBean bean = (LinPhoneBean) e.obj;
                 if (bean.getCallState() == Call.State.IncomingReceived) {
+                    if (showType == SHOW_TYPE_OUT || showType == SHOW_TYPE_CALL) {
+                        //如果是呼叫、接听页面，则不处理被叫请求（原因：测试时发现主叫时，
+                        // 不知道是什么原因，还会有收到IncomingReceived的状态，导致页面错乱显示成被叫页面。
+                        // 为了避免页面错乱，故不处理正在主叫、以及正在通话时收到的被叫请求
+                        return;
+                    }
+
                     showType = SHOW_TYPE_INCOMING;
                     showView(SHOW_TYPE_INCOMING);
                 } else if (bean.getCallState() == Call.State.Connected) {
@@ -292,6 +299,8 @@ public class PhoneAc extends BaseLinphoneAc {
                 outState.putLong("CALL_TIME", timeCount);
             }
 
+            debugToast("保存showType = " + showType);
+
             outState.putInt("SHOW_TYPE", showType);
         }
     }
@@ -306,10 +315,13 @@ public class PhoneAc extends BaseLinphoneAc {
             }
             long time = savedInstanceState.getLong("CALL_TIME", -1L);
             if (time > -1) {
-                setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(timeCount));
+                setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(time));
             }
 
             int show = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
+
+            debugToast("取出showType = " + show);
+
             showView(show);
         }
     }
