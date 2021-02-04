@@ -134,8 +134,8 @@ public class CallNumberAc extends BaseLinphoneAc {
 
                 Intent i = new Intent(CallNumberAc.this, PhoneAc.class);
                 i.putExtra(INTENT_CALL_NUMBER, phone);
-                i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_OUT);
 
+                i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_OUT);
                 startActivity(i);
             }
         });

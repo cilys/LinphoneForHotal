@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".call.PhoneAc">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/root_out" >
+
+        <LinearLayout
+            android:id="@+id/ll_out_model"
+            android:layout_width="@dimen/y850"
+            android:layout_height="@dimen/x650"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/y100"
+            android:paddingRight="@dimen/y100"
+            android:gravity="center_horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x240"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+                    <ImageView
+                        android:id="@+id/img_out_avatar"
+                        android:layout_width="@dimen/y150"
+                        android:layout_height="@dimen/y150"
+                        android:src="@mipmap/ic_avatar_test" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_out_custom_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginTop="@dimen/y10"
+                        android:text="Rober Watson"
+                        android:textColor="#FFF"
+                        android:textSize="@dimen/x40"
+                        android:ellipsize="marquee" />
+
+                    <TextView
+                        android:id="@+id/tv_out_custom_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Housekeeping"
+                        android:textSize="@dimen/x30"
+                        android:textColor="#80FFFFFF" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_out_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1001"
+                    android:textSize="@dimen/x30"
+                    android:textColor="#FFF" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/style_splite_line_h_light_gray"
+                android:layout_marginTop="@dimen/y30"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/x75"
+                android:paddingRight="@dimen/x75"
+                android:layout_marginTop="@dimen/y45"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/ll_out_mute"
+                    style="@style/style_call_action_parent" >
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_mute"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="MUTE"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_out_hold"
+                    style="@style/style_call_action_parent"
+                    android:visibility="invisible"
+                    android:layout_marginLeft="@dimen/x30">
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_hold"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="HOLD"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_out_speaker"
+                    style="@style/style_call_action_parent"
+                    android:layout_marginLeft="@dimen/x30">
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_speaker"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="SPEAKER"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_out_end_call"
+                android:layout_width="@dimen/y500"
+                android:layout_height="@dimen/x120"
+                android:layout_marginTop="@dimen/y30"
+                android:src="@mipmap/ic_end_call"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/root_incoming"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="@dimen/y850"
+            android:layout_height="@dimen/x650"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:id="@+id/ll_incoming_model">
+
+            <TextView
+                android:id="@+id/tv_incoming_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x25"
+                android:text="1001"
+                android:textSize="@dimen/x30"
+                android:textColor="#FFF"/>
+
+            <ImageView
+                android:layout_width="@dimen/x250"
+                android:layout_height="@dimen/x250"
+                android:layout_marginTop="@dimen/x30"
+                android:src="@mipmap/ic_avatar_test"/>
+
+            <TextView
+                android:id="@+id/tv_incoming_custom_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/y10"
+                android:text="Rober Watson"
+                android:textColor="#FFF"
+                android:textSize="@dimen/x40"
+                android:ellipsize="marquee" />
+
+            <TextView
+                android:id="@+id/tv_incoming_custom_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Housekeeping"
+                android:layout_marginTop="@dimen/y10"
+                android:textSize="@dimen/x30"
+                android:textColor="#80FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y30"
+                android:orientation="horizontal" >
+                <ImageView
+                    android:id="@+id/img_incoming_decline"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:src="@mipmap/icon_call_decline"
+                    android:layout_marginRight="@dimen/x50" />
+                <ImageView
+                    android:id="@+id/img_incoming_call_accept"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:src="@mipmap/icon_call_accept"
+                    android:layout_marginLeft="@dimen/x50" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/root_call"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="@dimen/y850"
+            android:layout_height="@dimen/x650"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingLeft="@dimen/y100"
+            android:paddingRight="@dimen/y100"
+            android:id="@+id/ll_call_model">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x240"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+                    <ImageView
+                        android:id="@+id/img_call_avatar"
+                        android:layout_width="@dimen/y150"
+                        android:layout_height="@dimen/y150"
+                        android:src="@mipmap/ic_avatar_test" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_call_custom_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginTop="@dimen/y10"
+                        android:text="Rober Watson"
+                        android:textColor="#FFF"
+                        android:textSize="@dimen/x40"
+                        android:ellipsize="marquee" />
+
+                    <TextView
+                        android:id="@+id/tv_call_custom_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Housekeeping"
+                        android:textSize="@dimen/x30"
+                        android:textColor="#80FFFFFF" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_call_room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1001"
+                    android:textSize="@dimen/x30"
+                    android:textColor="#FFF" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/style_splite_line_h_light_gray"
+                />
+
+            <TextView
+                android:id="@+id/tv_call_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:textColor="#FFF"
+                android:textSize="@dimen/x40"
+                android:text="05:03"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/x75"
+                android:paddingRight="@dimen/x75"
+                android:layout_marginTop="@dimen/y30"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/ll_call_mute"
+                    android:layout_height="@dimen/x100"
+                    style="@style/style_call_action_parent" >
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_mute"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="MUTE"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_call_hold"
+                    android:layout_height="@dimen/x100"
+                    style="@style/style_call_action_parent"
+                    android:layout_marginLeft="@dimen/x30">
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_hold"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="HOLD"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_call_speaker"
+                    android:layout_height="@dimen/x100"
+                    style="@style/style_call_action_parent"
+                    android:layout_marginLeft="@dimen/x30">
+                    <ImageView
+                        style="@style/style_call_action_img"
+                        android:src="@drawable/selector_call_action_img_speaker"/>
+                    <TextView
+                        style="@style/style_call_action_tv"
+                        android:text="SPEAKER"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_call_end_call"
+                android:layout_width="@dimen/y500"
+                android:layout_height="@dimen/x120"
+                android:layout_marginTop="@dimen/y30"
+                android:src="@mipmap/ic_end_call"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

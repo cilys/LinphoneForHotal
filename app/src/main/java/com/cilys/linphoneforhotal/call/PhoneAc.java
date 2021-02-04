@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.call;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,6 +30,9 @@ public class PhoneAc extends BaseLinphoneAc {
     public final static int SHOW_TYPE_INCOMING = 2; //显示来电布局
     public final static int SHOW_TYPE_CALL = 3;     //显示通话布局
 
+    private int showType = SHOW_TYPE_OUT;
+    private String outNumber;
+
     @Override
     protected int getLayout() {
         return R.layout.ac_phone;
@@ -38,13 +42,11 @@ public class PhoneAc extends BaseLinphoneAc {
     protected void initUI() {
         super.initUI();
 
-        int showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
+        showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
 
         initOutView(showType == SHOW_TYPE_OUT);
         initIncomingView();
         initCallView();
-
-        showView(showType);
     }
 
     private void showView(int type) {
@@ -61,13 +63,17 @@ public class PhoneAc extends BaseLinphoneAc {
             getViewFromCache(R.id.root_incoming).setVisibility(View.GONE);
             getViewFromCache(R.id.root_call).setVisibility(View.VISIBLE);
         }
+
+        showToast("root_out show = "
+                + (getViewFromCache(R.id.root_out).getVisibility() == View.VISIBLE)
+                + "<---> root_incoming show = "
+                + (getViewFromCache(R.id.root_incoming).getVisibility() == View.VISIBLE)
+                + "<---> root_call show = "
+                + (getViewFromCache(R.id.root_call).getVisibility() == View.VISIBLE));
     }
 
     private TextView tv_call_time;
     private void initCallView(){
-        setBackgroundById(R.id.root_call, R.mipmap.ic_call_bg);
-        setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
-
         TextView tv_call_room = findView(R.id.tv_call_room);
         setTextToView(tv_call_room, LinphoneUtils.getDisplayName(getCurrentCall()));
 
@@ -113,10 +119,6 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     private void initIncomingView(){
-        setBackgroundById(R.id.root_incoming, R.mipmap.ic_incoming_bg);
-        setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
-
-
         final Call call = getCurrentCall();
 
         TextView tv_incoming_room = findView(R.id.tv_incoming_room);
@@ -126,7 +128,6 @@ public class PhoneAc extends BaseLinphoneAc {
         }
 
         TextView tv_incoming_custom_name = findView(R.id.tv_incoming_custom_name);
-
 
         TextView tv_incoming_custom_status = findView(R.id.tv_incoming_custom_status);
 
@@ -169,11 +170,9 @@ public class PhoneAc extends BaseLinphoneAc {
         finish();
     }
 
+    private TextView tv_out_room;
     private void initOutView(boolean show) {
-        setBackgroundById(R.id.root_out, R.mipmap.ic_call_bg);
-        setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
-
-        TextView tv_out_room = findView(R.id.tv_out_room);
+        tv_out_room = findView(R.id.tv_out_room);
 
         ImageView img_out_avatar = findView(R.id.img_out_avatar);
 
@@ -207,13 +206,13 @@ public class PhoneAc extends BaseLinphoneAc {
         });
 
         if (show) {
-            String phone = getIntent().getStringExtra(INTENT_CALL_NUMBER);
-            if (phone == null || phone.length() < 1) {
+            outNumber = getIntent().getStringExtra(INTENT_CALL_NUMBER);
+            if (outNumber == null || outNumber.length() < 1) {
                 finish();
             }
-            setTextToView(tv_out_room, phone);
+            setTextToView(tv_out_room, outNumber);
 
-            call(phone);
+            call(outNumber);
         }
     }
 
@@ -254,12 +253,13 @@ public class PhoneAc extends BaseLinphoneAc {
             if (e.obj instanceof LinPhoneBean) {
                 LinPhoneBean bean = (LinPhoneBean) e.obj;
                 if (bean.getCallState() == Call.State.IncomingReceived) {
+                    showType = SHOW_TYPE_INCOMING;
                     showView(SHOW_TYPE_INCOMING);
                 } else if (bean.getCallState() == Call.State.Connected) {
                     if (LinphoneService.getInstance() != null) {
                         LinphoneService.getInstance().setNeedSystemTimer(true);
                     }
-
+                    showType = SHOW_TYPE_CALL;
                     timeCount = 0;
                     showView(SHOW_TYPE_CALL);
                 } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
@@ -277,5 +277,78 @@ public class PhoneAc extends BaseLinphoneAc {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     private long timeCount = -1;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (outState != null) {
+            if (outNumber != null) {
+                outState.putString("OUT_NUMBER", outNumber);
+            }
+            if (timeCount > -1) {
+                outState.putLong("CALL_TIME", timeCount);
+            }
+
+            outState.putInt("SHOW_TYPE", showType);
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            String number = savedInstanceState.getString("OUT_NUMBER", null);
+            if (number != null) {
+                setTextToView(tv_out_room, number);
+            }
+            long time = savedInstanceState.getLong("CALL_TIME", -1L);
+            if (time > -1) {
+                setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(timeCount));
+            }
+
+            int show = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
+            showView(show);
+        }
+    }
+
+    @Override
+    protected void screenLand() {
+        super.screenLand();
+        if (showType == SHOW_TYPE_INCOMING) {
+            setBackgroundById(R.id.root_incoming, R.mipmap.ic_phone_bg);
+            setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
+        } else if (showType == SHOW_TYPE_CALL) {
+            setBackgroundById(R.id.root_call, R.mipmap.ic_phone_bg);
+            setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
+        } else {
+            setBackgroundById(R.id.root_out, R.mipmap.ic_phone_bg);
+            setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
+        }
+
+        showView(showType);
+    }
+
+    @Override
+    protected void screenProtrait() {
+        super.screenProtrait();
+
+        if (showType == SHOW_TYPE_INCOMING) {
+            setBackgroundById(R.id.root_incoming, R.mipmap.ic_incoming_bg);
+            setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
+        } else if (showType == SHOW_TYPE_CALL) {
+            setBackgroundById(R.id.root_call, R.mipmap.ic_call_bg);
+            setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
+        } else {
+            setBackgroundById(R.id.root_out, R.mipmap.ic_call_bg);
+            setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
+        }
+
+        showView(showType);
+    }
 }
