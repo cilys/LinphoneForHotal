@@ -3,21 +3,16 @@ package com.cilys.linphoneforhotal.home;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
+import android.content.res.Configuration;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallNumberAc;
@@ -29,8 +24,6 @@ import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.stx.xhb.xbanner.XBanner;
 import com.stx.xhb.xbanner.entity.BaseBannerInfo;
-import com.stx.xhb.xbanner.transformers.BasePageTransformer;
-import com.stx.xhb.xbanner.transformers.DefaultPageTransformer;
 import com.stx.xhb.xbanner.transformers.Transformer;
 
 import java.util.ArrayList;
@@ -48,10 +41,9 @@ public class HomeAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
-        setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
-        setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
-//        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
-        setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
+        Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
+        int ori = cf.orientation ; //获取屏幕方向
+        setBackground(ori);
 
         LinearLayout ll_room_control = findView(R.id.ll_room_control);
 
@@ -240,6 +232,16 @@ public class HomeAc extends BaseLinphoneAc {
         super.onResume();
 
         App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
+    }
 
+    private void setBackground(int orientation) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg_land);
+        } else {
+            setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
+            setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
+            setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
+//        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
+        }
     }
 }

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeAc">
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x475"
+        android:paddingLeft="@dimen/y50"
+        android:paddingRight="@dimen/y50"
+        android:paddingTop="@dimen/y50"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/y133"
+            android:layout_height="@dimen/y82"
+            android:src="@mipmap/ic_logo_stay"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_room_control"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/ic_bg_home_head_action_room_control"
+            style="@style/style_home_head_action_ll.top">
+            <ImageView
+                style="@style/style_home_head_action_ll_img.top"
+                android:src="@mipmap/icon_cell_phone_white" />
+
+            <TextView
+                style="@style/style_home_head_action_ll_tv.top"
+                android:text="ROOM CONTROL"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tv_remote"
+            android:layout_toLeftOf="@+id/ll_room_control"
+            android:layout_marginRight="@dimen/y30"
+            android:background="@mipmap/ic_bg_home_head_action_room_control"
+            style="@style/style_home_head_action_ll.top">
+            <ImageView
+                style="@style/style_home_head_action_ll_img.top"
+                android:src="@mipmap/icon_line_setting_white" />
+
+            <TextView
+                style="@style/style_home_head_action_ll_tv.top"
+                android:text="TV REMOTE"/>
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x190"
+            android:layout_marginTop="@dimen/x54"
+            android:id="@+id/rl_head_weather"
+            android:padding="@dimen/x30" >
+
+            <TextView
+                android:id="@+id/tv_room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FCF9F9"
+                android:textSize="@dimen/x30"
+                android:text="Room 2021" />
+
+            <TextView
+                android:id="@+id/tv_custom_name"
+                android:layout_width="@dimen/x250"
+                android:maxHeight="@dimen/y80"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x30"
+                android:textColor="#FCF9F9"
+                android:layout_below="@+id/tv_room_name"
+                android:layout_marginTop="@dimen/y2"
+                android:text="Hello, Adam Miller!"/>
+            
+            <RelativeLayout
+                android:layout_width="@dimen/x250"
+                android:layout_height="@dimen/y50"
+                android:layout_marginTop="@dimen/y80"
+                android:background="@mipmap/ic_home_head_message_bg" >
+
+                <TextView
+                    android:id="@+id/tv_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x25"
+                    android:layout_marginRight="@dimen/x25"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="#19191B"
+                    android:textSize="@dimen/x16"
+                    android:gravity="center"
+                    android:text="You have 2Message"/>
+
+                <ImageView
+                    android:id="@+id/img_msg_notify"
+                    android:layout_width="@dimen/x20"
+                    android:layout_height="@dimen/y20"
+                    android:src="@mipmap/icon_red_point"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/x224"
+                android:layout_height="@dimen/y140"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="@dimen/x14"
+                    android:layout_height="@dimen/y20"
+                    android:src="@mipmap/icon_location"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="@dimen/x86"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="@dimen/y52"
+                    android:gravity="center"
+                    android:ellipsize="end"
+                    android:layout_toRightOf="@+id/img_location"
+                    android:textSize="@dimen/x20"
+                    android:textColor="#FFF"
+                    android:text="New York"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="@dimen/x224"
+                    android:layout_height="@dimen/y66"
+                    android:layout_marginTop="@dimen/y28"
+                    android:textColor="#FFF"
+                    android:textSize="@dimen/x50"
+                    android:text="10:18PM"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_weekday"
+                    android:layout_width="@dimen/x150"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/y90"
+                    android:textSize="@dimen/x20"
+                    android:textColor="#B8B8B8"
+                    android:maxHeight="@dimen/y52"
+                    android:layout_alignParentRight="true"
+                    android:text="Wed, 9 Dec\n2020"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/x100"
+                android:layout_height="@dimen/y68"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/y126">
+                <ImageView
+                    android:id="@+id/img_weather"
+                    android:layout_width="@dimen/x32"
+                    android:layout_height="@dimen/y32"
+                    android:src="@mipmap/icon_weather_cloudy" />
+
+                <TextView
+                    android:id="@+id/tv_temp"
+                    android:layout_width="@dimen/x52"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="@dimen/y66"
+                    android:layout_toRightOf="@+id/img_weather"
+                    android:textSize="@dimen/x25"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:text="-3 ℃"
+                    android:textColor="#FFF" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/ll_donot_disturb"
+                    style="@style/style_home_head_action_ll">
+
+                    <ImageView
+                        style="@style/style_home_head_action_ll_img"
+                        android:src="@mipmap/icon_donot_disturb_white"/>
+                    <TextView
+                        style="@style/style_home_head_action_ll_tv"
+                        android:text="DO NOT DISTURB"/>
+                </LinearLayout>
+
+
+
+                <View
+                    android:layout_width="@dimen/x10"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_make_up_room"
+                    style="@style/style_home_head_action_ll">
+
+                    <ImageView
+                        style="@style/style_home_head_action_ll_img"
+                        android:src="@mipmap/icon_make_up_room_white"/>
+                    <TextView
+                        style="@style/style_home_head_action_ll_tv"
+                        android:text="MAKE UP ROOM"/>
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="@dimen/x10"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_service_menu"
+                    style="@style/style_home_head_action_ll">
+
+                    <ImageView
+                        style="@style/style_home_head_action_ll_img"
+                        android:src="@mipmap/icon_service_menu_white"/>
+                    <TextView
+                        style="@style/style_home_head_action_ll_tv"
+                        android:text="SERVICE MENU"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x300"
+        android:layout_marginTop="@dimen/x420"
+        android:id="@+id/home_promo"
+        android:orientation="vertical"
+        android:background="@drawable/shape_top_round_white_bg"
+        android:paddingTop="@dimen/x20"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Promotions"
+            android:textColor="#19191B"
+            android:textSize="@dimen/x25"
+            android:layout_marginLeft="@dimen/y20" />
+        
+        <com.stx.xhb.xbanner.XBanner
+            android:id="@+id/xBanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y130"
+            app:AutoPlayTime="8000"
+            app:isAutoPlay="true"
+            app:pointsVisibility="false"
+            app:isClipChildrenMode="true"
+            app:clipChildrenLeftMargin="@dimen/x30"
+            app:clipChildrenRightMargin="@dimen/x400"
+            app:pageChangeDuration="800" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x650"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/ll_bottom">
+
+        <LinearLayout
+            android:layout_width="@dimen/y400"
+            android:layout_height="@dimen/x70"
+            android:layout_marginLeft="@dimen/y60"
+            android:layout_marginRight="@dimen/y60"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingRight="@dimen/x10"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x25"
+                    android:textColor="#FFF"
+                    android:text="Scan to check on mobile" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x18"
+                    android:layout_marginTop="@dimen/y8"
+                    android:textColor="#80FFFFFF"
+                    android:text="Tap QR code to view full screen"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/x70"
+                android:layout_height="@dimen/x70"
+                android:src="@mipmap/ic_qrcode_test" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:visibility="gone"
+                style="@style/style_home_bottom_action_ll" >
+                <ImageView
+                    style="@style/style_home_bottom_action_ll_img"
+                    android:src="@mipmap/icon_phone_white"/>
+                <TextView
+                    style="@style/style_home_bottom_action_ll_tv"
+                    android:text="PHONE" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_service_call"
+                style="@style/style_home_bottom_action_ll" >
+                <ImageView
+                    style="@style/style_home_bottom_action_ll_img"
+                    android:src="@mipmap/icon_service_call_white"/>
+                <TextView
+                    style="@style/style_home_bottom_action_ll_tv"
+                    android:text="SERVICE CALL" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_voice_mail"
+                style="@style/style_home_bottom_action_ll" >
+                <ImageView
+                    style="@style/style_home_bottom_action_ll_img"
+                    android:src="@mipmap/icon_voice_mail_white"/>
+                <TextView
+                    style="@style/style_home_bottom_action_ll_tv"
+                    android:text="VOICE MAIL" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_home_bottom_action_ll" >
+                <ImageView
+                    style="@style/style_home_bottom_action_ll_img"
+                    android:src="@mipmap/icon_sos_white"/>
+                <TextView
+                    style="@style/style_home_bottom_action_ll_tv"
+                    android:text="SOS" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
