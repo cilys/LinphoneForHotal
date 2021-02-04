@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.call;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,7 +14,6 @@ import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.event.LinPhoneBean;
 import com.cilys.linphoneforhotal.service.LinphoneService;
-import com.cilys.linphoneforhotal.utils.L;
 import com.cilys.linphoneforhotal.utils.LinphoneUtils;
 import com.cilys.linphoneforhotal.utils.Sp;
 import com.cilys.linphoneforhotal.utils.TimeUtils;
@@ -47,29 +47,26 @@ public class PhoneAc extends BaseLinphoneAc {
         initOutView(showType == SHOW_TYPE_OUT);
         initIncomingView();
         initCallView();
+
+        showView(showType);
     }
 
     private void showView(int type) {
-        if (type == SHOW_TYPE_OUT) {
-            getViewFromCache(R.id.root_out).setVisibility(View.VISIBLE);
-            getViewFromCache(R.id.root_incoming).setVisibility(View.GONE);
-            getViewFromCache(R.id.root_call).setVisibility(View.GONE);
-        } else if (type == SHOW_TYPE_INCOMING) {
-            getViewFromCache(R.id.root_out).setVisibility(View.GONE);
-            getViewFromCache(R.id.root_incoming).setVisibility(View.VISIBLE);
-            getViewFromCache(R.id.root_call).setVisibility(View.GONE);
+        if (type == SHOW_TYPE_INCOMING) {
+            getViewFromCache(R.id.ll_out_model).setVisibility(View.GONE);
+            getViewFromCache(R.id.ll_incoming_model).setVisibility(View.VISIBLE);
+            getViewFromCache(R.id.ll_call_model).setVisibility(View.GONE);
         } else if (type == SHOW_TYPE_CALL) {
-            getViewFromCache(R.id.root_out).setVisibility(View.GONE);
-            getViewFromCache(R.id.root_incoming).setVisibility(View.GONE);
-            getViewFromCache(R.id.root_call).setVisibility(View.VISIBLE);
+            getViewFromCache(R.id.ll_out_model).setVisibility(View.GONE);
+            getViewFromCache(R.id.ll_incoming_model).setVisibility(View.GONE);
+            getViewFromCache(R.id.ll_call_model).setVisibility(View.VISIBLE);
+        } else {
+            getViewFromCache(R.id.ll_out_model).setVisibility(View.VISIBLE);
+            getViewFromCache(R.id.ll_incoming_model).setVisibility(View.GONE);
+            getViewFromCache(R.id.ll_call_model).setVisibility(View.GONE);
         }
 
-        showToast("root_out show = "
-                + (getViewFromCache(R.id.root_out).getVisibility() == View.VISIBLE)
-                + "<---> root_incoming show = "
-                + (getViewFromCache(R.id.root_incoming).getVisibility() == View.VISIBLE)
-                + "<---> root_call show = "
-                + (getViewFromCache(R.id.root_call).getVisibility() == View.VISIBLE));
+        setBackgroundByScreen(getScreenModel());
     }
 
     private TextView tv_call_time;
@@ -317,38 +314,27 @@ public class PhoneAc extends BaseLinphoneAc {
         }
     }
 
-    @Override
-    protected void screenLand() {
-        super.screenLand();
-        if (showType == SHOW_TYPE_INCOMING) {
-            setBackgroundById(R.id.root_incoming, R.mipmap.ic_phone_bg);
-            setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
-        } else if (showType == SHOW_TYPE_CALL) {
-            setBackgroundById(R.id.root_call, R.mipmap.ic_phone_bg);
-            setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
+    private void setBackgroundByScreen(int screen) {
+        if (screen == Configuration.ORIENTATION_LANDSCAPE) {
+            setBackgroundById(R.id.root, R.mipmap.ic_phone_bg);
+
+            if (showType == SHOW_TYPE_INCOMING) {
+                setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
+            } else if (showType == SHOW_TYPE_CALL) {
+                setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
+            } else {
+                setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
+            }
         } else {
-            setBackgroundById(R.id.root_out, R.mipmap.ic_phone_bg);
-            setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
+            setBackgroundById(R.id.root, R.mipmap.ic_call_bg);
+
+            if (showType == SHOW_TYPE_INCOMING) {
+                setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
+            } else if (showType == SHOW_TYPE_CALL) {
+                setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
+            } else {
+                setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
+            }
         }
-
-        showView(showType);
-    }
-
-    @Override
-    protected void screenProtrait() {
-        super.screenProtrait();
-
-        if (showType == SHOW_TYPE_INCOMING) {
-            setBackgroundById(R.id.root_incoming, R.mipmap.ic_call_bg);
-            setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
-        } else if (showType == SHOW_TYPE_CALL) {
-            setBackgroundById(R.id.root_call, R.mipmap.ic_call_bg);
-            setBackgroundById(R.id.ll_call_model, R.mipmap.ic_incoming_model_bg);
-        } else {
-            setBackgroundById(R.id.root_out, R.mipmap.ic_call_bg);
-            setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
-        }
-
-        showView(showType);
     }
 }

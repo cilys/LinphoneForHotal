@@ -37,17 +37,7 @@ public abstract class BaseLinphoneAc extends BaseAc {
         init();
         afterInit();
 
-        Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
-        if (cf != null) {
-            //获取屏幕方向
-            if (cf.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                screenLand();
-            } else {
-                screenProtrait();
-            }
-        } else {
-            screenProtrait();
-        }
+
 
         if (BuildConfig.DEBUG || true) {
             View decorView = getWindow().getDecorView();
@@ -61,13 +51,14 @@ public abstract class BaseLinphoneAc extends BaseAc {
 
     }
 
-    //横屏
-    protected void screenLand(){
-
-    }
-
-    protected void screenProtrait(){
-
+    protected int getScreenModel(){
+        Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
+        if (cf != null) {
+            //获取屏幕方向
+            return cf.orientation;
+        } else {
+            return Configuration.ORIENTATION_PORTRAIT;
+        }
     }
 
     protected abstract @LayoutRes int getLayout();

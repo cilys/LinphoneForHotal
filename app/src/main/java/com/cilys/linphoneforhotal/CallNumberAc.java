@@ -1,6 +1,7 @@
 package com.cilys.linphoneforhotal;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -165,6 +166,13 @@ public class CallNumberAc extends BaseLinphoneAc {
                 finish();
             }
         });
+
+        int screen = getScreenModel();
+        if (screen == Configuration.ORIENTATION_LANDSCAPE) {
+            setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark_land);
+        } else {
+            setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark);
+        }
     }
 
     @Override
@@ -172,20 +180,6 @@ public class CallNumberAc extends BaseLinphoneAc {
         super.onResume();
 
         App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
-    }
-
-    @Override
-    protected void screenProtrait() {
-        super.screenProtrait();
-
-        setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark);
-    }
-
-    @Override
-    protected void screenLand() {
-        super.screenLand();
-
-        setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark_land);
     }
 
     @Override
