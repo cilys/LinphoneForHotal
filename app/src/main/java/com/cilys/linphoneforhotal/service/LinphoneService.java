@@ -164,13 +164,22 @@ public class LinphoneService extends Service {
                 mCore.iterate();
             }
             mHandler.postDelayed(this, 20);
-            if (System.currentTimeMillis() - lastTime >= 999) {
-                lastTime = System.currentTimeMillis();
 
-                EventBus.getInstance().postEvent(EventImpl.SYSTEM_TIMER);
+            if (needSystemTimer) {
+                if (System.currentTimeMillis() - lastTime >= 999) {
+                    lastTime = System.currentTimeMillis();
+
+                    EventBus.getInstance().postEvent(EventImpl.SYSTEM_TIMER);
+                }
             }
         }
     };
+
+    private boolean needSystemTimer = false;
+
+    public void setNeedSystemTimer(boolean needSystemTimer) {
+        this.needSystemTimer = needSystemTimer;
+    }
 
     private long lastTime = 0;
 

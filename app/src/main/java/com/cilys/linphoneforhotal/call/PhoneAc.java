@@ -8,8 +8,14 @@ import android.widget.TextView;
 import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
+import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.event.EventImpl;
+import com.cilys.linphoneforhotal.event.LinPhoneBean;
+import com.cilys.linphoneforhotal.service.LinphoneService;
+import com.cilys.linphoneforhotal.utils.L;
 import com.cilys.linphoneforhotal.utils.LinphoneUtils;
 import com.cilys.linphoneforhotal.utils.Sp;
+import com.cilys.linphoneforhotal.utils.TimeUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import org.linphone.core.Address;
@@ -32,11 +38,12 @@ public class PhoneAc extends BaseLinphoneAc {
     protected void initUI() {
         super.initUI();
 
-        initOutView();
+        int showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
+
+        initOutView(showType == SHOW_TYPE_OUT);
         initIncomingView();
         initCallView();
 
-        int showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
         showView(showType);
     }
 
@@ -106,6 +113,8 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     private void initIncomingView(){
+        L.w(TAG, "onCallStateChanged------+++++------");
+
         setBackgroundById(R.id.root_incoming, R.mipmap.ic_incoming_bg);
         setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
 
@@ -162,7 +171,7 @@ public class PhoneAc extends BaseLinphoneAc {
         finish();
     }
 
-    private void initOutView() {
+    private void initOutView(boolean show) {
         setBackgroundById(R.id.root_out, R.mipmap.ic_call_bg);
         setBackgroundById(R.id.ll_out_model, R.mipmap.ic_incoming_model_bg);
 
@@ -199,13 +208,15 @@ public class PhoneAc extends BaseLinphoneAc {
             }
         });
 
-        String phone = getIntent().getStringExtra(INTENT_CALL_NUMBER);
-        if (phone == null || phone.length() < 1) {
-            finish();
-        }
-        setTextToView(tv_out_room, phone);
+        if (show) {
+            String phone = getIntent().getStringExtra(INTENT_CALL_NUMBER);
+            if (phone == null || phone.length() < 1) {
+                finish();
+            }
+            setTextToView(tv_out_room, phone);
 
-        call(phone);
+            call(phone);
+        }
     }
 
     /**
@@ -237,4 +248,36 @@ public class PhoneAc extends BaseLinphoneAc {
             }
         }
     }
+
+    @Override
+    protected void onEvent(Event e) {
+        super.onEvent(e);
+        if (e.what == EventImpl.CALL_STATE_CHANGED) {
+            if (e.obj instanceof LinPhoneBean) {
+                LinPhoneBean bean = (LinPhoneBean) e.obj;
+                if (bean.getCallState() == Call.State.IncomingReceived) {
+                    showView(SHOW_TYPE_INCOMING);
+                } else if (bean.getCallState() == Call.State.Connected) {
+                    if (LinphoneService.getInstance() != null) {
+                        LinphoneService.getInstance().setNeedSystemTimer(true);
+                    }
+
+                    timeCount = 0;
+                    showView(SHOW_TYPE_CALL);
+                } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
+                    if (LinphoneService.getInstance() != null) {
+                        LinphoneService.getInstance().setNeedSystemTimer(false);
+                    }
+
+                    finish();
+                }
+            }
+        } else if (e.what == EventImpl.SYSTEM_TIMER) {
+            timeCount ++;
+
+            setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(timeCount));
+        }
+    }
+
+    private long timeCount = -1;
 }

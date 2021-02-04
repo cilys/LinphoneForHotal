@@ -10,11 +10,14 @@ import android.view.View;
 
 import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallAc;
+import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.IncomingAc;
 import com.cilys.linphoneforhotal.OutAc;
+import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.event.LinPhoneBean;
+import com.cilys.linphoneforhotal.home.HomeAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.L;
@@ -144,53 +147,64 @@ public abstract class BaseLinphoneAc extends BaseAc {
     }
 
     @Override
-    protected void onEvent(final Event e) {
+    protected void onEvent(Event e) {
         super.onEvent(e);
-
-//        if (!isResume) {
-//            L.v(TAG, "isResume = " + isResume);
-//            return;
-//        }
-
         if (e.what == EventImpl.CALL_STATE_CHANGED) {
-            if (e.obj instanceof LinPhoneBean) {
-                LinPhoneBean bean = (LinPhoneBean) e.obj;
-                if (bean.getCallState() == Call.State.IncomingReceived) {
+            if (this instanceof PhoneAc) {
 
-                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
-                        return;
-                    }
-
-                    if (this instanceof IncomingAc) {
-
-                    } else {
-                        Intent i = new Intent(this, IncomingAc.class);
-                        startActivity(i);
-                    }
-                } else if (bean.getCallState() == Call.State.Connected) {
-                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_INCOMING
-                        || App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
-
-                        Intent i = new Intent(this, CallAc.class);
+            } else {
+                if (e.obj instanceof LinPhoneBean) {
+                    if (((LinPhoneBean)e.obj).getCallState() == Call.State.IncomingReceived) {
+                        Intent i = new Intent(this, PhoneAc.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_INCOMING);
                         startActivity(i);
-                    } else {
-                        endCall();
-                    }
-
-
-//                    if (this instanceof IncomingAc || this instanceof OutAc) {
-//                        finish();
-//                    }
-                } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
-                    if (this instanceof OutAc || this instanceof IncomingAc || this instanceof CallAc) {
-                        showToast("呼叫已结束");
-                        finish();
+                        L.w(TAG, "onCallStateChanged--------------");
                     }
                 }
             }
-        } else if (e.what == EventImpl.REGISTION_STATE_CHANGED) {
-
         }
     }
+
+    //    @Override
+//    protected void onEvent(final Event e) {
+//        super.onEvent(e);
+//
+//        if (e.what == EventImpl.CALL_STATE_CHANGED) {
+//            if (e.obj instanceof LinPhoneBean) {
+//                LinPhoneBean bean = (LinPhoneBean) e.obj;
+//                if (bean.getCallState() == Call.State.IncomingReceived) {
+//
+//                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
+//                        return;
+//                    }
+//
+//                    if (this instanceof IncomingAc) {
+//
+//                    } else {
+//                        Intent i = new Intent(this, IncomingAc.class);
+//                        startActivity(i);
+//                    }
+//                } else if (bean.getCallState() == Call.State.Connected) {
+//                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_INCOMING
+//                        || App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
+//
+//                        Intent i = new Intent(this, CallAc.class);
+//                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(i);
+//                    } else {
+//                        endCall();
+//                    }
+//
+//                } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
+//                    if (this instanceof OutAc || this instanceof IncomingAc || this instanceof CallAc) {
+//                        showToast("呼叫已结束");
+//                        finish();
+//                    }
+//                }
+//            }
+//        } else if (e.what == EventImpl.REGISTION_STATE_CHANGED) {
+//
+//        }
+//    }
 }
