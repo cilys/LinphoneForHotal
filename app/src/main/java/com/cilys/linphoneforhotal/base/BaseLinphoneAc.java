@@ -10,15 +10,10 @@ import android.view.View;
 
 import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.BuildConfig;
-import com.cilys.linphoneforhotal.CallAc;
-import com.cilys.linphoneforhotal.CallNumberAc;
-import com.cilys.linphoneforhotal.IncomingAc;
-import com.cilys.linphoneforhotal.OutAc;
 import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.event.LinPhoneBean;
-import com.cilys.linphoneforhotal.home.HomeAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.L;
