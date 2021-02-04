@@ -25,7 +25,7 @@ public class IncomingAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
-        setBackgroundById(R.id.root, R.mipmap.ic_incoming_bg);
+        setBackgroundById(R.id.root, R.mipmap.ic_call_bg);
         setBackgroundById(R.id.ll_model, R.mipmap.ic_incoming_model_bg);
 
 

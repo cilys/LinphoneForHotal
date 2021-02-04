@@ -339,7 +339,7 @@ public class PhoneAc extends BaseLinphoneAc {
         super.screenProtrait();
 
         if (showType == SHOW_TYPE_INCOMING) {
-            setBackgroundById(R.id.root_incoming, R.mipmap.ic_incoming_bg);
+            setBackgroundById(R.id.root_incoming, R.mipmap.ic_call_bg);
             setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
         } else if (showType == SHOW_TYPE_CALL) {
             setBackgroundById(R.id.root_call, R.mipmap.ic_call_bg);
