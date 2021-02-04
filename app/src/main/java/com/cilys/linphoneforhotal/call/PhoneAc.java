@@ -316,7 +316,7 @@ public class PhoneAc extends BaseLinphoneAc {
 
     private void setBackgroundByScreen(int screen) {
         if (screen == Configuration.ORIENTATION_LANDSCAPE) {
-            setBackgroundById(R.id.root, R.mipmap.ic_phone_bg);
+            setBackgroundById(R.id.root, R.mipmap.ic_call_bg_land);
 
             if (showType == SHOW_TYPE_INCOMING) {
                 setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);

@@ -3,7 +3,6 @@ package com.cilys.linphoneforhotal;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -169,9 +168,9 @@ public class CallNumberAc extends BaseLinphoneAc {
 
         int screen = getScreenModel();
         if (screen == Configuration.ORIENTATION_LANDSCAPE) {
-            setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark_land);
+            setBackgroundById(R.id.root, R.mipmap.ic_call_bg_land);
         } else {
-            setBackgroundById(R.id.root, R.mipmap.ic_call_number_bg_dark);
+            setBackgroundById(R.id.root, R.mipmap.ic_call_bg);
         }
     }
 
