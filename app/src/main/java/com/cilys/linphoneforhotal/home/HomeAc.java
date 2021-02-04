@@ -15,14 +15,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
+import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
+import com.stx.xhb.xbanner.XBanner;
+import com.stx.xhb.xbanner.entity.BaseBannerInfo;
+import com.stx.xhb.xbanner.transformers.BasePageTransformer;
+import com.stx.xhb.xbanner.transformers.DefaultPageTransformer;
+import com.stx.xhb.xbanner.transformers.Transformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,38 +103,36 @@ public class HomeAc extends BaseLinphoneAc {
             }
         });
 
-        ViewPager vp = findView(R.id.vp);
-//        vp.setPageMargin((int)getResources().getDimension(R.dimen.x50));
-//        vp.setPageTransformer(false, new ViewPager.PageTransformer() {
-//            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-//            @Override
-//            public void transformPage(@NonNull View page, float position) {
-//                if (position < -1 || position> 1) {
-//                    page.setScaleX(0.5f);
-//                    page.setScaleY(0.5f);
-//                } else {
-//                    float curScale = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
-//                    curScale = Math.max(curScale, 0.5f);
-//                    float curAlpha = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
-//                    curAlpha = Math.max(curScale, curAlpha);
-//                    page.setAlpha(curAlpha);
-//                    page.setScaleX(curScale);
-//                    page.setScaleY(curScale);
-//                    float curTranZ = (1 - Math.abs(position))*(1-0.5f) + 0.5f;
-//                    curAlpha = Math.max(curTranZ, 0.5f);
-////                    page.setTranslationZ(curTranZ);
-//                }
-//            }
-//        });
+//        ViewPager vp = findView(R.id.vp);
+//
+//        List<PromFg> fgs = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            fgs.add(new PromFg());
+//        }
+//        VpHomeAdapter adapter = new VpHomeAdapter(getSupportFragmentManager(), fgs);
+//        vp.setAdapter(adapter);
+//        vp.setCurrentItem(Integer.MAX_VALUE / 2);
+//        vp.setClipToPadding(false);
+//        vp.setClipChildren(false);
+//        vp.setPadding(10, 0, 20, 30);
+//        vp.setPageMargin(50);
+//        vp.setPageTransformer(true);
 
-        List<PromFg> fgs = new ArrayList<>();
+        XBanner banner = findView(R.id.xBanner);
+        banner.setPageTransformer(Transformer.Default);
+
+        List<BaseBannerInfo> ls = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            fgs.add(new PromFg());
+            ls.add(new BannerInfo());
         }
-        VpHomeAdapter adapter = new VpHomeAdapter(getSupportFragmentManager(), fgs);
-        vp.setAdapter(adapter);
-        vp.setCurrentItem(Integer.MAX_VALUE / 2);
-
+        banner.setBannerData(R.layout.fg_home_prom, ls);
+        banner.loadImage(new XBanner.XBannerAdapter() {
+            @Override
+            public void loadBanner(XBanner banner, Object model, View view, int position) {
+                ImageView img = (ImageView)view.findViewById(R.id.img_pic);
+                ImageUtils.load(HomeAc.this, R.mipmap.ic_promo_test, img);
+            }
+        });
     }
 
     @Override
