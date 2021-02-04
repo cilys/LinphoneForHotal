@@ -10,36 +10,48 @@
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y756"
-        android:paddingLeft="@dimen/x76"
-        android:paddingRight="@dimen/x76"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
         >
 
-        <ImageView
-            android:id="@+id/img_room_control"
-            android:layout_width="@dimen/x225"
-            android:layout_height="@dimen/y58"
+        <LinearLayout
+            android:id="@+id/ll_room_control"
             android:layout_marginTop="@dimen/y40"
-            android:src="@mipmap/icon_room"
             android:layout_alignParentRight="true"
-            />
+            android:background="@mipmap/ic_bg_home_head_action_room_control"
+            style="@style/style_home_head_action_ll.top">
+            <ImageView
+                style="@style/style_home_head_action_ll_img.top"
+                android:src="@mipmap/icon_cell_phone_white" />
 
-        <ImageView
-            android:id="@+id/img_tv_remote"
-            android:layout_width="@dimen/x225"
-            android:layout_height="@dimen/y58"
-            android:layout_alignParentRight="true"
+            <TextView
+                style="@style/style_home_head_action_ll_tv.top"
+                android:text="ROOM CONTROL"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tv_remote"
             android:layout_marginTop="@dimen/y108"
-            android:src="@mipmap/icon_tv"/>
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/ic_bg_home_head_action_room_control"
+            style="@style/style_home_head_action_ll.top">
+            <ImageView
+                style="@style/style_home_head_action_ll_img.top"
+                android:src="@mipmap/icon_line_setting_white" />
+
+            <TextView
+                style="@style/style_home_head_action_ll_tv.top"
+                android:text="TV REMOTE"/>
+        </LinearLayout>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/y320"
             android:layout_marginTop="@dimen/y296"
             android:id="@+id/rl_head_weather"
-            android:paddingLeft="@dimen/x28"
-            android:paddingRight="@dimen/x28"
-            android:paddingTop="@dimen/y28"
-            android:paddingBottom="@dimen/y28" >
+            android:padding="@dimen/y30" >
 
             <TextView
                 android:id="@+id/tv_room_name"
@@ -326,6 +338,15 @@
                     android:text="VOICE MAIL" />
             </LinearLayout>
 
+            <LinearLayout
+                style="@style/style_home_bottom_action_ll" >
+                <ImageView
+                    style="@style/style_home_bottom_action_ll_img"
+                    android:src="@mipmap/icon_voice_mail_white"/>
+                <TextView
+                    style="@style/style_home_bottom_action_ll_tv"
+                    android:text="VOICE MAIL" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

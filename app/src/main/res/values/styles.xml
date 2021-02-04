@@ -117,12 +117,30 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
+    <style name="style_home_head_action_ll.top" parent="style_home_head_action_ll">
+        <item name="android:layout_width">@dimen/y225</item>
+        <item name="android:layout_height">@dimen/y55</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/x30</item>
+    </style>
+    <style name="style_home_head_action_ll_img.top" parent="style_home_head_action_ll_img">
+        <item name="android:layout_width">@dimen/y30</item>
+        <item name="android:layout_height">@dimen/y30</item>
+    </style>
+    <style name="style_home_head_action_ll_tv.top" parent="style_home_head_action_ll_tv">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/x10</item>
+    </style>
+
     <style name="style_home_bottom_action_ll" parent="style_home_head_action_ll">
         <item name="android:background">@null</item>
     </style>
+
     <style name="style_home_bottom_action_ll_img" parent="style_home_head_action_ll_img">
     </style>
-    <style name="style_home_bottom_action_ll_tv" parent="style_home_head_action_ll_tv">
 
+    <style name="style_home_bottom_action_ll_tv" parent="style_home_head_action_ll_tv">
     </style>
+
 </resources>

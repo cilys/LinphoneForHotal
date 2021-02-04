@@ -44,9 +44,9 @@ public class HomeAc extends BaseLinphoneAc {
 //        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
         setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
 
-        ImageView img_room_control = findView(R.id.img_room_control);
+        LinearLayout ll_room_control = findView(R.id.ll_room_control);
 
-        ImageView img_tv_remote = findView(R.id.img_tv_remote);
+        LinearLayout ll_tv_remote = findView(R.id.ll_tv_remote);
 
         TextView tv_room_name = findView(R.id.tv_room_name);
 
