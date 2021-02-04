@@ -40,8 +40,7 @@
         <service android:name=".service.LinphoneService" />
 
 
-        <activity android:name=".CallNumberAc"
-            android:screenOrientation="landscape" />
+        <activity android:name=".CallNumberAc" />
         <activity android:name=".home.HomeAc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
