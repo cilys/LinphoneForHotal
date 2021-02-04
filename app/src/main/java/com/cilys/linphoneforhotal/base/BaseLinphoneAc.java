@@ -9,7 +9,6 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.BuildConfig;
 import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
@@ -144,20 +143,6 @@ public abstract class BaseLinphoneAc extends BaseAc {
         if (v != null) {
             ImageUtils.load(this, resourceId, v);
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        isResume = true;
-    }
-
-    private boolean isResume = false;
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        isResume = false;
     }
 
     @Override

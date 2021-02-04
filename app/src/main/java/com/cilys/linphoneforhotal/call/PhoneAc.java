@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.event.Event;

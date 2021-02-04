@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
-import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
