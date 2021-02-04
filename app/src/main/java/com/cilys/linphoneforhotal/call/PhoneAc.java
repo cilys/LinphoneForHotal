@@ -113,8 +113,6 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     private void initIncomingView(){
-        L.w(TAG, "onCallStateChanged------+++++------");
-
         setBackgroundById(R.id.root_incoming, R.mipmap.ic_incoming_bg);
         setBackgroundById(R.id.ll_incoming_model, R.mipmap.ic_incoming_model_bg);
 

@@ -159,7 +159,6 @@ public abstract class BaseLinphoneAc extends BaseAc {
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_INCOMING);
                         startActivity(i);
-                        L.w(TAG, "onCallStateChanged--------------");
                     }
                 }
             }
