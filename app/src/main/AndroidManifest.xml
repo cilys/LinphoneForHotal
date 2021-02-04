@@ -47,7 +47,8 @@
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true" />
         <activity android:name=".IncomingAc" />
-        <activity android:name=".CallNumberAc" />
+        <activity android:name=".CallNumberAc"
+            android:screenOrientation="landscape" />
         <activity android:name=".home.HomeAc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

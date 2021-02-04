@@ -58,276 +58,297 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/x92"
-            android:layout_marginTop="@dimen/x40"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_number_1"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="1" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_2"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="2" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="A B C"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_3"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="3" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="D E F"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y92"
-            android:layout_marginTop="@dimen/y30"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_number_4"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="4" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="G H I"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_5"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="5" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="J K L"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_6"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="6" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="M N O"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y92"
-            android:layout_marginTop="@dimen/y30"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_number_7"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="7" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="P Q R S"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_8"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="8" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="T U V"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_9"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="9" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="W X Y Z"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y92"
-            android:layout_marginTop="@dimen/y30"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_number_star"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="*" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_0"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="0" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    android:text="+"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_number_shape"
-                style="@style/style_call_number_ll" >
-
-                <TextView
-                    style="@style/style_call_number_ll_tv_number"
-                    android:text="#" />
-                <TextView
-                    style="@style/style_call_number_ll_tv_char"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y120"
-            android:layout_marginTop="@dimen/y30"
-            android:orientation="horizontal">
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:layout_weight="1">
-            </LinearLayout>
+                android:layout_weight="3"
+                android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1">
-                <ImageView
-                    android:id="@+id/img_call"
-                    android:layout_width="@dimen/x120"
-                    android:layout_height="@dimen/y120"
-                    android:src="@mipmap/icon_call_accept"/>
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x92"
+                    android:layout_marginTop="@dimen/x30"
+                    android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/ll_del"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="@dimen/x40"
-                    android:layout_height="@dimen/y30"
-                    android:src="@mipmap/icon_delete"
-                    />
-            </LinearLayout>
-        </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_number_1"
+                        style="@style/style_call_number_ll" >
 
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="1" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char" />
+                    </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_split_line_light_gray_half"
-            android:layout_marginTop="@dimen/y45"
-            android:layout_marginBottom="@dimen/y45"/>
+                    <LinearLayout
+                        android:id="@+id/ll_number_2"
+                        style="@style/style_call_number_ll" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y100"
-            android:paddingLeft="@dimen/x30"
-            android:paddingRight="@dimen/x30"
-            android:orientation="horizontal">
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="2" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="A B C"/>
+                    </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_voice_mail"
-                style="@style/style_call_number_action_ll">
+                    <LinearLayout
+                        android:id="@+id/ll_number_3"
+                        style="@style/style_call_number_ll" >
 
-                <ImageView
-                    style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_voice_mail_drak" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="3" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="D E F"/>
+                    </LinearLayout>
+                </LinearLayout>
 
-                <TextView
-                    style="@style/style_call_number_action_ll_tv"
-                    android:text="VOICE MAIL"/>
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x92"
+                    android:layout_marginTop="@dimen/x20"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:id="@+id/ll_number_4"
+                        style="@style/style_call_number_ll" >
 
-            <View
-                android:layout_width="@dimen/x20"
-                android:layout_height="1dp" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="4" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="G H I"/>
+                    </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_service_call"
-                style="@style/style_call_number_action_ll">
+                    <LinearLayout
+                        android:id="@+id/ll_number_5"
+                        style="@style/style_call_number_ll" >
 
-                <ImageView
-                    style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_service_call_drak" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="5" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="J K L"/>
+                    </LinearLayout>
 
-                <TextView
-                    style="@style/style_call_number_action_ll_tv"
-                    android:text="SERVICE CALL"/>
+                    <LinearLayout
+                        android:id="@+id/ll_number_6"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="6" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="M N O"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x92"
+                    android:layout_marginTop="@dimen/x20"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_7"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="7" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="P Q R S"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_8"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="8" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="T U V"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_9"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="9" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="W X Y Z"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x92"
+                    android:layout_marginTop="@dimen/x20"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_star"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="*" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_0"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="0" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            android:text="+"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_number_shape"
+                        style="@style/style_call_number_ll" >
+
+                        <TextView
+                            style="@style/style_call_number_ll_tv_number"
+                            android:text="#" />
+                        <TextView
+                            style="@style/style_call_number_ll_tv_char"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <View
-                android:layout_width="@dimen/x20"
-                android:layout_height="1dp" />
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_split_line_light_gray_half" />
 
             <LinearLayout
-                android:id="@+id/ll_sos"
-                style="@style/style_call_number_action_ll">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/style_call_number_action_ll_img"
-                    android:src="@mipmap/icon_sos_drak" />
-                
-                <TextView
-                    style="@style/style_call_number_action_ll_tv"
-                    android:text="SOS"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x90"
+                    android:layout_marginTop="@dimen/x30"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_sos"
+                        style="@style/style_call_number_action_ll">
+
+                        <ImageView
+                            style="@style/style_call_number_action_ll_img"
+                            android:src="@mipmap/icon_sos_drak" />
+
+                        <TextView
+                            style="@style/style_call_number_action_ll_tv"
+                            android:text="SOS"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_service_call"
+                        style="@style/style_call_number_action_ll">
+
+                        <ImageView
+                            style="@style/style_call_number_action_ll_img"
+                            android:src="@mipmap/icon_service_call_drak" />
+
+                        <TextView
+                            style="@style/style_call_number_action_ll_tv"
+                            android:text="SERVICE CALL"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x90"
+                    android:layout_marginTop="@dimen/x30"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_voice_mail"
+                        style="@style/style_call_number_action_ll">
+
+                        <ImageView
+                            style="@style/style_call_number_action_ll_img"
+                            android:src="@mipmap/icon_voice_mail_drak" />
+
+                        <TextView
+                            style="@style/style_call_number_action_ll_tv"
+                            android:text="VOICE MAIL"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_del"
+                        style="@style/style_call_number_action_ll">
+                        <ImageView
+                            android:layout_width="@dimen/x40"
+                            android:layout_height="@dimen/y30"
+                            android:src="@mipmap/icon_delete"
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="1dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/x30"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/img_call"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/y120"
+                        android:src="@mipmap/icon_call_accept"/>
+                </LinearLayout>
+
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
 
