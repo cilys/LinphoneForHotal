@@ -241,7 +241,10 @@ public class HomeAc extends BaseLinphoneAc {
             setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
             setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
             setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
-//        setBackgroundById(R.id.rl_home_promo, R.mipmap.ic_home_promo_bg_test);
         }
+
+        setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
+        setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
+        setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
     }
 }
