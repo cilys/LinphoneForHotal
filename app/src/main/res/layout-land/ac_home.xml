@@ -188,6 +188,8 @@
                 android:layout_toLeftOf="@+id/rl_head_location"
                 android:layout_toRightOf="@+id/rl_head_msg"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
                 android:layout_height="@dimen/x100"
                 android:layout_centerVertical="true"
                 android:orientation="horizontal" >

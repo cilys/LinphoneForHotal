@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cilys.linphoneforhotal.BuildConfig;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.event.EventImpl;
@@ -70,5 +71,11 @@ public class BaseAc extends AppCompatActivity {
             text = "";
         }
         v.setText(text);
+    }
+
+    protected void debugToast(String str) {
+        if (BuildConfig.DEBUG) {
+            showToast(str);
+        }
     }
 }

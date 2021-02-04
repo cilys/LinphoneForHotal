@@ -1,6 +1,7 @@
 package com.cilys.linphoneforhotal.base;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
@@ -36,6 +37,18 @@ public abstract class BaseLinphoneAc extends BaseAc {
         init();
         afterInit();
 
+        Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
+        if (cf != null) {
+            //获取屏幕方向
+            if (cf.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                screenLand();
+            } else {
+                screenProtrait();
+            }
+        } else {
+            screenProtrait();
+        }
+
         if (BuildConfig.DEBUG || true) {
             View decorView = getWindow().getDecorView();
             int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -45,6 +58,15 @@ public abstract class BaseLinphoneAc extends BaseAc {
     }
 
     protected void afterInit(){
+
+    }
+
+    //横屏
+    protected void screenLand(){
+
+    }
+
+    protected void screenProtrait(){
 
     }
 

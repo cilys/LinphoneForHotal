@@ -10,20 +10,21 @@
     <LinearLayout
         android:id="@+id/ll_number_dialog"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y1062"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/x100"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/shape_top_round_white_bg"
+        android:background="@drawable/shape_top_round_white_bg_45"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y94"
+            android:layout_height="@dimen/x94"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/y54" >
+            android:layout_marginTop="@dimen/x54" >
 
             <View
-                android:layout_width="@dimen/y94"
+                android:layout_width="@dimen/x94"
                 android:layout_height="1dp" />
 
             <TextView
@@ -38,14 +39,14 @@
                 android:text=""/>
             <LinearLayout
                 android:id="@+id/ll_close"
-                android:layout_width="@dimen/y94"
+                android:layout_width="@dimen/x94"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center_horizontal" >
                 <ImageView
-                    android:layout_width="@dimen/y25"
-                    android:layout_height="@dimen/y25"
-                    android:layout_marginTop="@dimen/y5"
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="@dimen/x25"
+                    android:layout_marginTop="@dimen/x5"
                     android:src="@mipmap/icon_close"/>
             </LinearLayout>
         </LinearLayout>
@@ -57,8 +58,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y92"
-            android:layout_marginTop="@dimen/y40"
+            android:layout_height="@dimen/x92"
+            android:layout_marginTop="@dimen/x40"
             android:orientation="horizontal">
 
             <LinearLayout
