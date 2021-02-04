@@ -14,6 +14,12 @@
         android:paddingRight="@dimen/x40"
         >
 
+        <ImageView
+            android:layout_width="@dimen/y115"
+            android:layout_height="@dimen/y220"
+            android:src="@mipmap/icon_home_head_m"
+            />
+
         <LinearLayout
             android:id="@+id/ll_room_control"
             android:layout_marginTop="@dimen/y40"
