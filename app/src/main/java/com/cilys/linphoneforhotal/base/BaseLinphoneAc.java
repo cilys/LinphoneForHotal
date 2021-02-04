@@ -92,8 +92,6 @@ public abstract class BaseLinphoneAc extends BaseAc {
         if (call != null) {
             call.terminate();
         }
-
-        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
     }
 
     protected Core getLinphoneCore(){

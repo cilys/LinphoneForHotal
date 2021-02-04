@@ -233,12 +233,8 @@ public class PhoneAc extends BaseLinphoneAc {
             params.enableVideo(false);
 
             if (addressToCall != null) {
-                App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_OUT);
-
                 addressToCall.setDisplayName(phone);
-
                 core.inviteAddressWithParams(addressToCall, params);
-//                finish();
             }
         }
     }

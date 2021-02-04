@@ -227,13 +227,6 @@ public class HomeAc extends BaseLinphoneAc {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
-    }
-
     private void setBackground(int orientation) {
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg_land);

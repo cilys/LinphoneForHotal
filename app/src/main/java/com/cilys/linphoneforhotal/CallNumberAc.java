@@ -175,13 +175,6 @@ public class CallNumberAc extends BaseLinphoneAc {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        App.getInstance().setTypeLastActivity(App.TYPE_LAST_AC_DEFAULT);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (tv_show_number != null) {

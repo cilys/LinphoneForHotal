@@ -90,20 +90,6 @@ public class LinphoneService extends Service {
                 e.what = EventImpl.CALL_STATE_CHANGED;
                 e.obj = new LinPhoneBean().setCall(call).setCallState(state).setMessage(message);
                 EventBus.getInstance().postEvent(e);
-
-//                if (state == Call.State.IncomingReceived) {
-//                    L.i(TAG, "Incoming call received, answering it automatically");
-//                    // For this sample we will automatically answer incoming calls
-//                    CallParams params = getCore().createCallParams(call);
-//                    params.enableVideo(false);
-//                    call.acceptWithParams(params);
-//                } else if (state == Call.State.Connected) {
-//                    // This stats means the call has been established, let's start the call activity
-//                    Intent intent = new Intent(LinphoneService.this, CallAc.class);
-//                    // As it is the Service that is starting the activity, we have to give this flag
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(intent);
-//                }
             }
 
             @Override
