@@ -180,46 +180,4 @@ public abstract class BaseLinphoneAc extends BaseAc {
             }
         }
     }
-
-    //    @Override
-//    protected void onEvent(final Event e) {
-//        super.onEvent(e);
-//
-//        if (e.what == EventImpl.CALL_STATE_CHANGED) {
-//            if (e.obj instanceof LinPhoneBean) {
-//                LinPhoneBean bean = (LinPhoneBean) e.obj;
-//                if (bean.getCallState() == Call.State.IncomingReceived) {
-//
-//                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
-//                        return;
-//                    }
-//
-//                    if (this instanceof IncomingAc) {
-//
-//                    } else {
-//                        Intent i = new Intent(this, IncomingAc.class);
-//                        startActivity(i);
-//                    }
-//                } else if (bean.getCallState() == Call.State.Connected) {
-//                    if (App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_INCOMING
-//                        || App.getInstance().getTypeLastActivity() == App.TYPE_LAST_AC_OUT) {
-//
-//                        Intent i = new Intent(this, CallAc.class);
-//                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        startActivity(i);
-//                    } else {
-//                        endCall();
-//                    }
-//
-//                } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
-//                    if (this instanceof OutAc || this instanceof IncomingAc || this instanceof CallAc) {
-//                        showToast("呼叫已结束");
-//                        finish();
-//                    }
-//                }
-//            }
-//        } else if (e.what == EventImpl.REGISTION_STATE_CHANGED) {
-//
-//        }
-//    }
 }

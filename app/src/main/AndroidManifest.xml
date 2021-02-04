@@ -39,14 +39,7 @@
 
         <service android:name=".service.LinphoneService" />
 
-        <activity android:name=".OutAc" />
-        <activity
-            android:name=".CallAc"
-            android:launchMode="singleInstance"
-            android:noHistory="true"
-            android:resizeableActivity="true"
-            android:supportsPictureInPicture="true" />
-        <activity android:name=".IncomingAc" />
+
         <activity android:name=".CallNumberAc"
             android:screenOrientation="landscape" />
         <activity android:name=".home.HomeAc">
