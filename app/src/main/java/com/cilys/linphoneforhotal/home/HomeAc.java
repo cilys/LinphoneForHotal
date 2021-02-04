@@ -135,24 +135,6 @@ public class HomeAc extends BaseLinphoneAc {
                 ImageUtils.load(HomeAc.this, R.mipmap.ic_promo_test, img);
             }
         });
-
-        WindowManager wmanager = this.getWindowManager();
-
-        showToast(wmanager.getDefaultDisplay().getHeight()
-                + " x " + wmanager.getDefaultDisplay().getWidth() );
-
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        int widthPixels = displayMetrics.widthPixels;
-        int heightPixels = displayMetrics.heightPixels;
-        showToast(widthPixels
-                + " x " + heightPixels);
-
-        DisplayMetrics dm = new DisplayMetrics();
-        wmanager.getDefaultDisplay().getMetrics(dm);
-        int widthPixels2 = dm.widthPixels;
-        int heightPixels2 = dm.heightPixels;
-        showToast(widthPixels2
-                + " x " + heightPixels2);
     }
 
     @Override

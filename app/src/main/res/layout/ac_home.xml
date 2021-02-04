@@ -274,7 +274,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/y270"
-        android:layout_marginTop="@dimen/y1010"
+        android:layout_marginTop="@dimen/y1030"
         android:orientation="vertical"
         android:paddingTop="@dimen/y30"
         android:id="@+id/ll_bottom">
@@ -360,10 +360,10 @@
                 style="@style/style_home_bottom_action_ll" >
                 <ImageView
                     style="@style/style_home_bottom_action_ll_img"
-                    android:src="@mipmap/icon_voice_mail_white"/>
+                    android:src="@mipmap/icon_sos_white"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
-                    android:text="VOICE MAIL" />
+                    android:text="SOS" />
             </LinearLayout>
         </LinearLayout>
 
