@@ -10,7 +10,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -133,6 +135,24 @@ public class HomeAc extends BaseLinphoneAc {
                 ImageUtils.load(HomeAc.this, R.mipmap.ic_promo_test, img);
             }
         });
+
+        WindowManager wmanager = this.getWindowManager();
+
+        showToast(wmanager.getDefaultDisplay().getHeight()
+                + " x " + wmanager.getDefaultDisplay().getWidth() );
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int widthPixels = displayMetrics.widthPixels;
+        int heightPixels = displayMetrics.heightPixels;
+        showToast(widthPixels
+                + " x " + heightPixels);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        wmanager.getDefaultDisplay().getMetrics(dm);
+        int widthPixels2 = dm.widthPixels;
+        int heightPixels2 = dm.heightPixels;
+        showToast(widthPixels2
+                + " x " + heightPixels2);
     }
 
     @Override
