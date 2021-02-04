@@ -6,8 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="@dimen/x20"
     app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="#F00"
-    app:cardElevation="@dimen/x10"
     >
 
     <LinearLayout
@@ -18,6 +16,7 @@
             android:id="@+id/img_pic"
             android:layout_width="@dimen/y285"
             android:layout_height="match_parent"
+            android:scaleType="fitXY"
              />
 
         <LinearLayout
@@ -37,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Happy Hours 2x1"
-                android:layout_marginTop="@dimen/x35"
+                android:layout_marginTop="@dimen/y15"
                 android:textSize="@dimen/x25"
                 android:textColor="@color/color_main_text_color" />
             <TextView
@@ -45,11 +44,9 @@
                 android:layout_height="wrap_content"
                 android:text="Order dinner by 3:00 and enjoy an extra meal for your loved ones!"
                 android:textSize="@dimen/x16"
-                android:layout_marginTop="@dimen/x14"
+                android:layout_marginTop="@dimen/y2"
                 android:textColor="#8F19191B" />
         </LinearLayout>
     </LinearLayout>
-
-
 
 </android.support.v7.widget.CardView>

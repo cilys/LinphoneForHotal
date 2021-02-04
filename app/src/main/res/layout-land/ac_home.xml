@@ -55,9 +55,12 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/x190"
-            android:layout_marginTop="@dimen/x54"
+            android:layout_marginTop="@dimen/x136"
             android:id="@+id/rl_head_weather"
-            android:padding="@dimen/x30" >
+            android:paddingLeft="@dimen/y30"
+            android:paddingRight="@dimen/y30"
+            android:paddingTop="@dimen/x30"
+            android:paddingBottom="@dimen/x30" >
 
             <TextView
                 android:id="@+id/tv_room_name"
@@ -65,23 +68,24 @@
                 android:layout_height="wrap_content"
                 android:textColor="#FCF9F9"
                 android:textSize="@dimen/x30"
+                android:visibility="gone"
                 android:text="Room 2021" />
 
             <TextView
                 android:id="@+id/tv_custom_name"
-                android:layout_width="@dimen/x250"
-                android:maxHeight="@dimen/y80"
+                android:layout_width="@dimen/y250"
+                android:maxHeight="@dimen/x80"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/x30"
                 android:textColor="#FCF9F9"
                 android:layout_below="@+id/tv_room_name"
-                android:layout_marginTop="@dimen/y2"
-                android:text="Hello, Adam Miller!"/>
+                android:text="Hello, Adam \nMiller!"/>
             
             <RelativeLayout
-                android:layout_width="@dimen/x250"
-                android:layout_height="@dimen/y50"
-                android:layout_marginTop="@dimen/y80"
+                android:id="@+id/rl_head_msg"
+                android:layout_width="@dimen/y250"
+                android:layout_height="@dimen/x50"
+                android:layout_marginTop="@dimen/x50"
                 android:background="@mipmap/ic_home_head_message_bg" >
 
                 <TextView
@@ -100,15 +104,16 @@
 
                 <ImageView
                     android:id="@+id/img_msg_notify"
-                    android:layout_width="@dimen/x20"
+                    android:layout_width="@dimen/y20"
                     android:layout_height="@dimen/y20"
                     android:src="@mipmap/icon_red_point"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="@dimen/x224"
-                android:layout_height="@dimen/y140"
+                android:id="@+id/rl_head_location"
+                android:layout_width="@dimen/y224"
+                android:layout_height="@dimen/x140"
                 android:layout_alignParentRight="true">
 
                 <ImageView
@@ -120,9 +125,9 @@
 
                 <TextView
                     android:id="@+id/tv_location"
-                    android:layout_width="@dimen/x86"
+                    android:layout_width="@dimen/y86"
                     android:layout_height="wrap_content"
-                    android:maxHeight="@dimen/y52"
+                    android:maxHeight="@dimen/x52"
                     android:gravity="center"
                     android:ellipsize="end"
                     android:layout_toRightOf="@+id/img_location"
@@ -132,9 +137,9 @@
 
                 <TextView
                     android:id="@+id/tv_time"
-                    android:layout_width="@dimen/x224"
-                    android:layout_height="@dimen/y66"
-                    android:layout_marginTop="@dimen/y28"
+                    android:layout_width="@dimen/y224"
+                    android:layout_height="@dimen/x66"
+                    android:layout_marginTop="@dimen/x18"
                     android:textColor="#FFF"
                     android:textSize="@dimen/x50"
                     android:text="10:18PM"
@@ -142,34 +147,34 @@
 
                 <TextView
                     android:id="@+id/tv_weekday"
-                    android:layout_width="@dimen/x150"
+                    android:layout_width="@dimen/y150"
                     android:layout_height="wrap_content"
                     android:maxLines="2"
                     android:ellipsize="end"
-                    android:layout_marginTop="@dimen/y90"
+                    android:layout_marginTop="@dimen/x80"
                     android:textSize="@dimen/x20"
                     android:textColor="#B8B8B8"
-                    android:maxHeight="@dimen/y52"
+                    android:maxHeight="@dimen/x52"
                     android:layout_alignParentRight="true"
                     android:text="Wed, 9 Dec\n2020"/>
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="@dimen/x100"
-                android:layout_height="@dimen/y68"
+                android:layout_width="@dimen/y100"
+                android:layout_height="@dimen/x68"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/y126">
+                android:layout_marginTop="@dimen/x106">
                 <ImageView
                     android:id="@+id/img_weather"
-                    android:layout_width="@dimen/x32"
+                    android:layout_width="@dimen/y32"
                     android:layout_height="@dimen/y32"
                     android:src="@mipmap/icon_weather_cloudy" />
 
                 <TextView
                     android:id="@+id/tv_temp"
-                    android:layout_width="@dimen/x52"
+                    android:layout_width="@dimen/y52"
                     android:layout_height="wrap_content"
-                    android:maxHeight="@dimen/y66"
+                    android:maxHeight="@dimen/x66"
                     android:layout_toRightOf="@+id/img_weather"
                     android:textSize="@dimen/x25"
                     android:maxLines="2"
@@ -180,9 +185,11 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/rl_head_location"
+                android:layout_toRightOf="@+id/rl_head_msg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y100"
+                android:layout_height="@dimen/x100"
+                android:layout_centerVertical="true"
                 android:orientation="horizontal" >
 
                 <LinearLayout
@@ -196,7 +203,6 @@
                         style="@style/style_home_head_action_ll_tv"
                         android:text="DO NOT DISTURB"/>
                 </LinearLayout>
-
 
 
                 <View
@@ -242,7 +248,7 @@
         android:layout_marginTop="@dimen/x420"
         android:id="@+id/home_promo"
         android:orientation="vertical"
-        android:background="@drawable/shape_top_round_white_bg"
+        android:background="@drawable/shape_top_round_white_bg_45"
         android:paddingTop="@dimen/x20"
         >
         <TextView
@@ -251,18 +257,19 @@
             android:text="Our Promotions"
             android:textColor="#19191B"
             android:textSize="@dimen/x25"
-            android:layout_marginLeft="@dimen/y20" />
+            android:layout_marginLeft="@dimen/y30" />
         
         <com.stx.xhb.xbanner.XBanner
             android:id="@+id/xBanner"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y130"
+            android:layout_height="@dimen/x150"
             app:AutoPlayTime="8000"
             app:isAutoPlay="true"
             app:pointsVisibility="false"
             app:isClipChildrenMode="true"
-            app:clipChildrenLeftMargin="@dimen/x30"
-            app:clipChildrenRightMargin="@dimen/x400"
+            app:clipChildrenLeftMargin="@dimen/y30"
+            app:clipChildrenRightMargin="@dimen/y600"
+            app:clipChildrenTopBottomMargin="0dp"
             app:pageChangeDuration="800" />
     </LinearLayout>
 
@@ -321,7 +328,6 @@
             >
             <LinearLayout
                 android:id="@+id/ll_phone"
-                android:visibility="gone"
                 style="@style/style_home_bottom_action_ll" >
                 <ImageView
                     style="@style/style_home_bottom_action_ll_img"

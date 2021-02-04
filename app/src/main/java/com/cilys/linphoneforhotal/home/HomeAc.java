@@ -237,14 +237,12 @@ public class HomeAc extends BaseLinphoneAc {
     private void setBackground(int orientation) {
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg_land);
+            setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg_land);
+            setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather_land);
         } else {
             setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
             setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
             setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
         }
-
-        setBackgroundById(R.id.ll_bottom, R.mipmap.ic_home_bottom_bg);
-        setBackgroundById(R.id.rl_head, R.mipmap.ic_home_head_bg);
-        setBackgroundById(R.id.rl_head_weather, R.mipmap.ic_home_head_bg_weather);
     }
 }
