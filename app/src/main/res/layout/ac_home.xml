@@ -264,7 +264,7 @@
         android:layout_height="@dimen/y250"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:paddingTop="@dimen/y20"
+        android:paddingTop="@dimen/y30"
         android:id="@+id/ll_bottom">
 
         <LinearLayout
