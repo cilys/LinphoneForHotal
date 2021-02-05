@@ -188,7 +188,11 @@ public class PhoneAc extends BaseLinphoneAc {
         ll_out_speaker.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-
+                if (getSpeakerMode()) {
+                    changeSpeakerToNomal();
+                } else {
+                    changeSpeakerToExt();
+                }
             }
         });
 
@@ -293,9 +297,6 @@ public class PhoneAc extends BaseLinphoneAc {
             if (timeCount > -1) {
                 outState.putLong("CALL_TIME", timeCount);
             }
-
-            debugToast("保存showType = " + showType);
-
             outState.putInt("SHOW_TYPE", showType);
         }
     }
@@ -314,9 +315,6 @@ public class PhoneAc extends BaseLinphoneAc {
             }
 
             int show = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
-
-            debugToast("取出showType = " + show);
-
             showView(show);
         }
     }

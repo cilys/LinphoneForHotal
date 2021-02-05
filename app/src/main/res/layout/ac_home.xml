@@ -15,9 +15,10 @@
         >
 
         <ImageView
-            android:layout_width="@dimen/y115"
-            android:layout_height="@dimen/y220"
-            android:src="@mipmap/icon_home_head_m"
+            android:layout_width="@dimen/x133"
+            android:layout_height="@dimen/x82"
+            android:layout_marginTop="@dimen/y40"
+            android:src="@mipmap/ic_logo_stay"
             />
 
         <LinearLayout

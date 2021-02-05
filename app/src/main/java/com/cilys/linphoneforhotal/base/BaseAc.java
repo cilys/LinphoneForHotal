@@ -1,5 +1,7 @@
 package com.cilys.linphoneforhotal.base;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.BuildConfig;
+import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.event.EventImpl;
@@ -55,6 +58,8 @@ public class BaseAc extends AppCompatActivity {
         if (eventImpl != null) {
             EventBus.getInstance().unSub(eventImpl);
         }
+
+        changeSpeakerToNomal();
     }
 
     private EventImpl eventImpl;
@@ -77,5 +82,38 @@ public class BaseAc extends AppCompatActivity {
         if (BuildConfig.DEBUG) {
             showToast(str);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (this instanceof PhoneAc) {
+            //不响应返回按键事件
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    /**
+     * 切换到外放
+     */
+    protected void changeSpeakerToExt(){
+        AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        am.setMode(AudioManager.MODE_IN_CALL);
+        am.setSpeakerphoneOn(true);
+    }
+
+    /**
+     * 恢复到默认模式
+     */
+    protected void changeSpeakerToNomal(){
+        AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        am.setMode(AudioManager.MODE_NORMAL);
+        am.setSpeakerphoneOn(false);
+    }
+
+    protected boolean getSpeakerMode(){
+        AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        return am.isSpeakerphoneOn();
     }
 }
