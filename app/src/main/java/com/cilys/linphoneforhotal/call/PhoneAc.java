@@ -31,6 +31,8 @@ public class PhoneAc extends BaseLinphoneAc {
     public final static int SHOW_TYPE_INCOMING = 2; //显示来电布局
     public final static int SHOW_TYPE_CALL = 3;     //显示通话布局
 
+    public final static int FROM_TYPE_CALL_NUMBER = 1;  //从拨号界面来的
+
     private int showType = SHOW_TYPE_OUT;
     private String outNumber;
 
@@ -44,12 +46,14 @@ public class PhoneAc extends BaseLinphoneAc {
         super.initUI();
 
         showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
+        int fromType = getIntent().getIntExtra("FROM_TYPE", 0);
 
-        initOutView(showType == SHOW_TYPE_OUT);
+        initOutView(fromType == FROM_TYPE_CALL_NUMBER);
         initIncomingView();
         initCallView();
 
         showView(showType);
+        changeActionSpeakerBackgound(getSpeakerMode(), showType);
     }
 
     private void showView(int type) {
@@ -71,6 +75,9 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     private TextView tv_call_time;
+    private LinearLayout call_speaker;
+    private ImageView call_speaker_img;
+    private TextView call_speaker_tv;
     private void initCallView(){
         TextView tv_call_room = findView(R.id.tv_call_room);
         setTextToView(tv_call_room, LinphoneUtils.getDisplayName(getCurrentCall()));
@@ -99,11 +106,19 @@ public class PhoneAc extends BaseLinphoneAc {
             }
         });
 
-        LinearLayout ll_call_speaker = findView(R.id.ll_call_speaker);
-        ll_call_speaker.setOnClickListener(new SingleClickListener() {
+        call_speaker = findView(R.id.call_speaker);
+        call_speaker_img = findView(R.id.call_speaker_img);
+        call_speaker_tv = findView(R.id.call_speaker_tv);
+        call_speaker.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-
+                if (getSpeakerMode()) {
+                    changeSpeakerToNomal();
+                    changeActionSpeakerBackgound(false, showType);
+                } else {
+                    changeSpeakerToExt();
+                    changeActionSpeakerBackgound(true, showType);
+                }
             }
         });
 
@@ -197,10 +212,11 @@ public class PhoneAc extends BaseLinphoneAc {
             public void onSingleClick(View v) {
                 if (getSpeakerMode()) {
                     changeSpeakerToNomal();
-                    changeOutSpeakerBackgound(false);
+                    changeActionSpeakerBackgound(false, showType);
+
                 } else {
                     changeSpeakerToExt();
-                    changeOutSpeakerBackgound(true);
+                    changeActionSpeakerBackgound(true, showType);
                 }
             }
         });
@@ -226,19 +242,36 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     /**
-     * 改变呼叫页面，外放按钮的背景颜色
+     * 改变外放按钮的背景颜色
+     * @param speaker
+     * @param show
      */
-    private void changeOutSpeakerBackgound(boolean speaker){
-        if (speaker) {
-            setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_white_bg);
-            setTextColor(out_speaker_tv, R.color.color_main_text_color);
-            setImageResource(out_speaker_img, R.drawable.icon_voice_black);
+    private void changeActionSpeakerBackgound(boolean speaker, int show) {
+        if (show == SHOW_TYPE_INCOMING) {
+
+        } else if (show == SHOW_TYPE_CALL) {
+            if (speaker) {
+                setBackgoundResource(call_speaker, R.drawable.shape_round_for_action_white_bg);
+                setTextColor(call_speaker_tv, R.color.color_main_text_color);
+                setImageResource(call_speaker_img, R.drawable.icon_voice_black);
+            } else {
+                setBackgoundResource(call_speaker, R.drawable.shape_round_for_action_tans_bg);
+                setTextColor(call_speaker_tv, R.color.white);
+                setImageResource(call_speaker_img, R.drawable.icon_voice_white);
+            }
         } else {
-            setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_tans_bg);
-            setTextColor(out_speaker_tv, R.color.white);
-            setImageResource(out_speaker_img, R.drawable.icon_voice_white);
+            if (speaker) {
+                setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_white_bg);
+                setTextColor(out_speaker_tv, R.color.color_main_text_color);
+                setImageResource(out_speaker_img, R.drawable.icon_voice_black);
+            } else {
+                setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_tans_bg);
+                setTextColor(out_speaker_tv, R.color.white);
+                setImageResource(out_speaker_img, R.drawable.icon_voice_white);
+            }
         }
     }
+
 
     /**
      * 外呼
@@ -288,6 +321,7 @@ public class PhoneAc extends BaseLinphoneAc {
                     }
                     showType = SHOW_TYPE_CALL;
                     timeCount = 0;
+                    changeActionSpeakerBackgound(getSpeakerMode(), showType);
                     showView(SHOW_TYPE_CALL);
                 } else if (bean.getCallState() == Call.State.End || bean.getCallState() == Call.State.Released) {
                     if (LinphoneService.getInstance() != null) {
@@ -301,6 +335,24 @@ public class PhoneAc extends BaseLinphoneAc {
             timeCount ++;
 
             setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(timeCount));
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (getViewFromCache(R.id.root) != null) {
+            getViewFromCache(R.id.root).setKeepScreenOn(true);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if (getViewFromCache(R.id.root) != null) {
+            getViewFromCache(R.id.root).setKeepScreenOn(false);
         }
     }
 
@@ -350,13 +402,7 @@ public class PhoneAc extends BaseLinphoneAc {
                 changeSpeakerToNomal();
             }
 
-            if (show == SHOW_TYPE_INCOMING) {
-
-            } else if (show == SHOW_TYPE_CALL) {
-
-            } else {
-                changeOutSpeakerBackgound(speaker);
-            }
+            changeActionSpeakerBackgound(speaker, show);
         }
     }
 

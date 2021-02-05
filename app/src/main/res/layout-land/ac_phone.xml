@@ -302,14 +302,16 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_call_speaker"
+                android:id="@+id/call_speaker"
                 android:layout_height="@dimen/x100"
                 style="@style/style_call_action_parent"
                 android:layout_marginLeft="@dimen/x30">
                 <ImageView
+                    android:id="@+id/call_speaker_img"
                     style="@style/style_call_action_img"
                     android:src="@drawable/selector_call_action_img_speaker"/>
                 <TextView
+                    android:id="@+id/call_speaker_tv"
                     style="@style/style_call_action_tv"
                     android:text="SPEAKER"/>
             </LinearLayout>
