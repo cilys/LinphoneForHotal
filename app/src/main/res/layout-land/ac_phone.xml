@@ -109,13 +109,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_out_speaker"
+                android:id="@+id/out_speaker"
                 style="@style/style_call_action_parent"
                 android:layout_marginLeft="@dimen/x30">
                 <ImageView
+                    android:id="@+id/out_speaker_img"
                     style="@style/style_call_action_img"
                     android:src="@drawable/selector_call_action_img_speaker"/>
                 <TextView
+                    android:id="@+id/out_speaker_tv"
                     style="@style/style_call_action_tv"
                     android:text="SPEAKER"/>
             </LinearLayout>

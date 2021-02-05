@@ -3,6 +3,8 @@ package com.cilys.linphoneforhotal.call;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -167,6 +169,9 @@ public class PhoneAc extends BaseLinphoneAc {
     }
 
     private TextView tv_out_room;
+    private ImageView out_speaker_img;
+    private TextView out_speaker_tv;
+    private LinearLayout out_speaker;
     private void initOutView(boolean show) {
         tv_out_room = findView(R.id.tv_out_room);
 
@@ -184,14 +189,18 @@ public class PhoneAc extends BaseLinphoneAc {
             }
         });
 
-        LinearLayout ll_out_speaker = findView(R.id.ll_out_speaker);
-        ll_out_speaker.setOnClickListener(new SingleClickListener() {
+        out_speaker_img = findView(R.id.out_speaker_img);
+        out_speaker_tv = findView(R.id.out_speaker_tv);
+        out_speaker = findView(R.id.out_speaker);
+        out_speaker.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
                 if (getSpeakerMode()) {
                     changeSpeakerToNomal();
+                    changeOutSpeakerBackgound(false);
                 } else {
                     changeSpeakerToExt();
+                    changeOutSpeakerBackgound(true);
                 }
             }
         });
@@ -213,6 +222,21 @@ public class PhoneAc extends BaseLinphoneAc {
             setTextToView(tv_out_room, outNumber);
 
             call(outNumber);
+        }
+    }
+
+    /**
+     * 改变呼叫页面，外放按钮的背景颜色
+     */
+    private void changeOutSpeakerBackgound(boolean speaker){
+        if (speaker) {
+            setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_white_bg);
+            setTextColor(out_speaker_tv, R.color.color_main_text_color);
+            setImageResource(out_speaker_img, R.drawable.icon_voice_black);
+        } else {
+            setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_tans_bg);
+            setTextColor(out_speaker_tv, R.color.white);
+            setImageResource(out_speaker_img, R.drawable.icon_voice_white);
         }
     }
 
@@ -298,6 +322,8 @@ public class PhoneAc extends BaseLinphoneAc {
                 outState.putLong("CALL_TIME", timeCount);
             }
             outState.putInt("SHOW_TYPE", showType);
+
+            outState.putBoolean("SPEAKER_ON", getSpeakerMode());
         }
     }
 
@@ -316,6 +342,21 @@ public class PhoneAc extends BaseLinphoneAc {
 
             int show = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
             showView(show);
+
+            boolean speaker = savedInstanceState.getBoolean("SPEAKER_ON", false);
+            if (speaker) {
+                changeSpeakerToExt();
+            } else {
+                changeSpeakerToNomal();
+            }
+
+            if (show == SHOW_TYPE_INCOMING) {
+
+            } else if (show == SHOW_TYPE_CALL) {
+
+            } else {
+                changeOutSpeakerBackgound(speaker);
+            }
         }
     }
 

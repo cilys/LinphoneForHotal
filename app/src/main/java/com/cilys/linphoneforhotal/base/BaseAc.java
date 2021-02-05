@@ -3,10 +3,13 @@ package com.cilys.linphoneforhotal.base;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.BuildConfig;
@@ -76,6 +79,24 @@ public class BaseAc extends AppCompatActivity {
             text = "";
         }
         v.setText(text);
+    }
+
+    protected void setTextColor(TextView tv, @ColorRes int colorId){
+        if (tv != null) {
+            tv.setTextColor(getResources().getColor(colorId));
+        }
+    }
+
+    protected void setBackgoundResource(View v, @DrawableRes int resourceId){
+        if (v != null) {
+            v.setBackgroundResource(resourceId);
+        }
+    }
+
+    protected void setImageResource(ImageView img, @DrawableRes int resourceId){
+        if (img != null){
+            img.setImageResource(resourceId);
+        }
     }
 
     protected void debugToast(String str) {
