@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_remote_top_title_height">@dimen/y118</dimen>
+    <dimen name="bg_redius">@dimen/y45</dimen>
+
+    <dimen name="bottom_height">@dimen/y90</dimen>
+</resources>

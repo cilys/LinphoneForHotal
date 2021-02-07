@@ -18,6 +18,7 @@ import com.cilys.linphoneforhotal.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
+import com.cilys.linphoneforhotal.tv.TvAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
@@ -47,6 +48,12 @@ public class HomeAc extends BaseLinphoneAc {
         LinearLayout ll_room_control = findView(R.id.ll_room_control);
 
         LinearLayout ll_tv_remote = findView(R.id.ll_tv_remote);
+        ll_tv_remote.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                startActivity(new Intent(HomeAc.this, TvAc.class));
+            }
+        });
 
         TextView tv_room_name = findView(R.id.tv_room_name);
 
@@ -95,21 +102,6 @@ public class HomeAc extends BaseLinphoneAc {
 
             }
         });
-
-//        ViewPager vp = findView(R.id.vp);
-//
-//        List<PromFg> fgs = new ArrayList<>();
-//        for (int i = 0; i < 5; i++) {
-//            fgs.add(new PromFg());
-//        }
-//        VpHomeAdapter adapter = new VpHomeAdapter(getSupportFragmentManager(), fgs);
-//        vp.setAdapter(adapter);
-//        vp.setCurrentItem(Integer.MAX_VALUE / 2);
-//        vp.setClipToPadding(false);
-//        vp.setClipChildren(false);
-//        vp.setPadding(10, 0, 20, 30);
-//        vp.setPageMargin(50);
-//        vp.setPageTransformer(true);
 
         XBanner banner = findView(R.id.xBanner);
         banner.setPageTransformer(Transformer.Default);

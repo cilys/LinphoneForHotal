@@ -3,8 +3,6 @@ package com.cilys.linphoneforhotal.call;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -255,7 +253,7 @@ public class PhoneAc extends BaseLinphoneAc {
                 setTextColor(call_speaker_tv, R.color.color_main_text_color);
                 setImageResource(call_speaker_img, R.drawable.icon_voice_black);
             } else {
-                setBackgoundResource(call_speaker, R.drawable.shape_round_for_action_tans_bg);
+                setBackgoundResource(call_speaker, R.drawable.shape_round_for_action_trans_bg);
                 setTextColor(call_speaker_tv, R.color.white);
                 setImageResource(call_speaker_img, R.drawable.icon_voice_white);
             }
@@ -265,7 +263,7 @@ public class PhoneAc extends BaseLinphoneAc {
                 setTextColor(out_speaker_tv, R.color.color_main_text_color);
                 setImageResource(out_speaker_img, R.drawable.icon_voice_black);
             } else {
-                setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_tans_bg);
+                setBackgoundResource(out_speaker, R.drawable.shape_round_for_action_trans_bg);
                 setTextColor(out_speaker_tv, R.color.white);
                 setImageResource(out_speaker_img, R.drawable.icon_voice_white);
             }

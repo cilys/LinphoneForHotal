@@ -4,6 +4,6 @@
 
     <corners android:radius="@dimen/bg_redius"/>
 
-    <solid android:color="#FFF" />
+    <solid android:color="@color/color_main_text_color" />
 
 </shape>

@@ -30,7 +30,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/style_launcher">
-        <activity android:name=".call.PhoneAc"
+        <activity android:name=".tv.TvAc"></activity>
+        <activity
+            android:name=".call.PhoneAc"
             android:launchMode="singleInstance"
             android:noHistory="true"
             android:resizeableActivity="true"
@@ -38,7 +40,6 @@
         <activity android:name=".AccountAc" />
 
         <service android:name=".service.LinphoneService" />
-
 
         <activity android:name=".CallNumberAc" />
         <activity android:name=".home.HomeAc">
