@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="remoteview">
+        <attr name="width" format="integer" />
+        <attr name="height" format="integer" />
+        <attr name="background" format="reference|color" />
+        <attr name="foreground" format="reference|color" />
+        <attr name="topArrowColor" format="reference|color" />
+        <attr name="rightArrowColor" format="reference|color" />
+        <attr name="bottomArrowColor" format="reference|color" />
+        <attr name="leftArrowColor" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="rectColor" format="reference|color" />
+    </declare-styleable>
+</resources>
