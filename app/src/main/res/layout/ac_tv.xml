@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/shape_round_white_bg"
+    android:background="@drawable/shape_round_bg_white"
     tools:context=".tv.TvAc">
 
     <LinearLayout
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_height"
         android:orientation="horizontal"
-        android:background="@drawable/shape_round_bg_drak">
+        android:background="@drawable/shape_round_bg_black">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
@@ -41,6 +42,27 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
                 }
             });
         }
+        vh.setSelected(datas.get(i).isSelected());
+    }
+
+    public void changeSelected(int position) {
+        if (datas == null) {
+            return;
+        }
+        if (datas.size() < 1) {
+            return;
+        }
+
+        boolean selected = datas.get(position).isSelected();
+        if (selected) {
+            datas.get(position).setSelected(false);
+        } else {
+            for (ChannelBean b : datas) {
+                b.setSelected(false);
+            }
+            datas.get(position).setSelected(true);
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -51,11 +73,19 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
     protected static class VH extends RecyclerView.ViewHolder {
         private ImageView img;
         private View rootView;
+        private LinearLayout channel_parent;
 
         public VH(@NonNull View v) {
             super(v);
             rootView = v;
             img = (ImageView)v.findViewById(R.id.channel_icon);
+            channel_parent = (LinearLayout)v.findViewById(R.id.channel_parent);
+        }
+
+        public void setSelected(boolean selected) {
+            if (channel_parent != null) {
+                channel_parent.setBackgroundResource(selected ? R.drawable.shape_round_bg_drak_gray : R.drawable.shape_round_for_action_trans_bg);
+            }
         }
 
         public void setImageResource(@DrawableRes int resourceId) {

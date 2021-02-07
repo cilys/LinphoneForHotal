@@ -7,6 +7,7 @@ import java.io.Serializable;
 public class ChannelBean implements Serializable {
     private @DrawableRes int resourceId;
     private String channel;
+    private boolean selected;
 
     public ChannelBean() {
     }
@@ -34,5 +35,13 @@ public class ChannelBean implements Serializable {
 
     public void setChannel(String channel) {
         this.channel = channel;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

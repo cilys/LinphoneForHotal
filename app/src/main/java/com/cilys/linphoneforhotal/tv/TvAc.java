@@ -1,6 +1,5 @@
 package com.cilys.linphoneforhotal.tv;
 
-
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -37,14 +36,14 @@ public class TvAc extends BaseAc {
             }
         }
 
-        RemoteChannelAdapter adapter = new RemoteChannelAdapter(datas);
+        final RemoteChannelAdapter adapter = new RemoteChannelAdapter(datas);
 
         RecyclerView rv = findView(R.id.rv);
         rv.setAdapter(adapter);
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-
+                adapter.changeSelected(position);
             }
         });
     }
