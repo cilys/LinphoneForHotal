@@ -1,7 +1,15 @@
 package com.cilys.linphoneforhotal.ui.menu;
 
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceMenuAc extends CommonTitleAc {
 
@@ -14,7 +22,29 @@ public class ServiceMenuAc extends CommonTitleAc {
     protected void initUI() {
         super.initUI();
 
-        setBackgroundById(R.id.test, R.mipmap.ic_service_menu_test);
+
+        List<MenuBean> datas = new ArrayList<>();
+        datas.add(new MenuBean(R.mipmap.icon_amen, "Amenities"));
+        datas.add(new MenuBean(R.mipmap.icon_clean_room, "Clean Room"));
+        datas.add(new MenuBean(R.mipmap.icon_concierge, "Concierge"));
+        datas.add(new MenuBean(R.mipmap.icon_maintenance, "Maintenance"));
+        datas.add(new MenuBean(R.mipmap.icon_food, "Food"));
+        datas.add(new MenuBean(R.mipmap.icon_wakeup, "Wakeup Call"));
+        datas.add(new MenuBean(R.mipmap.icon_amenities, "Amenities"));
+        datas.add(new MenuBean(R.mipmap.icon_late_checkout, "Late Checkout"));
+        datas.add(new MenuBean(R.mipmap.icon_dnd, "DND"));
+
+
+        RecyclerView rv = findView(R.id.rv);
+        RvMenuAdapter adapter = new RvMenuAdapter(datas);
+        rv.setLayoutManager(new GridLayoutManager(this, 3));
+        rv.setAdapter(adapter);
+        adapter.setListener(new RvItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
     }
 
     @Override

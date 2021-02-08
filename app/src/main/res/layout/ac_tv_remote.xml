@@ -29,35 +29,7 @@
         android:layout_marginRight="@dimen/y80"
         />
     
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_height"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/bg_redius"
-        android:paddingRight="@dimen/bg_redius"
-        android:background="@drawable/shape_round_bg_black">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Remote"
-            android:textColor="@color/white"
-            android:textSize="@dimen/x25"/>
-
-        <LinearLayout
-            android:id="@+id/ll_home"
-            android:layout_width="@dimen/bottom_height"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:layout_width="@dimen/x20"
-                android:layout_height="@dimen/x20"
-                android:src="@mipmap/icon_double_arrow_top_white" />
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/common_bottom" />
 
 
 </LinearLayout>
