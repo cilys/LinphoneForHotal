@@ -19,6 +19,7 @@ import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
+import com.cilys.linphoneforhotal.ui.msg.MsgAc;
 import com.cilys.linphoneforhotal.ui.room.ControlAc;
 import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
@@ -68,6 +69,12 @@ public class HomeAc extends BaseLinphoneAc {
         TextView tv_custom_name = findView(R.id.tv_custom_name);
 
         TextView tv_msg = findView(R.id.tv_msg);
+        tv_msg.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                startActivity(new Intent(HomeAc.this, MsgAc.class));
+            }
+        });
 
         ImageView img_msg_notify = findView(R.id.img_msg_notify);
 

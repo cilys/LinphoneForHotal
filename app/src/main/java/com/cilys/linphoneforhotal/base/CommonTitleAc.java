@@ -13,19 +13,25 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
         super.initUI();
 
         setTextToView((TextView) getViewFromCache(R.id.tv_title), getCommonTitle());
-        findView(R.id.top_close).setOnClickListener(new SingleClickListener() {
-            @Override
-            public void onSingleClick(View v) {
-                finish();
-            }
-        });
+        View top_close = findView(R.id.top_close);
+        if (top_close != null) {
+            top_close.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
+                    finish();
+                }
+            });
+        }
 
-        findView(R.id.top_home).setOnClickListener(new SingleClickListener() {
-            @Override
-            public void onSingleClick(View v) {
+        View top_home = findView(R.id.top_home);
+        if (top_home != null) {
+            top_home.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
 
-            }
-        });
+                }
+            });
+        }
     }
 
     protected String getCommonTitle(){

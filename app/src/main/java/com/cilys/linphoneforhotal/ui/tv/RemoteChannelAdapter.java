@@ -30,8 +30,9 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VH vh, final int i) {
-        vh.setImageResource(datas.get(i).getResourceId());
+    public void onBindViewHolder(@NonNull VH vh, int position) {
+        vh.setImageResource(datas.get(position).getResourceId());
+        final int i = position;
         if (vh.rootView != null) {
             vh.rootView.setOnClickListener(new SingleClickListener() {
                 @Override
@@ -42,7 +43,7 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
                 }
             });
         }
-        vh.setSelected(datas.get(i).isSelected());
+        vh.setSelected(datas.get(position).isSelected());
     }
 
     public void changeSelected(int position) {

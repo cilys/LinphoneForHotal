@@ -18,7 +18,7 @@
             android:id="@+id/top_close"
             android:layout_width="@dimen/tv_remote_top_title_height"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             >
             <ImageView
@@ -41,7 +41,7 @@
             android:id="@+id/top_home"
             android:layout_width="@dimen/tv_remote_top_title_height"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_vertical|right"
             android:orientation="horizontal"
             >
             <ImageView
