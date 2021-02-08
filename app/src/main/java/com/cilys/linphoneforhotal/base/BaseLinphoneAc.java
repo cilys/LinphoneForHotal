@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.cilys.linphoneforhotal.BuildConfig;
-import com.cilys.linphoneforhotal.call.PhoneAc;
+import com.cilys.linphoneforhotal.ui.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.event.LinPhoneBean;
@@ -28,7 +28,45 @@ import java.util.Map;
 public abstract class BaseLinphoneAc extends BaseAc {
     public final String INTENT_CALL_NUMBER = "INTENT_CALL_NUMBER";
 
+    @Override
+    protected final void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayout());
+        initUI();
+        init();
+        afterInit();
 
+
+
+        if (BuildConfig.DEBUG || true) {
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
+    }
+
+    protected void afterInit(){
+
+    }
+
+    protected int getScreenModel(){
+        Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
+        if (cf != null) {
+            //获取屏幕方向
+            return cf.orientation;
+        } else {
+            return Configuration.ORIENTATION_PORTRAIT;
+        }
+    }
+
+    protected abstract @LayoutRes int getLayout();
+    protected void initUI(){
+
+    }
+    protected void init() {
+
+    }
 
     protected Call getCurrentCall(){
         Core core = LinphoneService.getCore();

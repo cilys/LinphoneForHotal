@@ -2,11 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@drawable/shape_round_bg_black"
-    android:padding="@dimen/bg_redius"
+
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/root"
+        android:orientation="vertical"
+        android:layout_width="@dimen/x799"
+        android:layout_height="@dimen/y700">
+
+    </LinearLayout>
+
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Remote"
@@ -65,6 +72,6 @@
                 android:layout_height="@dimen/x22"
                 android:src="@mipmap/icon_power_white" />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
 
 </LinearLayout>

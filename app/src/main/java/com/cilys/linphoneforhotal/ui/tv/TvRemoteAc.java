@@ -1,20 +1,21 @@
-package com.cilys.linphoneforhotal.tv;
+package com.cilys.linphoneforhotal.ui.tv;
 
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
-import com.cilys.linphoneforhotal.base.BaseAc;
+import com.cilys.linphoneforhotal.base.CommonTitleAc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TvAc extends BaseAc {
+public class TvRemoteAc extends CommonTitleAc {
 
     @Override
     protected int getLayout() {
-        return R.layout.ac_tv;
+        return R.layout.ac_tv_remote;
     }
 
     @Override
@@ -40,11 +41,24 @@ public class TvAc extends BaseAc {
 
         RecyclerView rv = findView(R.id.rv);
         rv.setAdapter(adapter);
+        rv.setLayoutManager(new GridLayoutManager(this, 3));
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 adapter.changeSelected(position);
+
+                showDialog();
             }
         });
+    }
+
+    @Override
+    protected String getCommonTitle() {
+        return "TV Remote";
+    }
+
+    private void showDialog(){
+        RemoteDialog dialog = new RemoteDialog(this);
+        dialog.show();
     }
 }

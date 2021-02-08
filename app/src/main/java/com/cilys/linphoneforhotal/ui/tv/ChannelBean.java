@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.tv;
+package com.cilys.linphoneforhotal.ui.tv;
 
 import android.support.annotation.DrawableRes;
 

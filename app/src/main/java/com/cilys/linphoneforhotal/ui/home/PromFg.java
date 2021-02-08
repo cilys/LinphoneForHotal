@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.home;
+package com.cilys.linphoneforhotal.ui.home;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

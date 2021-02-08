@@ -1,12 +1,15 @@
-package com.cilys.linphoneforhotal.tv;
+package com.cilys.linphoneforhotal.ui.tv;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.utils.ImageUtils;
 
 public class RemoteDialog {
 
@@ -25,12 +28,16 @@ public class RemoteDialog {
         if (window != null) {
             WindowManager.LayoutParams params = window.getAttributes();
             params.width = getScreenPix(ac, 1);
-            params.height = (int)(0.75f) * getScreenPix(ac, 2);
+            params.height = (int)(0.5 * getScreenPix(ac, 2));
+            window.setGravity(Gravity.BOTTOM);
             params.x = 0;
             params.y = 0;
             window.setAttributes(params);
         }
-        dialog.setContentView(R.layout.dialog_remote);
+        View rootView = View.inflate(ac, R.layout.dialog_remote, null);
+        ImageUtils.load(ac, R.mipmap.ic_remote_test, (rootView.findViewById(R.id.root)));
+
+        dialog.setContentView(rootView);
     }
 
     private int getScreenPix(Activity ac, int mode){
@@ -44,6 +51,16 @@ public class RemoteDialog {
         return dm.widthPixels;
     }
 
+    public void show(){
+        if (dialog != null) {
+            dialog.show();
+        }
+    }
 
+    public void dismiss(){
+        if (dialog != null) {
+            dialog.dismiss();
+        }
+    }
 
 }

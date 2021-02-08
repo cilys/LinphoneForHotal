@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.tv;
+package com.cilys.linphoneforhotal.ui.tv;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -84,7 +84,7 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
 
         public void setSelected(boolean selected) {
             if (channel_parent != null) {
-                channel_parent.setBackgroundResource(selected ? R.drawable.shape_round_bg_drak_gray : R.drawable.shape_round_for_action_trans_bg);
+//                channel_parent.setBackgroundResource(selected ? R.drawable.shape_round_bg_drak_gray : R.drawable.shape_round_for_action_trans_bg_45);
             }
         }
 

@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal;
+package com.cilys.linphoneforhotal.ui.call;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 
-import com.cilys.linphoneforhotal.call.PhoneAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 

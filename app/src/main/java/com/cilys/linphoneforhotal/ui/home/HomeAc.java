@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.home;
+package com.cilys.linphoneforhotal.ui.home;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,11 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
-import com.cilys.linphoneforhotal.CallNumberAc;
+import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
-import com.cilys.linphoneforhotal.tv.TvAc;
+import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
+import com.cilys.linphoneforhotal.ui.room.ControlAc;
+import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
@@ -46,12 +48,18 @@ public class HomeAc extends BaseLinphoneAc {
         setBackground(ori);
 
         LinearLayout ll_room_control = findView(R.id.ll_room_control);
+        ll_room_control.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                startActivity(new Intent(HomeAc.this, ControlAc.class));
+            }
+        });
 
         LinearLayout ll_tv_remote = findView(R.id.ll_tv_remote);
         ll_tv_remote.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-                startActivity(new Intent(HomeAc.this, TvAc.class));
+                startActivity(new Intent(HomeAc.this, TvRemoteAc.class));
             }
         });
 
@@ -78,6 +86,12 @@ public class HomeAc extends BaseLinphoneAc {
         LinearLayout ll_make_up_room = findView(R.id.ll_make_up_room);
 
         LinearLayout ll_service_menu = findView(R.id.ll_service_menu);
+        ll_service_menu.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                startActivity(new Intent(HomeAc.this, ServiceMenuAc.class));
+            }
+        });
 
         LinearLayout ll_phone = findView(R.id.ll_phone);
         ll_phone.setOnClickListener(new SingleClickListener() {
@@ -116,6 +130,12 @@ public class HomeAc extends BaseLinphoneAc {
             public void loadBanner(XBanner banner, Object model, View view, int position) {
                 ImageView img = (ImageView)view.findViewById(R.id.img_pic);
                 ImageUtils.load(HomeAc.this, R.mipmap.ic_promo_test, img);
+            }
+        });
+        banner.setOnItemClickListener(new XBanner.OnItemClickListener() {
+            @Override
+            public void onItemClick(XBanner banner, Object model, View view, int position) {
+                startActivity(new Intent(HomeAc.this, PromDetailsAc.class));
             }
         });
     }

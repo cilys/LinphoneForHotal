@@ -32,22 +32,22 @@ public class RemoteView extends View {
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.remoteview);
 
-        WIDTH = ta.getInt(R.styleable.remoteview_width, 100);
-        HEIGHT = ta.getInt(R.styleable.remoteview_height, 100);
+        WIDTH = ta.getInt(R.styleable.remoteview_view_width, 100);
+        HEIGHT = ta.getInt(R.styleable.remoteview_view_height, 100);
 
-        background = ta.getColor(R.styleable.remoteview_background, Color.TRANSPARENT);
-        foreground = ta.getColor(R.styleable.remoteview_foreground, context.getResources().getColor(R.color.color_303040));
+        background = ta.getColor(R.styleable.remoteview_backgroundColor, Color.TRANSPARENT);
+        foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_303040));
 
         topArrowColor = ta.getColor(R.styleable.remoteview_topArrowColor, context.getResources().getColor(R.color.white));
         rightArrowColor = ta.getColor(R.styleable.remoteview_rightArrowColor, context.getResources().getColor(R.color.white));
         bottomArrowColor = ta.getColor(R.styleable.remoteview_bottomArrowColor, context.getResources().getColor(R.color.white));
         leftArrowColor = ta.getColor(R.styleable.remoteview_leftArrowColor, context.getResources().getColor(R.color.white));
 
-        textColor = ta.getColor(R.styleable.remoteview_textColor, context.getResources().getColor(R.color.white));
+        textColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.white));
 
         rectColor = ta.getColor(R.styleable.remoteview_rectColor, context.getResources().getColor(R.color.white));
 
-        textSize = ta.getDimensionPixelSize(R.styleable.remoteview_textSize, 25);
+        textSize = ta.getDimensionPixelSize(R.styleable.remoteview_centerTextSize, 25);
 
         ta.recycle();
 

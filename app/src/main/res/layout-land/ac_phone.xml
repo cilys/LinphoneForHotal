@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:id="@+id/root"
-    tools:context=".call.PhoneAc">
+    tools:context=".ui.call.PhoneAc">
 
     <LinearLayout
         android:id="@+id/ll_out_model"

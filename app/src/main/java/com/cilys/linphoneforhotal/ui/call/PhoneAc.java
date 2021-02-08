@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.call;
+package com.cilys.linphoneforhotal.ui.call;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

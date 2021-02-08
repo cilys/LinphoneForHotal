@@ -30,9 +30,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/style_launcher">
-        <activity android:name=".tv.TvAc"></activity>
+        <activity android:name=".ui.menu.ServiceMenuDetails"></activity>
+        <activity android:name=".ui.home.PromDetailsAc" />
+        <activity android:name=".ui.menu.ServiceMenuAc" />
+        <activity android:name=".ui.room.ControlAc" />
+        <activity android:name=".ui.amen.AmenitiesCheckoutAc" />
+        <activity android:name=".ui.amen.AmentiesAc" />
+        <activity android:name=".ui.checkout.CheckoutAc" />
+        <activity android:name=".ui.menu.FoodAc" />
+        <activity android:name=".ui.msg.MsgAc" />
+        <activity android:name=".ui.tv.TvRemoteAc" />
         <activity
-            android:name=".call.PhoneAc"
+            android:name=".ui.call.PhoneAc"
             android:launchMode="singleInstance"
             android:noHistory="true"
             android:resizeableActivity="true"
@@ -41,8 +50,8 @@
 
         <service android:name=".service.LinphoneService" />
 
-        <activity android:name=".CallNumberAc" />
-        <activity android:name=".home.HomeAc">
+        <activity android:name=".ui.call.CallNumberAc" />
+        <activity android:name=".ui.home.HomeAc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
