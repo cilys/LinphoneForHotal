@@ -2,6 +2,7 @@ package com.cilys.linphoneforhotal.base;
 
 import android.content.Context;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -120,16 +121,29 @@ public class BaseAc extends AppCompatActivity {
      */
     protected void changeSpeakerToExt(){
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        am.setMode(AudioManager.MODE_IN_CALL);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            am.setMode(AudioManager.MODE_IN_COMMUNICATION);
+        } else {
+            am.setMode(AudioManager.MODE_IN_CALL);
+//            am.setMode(AudioManager.MODE_NORMAL);
+        }
+        int ret = am.requestAudioFocus(null, 2, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
+
+        am.adjustStreamVolume(AudioManager.STREAM_VOICE_CALL, AudioManager.ADJUST_RAISE,
+                AudioManager.FLAG_SHOW_UI);
         am.setSpeakerphoneOn(true);
     }
+
+
 
     /**
      * 恢复到默认模式
      */
     protected void changeSpeakerToNomal(){
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+
         am.setMode(AudioManager.MODE_NORMAL);
+
         am.setSpeakerphoneOn(false);
     }
 
