@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.BuildConfig;
+import com.cilys.linphoneforhotal.TAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
@@ -43,6 +45,12 @@ public class HomeAc extends BaseLinphoneAc {
     @Override
     protected void initUI(){
         super.initUI();
+
+        if (com.cilys.linphoneforhotal.BuildConfig.DEBUG) {
+            startActivity(new Intent(this, TAc.class));
+            finish();
+            return;
+        }
 
         Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
         int ori = cf.orientation ; //获取屏幕方向
@@ -155,6 +163,10 @@ public class HomeAc extends BaseLinphoneAc {
     @Override
     protected void onStart() {
         super.onStart();
+
+        if (BuildConfig.DEBUG) {
+            return;
+        }
 
         requestCameraPermission();
     }

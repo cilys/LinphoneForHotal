@@ -12,5 +12,7 @@
         <attr name="centerTextColor" format="reference|color" />
         <attr name="centerTextSize" format="dimension" />
         <attr name="rectColor" format="reference|color" />
+        <attr name="touchForegroundColor" format="reference|color" />
+        <attr name="touchArrowColor" format="reference|color" />
     </declare-styleable>
 </resources>
