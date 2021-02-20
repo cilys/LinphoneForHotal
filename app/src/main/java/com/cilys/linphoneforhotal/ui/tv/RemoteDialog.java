@@ -99,7 +99,7 @@ public class RemoteDialog {
         dialog.setContentView(rootView);
     }
 
-    private int getScreenPix(Activity ac, int mode){
+    public static int getScreenPix(Activity ac, int mode){
         if (ac == null) {
             return 0;
         }

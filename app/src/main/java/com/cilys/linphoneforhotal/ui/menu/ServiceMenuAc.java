@@ -36,7 +36,7 @@ public class ServiceMenuAc extends CommonTitleAc {
 
 
         RecyclerView rv = findView(R.id.rv);
-        RvMenuAdapter adapter = new RvMenuAdapter(datas);
+        ServiceMenuAdapter adapter = new ServiceMenuAdapter(datas);
         rv.setLayoutManager(new GridLayoutManager(this, 3));
         rv.setAdapter(adapter);
         adapter.setListener(new RvItemClickListener() {

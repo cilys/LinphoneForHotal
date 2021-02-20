@@ -14,10 +14,10 @@ import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
 
-public class RvMenuAdapter extends RecyclerView.Adapter<RvMenuAdapter.VH> {
+public class ServiceMenuAdapter extends RecyclerView.Adapter<ServiceMenuAdapter.VH> {
     private List<MenuBean> datas;
 
-    public RvMenuAdapter(List<MenuBean> datas){
+    public ServiceMenuAdapter(List<MenuBean> datas){
         this.datas = datas;
     }
 

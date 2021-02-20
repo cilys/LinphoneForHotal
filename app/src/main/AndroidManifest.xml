@@ -38,7 +38,7 @@
         <activity android:name=".ui.amen.AmenitiesCheckoutAc" />
         <activity android:name=".ui.amen.AmentiesAc" />
         <activity android:name=".ui.checkout.CheckoutAc" />
-        <activity android:name=".ui.menu.FoodAc" />
+        <activity android:name=".ui.food.FoodAc" />
         <activity android:name=".ui.msg.MsgAc" />
         <activity android:name=".ui.tv.TvRemoteAc" />
         <activity

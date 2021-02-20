@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.menu;
+package com.cilys.linphoneforhotal.ui.food;
 
 import android.view.View;
 
