@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.utils.L;
 
 public class RemoteView extends View {
     private final int WIDTH, HEIGHT;
@@ -32,10 +33,11 @@ public class RemoteView extends View {
 
 
     private final int AREA_DEFAULT = -1;
-    private final int AREA_TOP = 3;
-    private final int AREA_LEFT = 2;
-    private final int AREA_BOTTOM = 1;
-    private final int AREA_RIGHT = 0;
+    private final int AREA_TOP = 3;     //上箭头
+    private final int AREA_LEFT = 2;    //左箭头
+    private final int AREA_BOTTOM = 1;  //下箭头
+    private final int AREA_RIGHT = 0;   //右箭头
+    private final int AREA_CENTER_RECT = 4; //中间ok按钮
 
 
     private Paint mPaint;
@@ -58,7 +60,8 @@ public class RemoteView extends View {
 
         background = ta.getColor(R.styleable.remoteview_backgroundColor, Color.TRANSPARENT);
         foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_303040));
-        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
+//        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
+        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.white));
 
 
         topArrowColor = ta.getColor(R.styleable.remoteview_topArrowColor, context.getResources().getColor(R.color.white));
@@ -155,7 +158,6 @@ public class RemoteView extends View {
         mPaint.setColor(background);
         mPaint.setStyle(Paint.Style.FILL);
 
-
         canvas.drawRect(0, 0, getWidth(), getHeight(), mPaint);
     }
 
@@ -176,10 +178,12 @@ public class RemoteView extends View {
                 resetPaint();
                 mPaint.setColor(touchForegroundColor);
                 mPaint.setStyle(Paint.Style.FILL);
+                mPaint.setAntiAlias(true);
             } else {
                 resetPaint();
                 mPaint.setColor(foreground);
                 mPaint.setStyle(Paint.Style.FILL);
+                mPaint.setAntiAlias(true);
             }
             canvas.drawArc(rectF, start, 90, true, mPaint);
             start += 90;
@@ -187,7 +191,7 @@ public class RemoteView extends View {
     }
 
     private void drawArrow(Canvas canvas) {
-        final float arrowLineSize = Math.max(radius / 10 , 10);
+        final float arrowLineSize = Math.max(radius / 20 , 10);
 
         final float marginCircle = radius / 5;
 
@@ -255,58 +259,6 @@ public class RemoteView extends View {
 
     private final int STROKE_WIDTH = 2;
 
-    private void drawCenter(Canvas canvas){
-        resetPaint();
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setStrokeWidth(STROKE_WIDTH);
-        mPaint.setColor(rectColor);
-        mPaint.setAntiAlias(true);
-
-        final float disX = 50;
-        final float disY = disX;
-        final float radiusX = 20;
-        final float radiusY = radiusX;
-
-        //上
-        canvas.drawLine(cx - disX + radiusX, cy - disY, cx + disX - radiusX, cy - disY, mPaint);
-        //右
-        canvas.drawLine(cx + disX, cy - disY + radiusY, cx + disX, cy + disY - radiusY, mPaint);
-        //下
-        canvas.drawLine(cx - disX + radiusX, cy + disY, cx + disX - radiusX, cy + disY, mPaint);
-        //左
-        canvas.drawLine(cx - disX, cy - disY + radiusY, cx - disX, cy + disY - radiusY, mPaint);
-
-        resetPaint();
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(STROKE_WIDTH);
-        mPaint.setColor(rectColor);
-        mPaint.setAntiAlias(true);
-        //左上角
-//        RectF lt = new RectF(cx - disX, cy - disY, cx -disX + radiusX, cy - disY + radiusY);
-//        canvas.drawArc(lt, 0, 90, false, mPaint);
-        Path lt = new Path();
-        lt.moveTo(cx - disX, cy - disY + radiusY);
-        lt.quadTo(cx - disX, cy -disY, cx - disX + radiusX, cy - disY);
-        canvas.drawPath(lt, mPaint);
-        //右上角
-        Path rt = new Path();
-        rt.moveTo(cx + disX, cy - disY + radiusY);
-        rt.quadTo(cx + disX, cy -disY, cx + disX - radiusX, cy - disY);
-        canvas.drawPath(rt, mPaint);
-
-        //左下角
-        Path lb = new Path();
-        lb.moveTo(cx - disX, cy + disY - radiusY);
-        lb.quadTo(cx - disX, cy + disY, cx - disX + radiusX, cy + disY);
-        canvas.drawPath(lb, mPaint);
-
-        //右下角
-        Path rb = new Path();
-        rb.moveTo(cx + disX, cy + disY - radiusY);
-        rb.quadTo(cx + disX, cy + disY, cx + disX - radiusX, cy + disY);
-        canvas.drawPath(rb, mPaint);
-    }
-
     private final float CENTER_RECT_DIS_X = 50;
     private final float CENTER_RECT_DIS_Y = CENTER_RECT_DIS_X;
 
@@ -331,7 +283,11 @@ public class RemoteView extends View {
         resetPaint();
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setStrokeWidth(STROKE_WIDTH);
-        mPaint.setColor(foreground);
+        if (touchArea == AREA_CENTER_RECT) {
+            mPaint.setColor(touchForegroundColor);
+        } else {
+            mPaint.setColor(foreground);
+        }
         mPaint.setAntiAlias(true);
         canvas.drawRoundRect(c, radiusX, radiusY, mPaint);
     }
@@ -359,51 +315,70 @@ public class RemoteView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        L.v(getClass().getSimpleName(), "action: " + event.getAction());
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             //判断按压点在哪个区域内
             float x = event.getX();
             float y = event.getY();
 
             //如果在圆外，则不在任何一个区域
-            if ((x - cx) > 5 || (y - cy) > 5) {
+            if (Math.abs(x - cx) > radius || Math.abs(y - cy) > radius) {
 
             } else if (pointInRect(x, y, cx - CENTER_RECT_DIS_X, cy - CENTER_RECT_DIS_Y,
                     cx + CENTER_RECT_DIS_X, cy + CENTER_RECT_DIS_Y)){
                 //如果按压点在圆在中间的"Ok"按钮范围内，也不在任何一个区域内
 
+                touchArea = AREA_CENTER_RECT;
+
+                invalidate();
+
+                return true;
             } else {
                 //如果按压点在"ok"按钮范围外，在圆的范围内，则判断在哪个区域
 
-                //圆心坐标：（x, y）
-                //半径：r
-                //角度：a
-                //则圆上任一点的坐标（x1, y1）
-                //x1 = x + r * cos(a)
-                //y1 = y + r * sin(a)
+                // 圆心坐标点
 
-                //-45度线的坐标
-                double x1 = cx + radius * Math.cos(315);
-                double y1 = cy + radius * Math.sin(315);
+                if (x > cx) {
+                    //触摸点在右半圆
 
+                    //对应x坐标y1、y2（y1表示右区域的下限、y2表示右区域的上限）
+                    float y1 = cy - (x - cx);
+                    float y2 = cy + (x - cx);
 
-                //45度线的坐标
-                double x2 = cx + radius * Math.cos(45);
-                double y2 = cy + radius * Math.sin(45);
+                    if (y < y1) {
+                        touchArea = AREA_TOP;
+                    } else if (y > y2) {
+                        touchArea = AREA_BOTTOM;
+                    } else {
+                        //判断是否点击了右边箭头的区域
+                        touchArea = AREA_RIGHT;
+                    }
+                } else {
+                    //触摸点在左半圆
+                    //对应x坐标y1、y2（y1表示左区域的下限、y2表示右区域的上限）
+                    float y1 = cy - (cx - x);
+                    float y2 = cy + (cx - x);
 
-                //135度线的坐标
-                double x3 = cx + radius * Math.cos(135);
-                double y3 = cy + radius * Math.sin(135);
+                    if (y < y1) {
+                        touchArea = AREA_TOP;
+                    } else if (y > y2) {
+                        touchArea = AREA_BOTTOM;
+                    } else {
+                        //判断是否点击了左边箭头的区域
+                        touchArea = AREA_LEFT;
+                    }
+                }
 
-                //225度线的坐标
-                double x4 = cx + radius * Math.cos(225);
-                double y4 = cy + radius * Math.sin(225);
-
-
+                invalidate();
+                return true;
             }
-
-
         } else {
             touchArea = AREA_DEFAULT;
+            if (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL) {
+                invalidate();
+
+                return true;
+            }
         }
         return super.onTouchEvent(event);
     }
@@ -420,7 +395,7 @@ public class RemoteView extends View {
             return false;
         }
 
-        if (y - top > 0){
+        if (y - bottom > 0){
             return false;
         }
 
