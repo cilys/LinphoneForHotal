@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Linphone</string>
+
+    <string name="mute">MUTE</string>
+    <string name="home">HOME</string>
+    <string name="str_return">RETURN</string>
+
+    <string name="remote">Remote</string>
+    <string name="power">POWER</string>
+    <string name="cha">CHA</string>
+    <string name="vol">VOL</string>
+
+    <string name="tv_remote">TV Remote</string>
 </resources>

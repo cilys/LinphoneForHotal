@@ -15,4 +15,5 @@
     <color name="color_303040">#303040</color>
 
     <color name="white">#FFF</color>
+    <color name="color_tv_remote_center_rect">#80FFFFFF</color>
 </resources>

@@ -9,10 +9,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.utils.ImageUtils;
+import com.cilys.linphoneforhotal.view.RemoteView;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 public class RemoteDialog {
-
     private final String TAG = getClass().getSimpleName();
     private Activity ac;
     private Dialog dialog;
@@ -35,7 +35,66 @@ public class RemoteDialog {
             window.setAttributes(params);
         }
         View rootView = View.inflate(ac, R.layout.dialog_remote, null);
-        ImageUtils.load(ac, R.mipmap.ic_remote_test, (rootView.findViewById(R.id.root)));
+
+        rootView.findViewById(R.id.power_switch).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_POWER);
+            }
+        });
+        rootView.findViewById(R.id.channel_add).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_CHANNEL_ADD);
+            }
+        });
+        rootView.findViewById(R.id.channel_reduce).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_CHANNEL_REDUCE);
+            }
+        });
+
+        RemoteView remoteView = (RemoteView)rootView.findViewById(R.id.remoteView);
+        remoteView.setOnClickListener(new RemoteView.OnClickListener() {
+            @Override
+            public void onClick(int type) {
+                click(type);
+            }
+        });
+
+        rootView.findViewById(R.id.vol_add).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_VOL_ADD);
+            }
+        });
+        rootView.findViewById(R.id.vol_reduce).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_VOL_REDUCE);
+            }
+        });
+
+
+        rootView.findViewById(R.id.action_mute).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_ACTION_MUTE);
+            }
+        });
+        rootView.findViewById(R.id.action_home).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_ACTION_HOME);
+            }
+        });
+        rootView.findViewById(R.id.action_return).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                click(TYPE_ACTION_RETURN);
+            }
+        });
 
         dialog.setContentView(rootView);
     }
@@ -53,6 +112,9 @@ public class RemoteDialog {
 
     public void show(){
         if (dialog != null) {
+            if (dialog.isShowing()) {
+                return;
+            }
             dialog.show();
         }
     }
@@ -63,4 +125,30 @@ public class RemoteDialog {
         }
     }
 
+    private void click(int type) {
+        if (listener != null) {
+            listener.onClick(type);
+        }
+    }
+
+    public Listener listener;
+
+    public void setListener(Listener listener) {
+        this.listener = listener;
+    }
+
+    public final static int TYPE_POWER = 11;
+    public final static int TYPE_CHANNEL_ADD = 12;
+    public final static int TYPE_CHANNEL_REDUCE = 13;
+
+    public final static int TYPE_VOL_ADD = 21;
+    public final static int TYPE_VOL_REDUCE = 22;
+
+    public final static int TYPE_ACTION_MUTE = 31;
+    public final static int TYPE_ACTION_HOME = 32;
+    public final static int TYPE_ACTION_RETURN = 33;
+
+    public interface Listener {
+        void onClick(int type);
+    }
 }

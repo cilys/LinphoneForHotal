@@ -54,11 +54,17 @@ public class TvRemoteAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "TV Remote";
+        return getString(R.string.tv_remote);
     }
 
     private void showDialog(){
         RemoteDialog dialog = new RemoteDialog(this);
+        dialog.setListener(new RemoteDialog.Listener() {
+            @Override
+            public void onClick(int type) {
+
+            }
+        });
         dialog.show();
     }
 }

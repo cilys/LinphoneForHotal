@@ -32,12 +32,12 @@ public class RemoteView extends View {
     private float cx, cy;       //圆心坐标
 
 
-    private final int AREA_DEFAULT = -1;
-    private final int AREA_TOP = 3;     //上箭头
-    private final int AREA_LEFT = 2;    //左箭头
-    private final int AREA_BOTTOM = 1;  //下箭头
-    private final int AREA_RIGHT = 0;   //右箭头
-    private final int AREA_CENTER_RECT = 4; //中间ok按钮
+    public final static int AREA_DEFAULT = -1;
+    public final static int AREA_TOP = 3;     //上箭头
+    public final static int AREA_LEFT = 2;    //左箭头
+    public final static int AREA_BOTTOM = 1;  //下箭头
+    public final static int AREA_RIGHT = 0;   //右箭头
+    public final static int AREA_CENTER_RECT = 4; //中间ok按钮
 
 
     private Paint mPaint;
@@ -61,7 +61,7 @@ public class RemoteView extends View {
         background = ta.getColor(R.styleable.remoteview_backgroundColor, Color.TRANSPARENT);
         foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_303040));
 //        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
-        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.white));
+        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
 
 
         topArrowColor = ta.getColor(R.styleable.remoteview_topArrowColor, context.getResources().getColor(R.color.white));
@@ -74,7 +74,7 @@ public class RemoteView extends View {
 
         textColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.white));
 
-        rectColor = ta.getColor(R.styleable.remoteview_rectColor, context.getResources().getColor(R.color.white));
+        rectColor = ta.getColor(R.styleable.remoteview_rectColor, context.getResources().getColor(R.color.color_tv_remote_center_rect));
 
         textSize = ta.getDimensionPixelSize(R.styleable.remoteview_centerTextSize, 25);
 
@@ -313,9 +313,9 @@ public class RemoteView extends View {
         canvas.drawText(centerText, cx - w / 2, cy + h / 2, mPaint);
     }
 
+    long downTime = 0;
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        L.v(getClass().getSimpleName(), "action: " + event.getAction());
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             //判断按压点在哪个区域内
             float x = event.getX();
@@ -329,6 +329,8 @@ public class RemoteView extends View {
                 //如果按压点在圆在中间的"Ok"按钮范围内，也不在任何一个区域内
 
                 touchArea = AREA_CENTER_RECT;
+
+                downTime = System.currentTimeMillis();
 
                 invalidate();
 
@@ -369,6 +371,8 @@ public class RemoteView extends View {
                     }
                 }
 
+                downTime = System.currentTimeMillis();
+
                 invalidate();
                 return true;
             }
@@ -376,6 +380,15 @@ public class RemoteView extends View {
             touchArea = AREA_DEFAULT;
             if (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL) {
                 invalidate();
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    //10毫秒认为是误碰，2秒认为是长按
+                    if (System.currentTimeMillis() - downTime >= 10 && System.currentTimeMillis() - downTime <= 2000) {
+                        if (onClickListener != null) {
+                            onClickListener.onClick(touchArea);
+                        }
+                    }
+                }
 
                 return true;
             }
@@ -400,5 +413,15 @@ public class RemoteView extends View {
         }
 
         return true;
+    }
+
+    private OnClickListener onClickListener;
+
+    public void setOnClickListener(OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
+    public interface OnClickListener{
+        void onClick(int type);
     }
 }

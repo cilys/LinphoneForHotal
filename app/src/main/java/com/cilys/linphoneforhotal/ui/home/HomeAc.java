@@ -47,9 +47,9 @@ public class HomeAc extends BaseLinphoneAc {
         super.initUI();
 
         if (com.cilys.linphoneforhotal.BuildConfig.DEBUG) {
-            startActivity(new Intent(this, TAc.class));
-            finish();
-            return;
+//            startActivity(new Intent(this, TAc.class));
+//            finish();
+//            return;
         }
 
         Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
@@ -165,7 +165,7 @@ public class HomeAc extends BaseLinphoneAc {
         super.onStart();
 
         if (BuildConfig.DEBUG) {
-            return;
+//            return;
         }
 
         requestCameraPermission();
