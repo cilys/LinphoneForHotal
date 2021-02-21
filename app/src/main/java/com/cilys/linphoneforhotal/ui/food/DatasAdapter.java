@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.menu;
+package com.cilys.linphoneforhotal.ui.food;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 
 import com.cilys.linphoneforhotal.R;
 
-public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.VH> {
+public class DatasAdapter extends RecyclerView.Adapter<DatasAdapter.VH> {
 
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new VH(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_service_menu_details, viewGroup, false));
+        return new VH(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_food_order_details, viewGroup, false));
     }
 
     @Override
