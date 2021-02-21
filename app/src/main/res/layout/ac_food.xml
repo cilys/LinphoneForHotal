@@ -11,13 +11,43 @@
     <include
         layout="@layout/common_title" />
 
-    <LinearLayout
-        android:id="@+id/test"
-        android:orientation="horizontal"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp" >
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/dessert"
+            style="@style/style_food_order_nav"
+            android:text="@string/dessert"/>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/inter"
+            style="@style/style_food_order_nav"
+            android:text="@string/international"/>
+
+        <TextView
+            android:id="@+id/italian"
+            style="@style/style_food_order_nav"
+            android:text="@string/italian"/>
+
+        <TextView
+            android:id="@+id/kids"
+            style="@style/style_food_order_nav"
+            android:text="@string/kids_menu"/>
+
+        <TextView
+            android:id="@+id/middle"
+            style="@style/style_food_order_nav"
+            android:text="@string/middle_eas"/>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appetizer" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -13,8 +13,17 @@
     <string name="tv_remote">TV Remote</string>
 
     <string name="order_status">Order status</string>
+    <string name="food_order">Food Order</string>
 
     <string name="requested">Requested</string>
     <string name="in_progress">In Progress</string>
     <string name="delivered">Delivered</string>
+
+    <string name="dessert">Dessert</string>
+    <string name="international">International</string>
+    <string name="italian">Italian</string>
+    <string name="kids_menu">Kids Menu</string>
+    <string name="middle_eas">Middle Eas</string>
+
+    <string name="appetizer">Appetizer</string>
 </resources>
