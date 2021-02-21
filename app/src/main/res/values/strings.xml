@@ -11,4 +11,10 @@
     <string name="vol">VOL</string>
 
     <string name="tv_remote">TV Remote</string>
+
+    <string name="order_status">Order status</string>
+
+    <string name="requested">Requested</string>
+    <string name="in_progress">In Progress</string>
+    <string name="delivered">Delivered</string>
 </resources>

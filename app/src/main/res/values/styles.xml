@@ -195,4 +195,17 @@
         <item name="android:textSize">@dimen/x18</item>
     </style>
 
+    <style name="style_service_menu_details_dialog_rbt">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/x25</item>
+        <item name="android:drawablePadding">@dimen/y10</item>
+        <item name="android:drawableBottom">@mipmap/icon_point_trans</item>
+        <item name="android:textColor">@drawable/selector_service_menu_details_top_rbt_text_color</item>
+    </style>
+
 </resources>

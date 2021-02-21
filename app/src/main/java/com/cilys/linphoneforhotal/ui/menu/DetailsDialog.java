@@ -1,7 +1,9 @@
 package com.cilys.linphoneforhotal.ui.menu;
 
 import android.app.Activity;
+import android.view.View;
 
+import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.dialog.BaseDialog;
 
 public class DetailsDialog extends BaseDialog {
@@ -11,6 +13,12 @@ public class DetailsDialog extends BaseDialog {
 
     @Override
     protected int layoutId() {
-        return 0;
+        return R.layout.dialog_service_menu_details;
+    }
+
+    @Override
+    protected void initUI(View rootView) {
+        super.initUI(rootView);
+
     }
 }
