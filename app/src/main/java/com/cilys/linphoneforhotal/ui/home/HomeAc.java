@@ -15,13 +15,13 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.BuildConfig;
-import com.cilys.linphoneforhotal.TAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
 import com.cilys.linphoneforhotal.ui.msg.MsgAc;
+import com.cilys.linphoneforhotal.ui.prom.PromDetailsAc;
 import com.cilys.linphoneforhotal.ui.room.ControlAc;
 import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;

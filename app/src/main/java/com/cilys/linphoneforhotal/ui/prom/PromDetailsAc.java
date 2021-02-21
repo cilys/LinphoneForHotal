@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.home;
+package com.cilys.linphoneforhotal.ui.prom;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
