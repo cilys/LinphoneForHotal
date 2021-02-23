@@ -26,4 +26,8 @@
     <string name="middle_eas">Middle Eas</string>
 
     <string name="appetizer">Appetizer</string>
+
+    <string name="all">All</string>
+    <string name="unread">Unread</string>
+    <string name="read">Read</string>
 </resources>

@@ -47,14 +47,40 @@
         <View
             style="@style/style_splite_line_h_light_gray" />
 
-        <LinearLayout
-            android:id="@+id/ll_msg"
+        <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="1" >
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/bg_redius"
+            android:paddingRight="@dimen/bg_redius"
+            android:layout_marginBottom="@dimen/y30"
+            android:orientation="horizontal">
 
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/rbt_all"
+                android:text="@string/all"
+                android:checked="true"
+                android:drawableBottom="@mipmap/icon_point_red"
+                style="@style/style_service_menu_details_dialog_rbt" />
+
+            <RadioButton
+                android:id="@+id/rbt_unread"
+                android:text="@string/unread"
+                style="@style/style_service_menu_details_dialog_rbt" />
+
+            <RadioButton
+                android:id="@+id/rbt_read"
+                android:text="@string/read"
+                style="@style/style_service_menu_details_dialog_rbt" />
+        </RadioGroup>
+
+        <View
+            style="@style/style_splite_line_h_light_gray" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>
