@@ -1,8 +1,12 @@
 package com.cilys.linphoneforhotal.ui.menu;
 
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
@@ -35,6 +39,8 @@ public class ServiceMenuAc extends CommonTitleAc {
         datas.add(new MenuBean(R.mipmap.icon_dnd, "DND"));
 
 
+
+
         RecyclerView rv = findView(R.id.rv);
         ServiceMenuAdapter adapter = new ServiceMenuAdapter(datas);
         rv.setLayoutManager(new GridLayoutManager(this, 3));
@@ -42,13 +48,20 @@ public class ServiceMenuAc extends CommonTitleAc {
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-
+                showDetailsDialog();
             }
         });
     }
 
+
+
     @Override
     protected String getCommonTitle() {
         return "Service Menu";
+    }
+
+    private void showDetailsDialog(){
+        DetailsDialog dialog = new DetailsDialog(this);
+        dialog.show();
     }
 }

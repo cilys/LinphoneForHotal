@@ -5,19 +5,28 @@
     android:layout_height="match_parent">
     
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/x799"
+        android:layout_height="@dimen/y900"
         android:orientation="vertical"
-        android:padding="@dimen/bg_redius"
         android:background="@drawable/shape_top_round_bg_tv_remote_dialog">
 
-        <include layout="@layout/common_bottom" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/bg_redius"
+            android:orientation="horizontal">
+
+            <include layout="@layout/common_bottom" />
+        </LinearLayout>
+
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/bg_redius"
             android:paddingRight="@dimen/bg_redius"
+            android:layout_marginBottom="@dimen/y30"
             android:orientation="horizontal">
 
             <RadioButton
@@ -30,7 +39,6 @@
             <RadioButton
                 android:id="@+id/rbt_in_progress"
                 android:text="@string/in_progress"
-
                 style="@style/style_service_menu_details_dialog_rbt" />
 
             <RadioButton
@@ -40,7 +48,9 @@
         </RadioGroup>
 
         <View
-            style="@style/style_splite_line_h_light_gray" />
+            style="@style/style_splite_line_h_light_gray"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv"

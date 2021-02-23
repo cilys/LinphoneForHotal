@@ -13,7 +13,7 @@ import com.cilys.linphoneforhotal.R;
 
 public abstract class BaseDialog {
     private final String TAG = getClass().getSimpleName();
-    private Activity ac;
+    protected Activity ac;
     private Dialog dialog;
 
     public BaseDialog(Activity ac) {
