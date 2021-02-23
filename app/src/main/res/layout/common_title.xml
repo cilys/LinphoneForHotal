@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/tv_remote_top_title_height"
     android:gravity="center_vertical"
-    android:paddingLeft="@dimen/bg_redius"
-    android:paddingRight="@dimen/bg_redius"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginLeft="@dimen/bg_redius"
+        android:layout_marginRight="@dimen/bg_redius"
         android:gravity="center_vertical"
         android:orientation="horizontal">
         <LinearLayout
@@ -53,5 +53,4 @@
 
     <View
         style="@style/style_splite_line_h_light_gray" />
-
 </LinearLayout>
