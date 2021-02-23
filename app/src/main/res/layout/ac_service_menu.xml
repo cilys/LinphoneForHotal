@@ -7,7 +7,7 @@
     android:background="@drawable/shape_round_bg_white"
     tools:context=".ui.menu.ServiceMenuAc">
 
-    <include layout="@layout/common_title" />
+    <include layout="@layout/common_title_gray_line" />
 
     <LinearLayout
         android:layout_width="match_parent"

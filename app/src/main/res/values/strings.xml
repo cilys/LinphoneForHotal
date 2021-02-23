@@ -30,4 +30,24 @@
     <string name="all">All</string>
     <string name="unread">Unread</string>
     <string name="read">Read</string>
+
+    <string name="curtains">Curtains</string>
+    <string name="master_light">Master Ligth</string>
+
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
+
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+
+    <string name="bathroom_light">Bathroom Light</string>
+
+    <string name="lights">Lights</string>
+
+    <string name="min">MIN</string>
+    <string name="max">MAX</string>
+
+    <string name="temperature">Temperature</string>
+
+    <string name="fan_speed">Fan Speed</string>
 </resources>

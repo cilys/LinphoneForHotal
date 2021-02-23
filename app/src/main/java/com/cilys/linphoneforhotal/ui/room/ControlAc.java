@@ -14,7 +14,6 @@ public class ControlAc extends CommonTitleAc {
     protected void initUI() {
         super.initUI();
 
-        setBackgroundById(R.id.test, R.mipmap.ic_room_control_test);
     }
 
     @Override

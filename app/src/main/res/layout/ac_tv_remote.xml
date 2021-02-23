@@ -8,7 +8,7 @@
     android:background="@drawable/shape_round_bg_white"
     tools:context=".ui.tv.TvRemoteAc">
 
-    <include layout="@layout/common_title" />
+    <include layout="@layout/common_title_gray_line" />
 
     <TextView
         android:layout_width="wrap_content"

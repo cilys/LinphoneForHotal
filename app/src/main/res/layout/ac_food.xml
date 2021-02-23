@@ -9,7 +9,7 @@
     tools:context=".ui.food.FoodAc">
 
     <include
-        layout="@layout/common_title" />
+        layout="@layout/common_title_gray_line" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,15 +8,337 @@
     tools:context=".ui.room.ControlAc">
 
     <include
-        layout="@layout/common_title" />
+        layout="@layout/common_title_gray_line" />
 
     <LinearLayout
-        android:id="@+id/test"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x25"
+        android:layout_marginRight="@dimen/x25"
+        android:layout_marginTop="@dimen/x30"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            style="@style/style_room_control_layout" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/bg_redius"
+                    android:layout_height="@dimen/bg_redius"
+                    android:src="@mipmap/icon_curtain" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_main_text_color"
+                    android:textAllCaps="false"
+                    android:text="@string/curtains"
+                    android:layout_marginLeft="@dimen/x15"
+                    android:textSize="@dimen/x20"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/y30"
+                style="@style/style_room_control_layout_action">
+
+                <TextView
+                    android:id="@+id/curtains_open"
+                    style="@style/style_room_control_layout_action_open" />
+
+                <TextView
+                    android:id="@+id/curtains_close"
+                    style="@style/style_room_control_layout_action_close" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/x25"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            style="@style/style_room_control_layout" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/bg_redius"
+                    android:layout_height="@dimen/bg_redius"
+                    android:src="@mipmap/icon_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_main_text_color"
+                    android:textAllCaps="false"
+                    android:text="@string/master_light"
+                    android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                    android:textSize="@dimen/x20"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/y30"
+                style="@style/style_room_control_layout_action">
+
+                <TextView
+                    android:id="@+id/master_light_open"
+                    style="@style/style_room_control_layout_action_open"
+                    android:text="@string/on"/>
+
+                <TextView
+                    android:id="@+id/master_light_close"
+                    style="@style/style_room_control_layout_action_close"
+                    android:text="@string/off"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x25"
+        android:layout_marginRight="@dimen/x25"
+        android:layout_marginTop="@dimen/x30"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/style_room_control_layout" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/bg_redius"
+                    android:layout_height="@dimen/bg_redius"
+                    android:src="@mipmap/icon_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_main_text_color"
+                    android:textAllCaps="false"
+                    android:text="@string/bathroom_light"
+                    android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                    android:textSize="@dimen/x20"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/y30"
+                style="@style/style_room_control_layout_action">
+
+                <TextView
+                    android:id="@+id/Bathroom_light_open"
+                    android:text="@string/on"
+                    style="@style/style_room_control_layout_action_open" />
+
+                <TextView
+                    android:id="@+id/Bathroom_light_close"
+                    android:text="@string/off"
+                    style="@style/style_room_control_layout_action_close" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/x25"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            style="@style/style_room_control_layout" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/bg_redius"
+                    android:layout_height="@dimen/bg_redius"
+                    android:src="@mipmap/icon_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_main_text_color"
+                    android:textAllCaps="false"
+                    android:text="@string/lights"
+                    android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                    android:textSize="@dimen/x20"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/y30"
+                style="@style/style_room_control_layout_action">
+
+                <TextView
+                    android:id="@+id/lights_open"
+                    style="@style/style_room_control_layout_action_open"
+                    android:text="@string/min"/>
+
+                <TextView
+                    android:id="@+id/lights_close"
+                    style="@style/style_room_control_layout_action_close"
+                    android:text="@string/max"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/style_room_control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y230"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/x25"
+        android:layout_marginRight="@dimen/x25"
+        android:layout_marginTop="@dimen/x30"
+        android:paddingLeft="@dimen/bg_redius"
+        android:paddingRight="@dimen/bg_redius"
+        android:paddingTop="@dimen/y15"
+        android:paddingBottom="@dimen/y15"
+        android:background="@drawable/shape_round_bg_room_control_action" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="@dimen/y44"
+                    android:layout_height="@dimen/y40"
+                    android:src="@mipmap/icon_temperaure" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x20"
+                    android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                    android:textColor="@color/color_main_text_color"
+                    android:text="@string/temperature" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/y30"
+                android:textColor="@color/color_main_text_color"
+                android:text="Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember."/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_main_text_color"
+                android:textSize="@dimen/x20"
+                android:text="@string/min" />
+
+            <ImageView
+                android:layout_width="@dimen/y165"
+                android:layout_height="@dimen/y150"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                android:src="@mipmap/ic_temp_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_main_text_color"
+                android:textSize="@dimen/x20"
+                android:text="@string/max" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/style_room_control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y230"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/x25"
+        android:layout_marginRight="@dimen/x25"
+        android:layout_marginTop="@dimen/x30"
+        android:paddingLeft="@dimen/bg_redius"
+        android:paddingRight="@dimen/bg_redius"
+        android:paddingTop="@dimen/y15"
+        android:paddingBottom="@dimen/y15"
+        android:background="@drawable/shape_round_bg_room_control_action" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="@dimen/y44"
+                    android:layout_height="@dimen/y40"
+                    android:src="@mipmap/icon_fan_speed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x20"
+                    android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                    android:textColor="@color/color_main_text_color"
+                    android:text="@string/fan_speed" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x18"
+                android:layout_marginTop="@dimen/y30"
+                android:textColor="@color/color_main_text_color"
+                android:text="Set your preferred fan \nspeed by moving the red \ndot."/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_main_text_color"
+                android:textSize="@dimen/x20"
+                android:text="@string/min" />
+
+            <ImageView
+                android:layout_width="@dimen/y165"
+                android:layout_height="@dimen/y150"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginRight="@dimen/x20"
+                android:src="@mipmap/ic_fan_speed_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_main_text_color"
+                android:textSize="@dimen/x20"
+                android:text="@string/max" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
