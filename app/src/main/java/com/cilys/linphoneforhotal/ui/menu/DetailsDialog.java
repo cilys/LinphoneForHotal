@@ -3,6 +3,8 @@ package com.cilys.linphoneforhotal.ui.menu;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.dialog.BaseDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DetailsDialog extends BaseDialog {
     public DetailsDialog(Activity ac) {
@@ -59,6 +64,27 @@ public class DetailsDialog extends BaseDialog {
 
         TextView bottom_title = (TextView)rootView.findViewById(R.id.bottom_title);
         bottom_title.setText(ac.getResources().getString(R.string.order_status));
+
+
+        List<DetailsDataBean> datas = new ArrayList<>();
+        DetailsDataBean b0 = new DetailsDataBean();
+        b0.setName("Arancini (3 picces)");
+        b0.setPrice("$4.99");
+        b0.setCount(2);
+        datas.add(b0);
+
+        DetailsDataBean b1 = new DetailsDataBean();
+        b1.setName("Pizza Marghcrita");
+        b1.setPrice("$22.99");
+        b1.setCount(1);
+        datas.add(b1);
+
+
+
+        RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
+        DetailsDatasAdapter adapter = new DetailsDatasAdapter(datas);
+        rv.setLayoutManager(new LinearLayoutManager(ac));
+        rv.setAdapter(adapter);
     }
 
     private void setDrawableBottom(RadioButton rbt, @DrawableRes int resId) {

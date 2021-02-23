@@ -50,10 +50,13 @@
         <View
             style="@style/style_splite_line_h_light_gray"
             android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp" />
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="@dimen/y60"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv"
+            android:layout_marginLeft="@dimen/bottom_height"
+            android:layout_marginRight="@dimen/bottom_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
