@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/shape_round_bg_white"
     tools:context=".ui.room.ControlAc">
@@ -189,7 +190,6 @@
     </LinearLayout>
 
     <LinearLayout
-        style="@style/style_room_control_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y230"
         android:orientation="horizontal"
@@ -239,7 +239,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:gravity="center_horizontal|bottom"
+            android:gravity="center"
             android:layout_weight="1" >
 
             <TextView
@@ -247,26 +247,27 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_main_text_color"
                 android:textSize="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
                 android:text="@string/min" />
 
-            <ImageView
-                android:layout_width="@dimen/y165"
-                android:layout_height="@dimen/y150"
-                android:layout_marginLeft="@dimen/x20"
-                android:layout_marginRight="@dimen/x20"
-                android:src="@mipmap/ic_temp_test" />
+            <com.cilys.linphoneforhotal.view.DashView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:arcWidth="@dimen/y12"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_main_text_color"
                 android:textSize="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
                 android:text="@string/max" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        style="@style/style_room_control_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y230"
         android:orientation="horizontal"
@@ -316,7 +317,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:gravity="center_horizontal|bottom"
+            android:gravity="center"
             android:layout_weight="1" >
 
             <TextView
@@ -324,20 +325,22 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_main_text_color"
                 android:textSize="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
                 android:text="@string/min" />
 
-            <ImageView
-                android:layout_width="@dimen/y165"
-                android:layout_height="@dimen/y150"
-                android:layout_marginLeft="@dimen/x20"
-                android:layout_marginRight="@dimen/x20"
-                android:src="@mipmap/ic_fan_speed_test" />
+            <com.cilys.linphoneforhotal.view.DashView
+                android:id="@+id/fan_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:arcWidth="@dimen/y12"
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_main_text_color"
                 android:textSize="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
                 android:text="@string/max" />
         </LinearLayout>
     </LinearLayout>

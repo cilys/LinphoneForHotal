@@ -36,6 +36,7 @@ import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
+    private final boolean TO_TEST_VIEW = false;
 
     @Override
     protected int getLayout() {
@@ -46,7 +47,7 @@ public class HomeAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
-        if (com.cilys.linphoneforhotal.BuildConfig.DEBUG) {
+        if (TO_TEST_VIEW) {
             startActivity(new Intent(this, com.cilys.linphoneforhotal.TAc.class));
             finish();
             return;
@@ -164,7 +165,7 @@ public class HomeAc extends BaseLinphoneAc {
     protected void onStart() {
         super.onStart();
 
-        if (BuildConfig.DEBUG) {
+        if (TO_TEST_VIEW) {
             return;
         }
 

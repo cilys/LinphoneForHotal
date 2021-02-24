@@ -6,12 +6,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cilys.linphoneforhotal.BuildConfig;
 import com.cilys.linphoneforhotal.R;
 
 /**
@@ -74,7 +72,7 @@ public class DashView extends View {
 
         backgroundColor = ta.getColor(R.styleable.dashview_dashviewBackgroundColor, context.getResources().getColor(R.color.white));
 
-        center_text_size = ta.getDimensionPixelSize(R.styleable.dashview_dashviewCenterTextSize, default_size * 4);
+        center_text_size = ta.getDimensionPixelSize(R.styleable.dashview_dashviewCenterTextSize, (int)(arc_width * 4));
 
         ta.recycle();
     }
@@ -177,7 +175,7 @@ public class DashView extends View {
 
         canvas.drawArc(f, 135, 270, false, paint);
 
-        if (sweepAngle == 0){
+        if (sweepAngle <= 0){
             return;
         }
 
