@@ -13,6 +13,7 @@
     <string name="tv_remote">TV Remote</string>
 
     <string name="order_status">Order status</string>
+    <string name="order_details">Order details</string>
     <string name="food_order">Food Order</string>
 
     <string name="requested">Requested</string>

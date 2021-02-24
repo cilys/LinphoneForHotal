@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.ui.msg;
 
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,9 +13,9 @@ import android.view.ViewGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseFg;
+import com.cilys.linphoneforhotal.impl.ItemClickListener;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.List;
 
 public class MsgFg extends BaseFg {
@@ -75,5 +76,12 @@ public class MsgFg extends BaseFg {
         MsgAdapter adapter = new MsgAdapter(datas);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(adapter);
+
+        adapter.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                startActivity(new Intent(getActivity(), MsgDetailsAc.class));
+            }
+        });
     }
 }

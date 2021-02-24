@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.impl.ItemClickListener;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
 
@@ -43,11 +45,20 @@ public class MsgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder vh, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder vh, final int i) {
         if (vh instanceof VH_Title) {
             ((VH_Title) vh).setTitle(datas.get(i).getTitle());
         } else if (vh instanceof VH) {
             ((VH) vh).setData(datas.get(i));
+
+            ((VH) vh).rootView.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
+                    if (itemClickListener != null) {
+                        itemClickListener.onItemClick(v, i);
+                    }
+                }
+            });
         }
     }
 
@@ -76,9 +87,13 @@ public class MsgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     protected static class VH extends RecyclerView.ViewHolder {
         private ImageView red_point;
         private TextView name, time, info;
+        private View rootView;
 
         public VH(@NonNull View itemView) {
             super(itemView);
+
+            rootView = itemView;
+
             red_point = (ImageView) itemView.findViewById(R.id.red_point);
 
             name = (TextView) itemView.findViewById(R.id.name);
@@ -93,5 +108,11 @@ public class MsgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             red_point.setVisibility(bean.isNewMsg() ? View.VISIBLE : View.VISIBLE);
         }
+    }
+
+    private ItemClickListener itemClickListener;
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
     }
 }
