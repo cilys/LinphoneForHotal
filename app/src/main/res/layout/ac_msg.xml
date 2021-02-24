@@ -45,7 +45,8 @@
         </LinearLayout>
 
         <View
-            style="@style/style_splite_line_h_light_gray" />
+            style="@style/style_splite_line_h_light_gray"
+            android:background="@color/color_split_line_light_gray_half"/>
 
         <RadioGroup
             android:id="@+id/rg"
@@ -54,6 +55,7 @@
             android:paddingLeft="@dimen/bg_redius"
             android:paddingRight="@dimen/bg_redius"
             android:layout_marginBottom="@dimen/y30"
+            android:layout_marginTop="@dimen/y30"
             android:orientation="horizontal">
 
             <RadioButton
@@ -61,16 +63,19 @@
                 android:text="@string/all"
                 android:checked="true"
                 android:drawableBottom="@mipmap/icon_point_red"
+                android:textColor="@drawable/selector_msg_top_rbt_text_color"
                 style="@style/style_service_menu_details_dialog_rbt" />
 
             <RadioButton
                 android:id="@+id/rbt_unread"
                 android:text="@string/unread"
+                android:textColor="@drawable/selector_msg_top_rbt_text_color"
                 style="@style/style_service_menu_details_dialog_rbt" />
 
             <RadioButton
                 android:id="@+id/rbt_read"
                 android:text="@string/read"
+                android:textColor="@drawable/selector_msg_top_rbt_text_color"
                 style="@style/style_service_menu_details_dialog_rbt" />
         </RadioGroup>
 

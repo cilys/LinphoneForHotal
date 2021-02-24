@@ -34,6 +34,28 @@ public class MsgAc extends CommonTitleAc {
         setDrawableBottom(rbt_read, R.mipmap.icon_point_trans);
 
         final ViewPager vp = findView(R.id.vp);
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                if (i == 1) {
+                    rbt_unread.setChecked(true);
+                } else if (i == 2) {
+                    rbt_read.setChecked(true);
+                } else {
+                    rbt_all.setChecked(true);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
 
         RadioGroup rg = (RadioGroup)findViewById(R.id.rg);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -43,14 +65,17 @@ public class MsgAc extends CommonTitleAc {
                     setDrawableBottom(rbt_all, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_unread, R.mipmap.icon_point_red);
                     setDrawableBottom(rbt_read, R.mipmap.icon_point_trans);
+                    vp.setCurrentItem(1);
                 } else if (checkedId == R.id.rbt_read) {
                     setDrawableBottom(rbt_all, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_unread, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_read, R.mipmap.icon_point_red);
+                    vp.setCurrentItem(2);
                 } else {
                     setDrawableBottom(rbt_all, R.mipmap.icon_point_red);
                     setDrawableBottom(rbt_unread, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_read, R.mipmap.icon_point_trans);
+                    vp.setCurrentItem(0);
                 }
             }
         });
@@ -75,7 +100,7 @@ public class MsgAc extends CommonTitleAc {
         read.setArguments(b2);
         fgs.add(read);
 
-        MsgAdapter adapter = new MsgAdapter(getSupportFragmentManager(), fgs);
+        MsgFgAdapter adapter = new MsgFgAdapter(getSupportFragmentManager(), fgs);
         vp.setAdapter(adapter);
     }
 

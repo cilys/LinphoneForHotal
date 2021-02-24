@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-public class MsgAdapter extends FragmentPagerAdapter {
+public class MsgFgAdapter extends FragmentPagerAdapter {
     private List<MsgFg> datas;
 
-    public MsgAdapter(FragmentManager fm, List<MsgFg> datas) {
+    public MsgFgAdapter(FragmentManager fm, List<MsgFg> datas) {
         super(fm);
         this.datas = datas;
     }
