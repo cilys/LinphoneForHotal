@@ -245,4 +245,13 @@
         <item name="android:background">@drawable/shape_round_bg_room_control_action_close</item>
     </style>
 
+    <style name="style_scroll_nav">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/y25</item>
+        <item name="android:textSize">@dimen/x25</item>
+        <item name="android:drawablePadding">@dimen/y5</item>
+        <item name="android:textColor">@color/color_gray_text_color</item>
+    </style>
+
 </resources>

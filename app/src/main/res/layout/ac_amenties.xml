@@ -11,13 +11,47 @@
     <include
         layout="@layout/common_title_gray_line" />
 
-    <LinearLayout
-        android:id="@+id/test"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/bg_redius"
+        android:paddingBottom="@dimen/bg_redius"
+        android:scrollbars="none">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/pillow"
+                style="@style/style_scroll_nav"
+                android:text="@string/bedding_pillows"/>
+
+            <TextView
+                android:id="@+id/in_room"
+                style="@style/style_scroll_nav"
+                android:text="@string/in_room"/>
+
+            <TextView
+                android:id="@+id/laundries"
+                style="@style/style_scroll_nav"
+                android:text="@string/laundries"/>
+
+            <TextView
+                android:id="@+id/towels"
+                style="@style/style_scroll_nav"
+                android:text="@string/towels"/>
+
+            <TextView
+                android:id="@+id/bath"
+                style="@style/style_scroll_nav"
+                android:text="@string/bath"/>
+
+            <TextView
+                android:id="@+id/drinks"
+                style="@style/style_scroll_nav"
+                android:text="@string/drinks"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </LinearLayout>

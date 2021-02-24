@@ -51,4 +51,11 @@
     <string name="temperature">Temperature</string>
 
     <string name="fan_speed">Fan Speed</string>
+
+    <string name="bedding_pillows">Bedding &amp; Pillows</string>
+    <string name="in_room">In Room</string>
+    <string name="laundries">Laundries</string>
+    <string name="towels">Towels</string>
+    <string name="bath">Bath</string>
+    <string name="drinks">Drinks</string>
 </resources>

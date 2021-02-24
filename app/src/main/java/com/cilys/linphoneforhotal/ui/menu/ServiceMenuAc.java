@@ -1,12 +1,9 @@
 package com.cilys.linphoneforhotal.ui.menu;
 
-import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
+
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;

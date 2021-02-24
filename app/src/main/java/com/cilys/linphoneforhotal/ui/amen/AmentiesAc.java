@@ -1,11 +1,9 @@
 package com.cilys.linphoneforhotal.ui.amen;
 
-import android.view.View;
+import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.base.BaseAc;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
-import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 public class AmentiesAc extends CommonTitleAc {
 
@@ -18,13 +16,13 @@ public class AmentiesAc extends CommonTitleAc {
     protected void initUI() {
         super.initUI();
 
-        setBackgroundById(R.id.test, R.mipmap.ic_amenities_test);
-
-        findView(R.id.top_close).setOnClickListener(new SingleClickListener() {
-            @Override
-            public void onSingleClick(View v) {
-                finish();
-            }
-        });
+        TextView pillow = findView(R.id.pillow);
+        TextView in_room = findView(R.id.in_room);
+        TextView laundries = findView(R.id.laundries);
+        TextView towels = findView(R.id.towels);
+        TextView bath = findView(R.id.bath);
+        TextView drinks = findView(R.id.drinks);
     }
+
+
 }
