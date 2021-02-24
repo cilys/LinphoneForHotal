@@ -16,4 +16,11 @@
 
     <color name="white">#FFF</color>
     <color name="color_tv_remote_center_rect">#80FFFFFF</color>
+
+    <color name="color_eee">#EEE</color>
+    <color name="color_ea5b5b">#EA5B5B</color>
+    <color name="color_f9d0d0">#f9d0d0</color>
+
+    <color name="color_f0f0f0">#F0F0F0</color>
+
 </resources>

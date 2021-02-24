@@ -15,4 +15,15 @@
         <attr name="touchForegroundColor" format="reference|color" />
         <attr name="touchArrowColor" format="reference|color" />
     </declare-styleable>
+    
+    <declare-styleable name="dashview">
+        <attr name="arcWidth" format="dimension" />
+        <attr name="arcDarkColor" format="reference|color" />
+        <attr name="arcLightColor" format="reference|color" />
+        <attr name="arcPointCenterColor" format="reference|color" />
+        <attr name="arcPointRingColor" format="reference|color" />
+        <attr name="centerCircleColor" format="reference|color" />
+        <attr name="dashviewBackgroundColor" format="reference|color" />
+        <attr name="dashviewCenterTextSize" format="dimension" />
+    </declare-styleable>
 </resources>
