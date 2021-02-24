@@ -54,4 +54,12 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <View
+        style="@style/style_splite_line_h_light_gray"
+        android:background="@color/color_split_line_light_gray_half"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
+
+
+
 </LinearLayout>

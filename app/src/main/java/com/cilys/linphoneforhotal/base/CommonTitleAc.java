@@ -1,5 +1,7 @@
 package com.cilys.linphoneforhotal.base;
 
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,5 +38,13 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
 
     protected String getCommonTitle(){
         return "";
+    }
+
+    protected void setDrawableBottom(TextView rbt, @DrawableRes int resId) {
+        Drawable draw = getResources().getDrawable(resId);
+        draw.setBounds(0, 0,
+                getResources().getDimensionPixelSize(R.dimen.x10),
+                getResources().getDimensionPixelSize(R.dimen.x10));
+        rbt.setCompoundDrawables(null, null, null, draw);
     }
 }

@@ -22,7 +22,12 @@ public class AmentiesAc extends CommonTitleAc {
         TextView towels = findView(R.id.towels);
         TextView bath = findView(R.id.bath);
         TextView drinks = findView(R.id.drinks);
+
+        setDrawableBottom(pillow, R.mipmap.icon_point_red);
+        setDrawableBottom(in_room, R.mipmap.icon_point_trans);
+        setDrawableBottom(laundries, R.mipmap.icon_point_trans);
+        setDrawableBottom(towels, R.mipmap.icon_point_trans);
+        setDrawableBottom(bath, R.mipmap.icon_point_trans);
+        setDrawableBottom(drinks, R.mipmap.icon_point_trans);
     }
-
-
 }
