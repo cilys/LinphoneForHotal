@@ -358,10 +358,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_sos"
                 style="@style/style_home_bottom_action_ll" >
                 <ImageView
                     style="@style/style_home_bottom_action_ll_img"
-                    android:src="@mipmap/icon_sos_white"/>
+                    android:src="@mipmap/icon_sos_red"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
                     android:text="SOS" />

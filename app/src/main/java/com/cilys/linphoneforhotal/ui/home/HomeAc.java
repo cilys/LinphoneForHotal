@@ -20,6 +20,7 @@ import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
+import com.cilys.linphoneforhotal.ui.call.PhoneAc;
 import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
 import com.cilys.linphoneforhotal.ui.msg.MsgAc;
 import com.cilys.linphoneforhotal.ui.prom.PromDetailsAc;
@@ -120,6 +121,25 @@ public class HomeAc extends BaseLinphoneAc {
 
         LinearLayout ll_service_call = findView(R.id.ll_service_call);
         ll_service_call.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                if (getLinphoneConfig() == null) {
+                    showToast("请配置账户信息");
+                    startActivity(new Intent(HomeAc.this, AccountAc.class));
+
+                    return;
+                }
+
+                Intent i = new Intent(HomeAc.this, PhoneAc.class);
+                i.putExtra(INTENT_CALL_NUMBER, "0");
+                i.putExtra("FROM_TYPE", PhoneAc.FROM_TYPE_CALL_NUMBER);
+
+                i.putExtra("SHOW_TYPE", PhoneAc.SHOW_TYPE_OUT);
+                startActivity(i);
+            }
+        });
+
+        findView(R.id.ll_sos).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
                 startActivity(new Intent(HomeAc.this, AccountAc.class));
