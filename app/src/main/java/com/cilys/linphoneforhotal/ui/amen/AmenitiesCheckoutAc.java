@@ -17,12 +17,11 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
     protected void initUI() {
         super.initUI();
 
-        setBackgroundById(R.id.test, R.mipmap.ic_amenities_checkout_test);
-        findView(R.id.top_close).setOnClickListener(new SingleClickListener() {
-            @Override
-            public void onSingleClick(View v) {
-                finish();
-            }
-        });
+
+    }
+
+    @Override
+    protected String getCommonTitle() {
+        return "Checkout";
     }
 }
