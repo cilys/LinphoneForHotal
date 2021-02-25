@@ -43,6 +43,7 @@
 
 
             <LinearLayout
+                android:id="@+id/curtains"
                 android:layout_marginTop="@dimen/y30"
                 style="@style/style_room_control_layout_action">
 
@@ -83,6 +84,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/master_light"
                 android:layout_marginTop="@dimen/y30"
                 style="@style/style_room_control_layout_action">
 
@@ -131,16 +133,17 @@
 
 
             <LinearLayout
+                android:id="@+id/bathroom_light"
                 android:layout_marginTop="@dimen/y30"
                 style="@style/style_room_control_layout_action">
 
                 <TextView
-                    android:id="@+id/Bathroom_light_open"
+                    android:id="@+id/bathroom_light_open"
                     android:text="@string/on"
                     style="@style/style_room_control_layout_action_open" />
 
                 <TextView
-                    android:id="@+id/Bathroom_light_close"
+                    android:id="@+id/bathroom_light_close"
                     android:text="@string/off"
                     style="@style/style_room_control_layout_action_close" />
             </LinearLayout>
@@ -173,6 +176,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lights"
                 android:layout_marginTop="@dimen/y30"
                 style="@style/style_room_control_layout_action">
 
