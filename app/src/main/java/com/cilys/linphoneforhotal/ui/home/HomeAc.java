@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.BuildConfig;
+import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
@@ -36,7 +37,7 @@ import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
-    private final boolean TO_TEST_VIEW = false;
+    private final boolean TO_TEST_VIEW = true;
 
     @Override
     protected int getLayout() {
@@ -48,7 +49,7 @@ public class HomeAc extends BaseLinphoneAc {
         super.initUI();
 
         if (TO_TEST_VIEW) {
-            startActivity(new Intent(this, com.cilys.linphoneforhotal.TAc.class));
+            startActivity(new Intent(this, AmentiesAc.class));
             finish();
             return;
         }
