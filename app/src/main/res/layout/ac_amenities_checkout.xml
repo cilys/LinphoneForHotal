@@ -142,61 +142,7 @@
                     android:textSize="@dimen/x18"
                     android:textColor="@color/color_gray_text_color" />
 
-                <LinearLayout
-                    style="@style/style_amen_checkout_bill_details_layout">
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_title"
-                        android:text="Sub Total" />
-
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_value"
-                        android:text="$39.95"/>
-                </LinearLayout>
-                <LinearLayout
-                    style="@style/style_amen_checkout_bill_details_layout">
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_title"
-                        android:text="VAT Total(7%)" />
-
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_value"
-                        android:text="$16.45"/>
-                </LinearLayout>
-                <LinearLayout
-                    style="@style/style_amen_checkout_bill_details_layout">
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_title"
-                        android:text="Service fee(10%)" />
-
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_value"
-                        android:text="$23.50"/>
-                </LinearLayout>
-                <LinearLayout
-                    style="@style/style_amen_checkout_bill_details_layout">
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_title"
-                        android:text="Tips" />
-
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_value"
-                        android:text="$0"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/style_amen_checkout_bill_details_layout">
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_title"
-                        android:text="Total"
-                        android:textSize="@dimen/x25"
-                        android:textColor="@color/color_main_text_color"/>
-
-                    <TextView
-                        style="@style/style_amen_checkout_bill_details_layout_value"
-                        android:text="$235.00"
-                        android:textSize="@dimen/x25"
-                        android:textColor="@color/color_main_text_color" />
-                </LinearLayout>
+                <include layout="@layout/common_bill" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -236,20 +182,9 @@
                 </LinearLayout>
             </LinearLayout>
 
-
         </ScrollView>
 
-        <TextView
-            android:id="@+id/confirm"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/bottom_height"
-            android:text="CONFIRM"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/x25"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/bg_redius"
-            android:background="@drawable/shape_round_bg_amen_checkout_confirm"/>
+        <include layout="@layout/common_bottom_confirm" />
     </RelativeLayout>
 
 

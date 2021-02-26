@@ -30,7 +30,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/style_launcher">
-        <activity android:name=".ui.msg.MsgDetailsAc"></activity>
+        <activity android:name=".ui.msg.MsgDetailsAc" />
         <activity android:name=".ui.food.MealAc" />
         <activity android:name=".TAc" />
         <activity android:name=".ui.prom.PromDetailsAc" />
