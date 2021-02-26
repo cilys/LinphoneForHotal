@@ -30,18 +30,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/style_launcher">
-        <activity android:name=".ui.msg.MsgDetailsAc" />
-        <activity android:name=".ui.food.MealAc" />
-        <activity android:name=".TAc" />
-        <activity android:name=".ui.prom.PromDetailsAc" />
-        <activity android:name=".ui.menu.ServiceMenuAc" />
-        <activity android:name=".ui.room.ControlAc" />
-        <activity android:name=".ui.amen.AmenitiesCheckoutAc" />
-        <activity android:name=".ui.amen.AmentiesAc" />
-        <activity android:name=".ui.checkout.CheckoutAc" />
-        <activity android:name=".ui.food.FoodAc" />
-        <activity android:name=".ui.msg.MsgAc" />
-        <activity android:name=".ui.tv.TvRemoteAc" />
+
         <activity
             android:name=".ui.call.PhoneAc"
             android:launchMode="singleInstance"
@@ -60,6 +49,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.msg.MsgDetailsAc" />
+        <activity android:name=".ui.food.MealAc" />
+        <activity android:name=".TAc" />
+        <activity android:name=".ui.prom.PromDetailsAc" />
+        <activity android:name=".ui.menu.ServiceMenuAc" />
+        <activity android:name=".ui.room.ControlAc" />
+        <activity android:name=".ui.amen.AmenitiesCheckoutAc" />
+        <activity android:name=".ui.amen.AmentiesAc" />
+        <activity android:name=".ui.checkout.CheckoutAc" />
+        <activity android:name=".ui.food.FoodAc" />
+        <activity android:name=".ui.msg.MsgAc" />
+        <activity android:name=".ui.tv.TvRemoteAc" />
     </application>
 
 </manifest>
