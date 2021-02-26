@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/bg_redius"
+    android:layout_height="@dimen/bg_redius"
+    android:gravity="center"
+    android:id="@+id/reduce"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:layout_width="@dimen/y25"
+        android:layout_height="@dimen/y25"
+        android:src="@mipmap/icon_reduce_white" />
+</LinearLayout>

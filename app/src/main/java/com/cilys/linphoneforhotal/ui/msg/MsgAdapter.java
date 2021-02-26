@@ -38,7 +38,7 @@ public class MsgAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         if (i == TYPE_TITLE) {
-            return new VH_Title(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_msg_title, viewGroup, false));
+            return new VH_Title(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_title, viewGroup, false));
         } else {
             return new VH(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_msg_value, viewGroup, false));
         }

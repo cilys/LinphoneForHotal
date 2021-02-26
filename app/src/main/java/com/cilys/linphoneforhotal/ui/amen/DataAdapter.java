@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
-import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         if (i == TYPE_TITLE) {
-            return new VH_Title(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_msg_title, viewGroup, false));
+            return new VH_Title(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_title, viewGroup, false));
         } else {
             return new VH(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_amen_data_value, viewGroup, false));
         }
