@@ -11,22 +11,249 @@
     <include
         layout="@layout/common_title_gray_line" />
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_goods"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/amen_margin"
+        android:paddingRight="@dimen/amen_margin">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:scrollbars="none"
+            android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.cilys.linphoneforhotal.view.MyListView
+                    android:id="@+id/lv_goods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommendations for you"
+                    android:textSize="@dimen/x18"
+                    android:textColor="@color/color_gray_text_color"
+                    android:textAllCaps="false"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_height="wrap_content" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            style="@style/style_amen_recommend_layout" >
+                            <ImageView
+                                android:id="@+id/recommend_extra"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Extra Towel"
+                                    android:textColor="@color/color_main_text_color"
+                                    android:textSize="@dimen/x25" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/color_gray_text_color"
+                                    android:textSize="@dimen/x25"
+                                    android:text="$25.00"
+                                    android:textAllCaps="false" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/add"
+                                android:layout_width="@dimen/bg_redius"
+                                android:layout_height="@dimen/bg_redius"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/y25"
+                                    android:layout_height="@dimen/y25"
+                                    android:src="@mipmap/icon_add_white" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/style_amen_recommend_layout" >
+                            <ImageView
+                                android:id="@+id/recommend_kit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Extra Towel"
+                                    android:textColor="@color/color_main_text_color"
+                                    android:textSize="@dimen/x25" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/color_gray_text_color"
+                                    android:textSize="@dimen/x25"
+                                    android:text="$25.00"
+                                    android:textAllCaps="false" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/add_2"
+                                android:layout_width="@dimen/bg_redius"
+                                android:layout_height="@dimen/bg_redius"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/y25"
+                                    android:layout_height="@dimen/y25"
+                                    android:src="@mipmap/icon_add_white" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Bill Details"
+                    android:textSize="@dimen/x18"
+                    android:textColor="@color/color_gray_text_color" />
+
+                <LinearLayout
+                    style="@style/style_amen_checkout_bill_details_layout">
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_title"
+                        android:text="Sub Total" />
+
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_value"
+                        android:text="$39.95"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/style_amen_checkout_bill_details_layout">
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_title"
+                        android:text="VAT Total(7%)" />
+
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_value"
+                        android:text="$16.45"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/style_amen_checkout_bill_details_layout">
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_title"
+                        android:text="Service fee(10%)" />
+
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_value"
+                        android:text="$23.50"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/style_amen_checkout_bill_details_layout">
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_title"
+                        android:text="Tips" />
+
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_value"
+                        android:text="$0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/style_amen_checkout_bill_details_layout">
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_title"
+                        android:text="Total"
+                        android:textSize="@dimen/x25"
+                        android:textColor="@color/color_main_text_color"/>
+
+                    <TextView
+                        style="@style/style_amen_checkout_bill_details_layout_value"
+                        android:text="$235.00"
+                        android:textSize="@dimen/x25"
+                        android:textColor="@color/color_main_text_color" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remark"
+                    android:textColor="@color/color_gray_text_color"
+                    android:textSize="@dimen/x25"
+                    android:textAllCaps="false" />
+
+                <EditText
+                    android:id="@+id/remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type your comment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/x20"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_gray_text_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cash"
+                        android:textColor="@color/color_gray_text_color"
+                        android:textSize="@dimen/x20"
+                        android:textAllCaps="false"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_height"
+            android:text="CONFIRM"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x25"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/bg_redius"
+            android:background="@drawable/shape_round_bg_amen_checkout_confirm"/>
+    </RelativeLayout>
 
-    </LinearLayout>
+
+
+
 
 </LinearLayout>

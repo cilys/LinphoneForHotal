@@ -13,4 +13,6 @@
 
     <dimen name="room_control_icon_margin_text">@dimen/y20</dimen>
 
+    <dimen name="amen_margin">@dimen/y60</dimen>
+
 </resources>
