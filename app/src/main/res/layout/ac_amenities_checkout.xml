@@ -14,8 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/amen_margin"
-        android:paddingRight="@dimen/amen_margin">
+        >
         <ScrollView
             android:layout_width="match_parent"
             android:scrollbars="none"
@@ -29,7 +28,9 @@
                 <com.cilys.linphoneforhotal.view.MyListView
                     android:id="@+id/lv_goods"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/amen_margin"
+                    android:layout_marginRight="@dimen/amen_margin"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -38,12 +39,14 @@
                     android:textSize="@dimen/x18"
                     android:layout_marginTop="@dimen/y25"
                     android:layout_marginBottom="@dimen/y25"
+                    android:layout_marginLeft="@dimen/amen_margin"
                     android:textColor="@color/color_gray_text_color"
                     android:textAllCaps="false"/>
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:scrollbars="none"
+                    android:layout_marginLeft="@dimen/amen_margin"
                     android:layout_height="wrap_content" >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -147,6 +150,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_marginTop="@dimen/y25"
                     android:layout_marginBottom="@dimen/y25"
+
                     android:background="@color/color_split_line_light_gray_half" />
 
                 <TextView
@@ -155,14 +159,24 @@
                     android:textAllCaps="false"
                     android:text="Bill Details"
                     android:textSize="@dimen/x18"
+                    android:layout_marginLeft="@dimen/amen_margin"
                     android:textColor="@color/color_gray_text_color" />
 
-                <include layout="@layout/common_bill" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/amen_margin"
+                    android:paddingRight="@dimen/amen_margin"
+                    android:orientation="vertical">
+                    <include layout="@layout/common_bill" />
+                </LinearLayout>
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Remark"
+                    android:layout_marginLeft="@dimen/amen_margin"
                     android:layout_marginTop="@dimen/y15"
                     android:textColor="@color/color_gray_text_color"
                     android:textSize="@dimen/x25"
@@ -176,7 +190,9 @@
                     android:padding="@dimen/y15"
                     android:textColor="@color/color_main_text_color"
                     android:gravity="center_vertical"
-                    android:background="@drawable/shape_round_bg_room_control_action"
+                    android:layout_marginLeft="@dimen/amen_margin"
+                    android:layout_marginRight="@dimen/amen_margin"
+                    android:background="@drawable/shape_round_bg_5"
                     android:textSize="@dimen/x18"/>
 
                 <View
@@ -191,6 +207,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/amen_margin"
+                    android:layout_marginRight="@dimen/amen_margin"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -206,7 +224,7 @@
                         android:layout_width="@dimen/y300"
                         android:layout_height="@dimen/y60"
                         android:orientation="horizontal"
-                        android:background="@drawable/shape_round_bg_room_control_action"
+                        android:background="@drawable/shape_round_bg_5"
                         android:gravity="center">
                         <TextView
                             android:layout_width="wrap_content"
@@ -234,9 +252,4 @@
 
         <include layout="@layout/common_bottom_confirm" />
     </RelativeLayout>
-
-
-
-
-
 </LinearLayout>

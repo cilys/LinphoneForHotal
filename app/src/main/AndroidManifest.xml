@@ -56,7 +56,8 @@
         <activity android:name=".ui.prom.PromDetailsAc" />
         <activity android:name=".ui.menu.ServiceMenuAc" />
         <activity android:name=".ui.room.ControlAc" />
-        <activity android:name=".ui.amen.AmenitiesCheckoutAc" />
+        <activity android:name=".ui.amen.AmenitiesCheckoutAc"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ui.amen.AmentiesAc" />
         <activity android:name=".ui.checkout.CheckoutAc" />
         <activity android:name=".ui.food.FoodAc" />

@@ -268,8 +268,11 @@
         <item name="android:textSize">@dimen/x20</item>
         <item name="android:textColor">@color/color_gray_text_color</item>
     </style>
-    <style name="style_amen_checkout_bill_details_layout_value" parent="style_amen_checkout_bill_details_layout_title">
+    <style name="style_amen_checkout_bill_details_layout_value" >
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/x20</item>
+        <item name="android:textColor">@color/color_gray_text_color</item>
     </style>
 
     <style name="style_amen_recommend_layout">
