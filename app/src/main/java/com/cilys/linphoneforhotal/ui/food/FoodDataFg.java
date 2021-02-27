@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseFg;
+import com.cilys.linphoneforhotal.impl.ItemClickListener;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
@@ -29,17 +30,23 @@ public class FoodDataFg extends BaseFg {
     private void initUI(View rootView) {
         List<DataBean> datas = new ArrayList<>();
         datas.add(new DataBean("Appetzer"));
-        datas.add(new DataBean(null, "Bruschetta Pomodoro e Aglio", "$4.99", 0).setPicId(R.mipmap.ic_food_datas_test));
-        datas.add(new DataBean(null, "Sapori di Sicilia", "$4.99", 2).setPicId(R.mipmap.ic_food_datas_test));
+        datas.add(new DataBean(null, "Bruschetta Pomodoro e Aglio", "$4.99", 0).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(null, "Sapori di Sicilia", "$4.99", 2).setPicId(R.mipmap.ic_food_details_test));
 
         datas.add(new DataBean("Main dish"));
-        datas.add(new DataBean(null, "Pizza Margherita", "$12.99", 1).setPicId(R.mipmap.ic_food_datas_test));
-        datas.add(new DataBean(null, "Pizza Peperoncino", "$17.99", 0).setPicId(R.mipmap.ic_food_datas_test));
+        datas.add(new DataBean(null, "Pizza Margherita", "$12.99", 1).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(null, "Pizza Peperoncino", "$17.99", 0).setPicId(R.mipmap.ic_food_details_test));
 
         RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
         DatasAdapter adapter = new DatasAdapter(datas);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(adapter);
+        adapter.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                startActivity(new Intent(getActivity(), MealAc.class));
+            }
+        });
 
         rootView.findViewById(R.id.next).setOnClickListener(new SingleClickListener() {
             @Override

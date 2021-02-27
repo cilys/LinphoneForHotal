@@ -94,7 +94,7 @@
                                 <ImageView
                                     android:layout_width="@dimen/y25"
                                     android:layout_height="@dimen/y25"
-                                    android:src="@mipmap/icon_add_white" />
+                                    android:src="@mipmap/icon_add_black_bg" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -138,7 +138,7 @@
                                 <ImageView
                                     android:layout_width="@dimen/y25"
                                     android:layout_height="@dimen/y25"
-                                    android:src="@mipmap/icon_add_white" />
+                                    android:src="@mipmap/icon_add_black_bg" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

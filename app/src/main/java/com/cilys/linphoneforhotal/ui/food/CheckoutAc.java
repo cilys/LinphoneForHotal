@@ -21,12 +21,12 @@ public class CheckoutAc extends CommonTitleAc {
         List<DataBean> datas = new ArrayList<>();
         DataBean b2 = new DataBean(null, "Arancini(3 picces)",
                 "$4.49", 2);
-        b2.setPicId(R.mipmap.ic_food_datas_test);
+        b2.setPicId(R.mipmap.ic_food_details_test);
         datas.add(b2);
 
         DataBean b3 = new DataBean(null, "Pizza Margherta",
                 "$12.99", 1);
-        b3.setPicId(R.mipmap.ic_food_datas_test);
+        b3.setPicId(R.mipmap.ic_food_details_test);
         datas.add(b3);
 
         CheckoutDataAdapter adapter = new CheckoutDataAdapter(datas);
