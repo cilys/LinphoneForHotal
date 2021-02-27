@@ -38,7 +38,7 @@ import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
-    private final boolean TO_TEST_VIEW = false;
+    private final boolean TO_TEST_VIEW = true;
 
     @Override
     protected int getLayout() {
