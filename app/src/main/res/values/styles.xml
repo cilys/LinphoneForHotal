@@ -208,9 +208,7 @@
         <item name="android:textColor">@drawable/selector_service_menu_details_top_rbt_text_color</item>
     </style>
 
-    <style name="style_food_order_nav">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="style_food_order_nav" parent="style_scroll_nav">
     </style>
 
     <style name="style_room_control_layout">

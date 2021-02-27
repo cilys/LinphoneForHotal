@@ -14,13 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
-import com.cilys.linphoneforhotal.BuildConfig;
-import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.ui.call.PhoneAc;
+import com.cilys.linphoneforhotal.ui.food.FoodAc;
 import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
 import com.cilys.linphoneforhotal.ui.msg.MsgAc;
 import com.cilys.linphoneforhotal.ui.prom.PromDetailsAc;
@@ -50,7 +49,7 @@ public class HomeAc extends BaseLinphoneAc {
         super.initUI();
 
         if (TO_TEST_VIEW) {
-            startActivity(new Intent(this, AmentiesAc.class));
+            startActivity(new Intent(this, FoodAc.class));
             finish();
             return;
         }

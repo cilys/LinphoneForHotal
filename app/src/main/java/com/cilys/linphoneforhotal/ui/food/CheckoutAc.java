@@ -1,17 +1,13 @@
-package com.cilys.linphoneforhotal.ui.amen;
-
-import android.view.View;
+package com.cilys.linphoneforhotal.ui.food;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.view.MyListView;
-import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AmenitiesCheckoutAc extends CommonTitleAc {
-
+public class CheckoutAc extends CommonTitleAc {
     @Override
     protected int getLayout() {
         return R.layout.ac_amenities_checkout;
@@ -20,7 +16,6 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
     @Override
     protected void initUI() {
         super.initUI();
-
 
         MyListView lv = findView(R.id.lv_goods);
         List<DataBean> datas = new ArrayList<>();
@@ -42,4 +37,6 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
     protected String getCommonTitle() {
         return "Checkout";
     }
+
+
 }

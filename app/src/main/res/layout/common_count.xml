@@ -4,6 +4,6 @@
     android:id="@+id/count"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textColor="@color/color_tv_remote_center_rect"
+    android:textColor="@color/color_main_text_color"
     android:textSize="@dimen/x18" >
 </TextView>
