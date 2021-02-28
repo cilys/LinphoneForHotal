@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
         vh.setName(datas.get(i).getName());
         vh.setPrice(datas.get(i).getPrice());
         vh.setCount(datas.get(i).getCount());
+        vh.setPic(datas.get(i).getPicId());
 
         if (datas.get(i).getCount() < 1) {
             vh.reduce.setVisibility(View.INVISIBLE);
@@ -72,9 +74,12 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
     protected static class VH extends RecyclerView.ViewHolder {
         private TextView name, price, count;
         private View add, reduce;
+        private ImageView img;
 
         public VH(@NonNull View itemView) {
             super(itemView);
+            img = (ImageView) itemView.findViewById(R.id.img);
+
             name = (TextView) itemView.findViewById(R.id.name);
             price = (TextView) itemView.findViewById(R.id.price);
             count = (TextView) itemView.findViewById(R.id.count);
@@ -82,6 +87,12 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
 
             add =  itemView.findViewById(R.id.add);
             reduce =  itemView.findViewById(R.id.reduce);
+        }
+
+        private void setPic(int picId) {
+            if (img != null) {
+                ImageUtils.load(img.getContext(), picId, img);
+            }
         }
 
         private void setName(String name) {

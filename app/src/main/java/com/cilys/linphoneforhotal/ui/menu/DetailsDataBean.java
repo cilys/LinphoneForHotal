@@ -7,6 +7,16 @@ public class DetailsDataBean implements Serializable {
     private String price;
     private int count;
 
+    private int picId;
+
+    public int getPicId() {
+        return picId;
+    }
+
+    public void setPicId(int picId) {
+        this.picId = picId;
+    }
+
     public String getName() {
         return name;
     }

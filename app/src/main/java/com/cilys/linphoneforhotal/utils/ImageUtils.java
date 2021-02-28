@@ -43,4 +43,8 @@ public class ImageUtils {
     public static void load(Activity ac, @DrawableRes final int resourceId, ImageView img) {
         Glide.with(ac).load(resourceId).into(img);
     }
+
+    public static void load(Context ac, @DrawableRes final int resourceId, ImageView img) {
+        Glide.with(ac).load(resourceId).into(img);
+    }
 }
