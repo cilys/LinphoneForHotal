@@ -191,9 +191,11 @@
                     style="@style/style_home_head_action_ll">
 
                     <ImageView
+                        android:id="@+id/img_donot_disturb"
                         style="@style/style_home_head_action_ll_img"
                         android:src="@mipmap/icon_donot_disturb_white"/>
                     <TextView
+                        android:id="@+id/tv_donnot_disturb"
                         style="@style/style_home_head_action_ll_tv"
                         android:text="DO NOT DISTURB"/>
                 </LinearLayout>
@@ -209,9 +211,11 @@
                     style="@style/style_home_head_action_ll">
 
                     <ImageView
+                        android:id="@+id/img_make_up_room"
                         style="@style/style_home_head_action_ll_img"
                         android:src="@mipmap/icon_make_up_room_white"/>
                     <TextView
+                        android:id="@+id/tv_make_up_room"
                         style="@style/style_home_head_action_ll_tv"
                         android:text="MAKE UP ROOM"/>
                 </LinearLayout>

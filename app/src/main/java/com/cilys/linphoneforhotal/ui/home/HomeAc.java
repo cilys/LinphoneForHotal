@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -38,6 +39,8 @@ import java.util.List;
 
 public class HomeAc extends BaseLinphoneAc {
     private final boolean TO_TEST_VIEW = false;
+
+    private boolean selected_donot_disturb = false;
 
     @Override
     protected int getLayout() {
@@ -99,8 +102,45 @@ public class HomeAc extends BaseLinphoneAc {
         TextView tv_temp = findView(R.id.tv_temp);
 
         LinearLayout ll_donot_disturb = findView(R.id.ll_donot_disturb);
+        final ImageView img_donot_disturb = findView(R.id.img_donot_disturb);
+        final TextView tv_donot_disturb = findView(R.id.tv_donnot_disturb);
+        ll_donot_disturb.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                selected_donot_disturb = !selected_donot_disturb;
+                if (selected_donot_disturb) {
+                    img_donot_disturb.setImageResource(R.mipmap.icon_donot_disturb_gray);
+                    tv_donot_disturb.setTextColor(getResources().getColor(R.color.color_aeaeb2));
+                } else {
+                    img_donot_disturb.setImageResource(R.mipmap.icon_donot_disturb_white);
+                    tv_donot_disturb.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
 
         LinearLayout ll_make_up_room = findView(R.id.ll_make_up_room);
+        final ImageView img_make_up_room = findView(R.id.img_make_up_room);
+        final TextView tv_make_up_room = findView(R.id.tv_make_up_room);
+        ll_make_up_room.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    img_make_up_room.setImageResource(R.mipmap.icon_make_up_room_gray);
+                    tv_make_up_room.setTextColor(getResources().getColor(R.color.color_aeaeb2));
+                } else if (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL) {
+                    img_make_up_room.setImageResource(R.mipmap.icon_make_up_room_white);
+                    tv_make_up_room.setTextColor(getResources().getColor(R.color.white));
+                }
+                return false;
+            }
+        });
+        ll_make_up_room.setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                showToast("make up room");
+            }
+        });
+
 
         LinearLayout ll_service_menu = findView(R.id.ll_service_menu);
         ll_service_menu.setOnClickListener(new SingleClickListener() {
