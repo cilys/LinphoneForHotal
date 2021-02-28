@@ -7,6 +7,7 @@
     android:paddingBottom="@dimen/y25"
     android:paddingLeft="@dimen/bg_redius"
     android:paddingRight="@dimen/bg_redius"
+    android:layout_marginBottom="@dimen/y15"
     android:background="@drawable/shape_round_bg_room_control_action"
     android:layout_height="@dimen/y145" >
 
