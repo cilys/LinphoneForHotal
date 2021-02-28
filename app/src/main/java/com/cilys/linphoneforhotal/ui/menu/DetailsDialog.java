@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.dialog.BaseDialog;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,12 @@ public class DetailsDialog extends BaseDialog {
         ImageView right_arrow = (ImageView)rootView.findViewById(R.id.right_arrow);
         right_arrow.setImageResource(R.mipmap.icon_double_arrow_top_white);
         right_arrow.setRotation(180);
+        rootView.findViewById(R.id.bottom_top_arrow).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                dismiss();
+            }
+        });
 
         TextView bottom_title = (TextView)rootView.findViewById(R.id.bottom_title);
         bottom_title.setText(ac.getResources().getString(R.string.order_status));

@@ -30,7 +30,7 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
             top_home.setOnClickListener(new SingleClickListener() {
                 @Override
                 public void onSingleClick(View v) {
-
+                    finish();
                 }
             });
         }

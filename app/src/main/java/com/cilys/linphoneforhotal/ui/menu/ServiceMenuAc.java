@@ -4,10 +4,12 @@ package com.cilys.linphoneforhotal.ui.menu;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,15 @@ public class ServiceMenuAc extends CommonTitleAc {
     protected void initUI() {
         super.initUI();
 
+        TextView bottom_title = findView(R.id.bottom_title);
+        setTextToView(bottom_title, "Order status");
+
+        findView(R.id.bottom_top_arrow).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                showDetailsDialog();
+            }
+        });
 
         List<MenuBean> datas = new ArrayList<>();
         datas.add(new MenuBean(R.mipmap.icon_amen, "Amenities"));

@@ -78,6 +78,7 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
             name = (TextView) itemView.findViewById(R.id.name);
             price = (TextView) itemView.findViewById(R.id.price);
             count = (TextView) itemView.findViewById(R.id.count);
+            count.setTextColor(itemView.getContext().getResources().getColor(R.color.white));
 
             add =  itemView.findViewById(R.id.add);
             reduce =  itemView.findViewById(R.id.reduce);
@@ -105,6 +106,8 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
             }
             if (this.count != null) {
                 this.count.setText(String.valueOf(count));
+
+                this.count.setVisibility(count <= 0 ? View.GONE : View.VISIBLE);
             }
         }
     }

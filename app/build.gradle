@@ -28,6 +28,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("int", "BUILD_TIME", releaseTime());
     }
     buildTypes {
         release {
@@ -52,6 +54,10 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+}
+
+def releaseTime(){
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08:00"))
 }
 
 dependencies {
