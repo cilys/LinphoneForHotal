@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/y600">
+    android:layout_height="@dimen/y600"
+    android:layout_marginBottom="@dimen/y45">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/img_pic"
@@ -44,65 +46,77 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1" >
-
-    </LinearLayout>
-    <!--<TextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/x22"
         android:layout_marginTop="@dimen/y20"
         android:layout_marginLeft="@dimen/y20"
+        android:textColor="@color/color_main_text_color"
         android:text="second offer" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/startDay"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/y20"
+        android:gravity="center_horizontal">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="@dimen/x30"
             android:layout_height="wrap_content"
-            android:background="@color/color_split_line_light_gray" />
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/startDay"
+                style="@style/style_prom_details_day_bg"
+                android:text="19 January 2021"/>
+
+            <View
+                android:layout_width="@dimen/x15"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/y30"
+                android:layout_marginRight="@dimen/y30"
+                android:background="@color/color_gray_text_color" />
+
+            <TextView
+                android:id="@+id/endDay"
+                style="@style/style_prom_details_day_bg"
+                android:text="22 January 2021"/>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/endDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:id="@+id/oldPrice"
+            style="@style/style_prom_details_day_bg"
+            android:background="@drawable/shape_round_prom_details_old_price_bg"
+            android:layout_marginTop="@dimen/y30"
+            android:text="$ 30.00" />
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/style_prom_details_day_bg"
+            android:background="@drawable/shape_round_prom_details_price_bg"
+            android:textColor="#aaeb7d"
+            android:layout_marginTop="@dimen/y15"
+            android:text="$ 28.00" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/oldPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$ 30.00" />
-
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$ 28.00" />
 
     <TextView
         android:id="@+id/offer_brief"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="offer brief description"
+        android:textSize="@dimen/x22"
+        android:layout_marginTop="@dimen/y15"
+        android:textColor="@color/color_main_text_color"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="offer description with formatting"/>-->
+        android:textSize="@dimen/x22"
+        android:layout_marginTop="@dimen/y15"
+        android:textColor="@color/color_main_text_color"
+        android:text="offer description with formatting"/>
 
 </LinearLayout>

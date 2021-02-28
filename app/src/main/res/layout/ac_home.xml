@@ -195,7 +195,7 @@
                         style="@style/style_home_head_action_ll_img"
                         android:src="@mipmap/icon_donot_disturb_white"/>
                     <TextView
-                        android:id="@+id/tv_donnot_disturb"
+                        android:id="@+id/tv_donot_disturb"
                         style="@style/style_home_head_action_ll_tv"
                         android:text="DO NOT DISTURB"/>
                 </LinearLayout>

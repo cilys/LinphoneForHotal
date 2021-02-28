@@ -103,7 +103,7 @@ public class HomeAc extends BaseLinphoneAc {
 
         LinearLayout ll_donot_disturb = findView(R.id.ll_donot_disturb);
         final ImageView img_donot_disturb = findView(R.id.img_donot_disturb);
-        final TextView tv_donot_disturb = findView(R.id.tv_donnot_disturb);
+        final TextView tv_donot_disturb = findView(R.id.tv_donot_disturb);
         ll_donot_disturb.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {

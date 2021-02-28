@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.event.EventBus;
+import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 public abstract class CommonTitleAc extends BaseLinphoneAc {
@@ -30,11 +32,13 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
             top_home.setOnClickListener(new SingleClickListener() {
                 @Override
                 public void onSingleClick(View v) {
-                    finish();
+                    EventBus.getInstance().postEvent(EventImpl.TO_HOME);
                 }
             });
         }
     }
+
+
 
     protected String getCommonTitle(){
         return "";

@@ -1,6 +1,7 @@
 package com.cilys.linphoneforhotal.ui.menu;
 
 
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
+import com.cilys.linphoneforhotal.ui.food.FoodAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
@@ -35,7 +38,7 @@ public class ServiceMenuAc extends CommonTitleAc {
             }
         });
 
-        List<MenuBean> datas = new ArrayList<>();
+        final List<MenuBean> datas = new ArrayList<>();
         datas.add(new MenuBean(R.mipmap.icon_amen, "Amenities"));
         datas.add(new MenuBean(R.mipmap.icon_clean_room, "Clean Room"));
         datas.add(new MenuBean(R.mipmap.icon_concierge, "Concierge"));
@@ -56,7 +59,11 @@ public class ServiceMenuAc extends CommonTitleAc {
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                showDetailsDialog();
+                if ("Amenities".equals(datas.get(position).getName())) {
+                    startActivity(new Intent(ServiceMenuAc.this, AmentiesAc.class));
+                } else if ("Food".equals(datas.get(position).getName())) {
+                    startActivity(new Intent(ServiceMenuAc.this, FoodAc.class));
+                }
             }
         });
     }

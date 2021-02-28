@@ -282,4 +282,16 @@
         <item name="android:padding">@dimen/y15</item>
         <item name="android:layout_marginRight">@dimen/y25</item>
     </style>
+
+    <style name="style_prom_details_day_bg">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/y200</item>
+        <item name="android:paddingLeft">@dimen/y30</item>
+        <item name="android:paddingRight">@dimen/y30</item>
+        <item name="android:layout_height">@dimen/y60</item>
+        <item name="android:background">@drawable/shape_round_prom_details_day_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_main_text_color</item>
+        <item name="android:textSize">@dimen/x20</item>
+    </style>
 </resources>

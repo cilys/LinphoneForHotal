@@ -18,6 +18,7 @@ import com.cilys.linphoneforhotal.ui.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.event.EventImpl;
+import com.cilys.linphoneforhotal.ui.home.HomeAc;
 import com.cilys.linphoneforhotal.utils.L;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 
@@ -43,6 +44,12 @@ public class BaseAc extends AppCompatActivity {
                 public void onTrigger(Event event) {
                     if (event.what == EventImpl.CLOSE_APP) {
                         finish();
+                    } else if (event.what == EventImpl.TO_HOME){
+                        if (BaseAc.this instanceof HomeAc) {
+
+                        } else {
+                            finish();
+                        }
                     } else {
                         onEvent(event);
                     }

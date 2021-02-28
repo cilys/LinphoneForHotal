@@ -10,5 +10,7 @@
     android:textColor="@color/white"
     android:textSize="@dimen/x25"
     android:layout_alignParentBottom="true"
-    android:layout_marginBottom="@dimen/bg_redius"
+    android:layout_marginBottom="@dimen/y15"
+    android:layout_marginLeft="@dimen/bg_redius"
+    android:layout_marginRight="@dimen/bg_redius"
     android:background="@drawable/shape_round_bg_amen_checkout_confirm" />
