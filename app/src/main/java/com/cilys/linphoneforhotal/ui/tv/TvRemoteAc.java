@@ -7,6 +7,7 @@ import android.view.View;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,13 @@ public class TvRemoteAc extends CommonTitleAc {
             public void onItemClick(View view, int position) {
                 adapter.changeSelected(position);
 
+                showDialog();
+            }
+        });
+
+        findView(R.id.bottom_top_arrow).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
                 showDialog();
             }
         });
