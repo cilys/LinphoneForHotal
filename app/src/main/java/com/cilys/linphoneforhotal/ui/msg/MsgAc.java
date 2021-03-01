@@ -85,19 +85,19 @@ public class MsgAc extends CommonTitleAc {
         List<MsgFg> fgs = new ArrayList<>();
         MsgFg all = new MsgFg();
         Bundle b0 = new Bundle();
-        b0.putString("type", "all");
+        b0.putString("type", getString(R.string.all));
         all.setArguments(b0);
         fgs.add(all);
 
         MsgFg unread = new MsgFg();
         Bundle b1 = new Bundle();
-        b1.putString("type", "unread");
+        b1.putString("type", getString(R.string.unread));
         unread.setArguments(b1);
         fgs.add(unread);
 
         MsgFg read = new MsgFg();
         Bundle b2 = new Bundle();
-        b2.putString("type", "read");
+        b2.putString("type", getString(R.string.read));
         read.setArguments(b2);
         fgs.add(read);
 

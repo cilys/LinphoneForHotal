@@ -69,7 +69,7 @@ public class AccountAc extends BaseAc {
                         || (pwd == null || pwd.length() < 1)
                         || (domain == null || domain.length() < 1)
                 ){
-                    showToast("请输入必填项");
+                    showToast(getString(R.string.please_input_need));
                     return;
                 }
                 TransportType type = TransportType.Udp;
@@ -120,7 +120,7 @@ public class AccountAc extends BaseAc {
                     if (clickConfigButton) {
                         clickConfigButton = false;
 
-                        showToast("配置成功");
+                        showToast(getString(R.string.config_success));
 
                         ProxyConfig cfg = ((LinPhoneBean) e.obj).getProxyConfig();
                         cfg.edit();

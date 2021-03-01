@@ -30,10 +30,10 @@ public class MsgFg extends BaseFg {
 
     private void initUI(View v) {
         List<MsgBean> datas = new ArrayList<>();
-        MsgBean b0 = new MsgBean("New");
+        MsgBean b0 = new MsgBean(getString(R.string.New));
         datas.add(b0);
 
-        MsgBean b1 = new MsgBean("Service", "Your order has bean accepted. The wake up time was set to 7:30 AM.","11 min ago.", true);
+        MsgBean b1 = new MsgBean(getString(R.string.Service), "Your order has bean accepted. The wake up time was set to 7:30 AM.","11 min ago.", true);
         datas.add(b1);
 
         try{

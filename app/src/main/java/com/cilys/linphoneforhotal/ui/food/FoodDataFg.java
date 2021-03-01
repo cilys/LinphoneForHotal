@@ -29,13 +29,13 @@ public class FoodDataFg extends BaseFg {
 
     private void initUI(View rootView) {
         List<DataBean> datas = new ArrayList<>();
-        datas.add(new DataBean("Appetzer"));
-        datas.add(new DataBean(null, "Bruschetta Pomodoro e Aglio", "$4.99", 0).setPicId(R.mipmap.ic_food_details_test));
-        datas.add(new DataBean(null, "Sapori di Sicilia", "$4.99", 2).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(getString(R.string.Appetzer)));
+        datas.add(new DataBean(null, getString(R.string.Bruschetta_Pomodoro_e_Aglio), "$4.99", 0).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(null, getString(R.string.Sapori_di_Sicilia), "$4.99", 2).setPicId(R.mipmap.ic_food_details_test));
 
-        datas.add(new DataBean("Main dish"));
-        datas.add(new DataBean(null, "Pizza Margherita", "$12.99", 1).setPicId(R.mipmap.ic_food_details_test));
-        datas.add(new DataBean(null, "Pizza Peperoncino", "$17.99", 0).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(getString(R.string.Main_dish)));
+        datas.add(new DataBean(null, getString(R.string.Pizza_Margherita), "$12.99", 1).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(null, getString(R.string.Pizza_Peperoncino), "$17.99", 0).setPicId(R.mipmap.ic_food_details_test));
 
         RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
         DatasAdapter adapter = new DatasAdapter(datas);

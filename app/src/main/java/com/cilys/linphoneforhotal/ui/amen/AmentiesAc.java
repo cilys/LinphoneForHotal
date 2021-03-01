@@ -162,6 +162,6 @@ public class AmentiesAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "Amenties";
+        return getString(R.string.Amenties);
     }
 }

@@ -282,7 +282,7 @@ public class PhoneAc extends BaseLinphoneAc {
 
         if (cfg == null) {
             //提示未登陆
-            showToast("未配置账户");
+            showToast(getString(R.string.without_config));
         } else {
             cfg.setRoute(Sp.getStr(this, "SP_SIP_PROXY_SERVER", "core1-hk.netustay.com"));
             Address addressToCall = core.interpretUrl(phone);

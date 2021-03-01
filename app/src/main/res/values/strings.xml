@@ -156,13 +156,45 @@
 
     <string name="Scan_to_check_on_mobile">Scan to check on mobile</string>
 
+    <string name="without_config">未配置账户</string>
 
+    <string name="please_input_need">请输入必填项</string>
 
+    <string name="config_success">配置成功</string>
+    <string name="please_config_info">请配置账户信息</string>
 
+    <string name="no_permission_camera">相机权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_audio">录音权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_phone">电话被拒绝，暂无法使用app</string>
 
+    <string name="Promotions">Promotions</string>
 
+    <string name="Room_Control">Room Control</string>
 
+    <string name="Checkout">Checkout</string>
 
+    <string name="Amenties">Amenties</string>
+
+    <string name="Appetzer">Appetzer</string>
+    <string name="Bruschetta_Pomodoro_e_Aglio">Bruschetta Pomodoro e Aglio</string>
+    <string name="Sapori_di_Sicilia">Sapori di Sicilia</string>
+    <string name="Pizza_Margherita">Pizza Margherita</string>
+    <string name="Main_dish">Main dish</string>
+    <string name="Pizza_Peperoncino">Pizza Peperoncino</string>
+
+    <string name="Pizza_Marghcrita">Pizza Marghcrita</string>
+    <string name="Arancini">Arancini (3 picces)</string>
+
+    <string name="Amenities">Amenities</string>
+    <string name="Concierge">Concierge</string>
+    <string name="Maintenance">Maintenance</string>
+    <string name="Food">Food</string>
+    <string name="New">New</string>
+    <string name="Wakeup_Call">Wakeup Call</string>
+    <string name="Late_Checkout">Late Checkout</string>
+    <string name="DND">DND</string>
+    <string name="Clean_Room">Clean Room</string>
+    <string name="Service_Menu">Service Menu</string>
 
 
 

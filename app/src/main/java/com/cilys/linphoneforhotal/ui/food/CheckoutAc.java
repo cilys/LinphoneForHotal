@@ -55,7 +55,7 @@ public class CheckoutAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "Checkout";
+        return getString(R.string.Checkout);
     }
 
 

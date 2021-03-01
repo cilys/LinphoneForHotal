@@ -59,6 +59,6 @@ public class PromDetailsAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "Promotions";
+        return getString(R.string.Promotions);
     }
 }

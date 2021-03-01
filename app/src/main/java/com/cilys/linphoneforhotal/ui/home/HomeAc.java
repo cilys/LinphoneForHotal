@@ -163,7 +163,7 @@ public class HomeAc extends BaseLinphoneAc {
             @Override
             public void onSingleClick(View v) {
                 if (getLinphoneConfig() == null) {
-                    showToast("请配置账户信息");
+                    showToast(getString(R.string.please_config_info));
                     startActivity(new Intent(HomeAc.this, AccountAc.class));
 
                     return;
@@ -240,19 +240,19 @@ public class HomeAc extends BaseLinphoneAc {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 requestRecordPermission();
             } else {
-                ToastUtils.show(this, "相机权限被拒绝，暂无法使用app");
+                ToastUtils.show(this, getString(R.string.no_permission_camera));
             }
         } else if (requestCode == 12) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 requestSipPermission();
             } else {
-                ToastUtils.show(this, "录音权限被拒绝，暂无法使用app");
+                ToastUtils.show(this, getString(R.string.no_permission_audio));
             }
         } else if (requestCode == 13) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 start();
             } else {
-                ToastUtils.show(this, "电话被拒绝，暂无法使用app");
+                ToastUtils.show(this, getString(R.string.no_permission_phone));
             }
         }
     }

@@ -3,6 +3,7 @@ package com.cilys.linphoneforhotal.base.dialog;
 import android.app.Activity;
 import android.app.Dialog;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.StringRes;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -72,5 +73,12 @@ public abstract class BaseDialog {
         if (dialog != null) {
             dialog.dismiss();
         }
+    }
+
+    protected String getString(@StringRes int resId) {
+        if (ac == null) {
+            return null;
+        }
+        return ac.getString(resId);
     }
 }

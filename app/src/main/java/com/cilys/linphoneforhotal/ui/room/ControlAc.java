@@ -148,6 +148,6 @@ public class ControlAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "Room Control";
+        return getString(R.string.Room_Control);
     }
 }

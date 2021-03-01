@@ -70,19 +70,19 @@ public class DetailsDialog extends BaseDialog {
         });
 
         TextView bottom_title = (TextView)rootView.findViewById(R.id.bottom_title);
-        bottom_title.setText(ac.getResources().getString(R.string.order_status));
+        bottom_title.setText(getString(R.string.order_status));
 
 
         List<DetailsDataBean> datas = new ArrayList<>();
         DetailsDataBean b0 = new DetailsDataBean();
-        b0.setName("Arancini (3 picces)");
+        b0.setName(getString(R.string.Arancini));
         b0.setPrice("$4.99");
         b0.setCount(2);
         b0.setPicId(R.mipmap.ic_service_menu_dialog_details_test_1);
         datas.add(b0);
 
         DetailsDataBean b1 = new DetailsDataBean();
-        b1.setName("Pizza Marghcrita");
+        b1.setName(getString(R.string.Pizza_Marghcrita));
         b1.setPrice("$22.99");
         b1.setCount(1);
         b1.setPicId(R.mipmap.ic_service_menu_dialog_details_test_2);

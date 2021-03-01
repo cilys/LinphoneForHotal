@@ -122,12 +122,12 @@ public class CallNumberAc extends BaseLinphoneAc {
                 String phone = tv_show_number.getText().toString().trim();
 
                 if (phone == null || phone.length() < 1) {
-                    showToast("请输入号码");
+                    showToast(getString(R.string.please_input_account));
                     return;
                 }
 
                 if (getLinphoneConfig() == null) {
-                    showToast("请配置账户信息");
+                    showToast(getString(R.string.please_config_info));
                     startActivity(new Intent(CallNumberAc.this, AccountAc.class));
 
                     return;

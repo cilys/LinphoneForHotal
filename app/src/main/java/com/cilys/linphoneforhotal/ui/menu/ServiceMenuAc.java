@@ -29,7 +29,7 @@ public class ServiceMenuAc extends CommonTitleAc {
         super.initUI();
 
         TextView bottom_title = findView(R.id.bottom_title);
-        setTextToView(bottom_title, "Order status");
+        setTextToView(bottom_title, getString(R.string.order_status));
 
         findView(R.id.bottom_top_arrow).setOnClickListener(new SingleClickListener() {
             @Override
@@ -39,15 +39,15 @@ public class ServiceMenuAc extends CommonTitleAc {
         });
 
         final List<MenuBean> datas = new ArrayList<>();
-        datas.add(new MenuBean(R.mipmap.icon_amen, "Amenities"));
-        datas.add(new MenuBean(R.mipmap.icon_clean_room, "Clean Room"));
-        datas.add(new MenuBean(R.mipmap.icon_concierge, "Concierge"));
-        datas.add(new MenuBean(R.mipmap.icon_maintenance, "Maintenance"));
-        datas.add(new MenuBean(R.mipmap.icon_food, "Food"));
-        datas.add(new MenuBean(R.mipmap.icon_wakeup, "Wakeup Call"));
-        datas.add(new MenuBean(R.mipmap.icon_amenities, "Amenities"));
-        datas.add(new MenuBean(R.mipmap.icon_late_checkout, "Late Checkout"));
-        datas.add(new MenuBean(R.mipmap.icon_dnd, "DND"));
+        datas.add(new MenuBean(R.mipmap.icon_amen, getString(R.string.Amenities)));
+        datas.add(new MenuBean(R.mipmap.icon_clean_room, getString(R.string.Clean_Room)));
+        datas.add(new MenuBean(R.mipmap.icon_concierge, getString(R.string.Concierge)));
+        datas.add(new MenuBean(R.mipmap.icon_maintenance, getString(R.string.Maintenance)));
+        datas.add(new MenuBean(R.mipmap.icon_food, getString(R.string.Food)));
+        datas.add(new MenuBean(R.mipmap.icon_wakeup, getString(R.string.Wakeup_Call)));
+        datas.add(new MenuBean(R.mipmap.icon_amenities, getString(R.string.Amenities)));
+        datas.add(new MenuBean(R.mipmap.icon_late_checkout, getString(R.string.Late_Checkout)));
+        datas.add(new MenuBean(R.mipmap.icon_dnd, getString(R.string.DND)));
 
 
 
@@ -59,9 +59,9 @@ public class ServiceMenuAc extends CommonTitleAc {
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                if ("Amenities".equals(datas.get(position).getName())) {
+                if (getString(R.string.Amenities).equals(datas.get(position).getName())) {
                     startActivity(new Intent(ServiceMenuAc.this, AmentiesAc.class));
-                } else if ("Food".equals(datas.get(position).getName())) {
+                } else if (getString(R.string.Food).equals(datas.get(position).getName())) {
                     startActivity(new Intent(ServiceMenuAc.this, FoodAc.class));
                 }
             }
@@ -72,7 +72,7 @@ public class ServiceMenuAc extends CommonTitleAc {
 
     @Override
     protected String getCommonTitle() {
-        return "Service Menu";
+        return getString(R.string.Service_Menu);
     }
 
     private void showDetailsDialog(){
