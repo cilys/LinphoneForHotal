@@ -125,8 +125,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x20"
                     android:text="Your card will be charged the amount of the meal."
-                    android:layout_marginLeft="@dimen/y300"
-                    android:layout_marginRight="@dimen/y300"
+                    android:layout_marginLeft="@dimen/land_margin_left_right"
+                    android:layout_marginRight="@dimen/land_margin_left_right"
                     android:layout_marginTop="@dimen/bg_redius"
                     android:layout_marginBottom="@dimen/bg_redius"
                     android:textColor="@color/color_main_text_color" />
@@ -135,8 +135,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x25"
-                    android:layout_marginLeft="@dimen/y300"
-                    android:layout_marginRight="@dimen/y300"
+                    android:layout_marginLeft="@dimen/land_margin_left_right"
+                    android:layout_marginRight="@dimen/land_margin_left_right"
                     android:layout_marginBottom="@dimen/bg_redius"
                     android:text="@string/order_details"
                     android:textColor="@color/color_gray_text_color" />
@@ -144,8 +144,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y250"
-                    android:layout_marginLeft="@dimen/y300"
-                    android:layout_marginRight="@dimen/y300"
+                    android:layout_marginLeft="@dimen/land_margin_left_right"
+                    android:layout_marginRight="@dimen/land_margin_left_right"
                     android:background="@drawable/shape_round_bg_room_control_action"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
@@ -194,8 +194,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x18"
                     android:textColor="@color/color_gray_text_color"
-                    android:layout_marginLeft="@dimen/y300"
-                    android:layout_marginRight="@dimen/y300"
+                    android:layout_marginLeft="@dimen/land_margin_left_right"
+                    android:layout_marginRight="@dimen/land_margin_left_right"
                     android:text="Your card will be charged the amount of the meal."
                     android:layout_marginTop="@dimen/y2" />
             </LinearLayout>

@@ -21,4 +21,6 @@
     <dimen name="bottom_height_land">@dimen/x100</dimen>
     <dimen name="bg_redius_land">@dimen/x40</dimen>
 
+    <dimen name="land_margin_left_right">@dimen/y300</dimen>
+
 </resources>
