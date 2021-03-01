@@ -75,7 +75,11 @@
     <string name="Payment_Option">Payment Option</string>
     <string name="Cash">Cash</string>
 
+    <!-- call number -->
     <string name="VOICE_MAIL">VOICE MAIL</string>
     <string name="SERVICE_CALL">SERVICE CALL</string>
     <string name="SOS">SOS</string>
+
+    <string name="room_control_set_your_preferred_temperature">Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember.</string>
+    <string name="room_control_set_your_preferred_fan">Set your preferred fan \nspeed by moving the red \ndot.</string>
 </resources>
