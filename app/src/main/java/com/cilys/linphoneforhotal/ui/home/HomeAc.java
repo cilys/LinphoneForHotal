@@ -39,7 +39,7 @@ import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
-    private final boolean TO_TEST_VIEW = true;
+    private final boolean TO_TEST_VIEW = false;
 
     private boolean selected_donot_disturb = false;
 
