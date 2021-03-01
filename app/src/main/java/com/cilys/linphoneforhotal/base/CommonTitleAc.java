@@ -1,6 +1,7 @@
 package com.cilys.linphoneforhotal.base;
 
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.view.View;
 import android.widget.TextView;
@@ -36,9 +37,17 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
                 }
             });
         }
+
+        View top_search = findView(R.id.top_search);
+        if (top_search != null) {
+            top_search.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
+
+                }
+            });
+        }
     }
-
-
 
     protected String getCommonTitle(){
         return "";

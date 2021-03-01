@@ -1,5 +1,7 @@
 package com.cilys.linphoneforhotal.ui.tv;
 
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -42,7 +44,7 @@ public class TvRemoteAc extends CommonTitleAc {
 
         RecyclerView rv = findView(R.id.rv);
         rv.setAdapter(adapter);
-        rv.setLayoutManager(new GridLayoutManager(this, 3));
+        rv.setLayoutManager(new GridLayoutManager(this, getScreenModel() == Configuration.ORIENTATION_LANDSCAPE ? 5 : 3));
         adapter.setListener(new RvItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -65,14 +67,44 @@ public class TvRemoteAc extends CommonTitleAc {
         return getString(R.string.tv_remote);
     }
 
+    private RemoteDialog remoteDialog;
     private void showDialog(){
-        RemoteDialog dialog = new RemoteDialog(this);
-        dialog.setListener(new RemoteDialog.Listener() {
-            @Override
-            public void onClick(int type) {
+        if (remoteDialog == null) {
+            remoteDialog = new RemoteDialog(this);
+            remoteDialog.setListener(new RemoteDialog.Listener() {
+                @Override
+                public void onClick(int type) {
 
-            }
-        });
-        dialog.show();
+                }
+            });
+        }
+        remoteDialog.show();
+    }
+    private boolean isShowRemoteDialog(){
+        if (remoteDialog == null) {
+            return false;
+        }
+        return remoteDialog.isShowing();
+    }
+
+    private final String IS_SHOW_DIALOG = "IS_SHOW_DIALOG";
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(IS_SHOW_DIALOG, isShowRemoteDialog());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        boolean showDialog = false;
+        if (savedInstanceState == null) {
+
+        }
+        showDialog = savedInstanceState.getBoolean(IS_SHOW_DIALOG, false);
+
+        if (showDialog) {
+            showDialog();
+        }
     }
 }

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/shape_top_round_bg_tv_remote_dialog_70"
+        android:layout_width="@dimen/y1280"
+        android:paddingLeft="@dimen/bg_redius_70"
+        android:paddingRight="@dimen/bg_redius_70"
+        android:paddingTop="@dimen/x20"
+        android:paddingBottom="@dimen/x20"
+        android:layout_height="@dimen/x430">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remote"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_marginBottom="@dimen/x20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x18" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/bg_redius"
+            android:layout_marginRight="@dimen/bg_redius"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/action_mute"
+                    style="@style/style_tv_remote_dialog_bottom_action_ll" >
+
+                    <ImageView
+                        android:src="@mipmap/icon_voice_none_white"
+                        style="@style/style_tv_remote_dialog_bottom_action_img" />
+
+                    <TextView
+                        style="@style/style_tv_remote_dialog_bottom_action_tv"
+                        android:text="@string/mute"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/action_home"
+                    style="@style/style_tv_remote_dialog_bottom_action_ll" >
+
+                    <ImageView
+                        android:src="@mipmap/icon_home_white"
+                        style="@style/style_tv_remote_dialog_bottom_action_img" />
+
+                    <TextView
+                        style="@style/style_tv_remote_dialog_bottom_action_tv"
+                        android:text="@string/home"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+
+                <LinearLayout
+                    android:id="@+id/channel_switch"
+                    android:layout_width="@dimen/bottom_height"
+                    android:layout_height="@dimen/y300"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/shape_round_bg_tv_remote_land" >
+
+                    <LinearLayout
+                        android:id="@+id/channel_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="@dimen/y40"
+                            android:layout_height="@dimen/y40"
+                            android:src="@mipmap/icon_arrow_top_white" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/cha"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/x18" />
+
+                    <LinearLayout
+                        android:id="@+id/channel_reduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="@dimen/y40"
+                            android:layout_height="@dimen/y40"
+                            android:src="@mipmap/icon_arrow_bottom_white" />
+                    </LinearLayout>
+                </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <com.cilys.linphoneforhotal.view.RemoteView
+                android:id="@+id/remoteView"
+                android:layout_width="@dimen/x300"
+                android:layout_height="@dimen/x300"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/vol_switch"
+                    android:layout_width="@dimen/bottom_height"
+                    android:layout_height="@dimen/y300"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/shape_round_bg_tv_remote" >
+
+                    <LinearLayout
+                        android:id="@+id/vol_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="@dimen/y40"
+                            android:layout_height="@dimen/y40"
+                            android:src="@mipmap/icon_arrow_top_white" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="@string/vol"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/x18" />
+
+                    <LinearLayout
+                        android:id="@+id/vol_reduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="@dimen/y40"
+                            android:layout_height="@dimen/y40"
+                            android:src="@mipmap/icon_arrow_bottom_white" />
+                    </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/action_return"
+                    style="@style/style_tv_remote_dialog_bottom_action_ll" >
+
+                    <ImageView
+                        android:src="@mipmap/icon_return_white"
+                        style="@style/style_tv_remote_dialog_bottom_action_img" />
+
+                    <TextView
+                        style="@style/style_tv_remote_dialog_bottom_action_tv"
+                        android:text="@string/str_return"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/power_switch"
+                    style="@style/style_tv_remote_dialog_bottom_action_ll" >
+
+                    <ImageView
+                        android:src="@mipmap/icon_power_white"
+                        style="@style/style_tv_remote_dialog_bottom_action_img" />
+
+                    <TextView
+                        style="@style/style_tv_remote_dialog_bottom_action_tv"
+                        android:text="@string/power"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

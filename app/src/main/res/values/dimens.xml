@@ -3,6 +3,7 @@
     <dimen name="tv_remote_top_title_height">@dimen/y119</dimen>
     <dimen name="tv_remote_top_title_height_without_line">@dimen/y118</dimen>
     <dimen name="tv_remote_bottom_action_size">@dimen/y150</dimen>
+    <dimen name="tv_remote_bottom_action_size_land">@dimen/x150</dimen>
     <dimen name="bg_redius">@dimen/y45</dimen>
 
     <dimen name="room_control_action_redius">@dimen/y25</dimen>
@@ -14,5 +15,8 @@
     <dimen name="room_control_icon_margin_text">@dimen/y20</dimen>
 
     <dimen name="amen_margin">@dimen/y60</dimen>
+
+    <dimen name="bg_redius_70">@dimen/x70</dimen>
+    <dimen name="bottom_height_land">@dimen/x100</dimen>
 
 </resources>

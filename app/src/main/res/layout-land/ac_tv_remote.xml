@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape_round_bg_white_70"
+    tools:context=".ui.tv.TvRemoteAc">
+
+    <include layout="@layout/common_title_gray_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Channel"
+        android:layout_marginLeft="@dimen/x80"
+        android:textColor="@color/color_main_text_color"
+        android:layout_marginBottom="@dimen/x18"
+        android:layout_marginTop="@dimen/x30"
+        android:textSize="@dimen/x18" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/x80"
+        android:layout_marginRight="@dimen/x80"
+        />
+    
+    <include layout="@layout/common_bottom" />
+
+
+</LinearLayout>

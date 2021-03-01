@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/tv_remote_top_title_height"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/bg_redius"
+        android:layout_marginRight="@dimen/bg_redius"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/top_search"
+            android:layout_width="@dimen/tv_remote_top_title_height"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="@dimen/x25"
+                android:layout_height="@dimen/x25"
+                android:src="@mipmap/icon_search_dark" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Food Order"
+            android:gravity="center"
+            android:textColor="@color/color_19191b"
+            android:textSize="@dimen/x25"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/top_home"
+            android:layout_width="@dimen/tv_remote_top_title_height"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/x30"
+                android:src="@mipmap/icon_home_drak" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/style_splite_line_h_light_gray"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/color_split_line_light_gray_half" />
+</LinearLayout>

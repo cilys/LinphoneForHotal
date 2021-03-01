@@ -38,7 +38,7 @@ import java.util.List;
 
 
 public class HomeAc extends BaseLinphoneAc {
-    private final boolean TO_TEST_VIEW = false;
+    private final boolean TO_TEST_VIEW = true;
 
     private boolean selected_donot_disturb = false;
 
@@ -52,7 +52,7 @@ public class HomeAc extends BaseLinphoneAc {
         super.initUI();
 
         if (TO_TEST_VIEW) {
-            startActivity(new Intent(this, FoodAc.class));
+            startActivity(new Intent(this, TvRemoteAc.class));
             finish();
             return;
         }
