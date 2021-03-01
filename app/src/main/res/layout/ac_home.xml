@@ -33,7 +33,7 @@
 
             <TextView
                 style="@style/style_home_head_action_ll_tv.top"
-                android:text="ROOM CONTROL"/>
+                android:text="@string/ROOM_CONTROL"/>
         </LinearLayout>
 
         <LinearLayout
@@ -48,7 +48,7 @@
 
             <TextView
                 style="@style/style_home_head_action_ll_tv.top"
-                android:text="TV REMOTE"/>
+                android:text="@string/TV_REMOTE"/>
         </LinearLayout>
 
 
@@ -77,7 +77,7 @@
                 android:textColor="#FCF9F9"
                 android:layout_below="@+id/tv_room_name"
                 android:layout_marginTop="@dimen/y2"
-                android:text="Hello, Adam Miller!"/>
+                android:text="@string/Hello_Adam_Miller"/>
             
             <RelativeLayout
                 android:layout_width="@dimen/x250"
@@ -97,7 +97,7 @@
                     android:textColor="#19191B"
                     android:textSize="@dimen/x16"
                     android:gravity="center"
-                    android:text="You have 2Message"/>
+                    android:text="@string/You_have_2Message"/>
 
                 <ImageView
                     android:id="@+id/img_msg_notify"
@@ -129,7 +129,7 @@
                     android:layout_toRightOf="@+id/img_location"
                     android:textSize="@dimen/x20"
                     android:textColor="#FFF"
-                    android:text="New York"/>
+                    android:text="@string/New_York"/>
 
                 <TextView
                     android:id="@+id/tv_time"
@@ -197,7 +197,7 @@
                     <TextView
                         android:id="@+id/tv_donot_disturb"
                         style="@style/style_home_head_action_ll_tv"
-                        android:text="DO NOT DISTURB"/>
+                        android:text="@string/DO_NOT_DISTURB"/>
                 </LinearLayout>
 
 
@@ -217,7 +217,7 @@
                     <TextView
                         android:id="@+id/tv_make_up_room"
                         style="@style/style_home_head_action_ll_tv"
-                        android:text="MAKE UP ROOM"/>
+                        android:text="@string/MAKE_UP_ROOM"/>
                 </LinearLayout>
 
 
@@ -234,7 +234,7 @@
                         android:src="@mipmap/icon_service_menu_white"/>
                     <TextView
                         style="@style/style_home_head_action_ll_tv"
-                        android:text="SERVICE MENU"/>
+                        android:text="@string/SERVICE_MENU"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -253,7 +253,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Our Promotions"
+            android:text="@string/Our_Promotions"
             android:textColor="#19191B"
             android:textSize="@dimen/x25"
             android:layout_marginLeft="@dimen/x20" />
@@ -313,7 +313,7 @@
                     android:textSize="@dimen/x18"
                     android:layout_marginTop="@dimen/y8"
                     android:textColor="#80FFFFFF"
-                    android:text="Tap QR code to view full screen"/>
+                    android:text="@string/Tap_QR_code"/>
             </LinearLayout>
 
             <ImageView
@@ -337,7 +337,7 @@
                     android:src="@mipmap/icon_phone_white"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
-                    android:text="PHONE" />
+                    android:text="@string/PHONE" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/ll_service_call"
@@ -347,7 +347,7 @@
                     android:src="@mipmap/icon_service_call_white"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
-                    android:text="SERVICE CALL" />
+                    android:text="@string/SERVICE_CALL" />
             </LinearLayout>
 
             <LinearLayout
@@ -358,7 +358,7 @@
                     android:src="@mipmap/icon_voice_mail_white"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
-                    android:text="VOICE MAIL" />
+                    android:text="@string/VOICE_MAIL" />
             </LinearLayout>
 
             <LinearLayout
@@ -369,7 +369,7 @@
                     android:src="@mipmap/icon_sos_red"/>
                 <TextView
                     style="@style/style_home_bottom_action_ll_tv"
-                    android:text="SOS" />
+                    android:text="@string/SOS" />
             </LinearLayout>
         </LinearLayout>
 

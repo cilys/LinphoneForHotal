@@ -88,8 +88,16 @@
     <string name="Sweet_Potatoes">Sweet Potatoes</string>
     <string name="Coca_Cola">Coca-Cola</string>
 
-
-
-
-
+    <!-- home -->
+    <string name="ROOM_CONTROL">ROOM CONTROL</string>
+    <string name="TV_REMOTE">TV REMOTE</string>
+    <string name="Hello_Adam_Miller">Hello, Adam Miller!</string>
+    <string name="You_have_2Message">You have 2Message</string>
+    <string name="New_York">New York</string>
+    <string name="DO_NOT_DISTURB">DO NOT DISTURB</string>
+    <string name="MAKE_UP_ROOM">MAKE UP ROOM</string>
+    <string name="SERVICE_MENU">SERVICE MENU</string>
+    <string name="Our_Promotions">Our Promotions</string>
+    <string name="Tap_QR_code">Tap QR code to view full screen</string>
+    <string name="PHONE">PHONE</string>
 </resources>
