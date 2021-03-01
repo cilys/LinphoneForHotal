@@ -107,7 +107,8 @@
     <string name="Allergens">Allergens</string>
     <string name="For_Gluten">For Gluten/Wheat, Egg, Peanut/Tree Nut, Soy</string>
 
-
+    <!-- Msg -->
+    <string name="Message_2">Message(2)</string>
 
 
 
