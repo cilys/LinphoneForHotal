@@ -52,7 +52,7 @@ public class HomeAc extends BaseLinphoneAc {
         super.initUI();
 
         if (TO_TEST_VIEW) {
-            startActivity(new Intent(this, MsgAc.class));
+            startActivity(new Intent(this, FoodAc.class));
             finish();
             return;
         }

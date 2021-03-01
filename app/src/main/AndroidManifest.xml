@@ -60,7 +60,8 @@
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ui.amen.AmentiesAc" />
         <activity android:name=".ui.checkout.CheckoutAc" />
-        <activity android:name=".ui.food.FoodAc" />
+        <activity android:name=".ui.food.FoodAc"
+            android:screenOrientation="landscape"/>
         <activity android:name=".ui.food.CheckoutAc"
             android:windowSoftInputMode="adjustPan" />
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape_round_bg_white"
+    tools:context=".ui.food.FoodAc">
+
+    <include
+        layout="@layout/common_title_gray_line" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/amen_margin"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/dessert"
+                style="@style/style_food_order_nav"
+                android:text="@string/dessert"/>
+
+            <TextView
+                android:id="@+id/inter"
+                style="@style/style_food_order_nav"
+                android:text="@string/international"/>
+
+            <TextView
+                android:id="@+id/italian"
+                style="@style/style_food_order_nav"
+                android:text="@string/italian"/>
+
+            <TextView
+                android:id="@+id/kids"
+                style="@style/style_food_order_nav"
+                android:text="@string/kids_menu"/>
+
+            <TextView
+                android:id="@+id/middle"
+                style="@style/style_food_order_nav"
+                android:text="@string/middle_eas"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <View
+        style="@style/style_splite_line_h_light_gray"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="@dimen/bg_redius"
+        android:background="@color/color_split_line_light_gray_half" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
