@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="3 Items"
+            android:text="@string/Items_3"
             android:textColor="@color/white"
             android:textSize="@dimen/x25"/>
 
