@@ -289,7 +289,7 @@
 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
-                    android:text="VOICE MAIL"/>
+                    android:text="@string/VOICE_MAIL"/>
             </LinearLayout>
 
 
@@ -307,7 +307,7 @@
 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
-                    android:text="SERVICE CALL"/>
+                    android:text="@string/SERVICE_CALL"/>
             </LinearLayout>
 
             <View
@@ -324,7 +324,7 @@
                 
                 <TextView
                     style="@style/style_call_number_action_ll_tv"
-                    android:text="SOS"/>
+                    android:text="@string/SOS"/>
             </LinearLayout>
 
         </LinearLayout>
