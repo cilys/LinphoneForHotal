@@ -202,7 +202,7 @@
     </style>
 
     <style name="style_service_menu_details_dialog_rbt">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">@dimen/y250</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>

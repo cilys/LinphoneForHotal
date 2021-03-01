@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MsgAc extends CommonTitleAc {
+    private ViewPager vp;
 
     @Override
     protected int getLayout() {
@@ -33,7 +34,7 @@ public class MsgAc extends CommonTitleAc {
         final RadioButton rbt_read = (RadioButton)findViewById(R.id.rbt_read);
         setDrawableBottom(rbt_read, R.mipmap.icon_point_trans);
 
-        final ViewPager vp = findView(R.id.vp);
+        vp = findView(R.id.vp);
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
