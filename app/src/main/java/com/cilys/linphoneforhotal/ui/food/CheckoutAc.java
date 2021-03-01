@@ -39,16 +39,16 @@ public class CheckoutAc extends CommonTitleAc {
         ImageView recommend_extra = findView(R.id.recommend_extra);
         TextView recommend_extra_name = findView(R.id.recommend_extra_name);
         TextView recommend_extra_price = findView(R.id.recommend_extra_price);
-        recommend_extra_name.setText("Sweet Potatoes");
-        recommend_extra_price.setText("$4.99");
+//        recommend_extra_name.setText("");
+//        recommend_extra_price.setText("");
         ImageUtils.load(this, R.mipmap.ic_food_checkout_recommend_test_1, recommend_extra);
 
 
         ImageView recommend_kit = findView(R.id.recommend_kit);
         TextView recommend_kit_name = findView(R.id.recommend_kit_name);
-        recommend_kit_name.setText("Coca-Cola");
+//        recommend_kit_name.setText("");
         TextView recommend_kit_price = findView(R.id.recommend_kit_price);
-        recommend_kit_price.setText("$4.99");
+//        recommend_kit_price.setText("");
         ImageUtils.load(this, R.mipmap.ic_food_checkout_recommend_test_2, recommend_kit);
 
     }
