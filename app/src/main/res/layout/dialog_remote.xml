@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/remote"
+            android:text="@string/Remote"
             android:layout_marginTop="@dimen/y15"
             android:layout_marginLeft="@dimen/y15"
             android:layout_marginBottom="@dimen/y60"
@@ -185,7 +185,7 @@
 
                 <TextView
                     style="@style/style_tv_remote_dialog_bottom_action_tv"
-                    android:text="@string/mute"/>
+                    android:text="@string/MUTE"/>
             </LinearLayout>
 
             <View
