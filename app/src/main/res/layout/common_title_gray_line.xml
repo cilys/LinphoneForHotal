@@ -31,7 +31,7 @@
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Food Order"
+            android:text="@string/Food_Order"
             android:gravity="center"
             android:textColor="@color/color_19191b"
             android:textSize="@dimen/x25"
