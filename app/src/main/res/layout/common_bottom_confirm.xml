@@ -5,7 +5,7 @@
     android:id="@+id/confirm"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_height"
-    android:text="CONFIRM"
+    android:text="@string/CONFIRM"
     android:gravity="center"
     android:textColor="@color/white"
     android:textSize="@dimen/x25"

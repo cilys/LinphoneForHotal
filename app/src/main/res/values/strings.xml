@@ -137,6 +137,8 @@
     <!-- common bottom -->
     <string name="Remote">Remote</string>
 
+    <!-- common bottom confirm -->
+    <string name="CONFIRM">CONFIRM</string>
 
 
 
