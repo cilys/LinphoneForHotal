@@ -110,15 +110,18 @@
     <!-- Msg -->
     <string name="Message_2">Message(2)</string>
 
-    <!-- -->
+    <!-- msg details -->
     <string name="MyGallery">MyGallery</string>
     <string name="To_Admm_Miller">To:Admm Miller</string>
     <string name="Your_card_will_be_charged">Your card will be charged the amount of the meal.</string>
     <string name="Happy_Hours_2x1">Happy Hours 2x1</string>
     <string name="Pasta_Pomodoro">2x Pasta Pomodoro</string>
 
-
-
+    <string name="Rober_Watson">Rober Watson</string>
+    <string name="Housekeeping">Housekeeping</string>
+    <string name="MUTE">MUTE</string>
+    <string name="HOLD">HOLD</string>
+    <string name="SPEAKER">SPEAKER</string>
 
 
 

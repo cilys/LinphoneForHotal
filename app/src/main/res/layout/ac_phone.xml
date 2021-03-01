@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:layout_marginTop="@dimen/y10"
-                android:text="Rober Watson"
+                android:text="@string/Rober_Watson"
                 android:textColor="#FFF"
                 android:textSize="@dimen/x40"
                 android:ellipsize="marquee" />
@@ -64,7 +64,7 @@
                 android:id="@+id/tv_out_custom_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Housekeeping"
+                android:text="@string/Housekeeping"
                 android:textSize="@dimen/x30"
                 android:textColor="#80FFFFFF" />
         </LinearLayout>
@@ -89,7 +89,7 @@
                     android:src="@drawable/selector_call_action_img_mute"/>
                 <TextView
                     style="@style/style_call_action_tv"
-                    android:text="MUTE"/>
+                    android:text="@string/MUTE"/>
             </LinearLayout>
 
             <LinearLayout
@@ -102,7 +102,7 @@
                     android:src="@drawable/selector_call_action_img_hold"/>
                 <TextView
                     style="@style/style_call_action_tv"
-                    android:text="HOLD"/>
+                    android:text="@string/HOLD"/>
             </LinearLayout>
 
             <!--<CheckBox
@@ -124,7 +124,7 @@
                 <TextView
                     android:id="@+id/out_speaker_tv"
                     style="@style/style_call_action_tv"
-                    android:text="SPEAKER"/>
+                    android:text="@string/SPEAKER"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -164,7 +164,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:layout_marginTop="@dimen/y10"
-            android:text="Rober Watson"
+            android:text="@string/Rober_Watson"
             android:textColor="#FFF"
             android:textSize="@dimen/x40"
             android:ellipsize="marquee" />
@@ -173,7 +173,7 @@
             android:id="@+id/tv_incoming_custom_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Housekeeping"
+            android:text="@string/Housekeeping"
             android:layout_marginTop="@dimen/y10"
             android:textSize="@dimen/x30"
             android:textColor="#80FFFFFF" />
@@ -237,7 +237,7 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:layout_marginTop="@dimen/y10"
-                    android:text="Rober Watson"
+                    android:text="@string/Rober_Watson"
                     android:textColor="#FFF"
                     android:textSize="@dimen/x40"
                     android:ellipsize="marquee" />
@@ -246,7 +246,7 @@
                     android:id="@+id/tv_call_custom_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Housekeeping"
+                    android:text="@string/Housekeeping"
                     android:textSize="@dimen/x30"
                     android:textColor="#80FFFFFF" />
             </LinearLayout>
@@ -285,7 +285,7 @@
                     android:src="@drawable/selector_call_action_img_mute"/>
                 <TextView
                     style="@style/style_call_action_tv"
-                    android:text="MUTE"/>
+                    android:text="@string/MUTE"/>
             </LinearLayout>
 
             <LinearLayout
@@ -297,7 +297,7 @@
                     android:src="@drawable/selector_call_action_img_hold"/>
                 <TextView
                     style="@style/style_call_action_tv"
-                    android:text="HOLD"/>
+                    android:text="@string/HOLD"/>
             </LinearLayout>
 
             <LinearLayout
@@ -311,7 +311,7 @@
                 <TextView
                     android:id="@+id/call_speaker_tv"
                     style="@style/style_call_action_tv"
-                    android:text="SPEAKER"/>
+                    android:text="@string/SPEAKER"/>
             </LinearLayout>
         </LinearLayout>
 
