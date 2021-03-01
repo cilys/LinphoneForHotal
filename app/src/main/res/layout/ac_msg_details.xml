@@ -82,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x25"
-                    android:text="MyGallery"
+                    android:text="@string/MyGallery"
                     android:textColor="@color/color_main_text_color"
                     />
                 <TextView
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x20"
-                    android:text="To:Admm Miller"
+                    android:text="@string/To_Admm_Miller"
                     android:textColor="@color/color_gray_text_color"/>
             </LinearLayout>
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/x20"
-            android:text="Your card will be charged the amount of the meal."
+            android:text="@string/Your_card_will_be_charged"
             android:layout_marginLeft="@dimen/bottom_height"
             android:layout_marginRight="@dimen/bottom_height"
             android:layout_marginTop="@dimen/bg_redius"
@@ -155,7 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x20"
-                    android:text="Happy Hours 2x1"
+                    android:text="@string/Happy_Hours_2x1"
                     android:textColor="@color/color_gray_text_color" />
 
                 <TextView
@@ -163,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x25"
-                    android:text="2x Pasta Pomodoro"
+                    android:text="@string/Pasta_Pomodoro"
                     android:layout_marginTop="@dimen/y15"
                     android:textColor="@color/color_main_text_color" />
 
@@ -186,7 +186,7 @@
             android:textColor="@color/color_gray_text_color"
             android:layout_marginLeft="@dimen/bottom_height"
             android:layout_marginRight="@dimen/bottom_height"
-            android:text="Your card will be charged the amount of the meal."
+            android:text="@string/Your_card_will_be_charged"
             android:layout_marginTop="@dimen/y2" />
     </LinearLayout>
 </LinearLayout>
