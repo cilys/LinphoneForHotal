@@ -159,4 +159,9 @@ public class AmentiesAc extends CommonTitleAc {
             setDrawableBottom(pillow, R.mipmap.icon_point_red);
         }
     }
+
+    @Override
+    protected String getCommonTitle() {
+        return "Amenties";
+    }
 }

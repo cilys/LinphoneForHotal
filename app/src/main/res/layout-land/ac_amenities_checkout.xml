@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/shape_round_bg_white_land"
+    tools:context=".ui.amen.AmenitiesCheckoutAc">
+
+    <include
+        layout="@layout/common_title_gray_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/y25"
+                android:orientation="vertical" >
+
+                <com.cilys.linphoneforhotal.view.MyListView
+                    android:id="@+id/lv_goods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:layout_marginRight="@dimen/amen_margin_land"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommendations for you"
+                    android:textSize="@dimen/x18"
+                    android:layout_marginTop="@dimen/y25"
+                    android:layout_marginBottom="@dimen/y25"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:textColor="@color/color_gray_text_color"
+                    android:textAllCaps="false"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:layout_marginRight="@dimen/amen_margin_land"
+                    android:layout_height="wrap_content" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            style="@style/style_amen_recommend_layout" >
+                            <ImageView
+                                android:id="@+id/recommend_extra"
+                                android:layout_width="@dimen/y56"
+                                android:layout_height="@dimen/y56"
+                                android:layout_marginRight="@dimen/y25"
+                                android:src="@mipmap/icon_extra_towel"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/recommend_extra_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Extra Towel"
+                                    android:textColor="@color/color_main_text_color"
+                                    android:textSize="@dimen/x25" />
+
+                                <TextView
+                                    android:id="@+id/recommend_extra_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/color_gray_text_color"
+                                    android:textSize="@dimen/x25"
+                                    android:text="$25.00"
+                                    android:textAllCaps="false" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/add"
+                                android:layout_width="@dimen/bg_redius"
+                                android:layout_height="@dimen/bg_redius"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/y25"
+                                    android:layout_height="@dimen/y25"
+                                    android:src="@mipmap/icon_add_black_bg" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/style_amen_recommend_layout" >
+                            <ImageView
+                                android:id="@+id/recommend_kit"
+                                android:layout_width="@dimen/y56"
+                                android:layout_height="@dimen/y56"
+                                android:layout_marginRight="@dimen/y25"
+                                android:src="@mipmap/icon_dental_kit" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/recommend_kit_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dental Kit"
+                                    android:textColor="@color/color_main_text_color"
+                                    android:textSize="@dimen/x25" />
+
+                                <TextView
+                                    android:id="@+id/recommend_kit_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/color_gray_text_color"
+                                    android:textSize="@dimen/x25"
+                                    android:text="$15.00"
+                                    android:textAllCaps="false" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/add_2"
+                                android:layout_width="@dimen/bg_redius"
+                                android:layout_height="@dimen/bg_redius"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/y25"
+                                    android:layout_height="@dimen/y25"
+                                    android:src="@mipmap/icon_add_black_bg" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <View
+                    style="@style/style_splite_line_h_light_gray"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="@dimen/y25"
+                    android:layout_marginBottom="@dimen/y25"
+
+                    android:background="@color/color_split_line_light_gray_half" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Bill Details"
+                    android:textSize="@dimen/x18"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:textColor="@color/color_gray_text_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/amen_margin_land"
+                    android:paddingRight="@dimen/amen_margin_land"
+                    android:orientation="vertical">
+                    <include layout="@layout/common_bill" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remark"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:layout_marginTop="@dimen/y15"
+                    android:textColor="@color/color_gray_text_color"
+                    android:textSize="@dimen/x25"
+                    android:textAllCaps="false" />
+
+                <EditText
+                    android:id="@+id/remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y75"
+                    android:hint="Type your comment"
+                    android:padding="@dimen/y15"
+                    android:textColor="@color/color_main_text_color"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:layout_marginRight="@dimen/amen_margin_land"
+                    android:background="@drawable/shape_round_bg_5"
+                    android:textSize="@dimen/x18"/>
+
+                <View
+                    style="@style/style_splite_line_h_light_gray"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="@dimen/y25"
+                    android:layout_marginBottom="@dimen/y25"
+                    android:background="@color/color_split_line_light_gray_half" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/amen_margin_land"
+                    android:layout_marginRight="@dimen/amen_margin_land"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/x20"
+                        android:layout_weight="1"
+                        android:text="Payment Option"
+                        android:textColor="@color/color_gray_text_color" />
+
+                    <LinearLayout
+                        android:layout_width="@dimen/y300"
+                        android:layout_height="@dimen/y60"
+                        android:orientation="horizontal"
+                        android:background="@drawable/shape_round_bg_5"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cash"
+                            android:textColor="@color/color_gray_text_color"
+                            android:textSize="@dimen/x20"
+                            android:textAllCaps="false"
+
+                            android:gravity="center"
+                            />
+
+                        <ImageView
+                            android:layout_width="@dimen/y14"
+                            android:layout_height="@dimen/y8"
+                            android:src="@mipmap/icon_arrow_bottom_black"
+                            android:layout_marginLeft="@dimen/y10"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <include layout="@layout/common_bottom_confirm" />
+    </RelativeLayout>
+</LinearLayout>
