@@ -29,16 +29,18 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("int", "BUILD_TIME", releaseTime());
+
     }
     buildTypes {
         release {
+            buildConfigField("int", "BUILD_TIME", releaseTime());
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
 
         debug {
+            buildConfigField("int", "BUILD_TIME", releaseTime());
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug

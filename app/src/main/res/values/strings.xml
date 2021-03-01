@@ -58,4 +58,10 @@
     <string name="towels">Towels</string>
     <string name="bath">Bath</string>
     <string name="drinks">Drinks</string>
+
+    <string name="please_input_account">请输入账号</string>
+    <string name="please_input_pwd">请输入密码</string>
+    <string name="please_input_domain">请输入域名</string>
+    <string name="please_input_proxy_server">请输入代理服务器</string>
+    <string name="config">配置</string>
 </resources>

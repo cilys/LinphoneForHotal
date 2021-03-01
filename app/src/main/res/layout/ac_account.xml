@@ -12,26 +12,26 @@
         android:id="@+id/ed_userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入账号"/>
+        android:hint="@string/please_input_account"/>
 
     <EditText
         android:id="@+id/ed_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="请输入密码" />
+        android:hint="@string/please_input_pwd" />
 
     <EditText
         android:id="@+id/ed_domain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入域名" />
+        android:hint="@string/please_input_domain" />
 
     <EditText
         android:id="@+id/ed_proxy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入代理服务器" />
+        android:hint="@string/please_input_proxy_server" />
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="wrap_content"
@@ -61,5 +61,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_connect"
-        android:text="配置" />
+        android:text="@string/config" />
 </LinearLayout>
