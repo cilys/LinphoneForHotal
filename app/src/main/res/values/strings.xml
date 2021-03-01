@@ -100,4 +100,33 @@
     <string name="Our_Promotions">Our Promotions</string>
     <string name="Tap_QR_code">Tap QR code to view full screen</string>
     <string name="PHONE">PHONE</string>
+
+    <!-- food meal -->
+    <string name="Pasta_Alla_Filicudara">Pasta Alla Filicudara</string>
+    <string name="Fresh_pasta">Fresh pasta with tuna chunks, cherry tomatoes, onion  capers</string>
+    <string name="Allergens">Allergens</string>
+    <string name="For_Gluten">For Gluten/Wheat, Egg, Peanut/Tree Nut, Soy</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>
