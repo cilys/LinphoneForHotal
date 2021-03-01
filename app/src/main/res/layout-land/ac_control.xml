@@ -241,7 +241,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/x30"
-                            android:text="Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember."
+                            android:text="@string/room_control_set_your_preferred_temperature"
                             android:textColor="@color/color_main_text_color"
                             android:textSize="@dimen/x18" />
                     </LinearLayout>
@@ -324,7 +324,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/x30"
-                        android:text="Set your preferred fan \nspeed by moving the red \ndot."
+                        android:text="@string/room_control_set_your_preferred_fan"
                         android:textColor="@color/color_main_text_color"
                         android:textSize="@dimen/x18" />
                 </LinearLayout>

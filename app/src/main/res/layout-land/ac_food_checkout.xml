@@ -35,7 +35,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recommendations for you"
+                    android:text="@string/recommendations_for_you"
                     android:textSize="@dimen/x18"
                     android:layout_marginTop="@dimen/y25"
                     android:layout_marginBottom="@dimen/y25"
@@ -74,7 +74,7 @@
                                     android:id="@+id/recommend_extra_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Extra Towel"
+                                    android:text="@string/Sweet_Potatoes"
                                     android:textColor="@color/color_main_text_color"
                                     android:textSize="@dimen/x25" />
 
@@ -84,7 +84,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/color_gray_text_color"
                                     android:textSize="@dimen/x25"
-                                    android:text="$25.00"
+                                    android:text="$4.99"
                                     android:textAllCaps="false" />
                             </LinearLayout>
 
@@ -121,7 +121,7 @@
                                     android:id="@+id/recommend_kit_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Dental Kit"
+                                    android:text="@string/Coca_Cola"
                                     android:textColor="@color/color_main_text_color"
                                     android:textSize="@dimen/x25" />
 
@@ -131,7 +131,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/color_gray_text_color"
                                     android:textSize="@dimen/x25"
-                                    android:text="$15.00"
+                                    android:text="$4.99"
                                     android:textAllCaps="false" />
                             </LinearLayout>
 
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAllCaps="false"
-                    android:text="Bill Details"
+                    android:text="@string/Bill_Details"
                     android:textSize="@dimen/x18"
                     android:layout_marginLeft="@dimen/amen_margin_land"
                     android:textColor="@color/color_gray_text_color" />
@@ -182,7 +182,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Remark"
+                    android:text="@string/Remark"
                     android:layout_marginLeft="@dimen/amen_margin_land"
                     android:layout_marginTop="@dimen/y15"
                     android:textColor="@color/color_gray_text_color"
@@ -193,7 +193,7 @@
                     android:id="@+id/remarks"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y75"
-                    android:hint="Type your comment"
+                    android:hint="@string/Type_your_comment"
                     android:padding="@dimen/y15"
                     android:textColor="@color/color_main_text_color"
                     android:gravity="center_vertical"
@@ -224,7 +224,7 @@
                         android:textAllCaps="false"
                         android:textSize="@dimen/x20"
                         android:layout_weight="1"
-                        android:text="Payment Option"
+                        android:text="@string/Payment_Option"
                         android:textColor="@color/color_gray_text_color" />
 
                     <LinearLayout
@@ -236,7 +236,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cash"
+                            android:text="@string/Cash"
                             android:textColor="@color/color_gray_text_color"
                             android:textSize="@dimen/x20"
                             android:textAllCaps="false"

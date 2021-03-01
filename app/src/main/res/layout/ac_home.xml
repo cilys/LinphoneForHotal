@@ -305,7 +305,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/x25"
                     android:textColor="#FFF"
-                    android:text="Scan to check on mobile" />
+                    android:text="@string/Scan_to_check_on_mobile" />
 
                 <TextView
                     android:layout_width="match_parent"

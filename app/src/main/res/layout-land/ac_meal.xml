@@ -46,7 +46,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/x25"
             android:layout_marginTop="@dimen/x25"
-            android:text="Pasta Alla Filicudara"
+            android:text="@string/Pasta_Alla_Filicudara"
             android:layout_marginLeft="@dimen/bg_redius" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/x20"
             android:layout_marginTop="@dimen/x25"
-            android:text="Fresh pasta with tuna chunks, cherry tomatoes, onion  capers"
+            android:text="@string/Fresh_pasta"
             android:layout_marginLeft="@dimen/bg_redius" />
 
         <LinearLayout
@@ -97,7 +97,7 @@
             android:textColor="@color/white"
             android:layout_marginLeft="@dimen/bg_redius"
             android:layout_marginTop="@dimen/x10"
-            android:text="For Gluten/Wheat, Egg, Peanut/Tree Nut, Soy"/>
+            android:text="@string/For_Gluten"/>
     </LinearLayout>
 
 </LinearLayout>

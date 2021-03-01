@@ -29,20 +29,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available until 3:00"
+                android:text="@string/Available_until"
                 android:textSize="@dimen/x16"
                 android:textColor="#8019191B" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Happy Hours 2x1"
+                android:text="@string/Happy_Hours_2x1"
                 android:layout_marginTop="@dimen/y15"
                 android:textSize="@dimen/x25"
                 android:textColor="@color/color_main_text_color" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Order dinner by 3:00 and enjoy an extra meal for your loved ones!"
+                android:text="@string/Order_dinner_by"
                 android:textSize="@dimen/x16"
                 android:layout_marginTop="@dimen/y2"
                 android:textColor="#8F19191B" />
