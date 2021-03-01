@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root"
+    android:paddingTop="@dimen/y40"
+    tools:context=".ui.msg.MsgDetailsAc">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape_top_round_white_bg_45"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tv_remote_top_title_height"
+            android:paddingLeft="@dimen/bg_redius"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/top_back"
+                android:layout_width="@dimen/bottom_height"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="@dimen/x25"
+                    android:src="@mipmap/icon_back_drak" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Service"
+                android:textSize="@dimen/x25"
+                android:textColor="@color/color_main_text_color"
+                android:gravity="center_vertical"/>
+
+            <LinearLayout
+                android:id="@+id/top_close"
+                android:layout_width="@dimen/tv_remote_top_title_height"
+                android:layout_height="@dimen/tv_remote_top_title_height"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="@dimen/x25"
+                    android:src="@mipmap/icon_close"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <View
+                    style="@style/style_splite_line_h_light_gray"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/color_split_line_light_gray_half"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/bg_redius"
+                    android:layout_marginBottom="@dimen/bg_redius"
+                    android:layout_marginLeft="@dimen/bottom_height"
+                    android:layout_marginRight="@dimen/bottom_height"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/x25"
+                            android:text="MyGallery"
+                            android:textColor="@color/color_main_text_color"
+                            />
+                        <TextView
+                            android:id="@+id/to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/x20"
+                            android:text="To:Admm Miller"
+                            android:textColor="@color/color_gray_text_color"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/x20"
+                        android:text="11 min ago"
+                        android:textColor="@color/color_gray_text_color" />
+                </LinearLayout>
+
+                <View
+                    style="@style/style_splite_line_h_light_gray"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/color_split_line_light_gray_half"/>
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x20"
+                    android:text="Your card will be charged the amount of the meal."
+                    android:layout_marginLeft="@dimen/bottom_height"
+                    android:layout_marginRight="@dimen/bottom_height"
+                    android:layout_marginTop="@dimen/bg_redius"
+                    android:layout_marginBottom="@dimen/bg_redius"
+                    android:textColor="@color/color_main_text_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x25"
+                    android:layout_marginLeft="@dimen/bottom_height"
+                    android:layout_marginRight="@dimen/bottom_height"
+                    android:layout_marginBottom="@dimen/bg_redius"
+                    android:text="@string/order_details"
+                    android:textColor="@color/color_gray_text_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y250"
+                    android:layout_marginLeft="@dimen/bottom_height"
+                    android:layout_marginRight="@dimen/bottom_height"
+                    android:background="@drawable/shape_round_bg_room_control_action"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:id="@+id/pic"
+                        android:layout_width="@dimen/y250"
+                        android:layout_height="@dimen/y250"
+                        android:layout_marginRight="@dimen/y25"
+                        android:scaleType="fitCenter" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/extName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/x20"
+                            android:text="Happy Hours 2x1"
+                            android:textColor="@color/color_gray_text_color" />
+
+                        <TextView
+                            android:id="@+id/count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/x25"
+                            android:text="2x Pasta Pomodoro"
+                            android:layout_marginTop="@dimen/y15"
+                            android:textColor="@color/color_main_text_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/x35"
+                            android:textColor="@color/color_main_text_color"
+                            android:text="$32.99"
+                            android:layout_marginTop="@dimen/y40"
+                            android:id="@+id/price" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x18"
+                    android:textColor="@color/color_gray_text_color"
+                    android:layout_marginLeft="@dimen/bottom_height"
+                    android:layout_marginRight="@dimen/bottom_height"
+                    android:text="Your card will be charged the amount of the meal."
+                    android:layout_marginTop="@dimen/y2" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
