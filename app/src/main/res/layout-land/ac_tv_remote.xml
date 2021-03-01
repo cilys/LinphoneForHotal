@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/shape_round_bg_white_70"
+    android:background="@drawable/shape_round_bg_white_land"
     tools:context=".ui.tv.TvRemoteAc">
 
     <include layout="@layout/common_title_gray_line" />

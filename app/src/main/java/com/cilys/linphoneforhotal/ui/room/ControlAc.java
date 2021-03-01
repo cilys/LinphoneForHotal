@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.ui.room;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,6 +19,11 @@ public class ControlAc extends CommonTitleAc {
     protected int getLayout() {
         return R.layout.ac_control;
     }
+
+    private TextView curtains_open, curtains_close;
+    private TextView master_light_open, master_light_close;
+    private TextView bathroom_light_open, bathroom_light_close;
+    private TextView lights_open, lights_close;
 
     @Override
     protected void initUI() {
@@ -38,8 +44,8 @@ public class ControlAc extends CommonTitleAc {
         fan_speed.invalidate();
 
         View curtains = findView(R.id.curtains);
-        final TextView curtains_open = findView(R.id.curtains_open);
-        final TextView curtains_close = findView(R.id.curtains_close);
+        curtains_open = findView(R.id.curtains_open);
+        curtains_close = findView(R.id.curtains_close);
         curtains.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
@@ -50,8 +56,8 @@ public class ControlAc extends CommonTitleAc {
         });
 
         View master_light = findView(R.id.master_light);
-        final TextView master_light_open = findView(R.id.master_light_open);
-        final TextView master_light_close = findView(R.id.master_light_close);
+        master_light_open = findView(R.id.master_light_open);
+        master_light_close = findView(R.id.master_light_close);
         master_light.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
@@ -64,8 +70,8 @@ public class ControlAc extends CommonTitleAc {
         });
 
         View bathroom_light = findView(R.id.bathroom_light);
-        final TextView bathroom_light_open = findView(R.id.bathroom_light_open);
-        final TextView bathroom_light_close = findView(R.id.bathroom_light_close);
+        bathroom_light_open = findView(R.id.bathroom_light_open);
+        bathroom_light_close = findView(R.id.bathroom_light_close);
         bathroom_light.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
@@ -78,8 +84,8 @@ public class ControlAc extends CommonTitleAc {
         });
 
         View lights = findView(R.id.lights);
-        final TextView lights_open = findView(R.id.lights_open);
-        final TextView lights_close = findView(R.id.lights_close);
+        lights_open = findView(R.id.lights_open);
+        lights_close = findView(R.id.lights_close);
         lights.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
@@ -91,6 +97,9 @@ public class ControlAc extends CommonTitleAc {
     }
 
     private void setTextViewSelected(TextView tv, boolean selected){
+        if (tv == null) {
+            return;
+        }
         if (selected) {
             tv.setBackgroundResource(R.drawable.shape_round_bg_room_control_action_close);
             tv.setTextColor(getResources().getColor(R.color.white));
@@ -98,6 +107,43 @@ public class ControlAc extends CommonTitleAc {
             tv.setBackgroundResource(R.color.white);
             tv.setTextColor(getResources().getColor(R.color.color_main_text_color));
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (outState == null) {
+            return;
+        }
+        outState.putBoolean("curtainsStatus", curtainsStatus);
+        outState.putBoolean("masterLightStatus", masterLightStatus);
+        outState.putBoolean("bathroomLightStatus", bathroomLightStatus);
+        outState.putBoolean("lightsStatus", lightsStatus);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState == null) {
+            return;
+        }
+
+        curtainsStatus = savedInstanceState.getBoolean("curtainsStatus");
+        masterLightStatus = savedInstanceState.getBoolean("masterLightStatus");
+        bathroomLightStatus = savedInstanceState.getBoolean("bathroomLightStatus");
+        lightsStatus = savedInstanceState.getBoolean("lightsStatus");
+
+        setTextViewSelected(curtains_open, curtainsStatus);
+        setTextViewSelected(curtains_close, !curtainsStatus);
+
+        setTextViewSelected(master_light_open, masterLightStatus);
+        setTextViewSelected(master_light_close, !masterLightStatus);
+
+        setTextViewSelected(bathroom_light_open, bathroomLightStatus);
+        setTextViewSelected(bathroom_light_close, !bathroomLightStatus);
+
+        setTextViewSelected(lights_open, lightsStatus);
+        setTextViewSelected(lights_close, !lightsStatus);
     }
 
     @Override

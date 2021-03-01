@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_round_bg_white_land"
+    android:orientation="vertical"
+    tools:context=".ui.room.ControlAc">
+
+    <include layout="@layout/common_title_gray_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/style_room_control_layout_parent_land">
+
+                <LinearLayout style="@style/style_room_control_layout_land">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/bg_redius"
+                            android:layout_height="@dimen/bg_redius"
+                            android:src="@mipmap/icon_curtain" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x15"
+                            android:text="@string/curtains"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/curtains"
+                        style="@style/style_room_control_layout_action_land"
+                        android:layout_marginTop="@dimen/y30">
+
+                        <TextView
+                            android:id="@+id/curtains_open"
+                            style="@style/style_room_control_layout_action_open" />
+
+                        <TextView
+                            android:id="@+id/curtains_close"
+                            style="@style/style_room_control_layout_action_close_land" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="1dp" />
+
+                <LinearLayout style="@style/style_room_control_layout_land">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/bg_redius"
+                            android:layout_height="@dimen/bg_redius"
+                            android:src="@mipmap/icon_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                            android:text="@string/master_light"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/master_light"
+                        style="@style/style_room_control_layout_action_land"
+                        android:layout_marginTop="@dimen/y30">
+
+                        <TextView
+                            android:id="@+id/master_light_open"
+                            style="@style/style_room_control_layout_action_open"
+                            android:text="@string/on" />
+
+                        <TextView
+                            android:id="@+id/master_light_close"
+                            style="@style/style_room_control_layout_action_close_land"
+                            android:text="@string/off" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="1dp" />
+
+                <LinearLayout style="@style/style_room_control_layout_land">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/bg_redius"
+                            android:layout_height="@dimen/bg_redius"
+                            android:src="@mipmap/icon_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                            android:text="@string/bathroom_light"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/bathroom_light"
+                        style="@style/style_room_control_layout_action_land"
+                        android:layout_marginTop="@dimen/y30">
+
+                        <TextView
+                            android:id="@+id/bathroom_light_open"
+                            style="@style/style_room_control_layout_action_open"
+                            android:text="@string/on" />
+
+                        <TextView
+                            android:id="@+id/bathroom_light_close"
+                            style="@style/style_room_control_layout_action_close_land"
+                            android:text="@string/off" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_room_control_layout_parent_land">
+
+                <LinearLayout style="@style/style_room_control_layout_land">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/bg_redius"
+                            android:layout_height="@dimen/bg_redius"
+                            android:src="@mipmap/icon_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                            android:text="@string/lights"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lights"
+                        style="@style/style_room_control_layout_action_land"
+                        android:layout_marginTop="@dimen/y30">
+
+                        <TextView
+                            android:id="@+id/lights_open"
+                            style="@style/style_room_control_layout_action_open"
+                            android:text="@string/min" />
+
+                        <TextView
+                            android:id="@+id/lights_close"
+                            style="@style/style_room_control_layout_action_close_land"
+                            android:text="@string/max" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/x25"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="@dimen/x230"
+
+                    android:background="@drawable/shape_round_bg_room_control_action_land"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/bg_redius"
+                    android:paddingTop="@dimen/x15"
+                    android:paddingRight="@dimen/bg_redius"
+                    android:paddingBottom="@dimen/x15">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/x44"
+                                android:layout_height="@dimen/x40"
+                                android:src="@mipmap/icon_temperaure" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                                android:text="@string/temperature"
+                                android:textColor="@color/color_main_text_color"
+                                android:textSize="@dimen/x20" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x30"
+                            android:text="Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember."
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x60"
+                            android:text="@string/min"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+
+                        <com.cilys.linphoneforhotal.view.DashView
+                            android:id="@+id/temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:arcWidth="@dimen/x12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x60"
+                            android:text="@string/max"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="@dimen/x230"
+                android:layout_marginLeft="@dimen/x25"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_marginRight="@dimen/x25"
+                android:layout_marginBottom="@dimen/x30"
+                android:background="@drawable/shape_round_bg_room_control_action_land"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/bg_redius"
+                android:paddingTop="@dimen/x15"
+                android:paddingRight="@dimen/bg_redius"
+                android:paddingBottom="@dimen/x15">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/x44"
+                            android:layout_height="@dimen/x40"
+                            android:src="@mipmap/icon_fan_speed" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/room_control_icon_margin_text"
+                            android:text="@string/fan_speed"
+                            android:textColor="@color/color_main_text_color"
+                            android:textSize="@dimen/x20" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x30"
+                        android:text="Set your preferred fan \nspeed by moving the red \ndot."
+                        android:textColor="@color/color_main_text_color"
+                        android:textSize="@dimen/x18" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x60"
+                        android:text="@string/min"
+                        android:textColor="@color/color_main_text_color"
+                        android:textSize="@dimen/x20" />
+
+                    <com.cilys.linphoneforhotal.view.DashView
+                        android:id="@+id/fan_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:arcWidth="@dimen/x12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x60"
+                        android:text="@string/max"
+                        android:textColor="@color/color_main_text_color"
+                        android:textSize="@dimen/x20" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

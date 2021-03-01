@@ -217,6 +217,14 @@
     <style name="style_food_order_nav" parent="style_scroll_nav">
     </style>
 
+    <style name="style_room_control_layout_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/y25</item>
+        <item name="android:layout_marginTop">@dimen/y30</item>
+        <item name="android:layout_marginRight">@dimen/y25</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
     <style name="style_room_control_layout">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/y230</item>
@@ -226,12 +234,28 @@
         <item name="android:background">@drawable/shape_round_bg_room_control</item>
     </style>
 
+    <style name="style_room_control_layout_parent_land" parent="style_room_control_layout_parent">
+        <item name="android:layout_marginLeft">@dimen/x25</item>
+        <item name="android:layout_marginTop">@dimen/x30</item>
+        <item name="android:layout_marginRight">@dimen/x25</item>
+    </style>
+
+    <style name="style_room_control_layout_land" parent="style_room_control_layout">
+        <item name="android:layout_height">@dimen/x230</item>
+        <item name="android:padding">@dimen/bg_redius_land</item>
+        <item name="android:background">@drawable/shape_round_bg_room_control_land</item>
+    </style>
+
     <style name="style_room_control_layout_action" parent="style_room_control_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/y75</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">0dp</item>
         <item name="android:background">@drawable/shape_round_bg_room_control_action</item>
+    </style>
+    <style name="style_room_control_layout_action_land" parent="style_room_control_layout_action">
+        <item name="android:layout_height">@dimen/x75</item>
+        <item name="android:background">@drawable/shape_round_bg_room_control_action_land</item>
     </style>
 
     <style name="style_room_control_layout_action_open">
@@ -247,6 +271,9 @@
         <item name="android:text">@string/close</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/shape_round_bg_room_control_action_close</item>
+    </style>
+    <style name="style_room_control_layout_action_close_land" parent="style_room_control_layout_action_close">
+        <item name="android:background">@drawable/shape_round_bg_room_control_action_close_land</item>
     </style>
 
     <style name="style_scroll_nav">
