@@ -8,7 +8,7 @@
         style="@style/style_amen_checkout_bill_details_layout">
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_title"
-            android:text="Sub Total" />
+            android:text="@string/Sub_Total" />
 
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_value"
@@ -18,7 +18,7 @@
         style="@style/style_amen_checkout_bill_details_layout">
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_title"
-            android:text="VAT Total(7%)" />
+            android:text="@string/VAT_Total" />
 
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_value"
@@ -28,7 +28,7 @@
         style="@style/style_amen_checkout_bill_details_layout">
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_title"
-            android:text="Service fee(10%)" />
+            android:text="@string/Service_fee" />
 
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_value"
@@ -38,7 +38,7 @@
         style="@style/style_amen_checkout_bill_details_layout">
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_title"
-            android:text="Tips" />
+            android:text="@string/Tips" />
 
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_value"
@@ -49,7 +49,7 @@
         style="@style/style_amen_checkout_bill_details_layout">
         <TextView
             style="@style/style_amen_checkout_bill_details_layout_title"
-            android:text="Total"
+            android:text="@string/Total"
             android:textSize="@dimen/x25"
             android:textColor="@color/color_main_text_color"/>
 
