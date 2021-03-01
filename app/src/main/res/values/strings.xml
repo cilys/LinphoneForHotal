@@ -64,4 +64,13 @@
     <string name="please_input_domain">请输入域名</string>
     <string name="please_input_proxy_server">请输入代理服务器</string>
     <string name="config">配置</string>
+
+    <string name="recommendations_for_you">Recommendations for you</string>
+    <string name="Extra_Towel">Extra Towel</string>
+    <string name="Dental_Kit">Dental Kit</string>
+    <string name="Bill_Details">Bill Details</string>
+    <string name="Remark">Remark</string>
+    <string name="Type_your_comment">Type your comment</string>
+    <string name="Payment_Option">Payment Option</string>
+    <string name="Cash">Cash</string>
 </resources>
