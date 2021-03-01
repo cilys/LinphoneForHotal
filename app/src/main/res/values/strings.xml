@@ -147,7 +147,8 @@
     <string name="Available_until">Available until 3:00</string>
     <string name="Order_dinner_by">Order dinner by 3:00 and enjoy an extra meal for your loved ones!</string>
 
-
+    <string name="Service">Service</string>
+    <string name="order_been_accepted">Your order has bean accepted.</string>
 
 
 
