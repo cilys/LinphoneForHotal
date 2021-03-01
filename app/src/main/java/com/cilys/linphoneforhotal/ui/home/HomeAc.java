@@ -21,7 +21,6 @@ import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
 import com.cilys.linphoneforhotal.service.LinphoneService;
 import com.cilys.linphoneforhotal.ui.call.PhoneAc;
-import com.cilys.linphoneforhotal.ui.food.FoodAc;
 import com.cilys.linphoneforhotal.ui.menu.ServiceMenuAc;
 import com.cilys.linphoneforhotal.ui.msg.MsgAc;
 import com.cilys.linphoneforhotal.ui.prom.PromDetailsAc;
