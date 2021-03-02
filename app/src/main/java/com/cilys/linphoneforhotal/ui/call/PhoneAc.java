@@ -34,19 +34,37 @@ public class PhoneAc extends BaseLinphoneAc {
     private int showType = SHOW_TYPE_OUT;
     private String outNumber;
 
+    private int fromType = -1;
+
     @Override
     protected int getLayout() {
         return R.layout.ac_phone;
     }
 
     @Override
+    protected void beforeInitUI() {
+        super.beforeInitUI();
+
+        fromType = getIntent().getIntExtra("FROM_TYPE", 0);
+
+
+        if (fromType < 1) {
+
+        } else {
+            showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
+            getIntent().putExtra("SHOW_TYPE", 0);
+        }
+
+        getIntent().putExtra("FROM_TYPE", 0);
+    }
+
+    @Override
     protected void initUI() {
         super.initUI();
 
-        showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
-        int fromType = getIntent().getIntExtra("FROM_TYPE", 0);
 
         initOutView(fromType == FROM_TYPE_CALL_NUMBER);
+
         initIncomingView();
         initCallView();
 
@@ -385,13 +403,13 @@ public class PhoneAc extends BaseLinphoneAc {
             if (number != null) {
                 setTextToView(tv_out_room, number);
             }
-            long time = savedInstanceState.getLong("CALL_TIME", -1L);
-            if (time > -1) {
-                setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(time));
+            timeCount = savedInstanceState.getLong("CALL_TIME", -1L);
+            if (timeCount > -1) {
+                setTextToView(tv_call_time, TimeUtils.fomcatTimeToSecond(timeCount));
             }
 
-            int show = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
-            showView(show);
+            showType = savedInstanceState.getInt("SHOW_TYPE", SHOW_TYPE_OUT);
+            showView(showType);
 
             boolean speaker = savedInstanceState.getBoolean("SPEAKER_ON", false);
             if (speaker) {
@@ -400,7 +418,7 @@ public class PhoneAc extends BaseLinphoneAc {
                 changeSpeakerToNomal();
             }
 
-            changeActionSpeakerBackgound(speaker, show);
+            changeActionSpeakerBackgound(speaker, showType);
         }
     }
 

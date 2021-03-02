@@ -1,6 +1,7 @@
 package com.cilys.linphoneforhotal.base;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +23,8 @@ import com.cilys.linphoneforhotal.event.EventImpl;
 import com.cilys.linphoneforhotal.ui.home.HomeAc;
 import com.cilys.linphoneforhotal.utils.L;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
+
+import java.util.Locale;
 
 public class BaseAc extends AppCompatActivity {
     protected final String TAG = this.getClass().getSimpleName();
@@ -157,5 +161,19 @@ public class BaseAc extends AppCompatActivity {
     protected boolean getSpeakerMode(){
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         return am.isSpeakerphoneOn();
+    }
+
+    protected void switchLanguage(String language){
+        Configuration config = getResources().getConfiguration();
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        if (language.equals("en")) {
+            config.setLocale(Locale.ENGLISH);
+        } else {
+            config.setLocale(Locale.getDefault());
+        }
+
+        getResources().updateConfiguration(config, dm);
+
+
     }
 }

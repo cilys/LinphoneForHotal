@@ -32,11 +32,11 @@ public abstract class BaseLinphoneAc extends BaseAc {
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
+
+        beforeInitUI();
         initUI();
         init();
         afterInit();
-
-
 
         if (BuildConfig.DEBUG || true) {
             View decorView = getWindow().getDecorView();
@@ -61,6 +61,10 @@ public abstract class BaseLinphoneAc extends BaseAc {
     }
 
     protected abstract @LayoutRes int getLayout();
+    protected void beforeInitUI(){
+
+    }
+
     protected void initUI(){
 
     }
