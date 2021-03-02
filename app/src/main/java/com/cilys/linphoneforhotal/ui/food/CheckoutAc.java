@@ -23,12 +23,12 @@ public class CheckoutAc extends CommonTitleAc {
 
         MyListView lv = findView(R.id.lv_goods);
         List<DataBean> datas = new ArrayList<>();
-        DataBean b2 = new DataBean(null, "Arancini(3 picces)",
+        DataBean b2 = new DataBean(null, getString(R.string.Arancini),
                 "$4.49", 2);
         b2.setPicId(R.mipmap.ic_food_details_test);
         datas.add(b2);
 
-        DataBean b3 = new DataBean(null, "Pizza Margherta",
+        DataBean b3 = new DataBean(null, getString(R.string.Pizza_Margherta),
                 "$12.99", 1);
         b3.setPicId(R.mipmap.ic_food_details_test);
         datas.add(b3);

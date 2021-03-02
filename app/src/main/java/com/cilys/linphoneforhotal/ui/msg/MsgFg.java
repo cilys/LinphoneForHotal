@@ -33,7 +33,7 @@ public class MsgFg extends BaseFg {
         MsgBean b0 = new MsgBean(getString(R.string.New));
         datas.add(b0);
 
-        MsgBean b1 = new MsgBean(getString(R.string.Service), "Your order has bean accepted. The wake up time was set to 7:30 AM.","11 min ago.", true);
+        MsgBean b1 = new MsgBean(getString(R.string.Service), getString(R.string.order_been_accepted),"11 min ago.", true);
         datas.add(b1);
 
         try{
@@ -47,7 +47,7 @@ public class MsgFg extends BaseFg {
 
         try{
             MsgBean b3 = b0.clone();
-            b3.setTitle("All");
+            b3.setTitle(getString(R.string.all));
 
             datas.add(b3);
         }catch (Exception e) {
