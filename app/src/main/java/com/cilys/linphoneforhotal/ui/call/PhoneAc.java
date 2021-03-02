@@ -48,14 +48,14 @@ public class PhoneAc extends BaseLinphoneAc {
         fromType = getIntent().getIntExtra("FROM_TYPE", 0);
 
 
-        if (fromType < 1) {
+        if (fromType == -2) {
 
         } else {
             showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
             getIntent().putExtra("SHOW_TYPE", 0);
         }
 
-        getIntent().putExtra("FROM_TYPE", 0);
+        getIntent().putExtra("FROM_TYPE", -2);
     }
 
     @Override
