@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -26,6 +27,7 @@ import com.cilys.linphoneforhotal.ui.msg.MsgAc;
 import com.cilys.linphoneforhotal.ui.prom.PromDetailsAc;
 import com.cilys.linphoneforhotal.ui.room.ControlAc;
 import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
+import com.cilys.linphoneforhotal.utils.ApkUtils;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
@@ -33,6 +35,7 @@ import com.stx.xhb.xbanner.XBanner;
 import com.stx.xhb.xbanner.entity.BaseBannerInfo;
 import com.stx.xhb.xbanner.transformers.Transformer;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -189,7 +192,8 @@ public class HomeAc extends BaseLinphoneAc {
         ll_voice_mail.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-
+                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "lm.apk";
+                ApkUtils.install(path);
             }
         });
 

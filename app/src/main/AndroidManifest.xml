@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <uses-feature
         android:name="android.hardware.sip.voip"
@@ -67,6 +70,13 @@
 
         <activity android:name=".ui.msg.MsgAc" />
         <activity android:name=".ui.tv.TvRemoteAc" />
+
+        <receiver android:name=".receiver.OpenApkReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
