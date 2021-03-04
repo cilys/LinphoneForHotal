@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.pop.SwitchLanguagePopupWindow;
 import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
@@ -29,6 +30,7 @@ import com.cilys.linphoneforhotal.ui.room.ControlAc;
 import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
 import com.cilys.linphoneforhotal.utils.ApkUtils;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
+import com.cilys.linphoneforhotal.utils.L;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.stx.xhb.xbanner.XBanner;
@@ -38,6 +40,9 @@ import com.stx.xhb.xbanner.transformers.Transformer;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
+import con.cilys.utils.log.file.LogFileUtils;
 
 
 public class HomeAc extends BaseLinphoneAc {
@@ -54,10 +59,30 @@ public class HomeAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
+        L.setLogFilePath(Environment.getExternalStorageDirectory().getAbsolutePath(), "log.txt");
+        L.setWriteLogToFile(true);
+
         if (TO_TEST_VIEW) {
             startActivity(new Intent(this, AmentiesAc.class));
             finish();
             return;
+        }
+
+        final View head_gloable = findView(R.id.head_gloable);
+        if (head_gloable != null) {
+            head_gloable.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
+                    SwitchLanguagePopupWindow.show(HomeAc.this, head_gloable, new SwitchLanguagePopupWindow.ItemListener() {
+                        @Override
+                        public void onItemClick(Locale language) {
+                            switchLanguage(language);
+
+                            recreate();
+                        }
+                    });
+                }
+            });
         }
 
         Configuration cf= this.getResources().getConfiguration(); //获取设置的配置信息
@@ -121,7 +146,7 @@ public class HomeAc extends BaseLinphoneAc {
             }
         });
 
-        LinearLayout ll_make_up_room = findView(R.id.ll_make_up_room);
+        final LinearLayout ll_make_up_room = findView(R.id.ll_make_up_room);
         final ImageView img_make_up_room = findView(R.id.img_make_up_room);
         final TextView tv_make_up_room = findView(R.id.tv_make_up_room);
         ll_make_up_room.setOnTouchListener(new View.OnTouchListener() {
@@ -192,7 +217,7 @@ public class HomeAc extends BaseLinphoneAc {
         ll_voice_mail.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "lm.apk";
+                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "MyFavorite" + File.separator + "lm.apk";
                 ApkUtils.install(path);
             }
         });

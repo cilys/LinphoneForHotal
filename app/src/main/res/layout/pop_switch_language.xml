@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="top|right"
+    android:paddingRight="@dimen/y20"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/y25"
+        android:background="@drawable/triangle_white_bg" />
+
+    <LinearLayout
+        android:id="@+id/language_english"
+        style="@style/style_pop_switch_language_layout" >
+        <ImageView
+            style="@style/style_pop_switch_language_layout_country_pic"
+            android:src="@mipmap/icon_country_england"/>
+        <TextView
+            style="@style/style_pop_switch_language_layout_country_name"
+            android:text="@string/language_english" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/language_chinese"
+        style="@style/style_pop_switch_language_layout" >
+        <ImageView
+            android:src="@mipmap/icon_country_chinese"
+            style="@style/style_pop_switch_language_layout_country_pic" />
+        <TextView
+            style="@style/style_pop_switch_language_layout_country_name"
+            android:text="@string/language_chinese" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/language_jpan"
+        style="@style/style_pop_switch_language_layout" >
+        <ImageView
+            android:src="@mipmap/icon_country_japan"
+            style="@style/style_pop_switch_language_layout_country_pic" />
+        <TextView
+            style="@style/style_pop_switch_language_layout_country_name"
+            android:text="@string/language_jpan" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/language_th"
+        style="@style/style_pop_switch_language_layout" >
+        <ImageView
+            android:src="@mipmap/icon_country_thailand"
+            style="@style/style_pop_switch_language_layout_country_pic" />
+        <TextView
+            style="@style/style_pop_switch_language_layout_country_name"
+            android:text="@string/language_th" />
+    </LinearLayout>
+
+</LinearLayout>

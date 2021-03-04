@@ -1,0 +1,227 @@
+<resources>
+    <string name="app_name">Linphone</string>
+
+    <string name="mute">ปิดเสียง</string>
+    <string name="home">หน้าหลัก</string>
+    <string name="str_return">กลับ</string>
+
+    <string name="remote">รีโมท</string>
+    <string name="power">สวิตช์เปิดปิด</string>
+    <string name="cha">CHA</string>
+    <string name="vol">VOL</string>
+
+    <string name="tv_remote">รีโมททีวี</string>
+
+    <string name="order_status">สถานะออเดอร์</string>
+    <string name="order_details">ข้อมูลออเดอร์</string>
+    <string name="food_order">รายการอาหาร</string>
+
+    <string name="requested">รายการ</string>
+    <string name="in_progress">กำลังดำเนินการ</string>
+    <string name="delivered">เสร็จสิ้น</string>
+
+    <string name="dessert">ของหวาน</string>
+    <string name="international">นานาชาติ</string>
+    <string name="italian">อิตาเลียน</string>
+    <string name="kids_menu">เมนูเด็ก</string>
+    <string name="middle_eas">ตะวันออกกลาง</string>
+
+    <string name="appetizer">อาหารเรียกน้ำย่อย</string>
+
+    <string name="all">ทั้งหมด</string>
+    <string name="unread">ยังไม่ได้อ่าน</string>
+    <string name="read">อ่านแล้ว</string>
+
+    <string name="curtains">ผ้าม่าน</string>
+    <string name="master_light">ไฟมาสเตอร์</string>
+
+    <string name="open">เปิด</string>
+    <string name="close">ปิด</string>
+
+    <string name="on">เปิด</string>
+    <string name="off">ปิด</string>
+
+    <string name="bathroom_light">ไฟห้องน้ำ</string>
+
+    <string name="lights">ไฟส่องสว่าง</string>
+
+    <string name="min">ต่ำสุด</string>
+    <string name="max">สูงสุด</string>
+
+    <string name="temperature">อุณหภูมิ</string>
+
+    <string name="fan_speed">ความเร็วของพัดลม</string>
+
+    <string name="bedding_pillows">เครื่องนอนและหมอนs</string>
+    <string name="in_room">ในห้อง</string>
+    <string name="laundries">ซักรีด</string>
+    <string name="towels">ผ้าขนหนู</string>
+    <string name="bath">อาบน้ำ</string>
+    <string name="drinks">เครื่องดื่ม</string>
+
+    <string name="please_input_account">กรุณาระบุแอคเคาท์</string>
+    <string name="please_input_pwd">กรุณาระบุพาสเวิร์ด</string>
+    <string name="please_input_domain">กรุณาระบุ Domain</string>
+    <string name="please_input_proxy_server">กรุณาระบุ Proxy Server</string>
+    <string name="config">ตั้งค่า</string>
+
+    <!-- amenities checkout -->
+    <string name="recommendations_for_you">แนะนำสำหรับคุณ</string>
+    <string name="Extra_Towel">ผ้าขนหนูเพิ่ม</string>
+    <string name="Dental_Kit">ชุดแปรงสีฟัน</string>
+    <string name="Bill_Details">รายละเอียดบิล</string>
+    <string name="Remark">หมายเหตุ</string>
+    <string name="Type_your_comment">แสดงความคิดเห็น</string>
+    <string name="Payment_Option">ตัวเลือกการชำระเงิน</string>
+    <string name="Cash">เงินสด</string>
+
+    <!-- call number -->
+    <string name="VOICE_MAIL">ข้อความเสียง</string>
+    <string name="SERVICE_CALL">บริการโทร</string>
+    <string name="SOS">ขอความช่วยเหลือ</string>
+
+    <!-- room control -->
+    <string name="room_control_set_your_preferred_temperature">ตั้ง \ n อุณหภูมิที่คุณต้องการโดยเลื่อน \ n จุดสีแดง \ n อุณหภูมิที่ต่ำลงสามารถ \ n ช่วยให้คุณนอนหลับสบาย \ n จดจำค่าตั้งไว้</string>
+    <string name="room_control_set_your_preferred_fan">ตั้งพัดลมที่คุณต้องการ \ n ความเร็วโดยเลื่อน \ ndot สีแดง</string>
+
+    <!-- food checkout -->
+    <string name="Sweet_Potatoes">มันหวาน</string>
+    <string name="Coca_Cola">โคคาโคลา</string>
+
+    <!-- home -->
+    <string name="ROOM_CONTROL">แผงควบคุมในห้อง</string>
+    <string name="TV_REMOTE">รีโมททีวี</string>
+    <string name="Hello_Adam_Miller">สวัสดี Adam Miller!</string>
+    <string name="You_have_2Message">คุณมี 2 ข้อความใหม่</string>
+    <string name="New_York">นิวยอร์ก</string>
+    <string name="DO_NOT_DISTURB">ห้ามรบกวน</string>
+    <string name="MAKE_UP_ROOM">ทำความสะอาดห้อง</string>
+    <string name="SERVICE_MENU">บริการต่างๆ</string>
+    <string name="Our_Promotions">โปรโมชั่นของเรา</string>
+    <string name="Tap_QR_code">แตะที่ QR code เพื่อดูแบบเต็มหน้าจอ</string>
+    <string name="PHONE">โทรศัพท์</string>
+
+    <!-- food meal -->
+    <string name="Pasta_Alla_Filicudara">พาสต้า Alla Filicudara</string>
+    <string name="Fresh_pasta">พาสต้าสดกับทูน่าเสิร์ฟพร้อมมะเขือเทศเชอร์รี่ หัวหอม และเคเปอร์</string>
+    <string name="Allergens">แพ้อาหาร</string>
+    <string name="For_Gluten">สำหรับกลูเตน / ข้าวสาลี, ไข่, ถั่วลิสง / ถั่วชนิดอื่น, ถั่วเหลือง</string>
+
+    <!-- Msg -->
+    <string name="Message_2">ข้อความ (2)</string>
+
+    <!-- msg details -->
+    <string name="MyGallery">แกลเลอรี่ของฉัน</string>
+    <string name="To_Admm_Miller">ถึง: Admm Miller</string>
+    <string name="Your_card_will_be_charged">บัตรเครดิตของคุณจะถูกเรียกเก็บเงินตามจำนวนอาหารที่สั่ง</string>
+    <string name="Happy_Hours_2x1">ช่วงเวลาซื้อ 2 แถม 1</string>
+    <string name="Pasta_Pomodoro">2x พาสต้า Pomodoro</string>
+
+    <!-- phone -->
+    <string name="Rober_Watson">Rober Watson</string>
+    <string name="Housekeeping">แม่บ้าน</string>
+    <string name="MUTE">ปิดเสียง</string>
+    <string name="HOLD">ถือสาย</string>
+    <string name="SPEAKER">ลำโพง</string>
+
+    <!-- tv remote -->
+    <string name="Channel">ช่อง</string>
+
+    <!-- common bill -->
+    <string name="Sub_Total">รวม</string>
+    <string name="VAT_Total">ภาษีมูลค่าเพิ่ม (7%)</string>
+    <string name="Service_fee">ค่าบริการ (10%)</string>
+    <string name="Tips">เคล็ดลับ</string>
+    <string name="Total">รวมทั้งสิ้น</string>
+
+    <!-- common bottom -->
+    <string name="Remote">รีโมท</string>
+
+    <!-- common bottom confirm -->
+    <string name="CONFIRM">ยืนยัน</string>
+
+    <string name="Food_Order">รายการอาหาร</string>
+
+    <string name="Items_3">3 รายการ</string>
+
+    <string name="Available_until">เปิดให้บริการจนถึง 15:00 น</string>
+    <string name="Order_dinner_by">สั่งอาหารเย็นก่อน 15:00 น. และอิ่มอร่อยกับมื้อพิเศษพร้อมคนที่คุณรัก!</string>
+
+    <string name="Service">บริการ</string>
+    <string name="order_been_accepted">ได้รับออเดอร์ของคุณแล้ว</string>
+
+    <string name="offer_brief_description">คำอธิบายโดยสังเขป</string>
+    <string name="offer_description">คำอธิบาย</string>
+    <string name="second_offer">ข้อเสนอที่สอง</string>
+
+    <string name="Scan_to_check_on_mobile">สแกนเพื่อดูบนมือถือ</string>
+
+    <string name="without_config">未配置账户</string>
+
+    <string name="please_input_need">请输入必填项</string>
+
+    <string name="config_success">配置成功</string>
+    <string name="please_config_info">请配置账户信息</string>
+
+    <string name="no_permission_camera">相机权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_audio">录音权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_phone">电话被拒绝，暂无法使用app</string>
+
+    <string name="Promotions">โปรโมชั่น</string>
+
+    <string name="Room_Control">แผงควบคุมในห้อง</string>
+
+    <string name="Checkout">เช็คเอาท์</string>
+
+    <string name="Amenties">สิ่งอำนวยความสะดวก</string>
+
+    <string name="Appetzer">อาหารเรียกน้ำย่อย</string>
+    <string name="Bruschetta_Pomodoro_e_Aglio">Bruschetta Pomodoro e Aglio</string>
+    <string name="Sapori_di_Sicilia">Sapori di Sicilia</string>
+    <string name="Pizza_Margherita">พิซซ่า Margherita</string>
+    <string name="Main_dish">อาหารจานหลัก</string>
+    <string name="Pizza_Peperoncino">พิซซ่า Peperoncino</string>
+
+    <string name="Pizza_Marghcrita">พิซซ่า Marghcrita</string>
+    <string name="Arancini">Arancini (3 ชิ้น)</string>
+
+    <string name="Amenities">สิ่งอำนวยความสะดวก</string>
+    <string name="Concierge">คอนเซียจ</string>
+    <string name="Maintenance">งานช่าง</string>
+    <string name="Food">อาหาร</string>
+    <string name="New">ใหม่</string>
+    <string name="Wakeup_Call">โทรปลุก</string>
+    <string name="Late_Checkout">เช็คเอาท์</string>
+    <string name="DND">ห้ามรบกวน</string>
+    <string name="Clean_Room">ทำความสะอาดห้อง</string>
+    <string name="Service_Menu">เมนู</string>
+
+    <string name="Jacket">แจ็คเก็ต</string>
+    <string name="Pizza_Margherta">พิซซ่า Margherta</string>
+    <string name="Overcoat">เสื้อคลุม</string>
+    <string name="Laundry">ซักรีด</string>
+    <string name="Pyjamas_Silk">ชุดนอน (ผ้าไหม)</string>
+    <string name="Necktie">เนคไท</string>
+    <string name="Dry_Cleaning">ซักแห้ง</string>
+    <string name="Dressing_Gown_Silk">ชุดเดรส (ผ้าไหม)</string>
+
+    <string name="language_english">English</string>
+    <string name="language_chinese">简体中文</string>
+    <string name="language_chinese_tw">繁体中文</string>
+    <string name="language_jpan">日本语</string>
+    <string name="language_th">ไทย</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

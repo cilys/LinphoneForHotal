@@ -45,7 +45,8 @@
         <service android:name=".service.LinphoneService" />
 
         <activity android:name=".ui.call.CallNumberAc" />
-        <activity android:name=".ui.home.HomeAc">
+        <activity android:name=".ui.home.HomeAc"
+            android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

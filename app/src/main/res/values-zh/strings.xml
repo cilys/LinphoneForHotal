@@ -1,0 +1,227 @@
+<resources>
+    <string name="app_name">Linphone</string>
+
+    <string name="mute">静音</string>
+    <string name="home">主页</string>
+    <string name="str_return">返回</string>
+
+    <string name="remote">遥控</string>
+    <string name="power">电源开关</string>
+    <string name="cha">CHA</string>
+    <string name="vol">VOL</string>
+
+    <string name="tv_remote">电视遥控</string>
+
+    <string name="order_status">订单状态</string>
+    <string name="order_details">订单详情</string>
+    <string name="food_order">食物订购</string>
+
+    <string name="requested">已发送请求</string>
+    <string name="in_progress">处理中</string>
+    <string name="delivered">已送达</string>
+
+    <string name="dessert">甜点</string>
+    <string name="international">国际</string>
+    <string name="italian">意式</string>
+    <string name="kids_menu">儿童菜单</string>
+    <string name="middle_eas">中东</string>
+
+    <string name="appetizer">开胃菜</string>
+
+    <string name="all">全部</string>
+    <string name="unread">未读</string>
+    <string name="read">已读</string>
+
+    <string name="curtains">窗帘</string>
+    <string name="master_light">灯 总开关</string>
+
+    <string name="open">开</string>
+    <string name="close">关</string>
+
+    <string name="on">开</string>
+    <string name="off">关</string>
+
+    <string name="bathroom_light">浴室灯</string>
+
+    <string name="lights">灯</string>
+
+    <string name="min">最小</string>
+    <string name="max">最大</string>
+
+    <string name="temperature">温度</string>
+
+    <string name="fan_speed">风扇转速</string>
+
+    <string name="bedding_pillows">床上用品&#38;枕头</string>
+    <string name="in_room">房间内</string>
+    <string name="laundries">洗衣</string>
+    <string name="towels">毛巾</string>
+    <string name="bath">洗澡</string>
+    <string name="drinks">饮品</string>
+
+    <string name="please_input_account">请输入账号</string>
+    <string name="please_input_pwd">请输入密码</string>
+    <string name="please_input_domain">请输入域名</string>
+    <string name="please_input_proxy_server">请输入代理服务器</string>
+    <string name="config">配置</string>
+
+    <!-- amenities checkout -->
+    <string name="recommendations_for_you">为您推荐</string>
+    <string name="Extra_Towel">额外毛巾</string>
+    <string name="Dental_Kit">牙具</string>
+    <string name="Bill_Details">账单明细</string>
+    <string name="Remark">备注</string>
+    <string name="Type_your_comment">输入您的意见</string>
+    <string name="Payment_Option">付款方式</string>
+    <string name="Cash">现金</string>
+
+    <!-- call number -->
+    <string name="VOICE_MAIL">语音信箱</string>
+    <string name="SERVICE_CALL">服务电话</string>
+    <string name="SOS">紧急求救</string>
+
+    <!-- room control -->
+    <string name="room_control_set_your_preferred_temperature">Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember.</string>
+    <string name="room_control_set_your_preferred_fan">Set your preferred fan \nspeed by moving the red \ndot.</string>
+
+    <!-- food checkout -->
+    <string name="Sweet_Potatoes">红薯</string>
+    <string name="Coca_Cola">可口可乐</string>
+
+    <!-- home -->
+    <string name="ROOM_CONTROL">房间控制</string>
+    <string name="TV_REMOTE">电视遥控</string>
+    <string name="Hello_Adam_Miller">您好，Adam Miller!</string>
+    <string name="You_have_2Message">您有2条消息</string>
+    <string name="New_York">纽约</string>
+    <string name="DO_NOT_DISTURB">请勿打扰</string>
+    <string name="MAKE_UP_ROOM">清洁房间</string>
+    <string name="SERVICE_MENU">服务菜单</string>
+    <string name="Our_Promotions">我们的推广</string>
+    <string name="Tap_QR_code">点按二维码可全屏查看</string>
+    <string name="PHONE">电话</string>
+
+    <!-- food meal -->
+    <string name="Pasta_Alla_Filicudara">Pasta Alla Filicudara</string>
+    <string name="Fresh_pasta">新鲜意大利面配吞拿鱼块，樱桃番茄，洋葱</string>
+    <string name="Allergens">过敏原</string>
+    <string name="For_Gluten">麸质/小麦，鸡蛋，花生/坚果，大豆</string>
+
+    <!-- Msg -->
+    <string name="Message_2">讯息 （2）</string>
+
+    <!-- msg details -->
+    <string name="MyGallery">MyGallery</string>
+    <string name="To_Admm_Miller">致：Admm Miller</string>
+    <string name="Your_card_will_be_charged">餐费将从您的信用卡收取</string>
+    <string name="Happy_Hours_2x1">欢乐时光2x1</string>
+    <string name="Pasta_Pomodoro">2x番茄通心粉</string>
+
+    <!-- phone -->
+    <string name="Rober_Watson">Rober Watson</string>
+    <string name="Housekeeping">房务</string>
+    <string name="MUTE">静音</string>
+    <string name="HOLD">保持</string>
+    <string name="SPEAKER">音箱</string>
+
+    <!-- tv remote -->
+    <string name="Channel">频道</string>
+
+    <!-- common bill -->
+    <string name="Sub_Total">小计</string>
+    <string name="VAT_Total">增值税合计（7％）</string>
+    <string name="Service_fee">服务费（10％）</string>
+    <string name="Tips">小费</string>
+    <string name="Total">总额</string>
+
+    <!-- common bottom -->
+    <string name="Remote">遥控</string>
+
+    <!-- common bottom confirm -->
+    <string name="CONFIRM">确认</string>
+
+    <string name="Food_Order">食物订购</string>
+
+    <string name="Items_3">项目 3</string>
+
+    <string name="Available_until">有效期至3:00</string>
+    <string name="Order_dinner_by">于3:00之前订购晚餐，与您的亲人享用一顿美餐！</string>
+
+    <string name="Service">服务</string>
+    <string name="order_been_accepted">您的订单已被接受</string>
+
+    <string name="offer_brief_description">提供简短说明</string>
+    <string name="offer_description">提供说明含格式</string>
+    <string name="second_offer">second offer</string>
+
+    <string name="Scan_to_check_on_mobile">扫描后以手机查看</string>
+
+    <string name="without_config">未配置账户</string>
+
+    <string name="please_input_need">请输入必填项</string>
+
+    <string name="config_success">配置成功</string>
+    <string name="please_config_info">请配置账户信息</string>
+
+    <string name="no_permission_camera">相机权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_audio">录音权限被拒绝，暂无法使用app</string>
+    <string name="no_permission_phone">电话被拒绝，暂无法使用app</string>
+
+    <string name="Promotions">推广</string>
+
+    <string name="Room_Control">房间控制</string>
+
+    <string name="Checkout">退房</string>
+
+    <string name="Amenties">备品</string>
+
+    <string name="Appetzer">开胃菜</string>
+    <string name="Bruschetta_Pomodoro_e_Aglio">Bruschetta Pomodoro e Aglio</string>
+    <string name="Sapori_di_Sicilia">Sapori di Sicilia</string>
+    <string name="Pizza_Margherita">玛格丽特披萨</string>
+    <string name="Main_dish">主菜</string>
+    <string name="Pizza_Peperoncino">Pizza Peperoncino</string>
+
+    <string name="Pizza_Marghcrita">玛格丽特披萨</string>
+    <string name="Arancini">意式炸饭球（3个）</string>
+
+    <string name="Amenities">备品</string>
+    <string name="Concierge">礼宾</string>
+    <string name="Maintenance">维修</string>
+    <string name="Food">食物</string>
+    <string name="New">新</string>
+    <string name="Wakeup_Call">叫醒服务</string>
+    <string name="Late_Checkout">延迟退房</string>
+    <string name="DND">请勿打扰</string>
+    <string name="Clean_Room">清洁房间</string>
+    <string name="Service_Menu">服务菜单</string>
+
+    <string name="Jacket">外套</string>
+    <string name="Pizza_Margherta">玛格丽特披萨</string>
+    <string name="Overcoat">大衣</string>
+    <string name="Laundry">洗衣</string>
+    <string name="Pyjamas_Silk">睡衣（真丝）</string>
+    <string name="Necktie">领带</string>
+    <string name="Dry_Cleaning">干洗</string>
+    <string name="Dressing_Gown_Silk">晨衣（真丝）</string>
+
+    <string name="language_english">English</string>
+    <string name="language_chinese">简体中文</string>
+    <string name="language_chinese_tw">繁体中文</string>
+    <string name="language_jpan">日本语</string>
+    <string name="language_th">ไทย</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

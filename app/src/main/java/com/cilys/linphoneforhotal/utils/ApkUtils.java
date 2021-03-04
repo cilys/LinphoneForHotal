@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 public class ApkUtils {
 
     public static boolean install(String apkPath) {
+        L.d(ApkUtils.class.getSimpleName(), "install apkPath = " + apkPath);
         boolean result = false;
         DataOutputStream dataOutputStream = null;
         BufferedReader errorStream = null;
@@ -27,10 +28,12 @@ public class ApkUtils {
             while ((line = errorStream.readLine()) != null) {
                 msg += line;
             }
+            L.i(ApkUtils.class.getSimpleName(), "install msg = " + msg);
             if (!msg.contains("Failure")) {
                 result = true;
             }
         } catch (Exception e) {
+            L.printException(e);
         } finally {
             try {
                 if (dataOutputStream != null) {
@@ -46,4 +49,11 @@ public class ApkUtils {
         return result;
     }
 
+    public static void checkVersion (String url){
+
+    }
+
+    public static void downloadApk(String url) {
+
+    }
 }

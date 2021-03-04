@@ -24,4 +24,8 @@
 
     <dimen name="land_margin_left_right">@dimen/y300</dimen>
 
+    <dimen name="pop_layout_width">@dimen/y240</dimen>
+    <dimen name="pop_layout_height">@dimen/y60</dimen>
+    <dimen name="pop_pic_size">@dimen/y24</dimen>
+
 </resources>

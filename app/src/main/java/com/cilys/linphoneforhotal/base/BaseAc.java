@@ -163,17 +163,12 @@ public class BaseAc extends AppCompatActivity {
         return am.isSpeakerphoneOn();
     }
 
-    protected void switchLanguage(String language){
+    protected void switchLanguage(Locale language){
         Configuration config = getResources().getConfiguration();
         DisplayMetrics dm = getResources().getDisplayMetrics();
-        if (language.equals("en")) {
-            config.setLocale(Locale.ENGLISH);
-        } else {
-            config.setLocale(Locale.getDefault());
-        }
+
+        config.setLocale(language);
 
         getResources().updateConfiguration(config, dm);
-
-
     }
 }

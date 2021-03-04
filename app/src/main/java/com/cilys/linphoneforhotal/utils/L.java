@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Set;
 
+import con.cilys.utils.log.file.LogFileUtils;
+
 /**
  * user:cil
  * time:2017/2/23
@@ -157,7 +159,7 @@ public class L {
     }
 
     private static void writeLogToFile(String tag, String msg){
-//        LogFileUtils.getInstance().startWriteLog(dir, fileName, "[" + tag + "] " + msg);
+        LogFileUtils.getInstance().startWriteLog(dir, fileName, "[" + tag + "] " + msg);
     }
 
     private static String dir, fileName;
