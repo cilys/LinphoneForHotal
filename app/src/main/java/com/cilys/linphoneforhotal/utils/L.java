@@ -159,7 +159,7 @@ public class L {
     }
 
     private static void writeLogToFile(String tag, String msg){
-        LogFileUtils.getInstance().startWriteLog(dir, fileName, "[" + tag + "] " + msg);
+//        LogFileUtils.getInstance().startWriteLog(dir, fileName, "[" + tag + "] " + msg);
     }
 
     private static String dir, fileName;
