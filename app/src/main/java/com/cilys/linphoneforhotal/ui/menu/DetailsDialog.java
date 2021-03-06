@@ -19,6 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailsDialog extends BaseDialog {
+    public final static String TYPE_REQUESTED = "Requested";
+    public final static String TYPE_IN_PROGRESS = "in_progress";
+    public final static String TYPE_DELIVERED = "Delivered";
+
+    private DetailsDatasAdapter adapter;
+
     public DetailsDialog(Activity ac) {
         super(ac);
     }
@@ -44,14 +50,27 @@ public class DetailsDialog extends BaseDialog {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.rbt_in_progress){
+                    if (adapter != null) {
+                        adapter.setType(TYPE_IN_PROGRESS);
+                        adapter.notifyDataSetChanged();
+                    }
+
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_white);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_trans);
                 } else if (checkedId == R.id.rbt_delivered) {
+                    if (adapter != null) {
+                        adapter.setType(TYPE_DELIVERED);
+                        adapter.notifyDataSetChanged();
+                    }
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_white);
                 } else {
+                    if (adapter != null) {
+                        adapter.setType(TYPE_REQUESTED);
+                        adapter.notifyDataSetChanged();
+                    }
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_white);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_trans);
@@ -91,7 +110,8 @@ public class DetailsDialog extends BaseDialog {
 
 
         RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
-        DetailsDatasAdapter adapter = new DetailsDatasAdapter(datas);
+        adapter = new DetailsDatasAdapter(datas);
+        adapter.setType(TYPE_REQUESTED);
         rv.setLayoutManager(new LinearLayoutManager(ac));
         rv.setAdapter(adapter);
     }

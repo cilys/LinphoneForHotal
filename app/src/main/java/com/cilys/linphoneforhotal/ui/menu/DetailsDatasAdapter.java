@@ -16,6 +16,11 @@ import java.util.List;
 
 public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapter.VH> {
     private List<DetailsDataBean> datas;
+    private String type;
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public DetailsDatasAdapter(List<DetailsDataBean> datas) {
         this.datas = datas;
@@ -34,11 +39,15 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
         vh.setCount(datas.get(i).getCount());
         vh.setPic(datas.get(i).getPicId());
 
+
+
         if (datas.get(i).getCount() < 1) {
             vh.reduce.setVisibility(View.INVISIBLE);
         } else {
             vh.reduce.setVisibility(View.VISIBLE);
         }
+
+        vh.setData(datas.get(i), type);
 
         vh.add.setOnClickListener(new SingleClickListener() {
             @Override
@@ -87,6 +96,26 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
 
             add =  itemView.findViewById(R.id.add);
             reduce =  itemView.findViewById(R.id.reduce);
+        }
+
+        private void setData(DetailsDataBean bean, String type) {
+            if (bean != null) {
+                if (DetailsDialog.TYPE_IN_PROGRESS.equals(type) || DetailsDialog.TYPE_DELIVERED.equals(type)) {
+                    if (add != null) {
+                        add.setVisibility(View.INVISIBLE);
+                    }
+                    if (reduce != null) {
+                        reduce.setVisibility(View.INVISIBLE);
+                    }
+                } else {
+                    if (add != null) {
+                        add.setVisibility(View.VISIBLE);
+                    }
+                    if (reduce != null) {
+                        reduce.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
         }
 
         private void setPic(int picId) {
