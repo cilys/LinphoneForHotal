@@ -48,7 +48,6 @@ import con.cilys.utils.log.file.LogFileUtils;
 public class HomeAc extends BaseLinphoneAc {
     private final boolean TO_TEST_VIEW = false;
 
-
     @Override
     protected int getLayout() {
         return R.layout.ac_home;

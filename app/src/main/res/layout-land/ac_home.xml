@@ -22,8 +22,37 @@
             />
 
         <LinearLayout
-            android:id="@+id/ll_room_control"
+            android:id="@+id/head_gloable"
+            android:layout_width="@dimen/y55"
+            android:layout_height="@dimen/y55"
             android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/y34"
+                android:layout_height="@dimen/y34"
+                android:src="@mipmap/icon_gloable"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/head_question"
+            android:layout_width="@dimen/y55"
+            android:layout_height="@dimen/y55"
+            android:layout_toLeftOf="@+id/head_gloable"
+            android:layout_marginLeft="@dimen/x20"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/y34"
+                android:layout_height="@dimen/y34"
+                android:src="@mipmap/icon_question_white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_room_control"
+            android:layout_toLeftOf="@+id/head_question"
             android:background="@mipmap/ic_bg_home_head_action_room_control"
             style="@style/style_home_head_action_ll.top">
             <ImageView
