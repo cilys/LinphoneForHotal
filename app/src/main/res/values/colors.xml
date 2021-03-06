@@ -30,4 +30,6 @@
     <color name="color_tv_remote_text_selected">@color/white</color>
     <color name="color_tv_remote_text_normal">@color/white</color>
 
+    <color name="color_home_center_action_bg_normal">@android:color/transparent</color>
+    <color name="color_home_center_action_bg_selected">#3a8645</color>
 </resources>

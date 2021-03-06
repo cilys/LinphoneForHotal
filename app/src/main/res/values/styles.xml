@@ -112,7 +112,7 @@
         <item name="android:orientation">vertical</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@mipmap/ic_bg_home_head_action</item>
+        <item name="android:background">@drawable/selector_home_center_action_bg</item>
     </style>
     <style name="style_home_head_action_ll_img">
         <item name="android:layout_width">@dimen/y24</item>
