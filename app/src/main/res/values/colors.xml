@@ -25,4 +25,9 @@
 
     <color name="color_f0f0f0">#F0F0F0</color>
 
+    <color name="color_tv_remote_bg_normal">@color/color_303040</color>
+    <color name="color_tv_remote_bg_selected">@color/color_ababb1</color>
+    <color name="color_tv_remote_text_selected">@color/white</color>
+    <color name="color_tv_remote_text_normal">@color/white</color>
+
 </resources>

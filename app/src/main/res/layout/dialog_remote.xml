@@ -29,7 +29,7 @@
             android:layout_marginLeft="@dimen/tv_remote_dialog_margin"
             android:layout_marginRight="@dimen/tv_remote_dialog_margin"
             android:gravity="center"
-            android:background="@drawable/shape_round_bg_tv_remote" >
+            android:background="@drawable/selector_tv_remote_action" >
 
             <ImageView
                 android:layout_width="@dimen/x22"
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/power"
-                android:textColor="@color/white"
+                android:textColor="@color/color_tv_remote_text_normal"
                 android:layout_marginTop="@dimen/y10"
                 android:textSize="@dimen/x18" />
         </LinearLayout>
@@ -62,7 +62,7 @@
                     android:layout_height="@dimen/y300"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/shape_round_bg_tv_remote" >
+                    android:background="@drawable/selector_tv_remote_action" >
 
                     <LinearLayout
                         android:id="@+id/channel_add"
@@ -70,6 +70,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_add"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -83,7 +84,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:text="@string/cha"
-                        android:textColor="@color/white"
+                        android:textColor="@color/color_tv_remote_text_normal"
                         android:textSize="@dimen/x18" />
 
                     <LinearLayout
@@ -92,6 +93,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_reduce"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -127,7 +129,7 @@
                     android:layout_height="@dimen/y300"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/shape_round_bg_tv_remote" >
+                    android:background="@drawable/selector_tv_remote_action" >
 
                     <LinearLayout
                         android:id="@+id/vol_add"
@@ -135,6 +137,8 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+
+                        android:background="@drawable/selector_tv_remote_action_vol_add"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -148,7 +152,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:text="@string/vol"
-                        android:textColor="@color/white"
+                        android:textColor="@color/color_tv_remote_text_normal"
                         android:textSize="@dimen/x18" />
 
                     <LinearLayout
@@ -157,6 +161,8 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+
+                        android:background="@drawable/selector_tv_remote_action_vol_reduce"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"

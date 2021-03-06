@@ -4,6 +4,6 @@
 
     <corners android:radius="@dimen/y75"/>
 
-    <solid android:color="@color/color_303040" />
+    <solid android:color="@color/color_tv_remote_bg_selected" />
 
 </shape>

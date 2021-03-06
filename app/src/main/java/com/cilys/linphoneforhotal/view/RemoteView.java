@@ -25,7 +25,7 @@ public class RemoteView extends View {
             topArrowColor, rightArrowColor,
             bottomArrowColor, leftArrowColor,
             textColor, textSize, rectColor;
-    private int touchForegroundColor, touchArrowColor;
+    private int touchForegroundColor, touchArrowColor, touchTextColor;
 
     private int width, height;  //view的宽、高
     private float radius;         //圆的半径
@@ -59,9 +59,9 @@ public class RemoteView extends View {
         HEIGHT = ta.getDimensionPixelSize(R.styleable.remoteview_view_height, 100);
 
         background = ta.getColor(R.styleable.remoteview_backgroundColor, Color.TRANSPARENT);
-        foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_303040));
+        foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_tv_remote_bg_normal));
 //        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
-        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.white));
+        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_tv_remote_bg_selected));
 
 
         topArrowColor = ta.getColor(R.styleable.remoteview_topArrowColor, context.getResources().getColor(R.color.white));
@@ -70,10 +70,11 @@ public class RemoteView extends View {
         leftArrowColor = ta.getColor(R.styleable.remoteview_leftArrowColor, context.getResources().getColor(R.color.white));
 
 //        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.white));
-        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.color_303040));
+        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.color_tv_remote_bg_normal));
 
 
-        textColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.white));
+        textColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.color_tv_remote_text_normal));
+        touchTextColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.color_tv_remote_text_selected));
 
         rectColor = ta.getColor(R.styleable.remoteview_rectColor, context.getResources().getColor(R.color.color_tv_remote_center_rect));
 
@@ -300,7 +301,7 @@ public class RemoteView extends View {
         mPaint.setTextSize(textSize);
         mPaint.setStyle(Paint.Style.FILL);
         if (touchArea == AREA_CENTER_RECT) {
-            mPaint.setColor(foreground);
+            mPaint.setColor(touchTextColor);
         } else {
             mPaint.setColor(textColor);
         }

@@ -80,7 +80,7 @@
                     android:layout_height="@dimen/y300"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/shape_round_bg_tv_remote_land" >
+                    android:background="@drawable/shape_round_bg_tv_remote_normal_land" >
 
                     <LinearLayout
                         android:id="@+id/channel_add"
@@ -137,7 +137,7 @@
                     android:layout_height="@dimen/y300"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/shape_round_bg_tv_remote" >
+                    android:background="@drawable/shape_round_bg_tv_remote_normal" >
 
                     <LinearLayout
                         android:id="@+id/vol_add"
