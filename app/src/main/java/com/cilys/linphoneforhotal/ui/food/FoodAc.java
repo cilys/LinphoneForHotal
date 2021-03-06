@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.ui.food;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -120,6 +121,13 @@ public class FoodAc extends CommonTitleAc {
             @Override
             public void onPageScrollStateChanged(int i) {
 
+            }
+        });
+
+        findViewById(R.id.next).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                startActivity(new Intent(FoodAc.this, CheckoutAc.class));
             }
         });
     }

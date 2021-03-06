@@ -48,11 +48,5 @@ public class FoodDataFg extends BaseFg {
             }
         });
 
-        rootView.findViewById(R.id.next).setOnClickListener(new SingleClickListener() {
-            @Override
-            public void onSingleClick(View v) {
-                startActivity(new Intent(getActivity(), CheckoutAc.class));
-            }
-        });
     }
 }
