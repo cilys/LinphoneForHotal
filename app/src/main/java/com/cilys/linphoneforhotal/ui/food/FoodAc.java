@@ -8,10 +8,15 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FoodAc extends CommonTitleAc {
     private TextView dessert, inter, italian, kids, middle;
@@ -124,13 +129,23 @@ public class FoodAc extends CommonTitleAc {
             }
         });
 
+        items_count = findView(R.id.bottom_title);
+        total_price = findView(R.id.total_price);
+
         findViewById(R.id.next).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
+                if (selected_count_item <= 0) {
+                    showToast(getString(R.string.please_select_food));
+                    return;
+                }
                 startActivity(new Intent(FoodAc.this, CheckoutAc.class));
             }
         });
     }
+
+    private TextView items_count;
+    private TextView total_price;
 
     private void setSelect(int i) {
         setDrawableBottom(dessert, R.mipmap.icon_point_trans);
@@ -156,4 +171,71 @@ public class FoodAc extends CommonTitleAc {
     protected String getCommonTitle() {
         return getString(R.string.food_order);
     }
+
+    //已选中的菜品
+    private Map<String, DataBean> map_selected_food;
+
+
+    public final static int EVENT_SELECTED_FOOD_ADD = 1001;
+    public final static int EVENT_SELECTED_FOOD_RESUCE = 1002;
+    @Override
+    protected void onEvent(Event e) {
+        super.onEvent(e);
+
+        if (e.what == EVENT_SELECTED_FOOD_ADD) {
+            if (map_selected_food == null) {
+                map_selected_food = new HashMap<>();
+            }
+            DataBean bean = (DataBean)e.obj;
+            if (bean == null) {
+                return;
+            }
+            String id = bean.getId();
+
+            map_selected_food.put(id, bean);
+
+            selected_count_item ++;
+            items_count.setText(selected_count_item + " " + getString(R.string.Items));
+
+            BigDecimal d = new BigDecimal(selected_total_price);
+            BigDecimal d2 = new BigDecimal(bean.getPrice());
+            BigDecimal res = d.add(d2);
+            res = res.setScale(2, RoundingMode.HALF_UP);
+
+            selected_total_price = res.floatValue();
+
+            total_price.setText(getString(R.string.money_unit) + selected_total_price);
+        } else if (e.what == EVENT_SELECTED_FOOD_RESUCE) {
+            if (map_selected_food == null) {
+                map_selected_food = new HashMap<>();
+            }
+            DataBean bean = (DataBean)e.obj;
+            if (bean == null) {
+                return;
+            }
+            String id = bean.getId();
+
+            int count = bean.getCount();
+            if (count <= 0) {
+                map_selected_food.remove(id);
+            }else {
+                map_selected_food.put(id, bean);
+            }
+
+            selected_count_item --;
+            items_count.setText(selected_count_item + " " + getString(R.string.Items));
+
+            BigDecimal d = new BigDecimal(selected_total_price);
+            BigDecimal d2 = new BigDecimal(bean.getPrice());
+            BigDecimal res = d.subtract(d2);
+            res = res.setScale(2, RoundingMode.HALF_UP);
+
+            selected_total_price = res.floatValue();
+
+            total_price.setText(getString(R.string.money_unit) + selected_total_price);
+        }
+    }
+
+    private int selected_count_item = 0;
+    private float selected_total_price = 0.00f;
 }

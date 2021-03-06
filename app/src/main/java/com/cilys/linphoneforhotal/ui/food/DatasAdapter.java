@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
@@ -55,6 +57,12 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     datas.get(i).setCount(count);
 
                     notifyDataSetChanged();
+
+                    Event e = new Event();
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_ADD;
+                    e.obj = datas.get(i);
+
+                    EventBus.getInstance().postEvent(e);
                 }
             });
 
@@ -69,6 +77,12 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     datas.get(i).setCount(count);
 
                     notifyDataSetChanged();
+
+                    Event e = new Event();
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_RESUCE;
+                    e.obj = datas.get(i);
+
+                    EventBus.getInstance().postEvent(e);
                 }
             });
         }
@@ -80,7 +94,6 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     protected static class VH extends RecyclerView.ViewHolder {
-
         private View rootView;
         private ImageView img;
         private TextView name, price, count;
@@ -121,7 +134,7 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 this.name.setText(bean.getName());
             }
             if (this.price != null) {
-                this.price.setText(bean.getPrice());
+                this.price.setText(this.price.getContext().getString(R.string.money_unit) + bean.getPrice());
             }
         }
     }

@@ -144,6 +144,8 @@
     <string name="Food_Order">Food Order</string>
 
     <string name="Items_3">3 Items</string>
+    <string name="Items_0">0 Items</string>
+    <string name="Items">Items</string>
 
     <string name="Available_until">Available until 3:00</string>
     <string name="Order_dinner_by">Order dinner by 3:00 and enjoy an extra meal for your loved ones!</string>
@@ -214,7 +216,9 @@
 
     <string name="ADD_TO_CART">ADD TO CART</string>
 
+    <string name="money_unit">$</string>
 
+    <string name="please_select_food">please choose the food</string>
 
 
 

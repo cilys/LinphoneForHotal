@@ -143,6 +143,8 @@
     <string name="Food_Order">รายการอาหาร</string>
 
     <string name="Items_3">3 รายการ</string>
+    <string name="Items_0">0 รายการ</string>
+    <string name="Items">รายการ</string>
 
     <string name="Available_until">เปิดให้บริการจนถึง 15:00 น</string>
     <string name="Order_dinner_by">สั่งอาหารเย็นก่อน 15:00 น. และอิ่มอร่อยกับมื้อพิเศษพร้อมคนที่คุณรัก!</string>
@@ -214,8 +216,9 @@
     <string name="TABLET">TABLET</string>
     <string name="ADD_TO_CART">ADD TO CART</string>
 
+    <string name="money_unit">$</string>
 
-
+    <string name="please_select_food">please choose the food</string>
 
 
 

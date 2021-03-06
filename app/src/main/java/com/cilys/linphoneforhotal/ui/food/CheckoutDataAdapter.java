@@ -95,7 +95,7 @@ public class CheckoutDataAdapter extends BaseAdapter {
             vh.name.setText(datas.get(position).getName());
         }
         if (vh.price != null) {
-            vh.price.setText(datas.get(position).getPrice());
+            vh.price.setText(vh.price.getContext().getString(R.string.money_unit) + datas.get(position).getPrice());
         }
 
         return v;
