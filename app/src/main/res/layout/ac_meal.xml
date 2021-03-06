@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/model_layout"
         android:layout_width="@dimen/x650"
-        android:layout_height="@dimen/y850"
+        android:layout_height="@dimen/y978"
         android:orientation="vertical">
 
         <RelativeLayout
