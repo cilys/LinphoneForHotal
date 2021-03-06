@@ -61,7 +61,7 @@ public class RemoteView extends View {
         background = ta.getColor(R.styleable.remoteview_backgroundColor, Color.TRANSPARENT);
         foreground = ta.getColor(R.styleable.remoteview_foregroundColor, context.getResources().getColor(R.color.color_303040));
 //        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
-        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.color_303040));
+        touchForegroundColor = ta.getColor(R.styleable.remoteview_touchForegroundColor, context.getResources().getColor(R.color.white));
 
 
         topArrowColor = ta.getColor(R.styleable.remoteview_topArrowColor, context.getResources().getColor(R.color.white));
@@ -69,7 +69,8 @@ public class RemoteView extends View {
         bottomArrowColor = ta.getColor(R.styleable.remoteview_bottomArrowColor, context.getResources().getColor(R.color.white));
         leftArrowColor = ta.getColor(R.styleable.remoteview_leftArrowColor, context.getResources().getColor(R.color.white));
 
-        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.white));
+//        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.white));
+        touchArrowColor = ta.getColor(R.styleable.remoteview_touchArrowColor, context.getResources().getColor(R.color.color_303040));
 
 
         textColor = ta.getColor(R.styleable.remoteview_centerTextColor, context.getResources().getColor(R.color.white));
@@ -298,7 +299,11 @@ public class RemoteView extends View {
         resetPaint();
         mPaint.setTextSize(textSize);
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(textColor);
+        if (touchArea == AREA_CENTER_RECT) {
+            mPaint.setColor(foreground);
+        } else {
+            mPaint.setColor(textColor);
+        }
         mPaint.setAntiAlias(true);
 
         if (centerText == null || centerText.length() < 1) {

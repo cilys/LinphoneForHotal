@@ -85,7 +85,7 @@ public class RemoteChannelAdapter extends RecyclerView.Adapter<RemoteChannelAdap
 
         public void setSelected(boolean selected) {
             if (channel_parent != null) {
-//                channel_parent.setBackgroundResource(selected ? R.drawable.shape_round_bg_drak_gray : R.drawable.shape_round_for_action_trans_bg_45);
+                channel_parent.setBackgroundResource(selected ? R.drawable.shape_round_bg_tv_remote_parent_selected : R.drawable.shape_round_bg_tv_remote_parent_normal);
             }
         }
 
