@@ -123,6 +123,7 @@
     <string name="MUTE">MUTE</string>
     <string name="HOLD">HOLD</string>
     <string name="SPEAKER">SPEAKER</string>
+    <string name="TABLET">TABLET</string>
 
     <!-- tv remote -->
     <string name="Channel">Channel</string>

@@ -16,8 +16,9 @@
         android:id="@+id/menu_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y20"
+        android:layout_marginTop="@dimen/y10"
         android:textColor="@color/color_main_text_color"
+        android:gravity="center"
         android:textSize="@dimen/x25" />
 
 </LinearLayout>
