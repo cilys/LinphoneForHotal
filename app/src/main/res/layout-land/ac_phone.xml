@@ -313,7 +313,7 @@
                 <TextView
                     android:id="@+id/call_speaker_tv"
                     style="@style/style_call_action_tv"
-                    android:text="@string/SPEAKER"/>
+                    android:text="@string/TABLET"/>
             </LinearLayout>
         </LinearLayout>
 
