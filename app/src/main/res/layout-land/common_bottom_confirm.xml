@@ -11,6 +11,6 @@
     android:textSize="@dimen/x25"
     android:layout_alignParentBottom="true"
     android:layout_marginBottom="@dimen/y15"
-    android:layout_marginLeft="@dimen/amen_margin"
-    android:layout_marginRight="@dimen/amen_margin"
+    android:layout_marginLeft="@dimen/amen_margin_land"
+    android:layout_marginRight="@dimen/amen_margin_land"
     android:background="@drawable/shape_round_bg_amen_checkout_confirm" />
