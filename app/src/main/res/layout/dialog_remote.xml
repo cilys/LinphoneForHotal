@@ -12,12 +12,14 @@
         android:layout_height="@dimen/y900">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/top_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="@string/Remote"
-            android:layout_marginTop="@dimen/y15"
-            android:layout_marginLeft="@dimen/y15"
-            android:layout_marginBottom="@dimen/y60"
+            android:paddingTop="@dimen/y15"
+            android:paddingLeft="@dimen/y15"
+            android:paddingBottom="@dimen/y60"
             android:textColor="@color/white"
             android:textSize="@dimen/x18" />
 

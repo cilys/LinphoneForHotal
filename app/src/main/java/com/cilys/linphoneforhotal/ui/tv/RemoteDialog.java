@@ -37,6 +37,16 @@ public class RemoteDialog {
         }
         View rootView = View.inflate(ac, R.layout.dialog_remote, null);
 
+        View top_title = rootView.findViewById(R.id.top_title);
+        if (top_title != null) {
+            top_title.setOnClickListener(new SingleClickListener() {
+                @Override
+                public void onSingleClick(View v) {
+                    dismiss();
+                }
+            });
+        }
+
         final View power_switch = rootView.findViewById(R.id.power_switch);
         power_switch.setOnClickListener(new SingleClickListener() {
             @Override

@@ -15,11 +15,13 @@
         android:layout_height="@dimen/x430">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/top_title"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
             android:layout_height="wrap_content"
             android:text="@string/remote"
-            android:layout_marginLeft="@dimen/x15"
-            android:layout_marginBottom="@dimen/x20"
+            android:paddingLeft="@dimen/x15"
+            android:paddingBottom="@dimen/x20"
             android:textColor="@color/white"
             android:textSize="@dimen/x18" />
 
@@ -88,6 +90,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_add_land"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -110,6 +113,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_reduce_land"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -145,6 +149,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_add_land"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
@@ -167,6 +172,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="6"
                         android:gravity="center"
+                        android:background="@drawable/selector_tv_remote_action_vol_reduce_land"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_width="@dimen/y40"
