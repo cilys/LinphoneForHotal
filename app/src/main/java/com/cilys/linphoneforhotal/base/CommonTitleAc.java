@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.event.EventImpl;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 public abstract class CommonTitleAc extends BaseLinphoneAc {
@@ -59,5 +60,9 @@ public abstract class CommonTitleAc extends BaseLinphoneAc {
                 getResources().getDimensionPixelSize(R.dimen.x10),
                 getResources().getDimensionPixelSize(R.dimen.x10));
         rbt.setCompoundDrawables(null, null, null, draw);
+    }
+
+    protected String fomcatMoney(float money) {
+        return getString(R.string.money_unit) + MoneyUtils.fomcatMoney(money);
     }
 }

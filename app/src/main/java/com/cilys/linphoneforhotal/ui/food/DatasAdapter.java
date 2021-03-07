@@ -12,6 +12,7 @@ import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -134,7 +135,7 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 this.name.setText(bean.getName());
             }
             if (this.price != null) {
-                this.price.setText(this.price.getContext().getString(R.string.money_unit) + bean.getPrice());
+                this.price.setText(this.price.getContext().getString(R.string.money_unit) + MoneyUtils.fomcatMoney(bean.getPrice()));
             }
         }
     }

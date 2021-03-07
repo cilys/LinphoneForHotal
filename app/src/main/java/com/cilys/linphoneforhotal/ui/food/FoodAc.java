@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -145,11 +146,22 @@ public class FoodAc extends CommonTitleAc {
         findViewById(R.id.next).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-                if (selected_count_item <= 0) {
+                if (map_selected_food == null || map_selected_food.size() <= 0) {
                     showToast(getString(R.string.please_select_food));
                     return;
                 }
-                startActivity(new Intent(FoodAc.this, CheckoutAc.class));
+
+                ArrayList<DataBean> datas_selected = new ArrayList<>();
+                for (DataBean b : map_selected_food.values()) {
+                    datas_selected.add(b);
+                }
+
+                Intent i = new Intent(FoodAc.this, CheckoutAc.class);
+                Bundle b = new Bundle();
+                b.putSerializable("datas_selected", datas_selected);
+                i.putExtras(b);
+
+                startActivity(i);
             }
         });
     }
@@ -214,7 +226,7 @@ public class FoodAc extends CommonTitleAc {
 
             selected_total_price = res.floatValue();
 
-            total_price.setText(getString(R.string.money_unit) + selected_total_price);
+            total_price.setText(fomcatMoney(selected_total_price));
         } else if (e.what == EVENT_SELECTED_FOOD_RESUCE) {
             if (map_selected_food == null) {
                 map_selected_food = new HashMap<>();
@@ -242,7 +254,7 @@ public class FoodAc extends CommonTitleAc {
 
             selected_total_price = res.floatValue();
 
-            total_price.setText(getString(R.string.money_unit) + selected_total_price);
+            total_price.setText(fomcatMoney(selected_total_price));
         }
     }
 

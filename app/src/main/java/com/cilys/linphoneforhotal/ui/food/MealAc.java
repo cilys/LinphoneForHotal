@@ -41,7 +41,7 @@ public class MealAc extends CommonTitleAc {
 
         final float singlePrice = dataBean.getPrice();
         TextView price = findView(R.id.price);
-        setTextToView(price, getString(R.string.money_unit) + singlePrice);
+        setTextToView(price, fomcatMoney(singlePrice));
 
         final TextView total_price = findView(R.id.total_price);
         final TextView count = findView(R.id.count);
@@ -162,13 +162,13 @@ public class MealAc extends CommonTitleAc {
 
     private String calTotal(float singlePrice, int num) {
         if (singlePrice == 0 || num == 0) {
-            return getString(R.string.money_unit) + "0.00";
+            return fomcatMoney(0.00f);
         }
         BigDecimal b1 = new BigDecimal(singlePrice);
         BigDecimal b2 = new BigDecimal(num);
         BigDecimal res = b1.multiply(b2);
         res = res.setScale(2, RoundingMode.HALF_UP);
 
-        return getString(R.string.money_unit) + res.toString();
+        return fomcatMoney(res.floatValue());
     }
 }
