@@ -2,7 +2,7 @@ package com.cilys.linphoneforhotal.ui.menu;
 
 import java.io.Serializable;
 
-public class DetailsDataBean implements Serializable {
+public class DataBean implements Serializable {
     private String name;
     private String price;
     private int count;

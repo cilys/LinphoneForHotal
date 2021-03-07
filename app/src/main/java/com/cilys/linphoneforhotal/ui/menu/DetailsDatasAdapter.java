@@ -15,14 +15,14 @@ import com.cilys.linphoneforhotal.view.SingleClickListener;
 import java.util.List;
 
 public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapter.VH> {
-    private List<DetailsDataBean> datas;
+    private List<DataBean> datas;
     private String type;
 
     public void setType(String type) {
         this.type = type;
     }
 
-    public DetailsDatasAdapter(List<DetailsDataBean> datas) {
+    public DetailsDatasAdapter(List<DataBean> datas) {
         this.datas = datas;
     }
 
@@ -98,7 +98,7 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
             reduce =  itemView.findViewById(R.id.reduce);
         }
 
-        private void setData(DetailsDataBean bean, String type) {
+        private void setData(DataBean bean, String type) {
             if (bean != null) {
                 if (DetailsDialog.TYPE_IN_PROGRESS.equals(type) || DetailsDialog.TYPE_DELIVERED.equals(type)) {
                     if (add != null) {
