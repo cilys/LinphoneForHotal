@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/y156"
     android:gravity="center"
-    android:background="@drawable/shape_round_bg_service_menu"
+    android:background="@drawable/selector_service_menu_item_bg"
     android:layout_margin="@dimen/y10" >
 
     <ImageView
