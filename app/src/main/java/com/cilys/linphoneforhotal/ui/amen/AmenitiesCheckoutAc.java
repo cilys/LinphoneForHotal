@@ -1,6 +1,5 @@
 package com.cilys.linphoneforhotal.ui.amen;
 
-
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
