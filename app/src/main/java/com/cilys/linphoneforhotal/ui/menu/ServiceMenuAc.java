@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
-import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.ui.menu.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.menu.food.FoodAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
@@ -17,7 +17,7 @@ import com.cilys.linphoneforhotal.view.SingleClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceMenuAc extends CommonTitleAc {
+public class ServiceMenuAc extends ServiceParentAc {
 
     @Override
     protected int getLayout() {
@@ -49,9 +49,6 @@ public class ServiceMenuAc extends CommonTitleAc {
         datas.add(new MenuBean(R.mipmap.icon_late_checkout, getString(R.string.Late_Checkout)));
         datas.add(new MenuBean(R.mipmap.icon_dnd, getString(R.string.DND)));
 
-
-
-
         RecyclerView rv = findView(R.id.rv);
         ServiceMenuAdapter adapter = new ServiceMenuAdapter(datas);
         rv.setLayoutManager(new GridLayoutManager(this, 3));
@@ -77,6 +74,30 @@ public class ServiceMenuAc extends CommonTitleAc {
 
     private void showDetailsDialog(){
         DetailsDialog dialog = new DetailsDialog(this);
+        dialog.setDatas(datas_selected);
         dialog.show();
+    }
+
+    private List<DataBean> datas_selected;
+
+
+    @Override
+    protected void onEvent(Event e) {
+        super.onEvent(e);
+        if (e.what == EVENT_CONFIRM_SELECT) {
+            ArrayList<DataBean> datas = (ArrayList<DataBean>)e.obj;
+            if (datas == null || datas.size() < 1) {
+                return;
+            }
+
+            if (datas_selected == null) {
+                datas_selected = new ArrayList<>();
+            }
+
+            datas_selected.clear();
+            datas_selected.addAll(datas);
+
+            showDetailsDialog();
+        }
     }
 }

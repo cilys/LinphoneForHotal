@@ -19,11 +19,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailsDialog extends BaseDialog {
-    public final static String TYPE_REQUESTED = "Requested";
-    public final static String TYPE_IN_PROGRESS = "in_progress";
-    public final static String TYPE_DELIVERED = "Delivered";
+//    public final static String TYPE_REQUESTED = "Requested";
+//    public final static String TYPE_IN_PROGRESS = "in_progress";
+//    public final static String TYPE_DELIVERED = "Delivered";
+    public final static String TYPE_REQUESTED = "0";
+    public final static String TYPE_IN_PROGRESS = "1";
+    public final static String TYPE_DELIVERED = "2";
 
     private DetailsDatasAdapter adapter;
+    private List<DataBean> datas;
+    private String currentType = TYPE_REQUESTED;
 
     public DetailsDialog(Activity ac) {
         super(ac);
@@ -50,27 +55,26 @@ public class DetailsDialog extends BaseDialog {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.rbt_in_progress){
-                    if (adapter != null) {
-                        adapter.setType(TYPE_IN_PROGRESS);
-                        adapter.notifyDataSetChanged();
-                    }
+                    currentType = TYPE_IN_PROGRESS;
+
+                    anayDatas();
 
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_white);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_trans);
                 } else if (checkedId == R.id.rbt_delivered) {
-                    if (adapter != null) {
-                        adapter.setType(TYPE_DELIVERED);
-                        adapter.notifyDataSetChanged();
-                    }
+                    currentType = TYPE_DELIVERED;
+
+                    anayDatas();
+
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_white);
                 } else {
-                    if (adapter != null) {
-                        adapter.setType(TYPE_REQUESTED);
-                        adapter.notifyDataSetChanged();
-                    }
+                    currentType = TYPE_REQUESTED;
+
+                    anayDatas();
+
                     setDrawableBottom(rbt_req, R.mipmap.icon_point_white);
                     setDrawableBottom(rbt_in_progress, R.mipmap.icon_point_trans);
                     setDrawableBottom(rbt_delivered, R.mipmap.icon_point_trans);
@@ -91,17 +95,41 @@ public class DetailsDialog extends BaseDialog {
         TextView bottom_title = (TextView)rootView.findViewById(R.id.bottom_title);
         bottom_title.setText(getString(R.string.order_status));
 
-
-        List<DataBean> datas = new ArrayList<>();
-
-
-
-
+        datas = new ArrayList<>();
         RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
         adapter = new DetailsDatasAdapter(datas);
-        adapter.setType(TYPE_REQUESTED);
         rv.setLayoutManager(new LinearLayoutManager(ac));
         rv.setAdapter(adapter);
+    }
+
+    private List<DataBean> datas_cache;
+    public void setDatas(List<DataBean> datas) {
+        if (datas == null || datas.size() < 1) {
+            return;
+        }
+        if (this.datas_cache == null) {
+            this.datas_cache = new ArrayList<>();
+        }
+        this.datas_cache.clear();
+        this.datas_cache.addAll(datas);
+
+        anayDatas();
+    }
+    private void anayDatas(){
+        if (this.datas == null) {
+            this.datas = new ArrayList<>();
+        }
+        this.datas.clear();
+
+        for (DataBean b : datas_cache) {
+            if (currentType.equals(b.getStatus())) {
+                this.datas.add(b);
+            }
+        }
+
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
     }
 
     private void setDrawableBottom(RadioButton rbt, @DrawableRes int resId) {

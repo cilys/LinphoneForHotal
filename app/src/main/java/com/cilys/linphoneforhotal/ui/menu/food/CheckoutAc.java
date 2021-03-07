@@ -1,19 +1,22 @@
 package com.cilys.linphoneforhotal.ui.menu.food;
 
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.event.EventBus;
+import com.cilys.linphoneforhotal.ui.menu.ServiceParentAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.MyListView;
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
+import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 
-public class CheckoutAc extends CommonTitleAc {
+public class CheckoutAc extends ServiceParentAc {
     public final static int EVENT_CHOOSE_FOOD = 1021;
 
     private TextView sub_total, vat_total, service_fee, tips, total;
@@ -68,6 +71,17 @@ public class CheckoutAc extends CommonTitleAc {
         total = findView(R.id.total);
 
         cal();
+
+        findView(R.id.confirm).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                Event e = new Event();
+                e.what = EVENT_CONFIRM_SELECT;
+                e.obj = datas_selected;
+
+                EventBus.getInstance().postEvent(e);
+            }
+        });
     }
 
     @Override

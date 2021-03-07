@@ -7,9 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
+import com.cilys.linphoneforhotal.ui.menu.ServiceParentAc;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
@@ -17,7 +17,7 @@ import com.cilys.linphoneforhotal.ui.menu.DataBean;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class MealAc extends CommonTitleAc {
+public class MealAc extends ServiceParentAc {
     private int num = 1;
 
     @Override

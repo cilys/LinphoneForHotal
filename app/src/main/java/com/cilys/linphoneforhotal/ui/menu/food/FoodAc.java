@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.ui.menu.ServiceParentAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FoodAc extends CommonTitleAc {
+public class FoodAc extends ServiceParentAc {
     public final static String TYPE_dessert = "TYPE_dessert";
     public final static String TYPE_inter = "TYPE_inter";
     public final static String TYPE_italian = "TYPE_italian";

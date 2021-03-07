@@ -13,6 +13,7 @@ public class DataBean implements Serializable {
     private @DrawableRes
     int picId;
     private String id;
+    private String status = DetailsDialog.TYPE_REQUESTED;
 
     public String getId() {
         return id;
@@ -84,5 +85,14 @@ public class DataBean implements Serializable {
     public DataBean setPicId(int picId) {
         this.picId = picId;
         return this;
+    }
+
+    public DataBean setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/bg_redius"
+            android:padding="@dimen/y15"
             android:orientation="horizontal">
 
             <include layout="@layout/common_bottom" />

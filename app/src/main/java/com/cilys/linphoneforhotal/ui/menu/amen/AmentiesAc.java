@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.ui.menu.ServiceParentAc;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
@@ -19,7 +19,7 @@ import java.util.Map;
 
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
-public class AmentiesAc extends CommonTitleAc {
+public class AmentiesAc extends ServiceParentAc {
     public final static String TYPE_pillow = "TYPE_pillow";
     public final static String TYPE_in_room = "TYPE_in_room";
     public final static String TYPE_laundries = "TYPE_laundries";

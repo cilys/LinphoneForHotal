@@ -15,6 +15,8 @@ import com.cilys.linphoneforhotal.base.BaseFg;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
+import com.cilys.linphoneforhotal.ui.menu.DetailsDialog;
+import com.cilys.linphoneforhotal.utils.RandomUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,14 +51,24 @@ public class FoodDataFg extends BaseFg {
             ext = "1";
         }
 
+        final int randomBound = 4;
+
         datas = new ArrayList<>();
         datas.add(new DataBean(getString(R.string.Appetzer)));
-        datas.add(new DataBean(ext + "1", null, getString(R.string.Bruschetta_Pomodoro_e_Aglio), 4.99f, 0).setPicId(R.mipmap.ic_food_details_test));
-        datas.add(new DataBean(ext + "2", null, getString(R.string.Sapori_di_Sicilia), 4.99f, 0).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(ext + "1", null, getString(R.string.Bruschetta_Pomodoro_e_Aglio), 4.99f, 0)
+                .setPicId(R.mipmap.ic_food_details_test)
+                .setStatus(getRandom()));
+        datas.add(new DataBean(ext + "2", null, getString(R.string.Sapori_di_Sicilia), 4.99f, 0)
+                .setPicId(R.mipmap.ic_food_details_test)
+                .setStatus(getRandom()));
 
         datas.add(new DataBean(getString(R.string.Main_dish)));
-        datas.add(new DataBean(ext + "3", null, getString(R.string.Pizza_Margherita), 12.99f, 0).setPicId(R.mipmap.ic_food_details_test));
-        datas.add(new DataBean(ext + "4", null, getString(R.string.Pizza_Peperoncino), 17.99f, 0).setPicId(R.mipmap.ic_food_details_test));
+        datas.add(new DataBean(ext + "3", null, getString(R.string.Pizza_Margherita), 12.99f, 0)
+                .setPicId(R.mipmap.ic_food_details_test)
+                .setStatus(getRandom()));
+        datas.add(new DataBean(ext + "4", null, getString(R.string.Pizza_Peperoncino), 17.99f, 0)
+                .setPicId(R.mipmap.ic_food_details_test)
+                .setStatus(getRandom()));
 
         RecyclerView rv = (RecyclerView)rootView.findViewById(R.id.rv);
         adapter = new DatasAdapter(datas);
@@ -72,6 +84,19 @@ public class FoodDataFg extends BaseFg {
                 startActivity(i);
             }
         });
+    }
+
+    public static String getRandom(){
+        int random = RandomUtils.getRandom(9);
+        if (random % 3 == 2) {
+            return DetailsDialog.TYPE_DELIVERED;
+        }
+
+        if (random % 3 == 1) {
+            return DetailsDialog.TYPE_IN_PROGRESS;
+        }
+
+        return DetailsDialog.TYPE_REQUESTED;
     }
 
     public final static int EVENT_FOOD_ADD_TO_CAR = 1011;

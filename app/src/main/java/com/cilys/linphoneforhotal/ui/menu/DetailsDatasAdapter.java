@@ -17,11 +17,6 @@ import java.util.List;
 
 public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapter.VH> {
     private List<DataBean> datas;
-    private String type;
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public DetailsDatasAdapter(List<DataBean> datas) {
         this.datas = datas;
@@ -40,15 +35,13 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
         vh.setCount(datas.get(i).getCount());
         vh.setPic(datas.get(i).getPicId());
 
-
-
         if (datas.get(i).getCount() < 1) {
             vh.reduce.setVisibility(View.INVISIBLE);
         } else {
             vh.reduce.setVisibility(View.VISIBLE);
         }
 
-        vh.setData(datas.get(i), type);
+        vh.setData(datas.get(i));
 
         vh.add.setOnClickListener(new SingleClickListener() {
             @Override
@@ -99,9 +92,9 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
             reduce =  itemView.findViewById(R.id.reduce);
         }
 
-        private void setData(DataBean bean, String type) {
+        private void setData(DataBean bean) {
             if (bean != null) {
-                if (DetailsDialog.TYPE_IN_PROGRESS.equals(type) || DetailsDialog.TYPE_DELIVERED.equals(type)) {
+                if (DetailsDialog.TYPE_IN_PROGRESS.equals(bean.getStatus()) || DetailsDialog.TYPE_DELIVERED.equals(bean.getStatus())) {
                     if (add != null) {
                         add.setVisibility(View.INVISIBLE);
                     }
