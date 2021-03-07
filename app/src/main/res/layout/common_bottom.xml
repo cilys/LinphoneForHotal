@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_height"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/bg_redius"
-    android:paddingRight="@dimen/bg_redius"
+    android:paddingLeft="@dimen/x15"
+    android:paddingRight="@dimen/x15"
     android:background="@drawable/shape_round_bg_black">
 
     <TextView

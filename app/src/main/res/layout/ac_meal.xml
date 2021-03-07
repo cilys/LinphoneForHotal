@@ -7,7 +7,7 @@
     android:gravity="center"
     android:id="@+id/root"
     android:orientation="vertical"
-    tools:context=".ui.food.MealAc">
+    tools:context=".ui.menu.food.MealAc">
 
     <LinearLayout
         android:id="@+id/model_layout"

@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,7 +16,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
 import com.cilys.linphoneforhotal.pop.SwitchLanguagePopupWindow;
-import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
+import com.cilys.linphoneforhotal.ui.menu.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseLinphoneAc;
@@ -41,8 +40,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import con.cilys.utils.log.file.LogFileUtils;
 
 
 public class HomeAc extends BaseLinphoneAc {

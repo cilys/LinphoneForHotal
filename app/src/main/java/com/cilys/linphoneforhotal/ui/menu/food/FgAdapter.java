@@ -1,10 +1,7 @@
-package com.cilys.linphoneforhotal.ui.food;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import com.cilys.linphoneforhotal.base.BaseFg;
 
 import java.util.List;
 

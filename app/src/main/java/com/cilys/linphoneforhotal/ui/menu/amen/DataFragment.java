@@ -1,6 +1,5 @@
-package com.cilys.linphoneforhotal.ui.amen;
+package com.cilys.linphoneforhotal.ui.menu.amen;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseFg;
-import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

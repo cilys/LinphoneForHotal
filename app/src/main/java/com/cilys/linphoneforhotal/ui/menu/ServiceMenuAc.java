@@ -10,8 +10,8 @@ import android.widget.TextView;
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.adapter.RvItemClickListener;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
-import com.cilys.linphoneforhotal.ui.amen.AmentiesAc;
-import com.cilys.linphoneforhotal.ui.food.FoodAc;
+import com.cilys.linphoneforhotal.ui.menu.amen.AmentiesAc;
+import com.cilys.linphoneforhotal.ui.menu.food.FoodAc;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;

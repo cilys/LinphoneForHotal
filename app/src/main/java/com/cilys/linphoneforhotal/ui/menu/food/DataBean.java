@@ -1,10 +1,10 @@
-package com.cilys.linphoneforhotal.ui.amen;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
 import android.support.annotation.DrawableRes;
 
 import java.io.Serializable;
 
-public class DataBean implements Serializable, Cloneable {
+public class DataBean implements Serializable {
     private String picUrl;
     private String name;
     private float price;
@@ -34,22 +34,6 @@ public class DataBean implements Serializable, Cloneable {
         this.name = name;
         this.price = price;
         this.count = count;
-    }
-
-    public int getPicId() {
-        return picId;
-    }
-
-    public void setPicId(int picId) {
-        this.picId = picId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getPicUrl() {
@@ -84,8 +68,20 @@ public class DataBean implements Serializable, Cloneable {
         this.count = count;
     }
 
-    @Override
-    protected DataBean clone() throws CloneNotSupportedException {
-        return (DataBean) super.clone();
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getPicId() {
+        return picId;
+    }
+
+    public DataBean setPicId(int picId) {
+        this.picId = picId;
+        return this;
     }
 }

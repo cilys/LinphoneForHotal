@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.food;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 

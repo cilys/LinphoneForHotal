@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.amen;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
-import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
@@ -64,10 +63,7 @@ public class CheckoutDataAdapter extends BaseAdapter {
                 count ++;
                 datas.get(position).setCount(count);
 
-                Event e = new Event();
-                e.what = AmenitiesCheckoutAc.EVENT_CHOOSE_AMEN;
-                e.obj = datas.get(position);
-                EventBus.getInstance().postEvent(e);
+                EventBus.getInstance().postEvent(CheckoutAc.EVENT_CHOOSE_FOOD);
 
                 notifyDataSetChanged();
             }
@@ -83,10 +79,7 @@ public class CheckoutDataAdapter extends BaseAdapter {
                 count --;
                 datas.get(position).setCount(count);
 
-                Event e = new Event();
-                e.what = AmenitiesCheckoutAc.EVENT_CHOOSE_AMEN;
-                e.obj = datas.get(position);
-                EventBus.getInstance().postEvent(e);
+                EventBus.getInstance().postEvent(CheckoutAc.EVENT_CHOOSE_FOOD);
 
                 notifyDataSetChanged();
             }
@@ -108,7 +101,7 @@ public class CheckoutDataAdapter extends BaseAdapter {
             vh.name.setText(datas.get(position).getName());
         }
         if (vh.price != null) {
-            vh.price.setText(vh.price.getContext().getResources().getString(R.string.money_unit)
+            vh.price.setText(vh.price.getContext().getString(R.string.money_unit)
                     + MoneyUtils.fomcatMoney(datas.get(position).getPrice()));
         }
 

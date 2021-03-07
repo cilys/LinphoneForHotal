@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.amen;
+package com.cilys.linphoneforhotal.ui.menu.amen;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

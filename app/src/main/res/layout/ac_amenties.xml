@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/shape_round_bg_white"
-    tools:context=".ui.amen.AmentiesAc">
+    tools:context=".ui.menu.amen.AmentiesAc">
 
     <include
         layout="@layout/common_title_gray_line" />

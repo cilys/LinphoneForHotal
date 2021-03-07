@@ -1,4 +1,4 @@
-package com.cilys.linphoneforhotal.ui.food;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

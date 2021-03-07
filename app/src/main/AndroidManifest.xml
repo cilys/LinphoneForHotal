@@ -59,18 +59,18 @@
         </activity>
 
         <activity android:name=".ui.msg.MsgDetailsAc" />
-        <activity android:name=".ui.food.MealAc" />
+        <activity android:name=".ui.menu.food.MealAc" />
         <activity android:name=".TAc" />
         <activity android:name=".ui.prom.PromDetailsAc" />
         <activity android:name=".ui.menu.ServiceMenuAc" />
         <activity android:name=".ui.room.ControlAc" />
-        <activity android:name=".ui.amen.AmenitiesCheckoutAc"
+        <activity android:name=".ui.menu.amen.AmenitiesCheckoutAc"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".ui.amen.AmentiesAc" />
+        <activity android:name=".ui.menu.amen.AmentiesAc" />
         <activity android:name=".ui.checkout.CheckoutAc" />
-        <activity android:name=".ui.food.FoodAc"
+        <activity android:name=".ui.menu.food.FoodAc"
             />
-        <activity android:name=".ui.food.CheckoutAc"
+        <activity android:name=".ui.menu.food.CheckoutAc"
             android:windowSoftInputMode="adjustPan" />
 
         <activity android:name=".ui.msg.MsgAc" />

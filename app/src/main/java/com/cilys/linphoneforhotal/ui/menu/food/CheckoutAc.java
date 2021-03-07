@@ -1,17 +1,19 @@
-package com.cilys.linphoneforhotal.ui.amen;
+package com.cilys.linphoneforhotal.ui.menu.food;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.MyListView;
 
 import java.util.ArrayList;
 
-public class AmenitiesCheckoutAc extends CommonTitleAc {
-    public final static int EVENT_CHOOSE_AMEN = 1041;
+public class CheckoutAc extends CommonTitleAc {
+    public final static int EVENT_CHOOSE_FOOD = 1021;
 
     private TextView sub_total, vat_total, service_fee, tips, total;
 
@@ -19,15 +21,15 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
 
     @Override
     protected int getLayout() {
-        return R.layout.ac_amenities_checkout;
+        return R.layout.ac_food_checkout;
     }
 
     @Override
     protected void initUI() {
         super.initUI();
 
-        datas_selected = (ArrayList<DataBean>)getIntent().getSerializableExtra("selected_amen");
-        if (datas_selected == null || datas_selected.size() < 1){
+        datas_selected = (ArrayList<DataBean>) getIntent().getSerializableExtra("datas_selected");
+        if (datas_selected == null || datas_selected.size() < 0) {
             finish();
             return;
         }
@@ -37,6 +39,22 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
 
         CheckoutDataAdapter adapter = new CheckoutDataAdapter(datas_selected);
         lv.setAdapter(adapter);
+
+        ImageView recommend_extra = findView(R.id.recommend_extra);
+        TextView recommend_extra_name = findView(R.id.recommend_extra_name);
+        TextView recommend_extra_price = findView(R.id.recommend_extra_price);
+//        recommend_extra_name.setText("");
+//        recommend_extra_price.setText("");
+        ImageUtils.load(this, R.mipmap.ic_food_checkout_recommend_test_1, recommend_extra);
+
+
+        ImageView recommend_kit = findView(R.id.recommend_kit);
+        TextView recommend_kit_name = findView(R.id.recommend_kit_name);
+//        recommend_kit_name.setText("");
+        TextView recommend_kit_price = findView(R.id.recommend_kit_price);
+//        recommend_kit_price.setText("");
+        ImageUtils.load(this, R.mipmap.ic_food_checkout_recommend_test_2, recommend_kit);
+
 
         sub_total = findView(R.id.sub_total);
 
@@ -54,7 +72,7 @@ public class AmenitiesCheckoutAc extends CommonTitleAc {
     @Override
     protected void onEvent(Event e) {
         super.onEvent(e);
-        if (e.what == EVENT_CHOOSE_AMEN) {
+        if (e.what == EVENT_CHOOSE_FOOD) {
             cal();
         }
     }
