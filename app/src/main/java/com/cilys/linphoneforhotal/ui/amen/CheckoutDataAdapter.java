@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -95,7 +96,8 @@ public class CheckoutDataAdapter extends BaseAdapter {
             vh.name.setText(datas.get(position).getName());
         }
         if (vh.price != null) {
-            vh.price.setText(datas.get(position).getPrice());
+            vh.price.setText(vh.price.getContext().getResources().getString(R.string.money_unit)
+                    + MoneyUtils.fomcatMoney(datas.get(position).getPrice()));
         }
 
         return v;

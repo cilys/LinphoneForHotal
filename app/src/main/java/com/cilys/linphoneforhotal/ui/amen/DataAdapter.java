@@ -9,7 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -57,6 +60,11 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     count ++;
                     datas.get(i).setCount(count);
 
+                    Event e = new Event();
+                    e.what = AmentiesAc.EVENT_AMEN_CHANGE;
+                    e.obj = datas.get(i);
+                    EventBus.getInstance().postEvent(e);
+
                     notifyDataSetChanged();
                 }
             });
@@ -70,6 +78,11 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     }
                     count --;
                     datas.get(i).setCount(count);
+
+                    Event e = new Event();
+                    e.what = AmentiesAc.EVENT_AMEN_CHANGE;
+                    e.obj = datas.get(i);
+                    EventBus.getInstance().postEvent(e);
 
                     notifyDataSetChanged();
                 }
@@ -151,7 +164,8 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 this.name.setText(bean.getName());
             }
             if (this.price != null) {
-                this.price.setText(bean.getPrice());
+                this.price.setText(this.price.getContext().getResources().getString(R.string.money_unit)
+                        + MoneyUtils.fomcatMoney(bean.getPrice()));
             }
         }
     }

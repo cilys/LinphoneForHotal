@@ -7,10 +7,19 @@ import java.io.Serializable;
 public class DataBean implements Serializable, Cloneable {
     private String picUrl;
     private String name;
-    private String price;
+    private float price;
     private int count;
     private String title;
     private @DrawableRes int picId;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public DataBean() {
     }
@@ -19,7 +28,8 @@ public class DataBean implements Serializable, Cloneable {
         this.title = title;
     }
 
-    public DataBean(String picUrl, String name, String price, int count) {
+    public DataBean(String id, String picUrl, String name, float price, int count) {
+        this.id = id;
         this.picUrl = picUrl;
         this.name = name;
         this.price = price;
@@ -58,11 +68,11 @@ public class DataBean implements Serializable, Cloneable {
         this.name = name;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

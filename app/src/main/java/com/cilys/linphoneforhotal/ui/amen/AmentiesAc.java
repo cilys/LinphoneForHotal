@@ -7,12 +7,23 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
+import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AmentiesAc extends CommonTitleAc {
+    public final static String TYPE_pillow = "TYPE_pillow";
+    public final static String TYPE_in_room = "TYPE_in_room";
+    public final static String TYPE_laundries = "TYPE_laundries";
+    public final static String TYPE_towels = "TYPE_towels";
+    public final static String TYPE_bath = "TYPE_bath";
+    public final static String TYPE_drinks = "TYPE_drinks";
+
     private TextView pillow, in_room, laundries, towels, bath, drinks;
     @Override
     protected int getLayout() {
@@ -82,43 +93,44 @@ public class AmentiesAc extends CommonTitleAc {
         List<DataFragment> fgs = new ArrayList<>();
         DataFragment f0 = new DataFragment();
         Bundle b0 = new Bundle();
-        b0.putString("type", "pillow");
+        b0.putString("type", TYPE_pillow);
         f0.setArguments(b0);
         fgs.add(f0);
 
         DataFragment f1 = new DataFragment();
         Bundle b1 = new Bundle();
-        b1.putString("type", "in_room");
+        b1.putString("type", TYPE_in_room);
         f1.setArguments(b1);
         fgs.add(f1);
 
         DataFragment f2 = new DataFragment();
         Bundle b2 = new Bundle();
-        b2.putString("type", "laundries");
+        b2.putString("type", TYPE_laundries);
         f2.setArguments(b2);
         fgs.add(f2);
 
         DataFragment f3 = new DataFragment();
         Bundle b3 = new Bundle();
-        b3.putString("type", "towels");
+        b3.putString("type", TYPE_towels);
         f3.setArguments(b3);
         fgs.add(f3);
 
         DataFragment f4 = new DataFragment();
         Bundle b4 = new Bundle();
-        b4.putString("type", "bath");
-        f0.setArguments(b4);
+        b4.putString("type", TYPE_bath);
+        f4.setArguments(b4);
         fgs.add(f4);
 
         DataFragment f5 = new DataFragment();
         Bundle b5 = new Bundle();
-        b5.putString("type", "drinks");
+        b5.putString("type", TYPE_drinks);
         f5.setArguments(b5);
         fgs.add(f5);
 
 
         FgAdapter adapter = new FgAdapter(getSupportFragmentManager(), fgs);
         vp.setAdapter(adapter);
+        vp.setOffscreenPageLimit(fgs.size());
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -135,7 +147,21 @@ public class AmentiesAc extends CommonTitleAc {
 
             }
         });
+
+        findView(R.id.next).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+
+            }
+        });
+        bottom_title = findView(R.id.bottom_title);
+        setTextToView(bottom_title, getString(R.string.Items_0));
+
+        total_price = findView(R.id.total_price);
+        setTextToView(total_price, fomcatMoney(0.00f));
     }
+
+    private TextView bottom_title, total_price;
 
     private void setSelect(int i) {
         setDrawableBottom(pillow, R.mipmap.icon_point_trans);
@@ -164,4 +190,38 @@ public class AmentiesAc extends CommonTitleAc {
     protected String getCommonTitle() {
         return getString(R.string.Amenties);
     }
+
+    @Override
+    protected void onEvent(Event e) {
+        super.onEvent(e);
+        if (e.what == EVENT_AMEN_CHANGE) {
+            DataBean bean = (DataBean)e.obj;
+            if (bean == null) {
+                return;
+            }
+
+            String id = bean.getId();
+
+            if (map_selected == null) {
+                map_selected = new HashMap<>();
+            }
+            map_selected.put(id, bean);
+
+            List<Float> prices = new ArrayList<>();
+            int count = 0;
+            for (DataBean b : map_selected.values()) {
+                count += b.getCount();
+                prices.add(MoneyUtils.mul(b.getPrice(), b.getCount()));
+            }
+            float[] ps = new float[prices.size()];
+            for (int i = 0; i < ps.length; i++) {
+                ps[i] = prices.get(i);
+            }
+            setTextToView(bottom_title, count + " " + getString(R.string.Items));
+            setTextToView(total_price, fomcatMoney(MoneyUtils.add(ps)));
+        }
+    }
+
+    public final static int EVENT_AMEN_CHANGE = 1031;
+    private Map<String, DataBean> map_selected;
 }
