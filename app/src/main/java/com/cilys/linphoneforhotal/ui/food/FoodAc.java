@@ -19,6 +19,12 @@ import java.util.List;
 import java.util.Map;
 
 public class FoodAc extends CommonTitleAc {
+    public final static String TYPE_dessert = "TYPE_dessert";
+    public final static String TYPE_inter = "TYPE_inter";
+    public final static String TYPE_italian = "TYPE_italian";
+    public final static String TYPE_kids = "TYPE_kids";
+    public final static String TYPE_middle = "TYPE_middle";
+
     private TextView dessert, inter, italian, kids, middle;
 
     @Override
@@ -82,36 +88,40 @@ public class FoodAc extends CommonTitleAc {
         List<FoodDataFg> fgs = new ArrayList<>();
         FoodDataFg f0 = new FoodDataFg();
         Bundle b0 = new Bundle();
-        b0.putString("type", "dessert");
+        b0.putString("type", TYPE_dessert);
         f0.setArguments(b0);
         fgs.add(f0);
 
         FoodDataFg f1 = new FoodDataFg();
         Bundle b1 = new Bundle();
-        b1.putString("type", "inter");
+        b1.putString("type", TYPE_inter);
         f1.setArguments(b1);
         fgs.add(f1);
 
         FoodDataFg f2 = new FoodDataFg();
         Bundle b2 = new Bundle();
-        b2.putString("type", "italian");
+        b2.putString("type", TYPE_italian);
         f2.setArguments(b2);
         fgs.add(f2);
 
         FoodDataFg f3 = new FoodDataFg();
         Bundle b3 = new Bundle();
-        b3.putString("type", "kids");
+        b3.putString("type", TYPE_kids);
         f3.setArguments(b3);
         fgs.add(f3);
 
         FoodDataFg f4 = new FoodDataFg();
         Bundle b4 = new Bundle();
-        b4.putString("type", "middle");
-        f0.setArguments(b4);
+        b4.putString("type", TYPE_middle);
+        f4.setArguments(b4);
         fgs.add(f4);
 
         FgAdapter adapter = new FgAdapter(getSupportFragmentManager(), fgs);
         vp.setAdapter(adapter);
+
+        //TODO 未做缓存数据恢复功能，先取巧解决数据缓存问题
+        vp.setOffscreenPageLimit(fgs.size());
+
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {

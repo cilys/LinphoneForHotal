@@ -28,4 +28,6 @@
     <dimen name="pop_layout_height">@dimen/y60</dimen>
     <dimen name="pop_pic_size">@dimen/y24</dimen>
 
+    <dimen name="icon_add_reduce_size">@dimen/y90</dimen>
+
 </resources>
