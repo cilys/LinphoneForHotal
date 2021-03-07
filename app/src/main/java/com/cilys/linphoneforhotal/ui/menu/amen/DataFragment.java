@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseFg;
+import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +33,17 @@ public class DataFragment extends BaseFg {
     private void initUI(View rootView) {
         String ext = "";
         if (AmentiesAc.TYPE_in_room.equals(type)) {
-            ext = "20";
+            ext = "200";
         } else if (AmentiesAc.TYPE_laundries.equals(type)) {
-            ext = "30";
+            ext = "300";
         } else if (AmentiesAc.TYPE_towels.equals(type)) {
-            ext = "40";
+            ext = "400";
         } else if (AmentiesAc.TYPE_bath.equals(type)) {
-            ext = "50";
+            ext = "500";
         } else if (AmentiesAc.TYPE_drinks.equals(type)) {
-            ext = "60";
+            ext = "600";
         }  else if (AmentiesAc.TYPE_pillow.equals(type)) {
-            ext = "10";
+            ext = "100";
         }
 
         List<DataBean> datas = new ArrayList<>();

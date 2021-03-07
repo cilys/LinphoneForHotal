@@ -14,6 +14,7 @@ import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.BaseFg;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.impl.ItemClickListener;
+import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
 import java.util.ArrayList;
 import java.util.List;

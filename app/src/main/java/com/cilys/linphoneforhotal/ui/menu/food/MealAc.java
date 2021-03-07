@@ -12,6 +12,7 @@ import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
+import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
 import java.util.List;
@@ -132,11 +133,10 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
             }
         }
 
-        private void setPrice(String price) {
-            if (price != null) {
-                if (this.price != null) {
-                    this.price.setText(price);
-                }
+        private void setPrice(float price) {
+            if (this.price != null) {
+                this.price.setText(this.price.getContext().getResources().getString(R.string.money_unit)
+                            + MoneyUtils.fomcatMoney(price));
             }
         }
 

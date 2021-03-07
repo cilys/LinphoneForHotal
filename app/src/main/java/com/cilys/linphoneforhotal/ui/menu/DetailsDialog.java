@@ -93,19 +93,7 @@ public class DetailsDialog extends BaseDialog {
 
 
         List<DataBean> datas = new ArrayList<>();
-        DataBean b0 = new DataBean();
-        b0.setName(getString(R.string.Arancini));
-        b0.setPrice("$4.99");
-        b0.setCount(2);
-        b0.setPicId(R.mipmap.ic_service_menu_dialog_details_test_1);
-        datas.add(b0);
 
-        DataBean b1 = new DataBean();
-        b1.setName(getString(R.string.Pizza_Marghcrita));
-        b1.setPrice("$22.99");
-        b1.setCount(1);
-        b1.setPicId(R.mipmap.ic_service_menu_dialog_details_test_2);
-        datas.add(b1);
 
 
 

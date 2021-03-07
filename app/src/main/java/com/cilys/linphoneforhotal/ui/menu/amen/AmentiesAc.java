@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cilys.linphoneforhotal.ui.menu.DataBean;
+
 public class AmentiesAc extends CommonTitleAc {
     public final static String TYPE_pillow = "TYPE_pillow";
     public final static String TYPE_in_room = "TYPE_in_room";

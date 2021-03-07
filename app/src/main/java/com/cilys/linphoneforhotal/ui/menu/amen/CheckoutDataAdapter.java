@@ -12,7 +12,7 @@ import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
-
+import com.cilys.linphoneforhotal.ui.menu.DataBean;
 import java.util.List;
 
 public class CheckoutDataAdapter extends BaseAdapter {
