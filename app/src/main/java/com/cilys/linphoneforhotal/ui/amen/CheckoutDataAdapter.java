@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.R;
+import com.cilys.linphoneforhotal.event.Event;
+import com.cilys.linphoneforhotal.event.EventBus;
 import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 
@@ -62,6 +64,11 @@ public class CheckoutDataAdapter extends BaseAdapter {
                 count ++;
                 datas.get(position).setCount(count);
 
+                Event e = new Event();
+                e.what = AmenitiesCheckoutAc.EVENT_CHOOSE_AMEN;
+                e.obj = datas.get(position);
+                EventBus.getInstance().postEvent(e);
+
                 notifyDataSetChanged();
             }
         });
@@ -75,6 +82,11 @@ public class CheckoutDataAdapter extends BaseAdapter {
                 }
                 count --;
                 datas.get(position).setCount(count);
+
+                Event e = new Event();
+                e.what = AmenitiesCheckoutAc.EVENT_CHOOSE_AMEN;
+                e.obj = datas.get(position);
+                EventBus.getInstance().postEvent(e);
 
                 notifyDataSetChanged();
             }

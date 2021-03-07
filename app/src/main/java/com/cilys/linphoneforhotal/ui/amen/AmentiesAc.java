@@ -1,5 +1,6 @@
 package com.cilys.linphoneforhotal.ui.amen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -151,7 +152,17 @@ public class AmentiesAc extends CommonTitleAc {
         findView(R.id.next).setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
-
+                if (map_selected == null || map_selected.size() < 1) {
+                    showToast(getString(R.string.please_select_amen));
+                    return;
+                }
+                ArrayList<DataBean> datas = new ArrayList<>();
+                for (DataBean b : map_selected.values()) {
+                    datas.add(b);
+                }
+                Intent i = new Intent(AmentiesAc.this, AmenitiesCheckoutAc.class);
+                i.putExtra("selected_amen", datas);
+                startActivity(i);
             }
         });
         bottom_title = findView(R.id.bottom_title);
