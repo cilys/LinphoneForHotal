@@ -34,7 +34,7 @@ public class SwitchLanguagePopupWindow {
             @Override
             public void onSingleClick(View v) {
                 if (listener != null) {
-                    listener.onItemClick(Locale.ENGLISH);
+                    listener.onItemClick(Locale.UK);
                 }
                 popupWindow.dismiss();
             }

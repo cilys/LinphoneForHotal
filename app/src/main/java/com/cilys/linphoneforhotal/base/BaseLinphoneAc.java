@@ -31,6 +31,9 @@ public abstract class BaseLinphoneAc extends BaseAc {
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        beforeSetContentView();
+
         setContentView(getLayout());
 
         beforeInitUI();
@@ -44,6 +47,10 @@ public abstract class BaseLinphoneAc extends BaseAc {
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
             decorView.setSystemUiVisibility(uiOptions);
         }
+    }
+
+    protected void beforeSetContentView(){
+
     }
 
     protected void afterInit(){
