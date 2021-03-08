@@ -162,7 +162,7 @@
                     android:layout_toRightOf="@+id/img_location"
                     android:textSize="@dimen/x20"
                     android:textColor="#FFF"
-                    android:text="@string/New_York"/>
+                    android:text="@string/str_location_test"/>
 
                 <TextView
                     android:id="@+id/tv_time"

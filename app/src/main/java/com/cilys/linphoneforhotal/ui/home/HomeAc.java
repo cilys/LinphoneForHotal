@@ -30,6 +30,7 @@ import com.cilys.linphoneforhotal.ui.tv.TvRemoteAc;
 import com.cilys.linphoneforhotal.utils.ApkUtils;
 import com.cilys.linphoneforhotal.utils.ImageUtils;
 import com.cilys.linphoneforhotal.utils.L;
+import com.cilys.linphoneforhotal.utils.TimeUtils;
 import com.cilys.linphoneforhotal.utils.ToastUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.stx.xhb.xbanner.XBanner;
@@ -41,9 +42,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
 public class HomeAc extends BaseLinphoneAc {
     private final boolean TO_TEST_VIEW = false;
+
+    private TextView tv_time;
 
     @Override
     protected int getLayout() {
@@ -116,7 +118,7 @@ public class HomeAc extends BaseLinphoneAc {
 
         TextView tv_location = findView(R.id.tv_location);
 
-        TextView tv_time = findView(R.id.tv_time);
+        tv_time = findView(R.id.tv_time);
 
         TextView tv_weekday = findView(R.id.tv_weekday);
 
@@ -230,11 +232,47 @@ public class HomeAc extends BaseLinphoneAc {
     protected void onStart() {
         super.onStart();
 
+        startTimer();
+
         if (TO_TEST_VIEW) {
             return;
         }
 
         requestCameraPermission();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
+    private Handler timerHandler;
+    private Runnable timerRunnable;
+    private void startTimer(){
+        if (timerHandler == null) {
+            timerHandler = new Handler();
+        }
+        if (timerRunnable == null) {
+            timerRunnable = new Runnable() {
+                @Override
+                public void run() {
+                    setTextToView(tv_time, TimeUtils.getCurrentTime());
+
+                    timerHandler.postDelayed(this, 1000);
+                }
+            };
+        }
+        stopTimer();
+
+        timerHandler.postDelayed(timerRunnable, 1000);
+    }
+    private void stopTimer(){
+        if (timerHandler != null) {
+            if (timerRunnable != null) {
+                timerHandler.removeCallbacks(timerRunnable);
+            }
+        }
     }
 
     @Override

@@ -28,19 +28,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-
     }
     buildTypes {
         release {
-            buildConfigField("int", "BUILD_TIME", releaseTime());
+            buildConfigField("long", "BUILD_TIME", releaseTime());
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
 
         debug {
-            buildConfigField("int", "BUILD_TIME", releaseTime());
+            buildConfigField("long", "BUILD_TIME", releaseTime());
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
@@ -59,7 +57,8 @@ repositories {
 }
 
 def releaseTime(){
-    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08:00"))
+//    return new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("GMT+08:00")) + "L"
+    return (System.currentTimeMillis()) + "L"
 }
 
 dependencies {

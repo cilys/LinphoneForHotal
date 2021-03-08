@@ -1,5 +1,8 @@
 package com.cilys.linphoneforhotal.utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class TimeUtils {
     public static String fomcatTimeToSecond(long count){
         if (count >= 0) {
@@ -30,12 +33,20 @@ public class TimeUtils {
         }
     }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        System.out.println(fomcatTimeToSecond(0));
 //        System.out.println(fomcatTimeToSecond(9));
 //        System.out.println(fomcatTimeToSecond(99));
 //        System.out.println(fomcatTimeToSecond(999));
 //        System.out.println(fomcatTimeToSecond(9999));
 //        System.out.println(fomcatTimeToSecond(99999));
-//    }
+        System.out.println(getCurrentTime());
+    }
+
+    public static String getCurrentTime (){
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.ENGLISH);
+        return sdf.format(System.currentTimeMillis()).replace(" ", "");
+    }
+
+
 }

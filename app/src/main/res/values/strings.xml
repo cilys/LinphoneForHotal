@@ -94,6 +94,7 @@
     <string name="Hello_Adam_Miller">Hello, Adam Miller!</string>
     <string name="You_have_2Message">You have 2Message</string>
     <string name="New_York">New York</string>
+
     <string name="DO_NOT_DISTURB">DO NOT DISTURB</string>
     <string name="MAKE_UP_ROOM">MAKE UP ROOM</string>
     <string name="SERVICE_MENU">SERVICE MENU</string>
@@ -220,7 +221,9 @@
 
     <string name="please_select_food">please choose the food</string>
     <string name="please_select_amen">please choose the amenities</string>
+    <string name="Hong_kong">Hongkong</string>
 
+    <string name="str_location_test">@string/Hong_kong</string>
 
 
 
