@@ -154,7 +154,8 @@
 
                 <TextView
                     android:id="@+id/tv_location"
-                    android:layout_width="@dimen/y86"
+                    android:layout_width="wrap_content"
+                    android:minWidth="@dimen/y86"
                     android:layout_height="wrap_content"
                     android:maxHeight="@dimen/x52"
                     android:gravity="center"

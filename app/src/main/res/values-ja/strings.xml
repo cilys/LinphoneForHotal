@@ -219,7 +219,7 @@
     <string name="money_unit">$</string>
     <string name="please_select_food">please choose the food</string>
     <string name="please_select_amen">please choose the amenities</string>
-    <string name="Hong_kong">Hongkong</string>
+    <string name="Hong_kong">HongKong</string>
 
     <string name="str_location_test">@string/Hong_kong</string>
 
