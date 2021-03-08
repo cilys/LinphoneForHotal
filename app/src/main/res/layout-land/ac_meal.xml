@@ -70,34 +70,85 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
+                android:minWidth="@dimen/x120"
                 android:textSize="@dimen/x25"
                 android:text="$19.99"/>
+
+            <ImageView
+                android:id="@+id/reduce"
+                android:layout_width="@dimen/x35"
+                android:layout_height="@dimen/x35"
+                android:layout_marginLeft="@dimen/x25"
+                android:src="@mipmap/icon_reduce_white_bg" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:minWidth="@dimen/x60"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x25"
+                android:gravity="center"
+                android:text="1" />
 
             <ImageView
                 android:id="@+id/add"
                 android:layout_width="@dimen/x35"
                 android:layout_height="@dimen/x35"
-                android:layout_marginLeft="@dimen/x25"
                 android:src="@mipmap/icon_add_white_bg" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x25"
-            android:layout_marginLeft="@dimen/bg_redius"
-            android:textSize="@dimen/x18"
-            android:text="Allergens"
-            android:textColor="#80FFFFFF"/>
+            android:layout_marginTop="@dimen/x5"
+            android:layout_marginLeft="@dimen/bg_redius_land"
+            android:layout_marginRight="@dimen/bg_redius_land"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/remark"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/y50"
+                android:textSize="@dimen/x24"
+                android:textColor="@color/color_main_text_color"
+                android:hint="@string/Remark"
+                android:background="@color/white"
+                android:textColorHint="@color/color_gray_text_color" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/x20"
-            android:textColor="@color/white"
-            android:layout_marginLeft="@dimen/bg_redius"
-            android:layout_marginTop="@dimen/x10"
-            android:text="@string/For_Gluten"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:textSize="@dimen/x25"
+                    android:text="$19.99"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/add_car"
+                    android:layout_width="@dimen/y270"
+                    android:layout_height="@dimen/y66"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x25"
+                    android:text="@string/ADD_TO_CART"
+                    android:background="@drawable/shape_food_details_add_car_bg"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </LinearLayout>

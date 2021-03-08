@@ -140,9 +140,13 @@ public class MealAc extends ServiceParentAc {
                 }
             });
         }
-        if (num <= 0){
-            reduce.setVisibility(View.INVISIBLE);
-            count.setVisibility(View.INVISIBLE);
+        if (num <= 0) {
+            if (reduce != null) {
+                reduce.setVisibility(View.INVISIBLE);
+            }
+            if (count != null) {
+                count.setVisibility(View.INVISIBLE);
+            }
         }
 
         setBackgroundById(R.id.root, R.mipmap.ic_meal_details_bg);
