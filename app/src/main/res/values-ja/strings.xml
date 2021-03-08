@@ -1,63 +1,63 @@
 <resources>
     <string name="app_name">Linphone</string>
 
-    <string name="mute">MUTE</string>
-    <string name="home">HOME</string>
-    <string name="str_return">RETURN</string>
+    <string name="mute">ミュート</string>
+    <string name="home">ホーム</string>
+    <string name="str_return">戻る</string>
 
-    <string name="remote">Remote</string>
-    <string name="power">POWER</string>
+    <string name="remote">リモート</string>
+    <string name="power">電源</string>
     <string name="cha">CHA</string>
     <string name="vol">VOL</string>
 
-    <string name="tv_remote">TV Remote</string>
+    <string name="tv_remote">テレビリモコン</string>
 
-    <string name="order_status">Order status</string>
-    <string name="order_details">Order details</string>
-    <string name="food_order">Food Order</string>
+    <string name="order_status">注文状況</string>
+    <string name="order_details">注文詳細</string>
+    <string name="food_order">お料理の注文</string>
 
-    <string name="requested">Requested</string>
-    <string name="in_progress">In Progress</string>
-    <string name="delivered">Delivered</string>
+    <string name="requested">リクエスト済</string>
+    <string name="in_progress">現在進行中</string>
+    <string name="delivered">配達済</string>
 
-    <string name="dessert">Dessert</string>
-    <string name="international">International</string>
-    <string name="italian">Italian</string>
-    <string name="kids_menu">Kids Menu</string>
-    <string name="middle_eas">Middle Eas</string>
+    <string name="dessert">デザート</string>
+    <string name="international">インターナショナル</string>
+    <string name="italian">イタリアン</string>
+    <string name="kids_menu">キッズメニュー</string>
+    <string name="middle_eas">中東</string>
 
-    <string name="appetizer">Appetizer</string>
+    <string name="appetizer">アペタイザー</string>
 
-    <string name="all">All</string>
-    <string name="unread">Unread</string>
-    <string name="read">Read</string>
+    <string name="all">全て</string>
+    <string name="unread">未読</string>
+    <string name="read">既読</string>
 
-    <string name="curtains">Curtains</string>
-    <string name="master_light">Master Ligth</string>
+    <string name="curtains">カーテン</string>
+    <string name="master_light">マスターライト</string>
 
-    <string name="open">OPEN</string>
-    <string name="close">CLOSE</string>
+    <string name="open">開く</string>
+    <string name="close">閉じる</string>
 
-    <string name="on">ON</string>
-    <string name="off">OFF</string>
+    <string name="on">オン</string>
+    <string name="off">オフ</string>
 
-    <string name="bathroom_light">Bathroom Light</string>
+    <string name="bathroom_light">バスルームライト</string>
 
-    <string name="lights">Lights</string>
+    <string name="lights">ライト</string>
 
-    <string name="min">MIN</string>
-    <string name="max">MAX</string>
+    <string name="min">最小</string>
+    <string name="max">最大</string>
 
-    <string name="temperature">Temperature</string>
+    <string name="temperature">温度</string>
 
-    <string name="fan_speed">Fan Speed</string>
+    <string name="fan_speed">風量</string>
 
-    <string name="bedding_pillows">Bedding &amp; Pillows</string>
-    <string name="in_room">In Room</string>
-    <string name="laundries">Laundries</string>
-    <string name="towels">Towels</string>
-    <string name="bath">Bath</string>
-    <string name="drinks">Drinks</string>
+    <string name="bedding_pillows">ベッドと枕</string>
+    <string name="in_room">室内</string>
+    <string name="laundries">ランドリー</string>
+    <string name="towels">タオル</string>
+    <string name="bath">バス</string>
+    <string name="drinks">飲み物</string>
 
     <string name="please_input_account">Please enter account</string>
     <string name="please_input_pwd">Please enter password</string>
@@ -66,97 +66,97 @@
     <string name="config">Configure</string>
 
     <!-- amenities checkout -->
-    <string name="recommendations_for_you">Recommendations for you</string>
-    <string name="Extra_Towel">Extra Towel</string>
-    <string name="Dental_Kit">Dental Kit</string>
-    <string name="Bill_Details">Bill Details</string>
-    <string name="Remark">Remark</string>
-    <string name="Type_your_comment">Type your comment</string>
-    <string name="Payment_Option">Payment Option</string>
-    <string name="Cash">Cash</string>
+    <string name="recommendations_for_you">お客様へのおすすめ</string>
+    <string name="Extra_Towel">タオル追加</string>
+    <string name="Dental_Kit">デンタルキット</string>
+    <string name="Bill_Details">請求詳細</string>
+    <string name="Remark">リマーク</string>
+    <string name="Type_your_comment">ここにコメントを入力して下さい</string>
+    <string name="Payment_Option">支払い方法</string>
+    <string name="Cash">現金</string>
 
     <!-- call number -->
-    <string name="VOICE_MAIL">VOICE MAIL</string>
-    <string name="SERVICE_CALL">SERVICE CALL</string>
+    <string name="VOICE_MAIL">ボイスメール</string>
+    <string name="SERVICE_CALL">サービスコール</string>
     <string name="SOS">SOS</string>
 
     <!-- room control -->
-    <string name="room_control_set_your_preferred_temperature">Set your preferred \ntemperature by moving the \nred dot.\nLower temperature can \nhelp you sleep well. \nRemember.</string>
-    <string name="room_control_set_your_preferred_fan">Set your preferred fan \nspeed by moving the red \ndot.</string>
+    <string name="room_control_set_your_preferred_temperature">お好みの温度を赤い点を動かして設定して下さい。温度が低いほうが快適な睡眠が得られます。</string>
+    <string name="room_control_set_your_preferred_fan">お好みの風量を赤い点を動かして設定して下さい。</string>
 
     <!-- food checkout -->
-    <string name="Sweet_Potatoes">Sweet Potatoes</string>
-    <string name="Coca_Cola">Coca-Cola</string>
+    <string name="Sweet_Potatoes">スイートホテト</string>
+    <string name="Coca_Cola">コカ・コーラ</string>
 
     <!-- home -->
-    <string name="ROOM_CONTROL">ROOM CONTROL</string>
-    <string name="TV_REMOTE">TV REMOTE</string>
-    <string name="Hello_Adam_Miller">Hello, Adam Miller!</string>
-    <string name="You_have_2Message">You have 2Message</string>
-    <string name="New_York">New York</string>
-    <string name="DO_NOT_DISTURB">DO NOT DISTURB</string>
-    <string name="MAKE_UP_ROOM">MAKE UP ROOM</string>
-    <string name="SERVICE_MENU">SERVICE MENU</string>
-    <string name="Our_Promotions">Our Promotions</string>
-    <string name="Tap_QR_code">Tap QR code to view full screen</string>
-    <string name="PHONE">PHONE</string>
+    <string name="ROOM_CONTROL">室内コントロール</string>
+    <string name="TV_REMOTE">テレビリモコン</string>
+    <string name="Hello_Adam_Miller">こんにちはアダム・ミラー様</string>
+    <string name="You_have_2Message">新着のメッセージが2件あります</string>
+    <string name="New_York">ニューヨーク</string>
+    <string name="DO_NOT_DISTURB">邪魔をしないで下さい</string>
+    <string name="MAKE_UP_ROOM">室内清掃をお願いいたします。</string>
+    <string name="SERVICE_MENU">サービスメニュー</string>
+    <string name="Our_Promotions">広告</string>
+    <string name="Tap_QR_code">QRをタップして画面を拡大</string>
+    <string name="PHONE">電話</string>
 
     <!-- food meal -->
-    <string name="Pasta_Alla_Filicudara">Pasta Alla Filicudara</string>
-    <string name="Fresh_pasta">Fresh pasta with tuna chunks, cherry tomatoes, onion  capers</string>
-    <string name="Allergens">Allergens</string>
-    <string name="For_Gluten">For Gluten/Wheat, Egg, Peanut/Tree Nut, Soy</string>
+    <string name="Pasta_Alla_Filicudara">パスタ</string>
+    <string name="Fresh_pasta">ツナとチェリートマトのパスタ</string>
+    <string name="Allergens">アレルゲン</string>
+    <string name="For_Gluten">グルテン/小麦、タマゴ、ピーナッツ/木ノ実、大豆</string>
 
     <!-- Msg -->
-    <string name="Message_2">Message(2)</string>
+    <string name="Message_2">メッセージ(2)</string>
 
     <!-- msg details -->
-    <string name="MyGallery">MyGallery</string>
-    <string name="To_Admm_Miller">To:Admm Miller</string>
-    <string name="Your_card_will_be_charged">Your card will be charged the amount of the meal.</string>
-    <string name="Happy_Hours_2x1">Happy Hours 2x1</string>
-    <string name="Pasta_Pomodoro">2x Pasta Pomodoro</string>
+    <string name="MyGallery">ギャラリー</string>
+    <string name="To_Admm_Miller">アダム・ミラー様宛</string>
+    <string name="Your_card_will_be_charged">お食事代金はクレジットカードに請求されます。</string>
+    <string name="Happy_Hours_2x1">ハッピーアワー　2x1</string>
+    <string name="Pasta_Pomodoro">ポモドーロx2</string>
 
     <!-- phone -->
-    <string name="Rober_Watson">Rober Watson</string>
-    <string name="Housekeeping">Housekeeping</string>
-    <string name="MUTE">MUTE</string>
-    <string name="HOLD">HOLD</string>
-    <string name="SPEAKER">SPEAKER</string>
+    <string name="Rober_Watson">ローバー・ワトソン</string>
+    <string name="Housekeeping">室内清掃</string>
+    <string name="MUTE">ミュート</string>
+    <string name="HOLD">保留</string>
+    <string name="SPEAKER">スピーカー</string>
 
     <!-- tv remote -->
-    <string name="Channel">Channel</string>
+    <string name="Channel">チャンネル</string>
 
     <!-- common bill -->
-    <string name="Sub_Total">Sub Total</string>
-    <string name="VAT_Total">VAT Total(7%)</string>
-    <string name="Service_fee">Service fee(10%)</string>
-    <string name="Tips">Tips</string>
-    <string name="Total">Total</string>
+    <string name="Sub_Total">小計</string>
+    <string name="VAT_Total">消費税(7%)</string>
+    <string name="Service_fee">サービス料金(10%)</string>
+    <string name="Tips">チップ</string>
+    <string name="Total">合計</string>
 
     <!-- common bottom -->
-    <string name="Remote">Remote</string>
+    <string name="Remote">リモート</string>
 
     <!-- common bottom confirm -->
-    <string name="CONFIRM">CONFIRM</string>
+    <string name="CONFIRM">確認</string>
 
-    <string name="Food_Order">Food Order</string>
+    <string name="Food_Order">お料理の注文</string>
 
-    <string name="Items_3">3 Items</string>
-    <string name="Items_0">0 Items</string>
-    <string name="Items">Items</string>
+    <string name="Items_3">3 点</string>
+    <string name="Items_0">0 点</string>
+    <string name="Items">点</string>
 
-    <string name="Available_until">Available until 3:00</string>
+    <string name="Available_until">15時までご注文いただけます</string>
     <string name="Order_dinner_by">Order dinner by 3:00 and enjoy an extra meal for your loved ones!</string>
 
-    <string name="Service">Service</string>
-    <string name="order_been_accepted">Your order has bean accepted.</string>
+    <string name="Service">サービス</string>
+    <string name="order_been_accepted">注文が確定されました</string>
 
-    <string name="offer_brief_description">offer brief description</string>
+    <string name="offer_brief_description">詳細</string>
     <string name="offer_description">offer description with formatting</string>
-    <string name="second_offer">second offer</string>
+    <string name="second_offer">次のおすすめ</string>
 
-    <string name="Scan_to_check_on_mobile">Scan to check on mobile</string>
+    <string name="Scan_to_check_on_mobile">モバイルで確認するためにスキャン</string>
 
     <string name="without_config">Without configure account</string>
 
@@ -169,43 +169,43 @@
     <string name="no_permission_audio">Audio permission denied, unable to use app temporarily</string>
     <string name="no_permission_phone">Phone permission denied, unable to use app temporarily</string>
 
-    <string name="Promotions">Promotions</string>
+    <string name="Promotions">広告</string>
 
-    <string name="Room_Control">Room Control</string>
+    <string name="Room_Control">室内コントロール</string>
 
-    <string name="Checkout">Checkout</string>
+    <string name="Checkout">チェックアウト</string>
 
-    <string name="Amenties">Amenties</string>
+    <string name="Amenties">アメニティー</string>
 
-    <string name="Appetzer">Appetzer</string>
-    <string name="Bruschetta_Pomodoro_e_Aglio">Bruschetta Pomodoro e Aglio</string>
+    <string name="Appetzer">アペタイザー</string>
+    <string name="Bruschetta_Pomodoro_e_Aglio">ポモドーロのブルスケッタ</string>
     <string name="Sapori_di_Sicilia">Sapori di Sicilia</string>
-    <string name="Pizza_Margherita">Pizza Margherita</string>
-    <string name="Main_dish">Main dish</string>
-    <string name="Pizza_Peperoncino">Pizza Peperoncino</string>
+    <string name="Pizza_Margherita">ピザ・マルゲリータ</string>
+    <string name="Main_dish">メイン</string>
+    <string name="Pizza_Peperoncino">ピザ・ペペロンチーノ</string>
 
     <string name="Pizza_Marghcrita">Pizza Marghcrita</string>
-    <string name="Arancini">Arancini (3 picces)</string>
+    <string name="Arancini">アランチーニ(３つ）</string>
 
-    <string name="Amenities">Amenities</string>
-    <string name="Concierge">Concierge</string>
-    <string name="Maintenance">Maintenance</string>
-    <string name="Food">Food</string>
-    <string name="New">New</string>
-    <string name="Wakeup_Call">Wakeup Call</string>
-    <string name="Late_Checkout">Late Checkout</string>
-    <string name="DND">DND</string>
-    <string name="Clean_Room">Clean Room</string>
-    <string name="Service_Menu">Service Menu</string>
+    <string name="Amenities">アメニティー</string>
+    <string name="Concierge">コンシェルジュ</string>
+    <string name="Maintenance">メンテナンス</string>
+    <string name="Food">フード</string>
+    <string name="New">新</string>
+    <string name="Wakeup_Call">モーニングコール</string>
+    <string name="Late_Checkout">レイトチェックアウト</string>
+    <string name="DND">邪魔をしないで下さい</string>
+    <string name="Clean_Room">室内清掃</string>
+    <string name="Service_Menu">サービスメニュー</string>
 
-    <string name="Jacket">Jacket</string>
-    <string name="Pizza_Margherta">Pizza Margherta</string>
-    <string name="Overcoat">Overcoat</string>
-    <string name="Laundry">Laundry</string>
-    <string name="Pyjamas_Silk">Pyjamas (Silk)</string>
-    <string name="Necktie">Necktie</string>
-    <string name="Dry_Cleaning">Dry Cleaning</string>
-    <string name="Dressing_Gown_Silk">Dressing Gown (Silk)</string>
+    <string name="Jacket">ジャケット</string>
+    <string name="Pizza_Margherta">ピザ・マルゲリータ</string>
+    <string name="Overcoat">オーバーコート</string>
+    <string name="Laundry">ランドリー</string>
+    <string name="Pyjamas_Silk">パジャマ（シルク）</string>
+    <string name="Necktie">ネクタイ</string>
+    <string name="Dry_Cleaning">ドライクリーニング</string>
+    <string name="Dressing_Gown_Silk">ドレスガウン（シルク）</string>
 
     <string name="language_english">English</string>
     <string name="language_chinese">简体中文</string>
