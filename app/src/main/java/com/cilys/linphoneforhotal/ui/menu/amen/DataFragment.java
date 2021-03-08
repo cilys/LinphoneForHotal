@@ -56,31 +56,31 @@ public class DataFragment extends BaseFg {
 
         DataBean b1 = new DataBean(ext + "1", null, getString(R.string.Dressing_Gown_Silk),
                 140.00f, 0);
-        b1.setPicId(R.mipmap.icon_dress)
+        b1.setPicId(R.mipmap.icon_dress_test)
                 .setStatus(getRandom());
         datas.add(b1);
 
         DataBean b2 = new DataBean(ext + "2", null, getString(R.string.Jacket),
                 95.00f, 0);
-        b2.setPicId(R.mipmap.icon_necktie)
+        b2.setPicId(R.mipmap.icon_necktie_test)
                 .setStatus(getRandom());
         datas.add(b2);
 
         DataBean b3 = new DataBean(ext + "3", null, getString(R.string.Necktie),
                 45.00f, 0);
-        b3.setPicId(R.mipmap.icon_necktie_2)
+        b3.setPicId(R.mipmap.icon_necktie_2_test)
                 .setStatus(getRandom());
         datas.add(b3);
 
         DataBean b4 = new DataBean(ext + "4", null, getString(R.string.Overcoat),
                 187.00f, 0);
-        b4.setPicId(R.mipmap.icon_dress_2)
+        b4.setPicId(R.mipmap.icon_dress_2_test)
                 .setStatus(getRandom());
         datas.add(b4);
 
         DataBean b5 = new DataBean(ext + "5", null, getString(R.string.Pyjamas_Silk),
                 114.00f, 0);
-        b5.setPicId(R.mipmap.icon_dress_3)
+        b5.setPicId(R.mipmap.icon_dress_3_test)
                 .setStatus(getRandom());
         datas.add(b5);
 
@@ -89,7 +89,7 @@ public class DataFragment extends BaseFg {
 
         DataBean b7 = new DataBean(ext + "6", null, getString(R.string.Pyjamas_Silk),
                 114.00f, 0);
-        b7.setPicId(R.mipmap.icon_dress_3)
+        b7.setPicId(R.mipmap.icon_dress_3_test)
                 .setStatus(getRandom());
         datas.add(b7);
 
