@@ -45,6 +45,9 @@ import java.util.Locale;
 public class HomeAc extends BaseLinphoneAc {
     private final boolean TO_TEST_VIEW = false;
 
+    private boolean flag_donot_disturb = false;
+    private boolean flag_make_up_room = false;
+
     private TextView tv_time;
 
     @Override
@@ -126,13 +129,15 @@ public class HomeAc extends BaseLinphoneAc {
 
         TextView tv_temp = findView(R.id.tv_temp);
 
-        LinearLayout ll_donot_disturb = findView(R.id.ll_donot_disturb);
+        final LinearLayout ll_donot_disturb = findView(R.id.ll_donot_disturb);
         final ImageView img_donot_disturb = findView(R.id.img_donot_disturb);
         final TextView tv_donot_disturb = findView(R.id.tv_donot_disturb);
         ll_donot_disturb.setOnClickListener(new SingleClickListener() {
             @Override
             public void onSingleClick(View v) {
+                flag_donot_disturb = !flag_donot_disturb;
 
+                ll_donot_disturb.setBackgroundResource(flag_donot_disturb ? R.mipmap.ic_bg_home_head_action_selected : R.mipmap.ic_bg_home_head_action);
             }
         });
 
@@ -144,6 +149,9 @@ public class HomeAc extends BaseLinphoneAc {
             @Override
             public void onSingleClick(View v) {
                 showToast("make up room");
+                flag_make_up_room = !flag_make_up_room;
+
+                ll_make_up_room.setBackgroundResource(flag_make_up_room ? R.mipmap.ic_bg_home_head_action_selected : R.mipmap.ic_bg_home_head_action);
             }
         });
 

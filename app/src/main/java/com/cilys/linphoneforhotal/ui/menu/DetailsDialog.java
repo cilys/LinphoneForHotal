@@ -121,6 +121,10 @@ public class DetailsDialog extends BaseDialog {
         }
         this.datas.clear();
 
+        if (datas_cache == null) {
+            datas_cache = new ArrayList<>();
+        }
+
         for (DataBean b : datas_cache) {
             if (currentType.equals(b.getStatus())) {
                 this.datas.add(b);
