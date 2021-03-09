@@ -64,37 +64,11 @@ public class MealAc extends ServiceParentAc {
                         finish();
                         return;
                     }
-
-                    if (dataBean.getCount() < 1) {
-                        finish();
-                        return;
-                    }
-
-                    if (addOptionNum > 0) {
-                        for (int i = 0; i < addOptionNum; i++) {
-                            Event e = new Event();
-                            e.what = FoodAc.EVENT_SELECTED_FOOD_ADD;
-                            e.obj = dataBean;
-
-                            EventBus.getInstance().postEvent(e);
-                        }
-                    } else if (addOptionNum < 0) {
-                        int addNum = Math.abs(addOptionNum);
-
-                        for (int i = 0; i < addNum; i++) {
-                            Event e = new Event();
-                            e.what = FoodAc.EVENT_SELECTED_FOOD_RESUCE;
-                            e.obj = dataBean;
-
-                            EventBus.getInstance().postEvent(e);
-                        }
-                    }
-
+                    dataBean.setCount(num);
 
                     Event e = new Event();
-                    e.what = FoodDataFg.EVENT_FOOD_ADD_TO_CAR;
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_CHANGE;
                     e.obj = dataBean;
-
                     EventBus.getInstance().postEvent(e);
 
                     finish();
@@ -108,12 +82,15 @@ public class MealAc extends ServiceParentAc {
                 @Override
                 public void onSingleClick(View v) {
 
-
+                    num = dataBean.getCount();
                     num ++;
-
-                    addOptionNum ++;
-
                     dataBean.setCount(num);
+
+                    Event e = new Event();
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_CHANGE;
+                    e.obj = dataBean;
+                    EventBus.getInstance().postEvent(e);
+
 
                     reduce.setVisibility(View.VISIBLE);
                     count.setVisibility(View.VISIBLE);
@@ -127,9 +104,12 @@ public class MealAc extends ServiceParentAc {
             reduce.setOnClickListener(new SingleClickListener() {
                 @Override
                 public void onSingleClick(View v) {
-                    num--;
-
-                    addOptionNum --;
+                    num = dataBean.getCount();
+                    if (num < 1) {
+                        return;
+                    }
+                    num --;
+                    dataBean.setCount(num);
 
                     if (num < 1) {
                         num = 0;
@@ -137,15 +117,17 @@ public class MealAc extends ServiceParentAc {
                         reduce.setVisibility(View.INVISIBLE);
                         count.setVisibility(View.INVISIBLE);
 
-                        dataBean.setCount(num);
                         setTextToView(count, String.valueOf(num));
                         setTextToView(total_price, calTotal(singlePrice, num));
                     } else {
-                        dataBean.setCount(num);
-
                         setTextToView(count, String.valueOf(num));
                         setTextToView(total_price, calTotal(singlePrice, num));
                     }
+
+                    Event e = new Event();
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_CHANGE;
+                    e.obj = dataBean;
+                    EventBus.getInstance().postEvent(e);
                 }
             });
         }
@@ -172,7 +154,6 @@ public class MealAc extends ServiceParentAc {
         });
     }
 
-    private int addOptionNum = 0;
 
     private String calTotal(float singlePrice, int num) {
         if (singlePrice == 0 || num == 0) {

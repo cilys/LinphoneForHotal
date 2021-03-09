@@ -10,6 +10,7 @@ import com.cilys.linphoneforhotal.R;
 import com.cilys.linphoneforhotal.base.CommonTitleAc;
 import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.ui.menu.ServiceParentAc;
+import com.cilys.linphoneforhotal.utils.MoneyUtils;
 import com.cilys.linphoneforhotal.view.SingleClickListener;
 import com.cilys.linphoneforhotal.ui.menu.DataBean;
 
@@ -199,66 +200,36 @@ public class FoodAc extends ServiceParentAc {
     private Map<String, DataBean> map_selected_food;
 
 
-    public final static int EVENT_SELECTED_FOOD_ADD = 1001;
-    public final static int EVENT_SELECTED_FOOD_RESUCE = 1002;
+    public final static int EVENT_SELECTED_FOOD_CHANGE = 1001;
     @Override
     protected void onEvent(Event e) {
         super.onEvent(e);
 
-        if (e.what == EVENT_SELECTED_FOOD_ADD) {
-            if (map_selected_food == null) {
-                map_selected_food = new HashMap<>();
-            }
+        if (e.what == EVENT_SELECTED_FOOD_CHANGE) {
             DataBean bean = (DataBean)e.obj;
             if (bean == null) {
                 return;
             }
+
             String id = bean.getId();
 
+            if (map_selected_food == null) {
+                map_selected_food = new HashMap<>();
+            }
             map_selected_food.put(id, bean);
 
-            selected_count_item ++;
-            items_count.setText(selected_count_item + " " + getString(R.string.Items));
-
-            BigDecimal d = new BigDecimal(selected_total_price);
-            BigDecimal d2 = new BigDecimal(bean.getPrice());
-            BigDecimal res = d.add(d2);
-            res = res.setScale(2, RoundingMode.HALF_UP);
-
-            selected_total_price = res.floatValue();
-
-            total_price.setText(fomcatMoney(selected_total_price));
-        } else if (e.what == EVENT_SELECTED_FOOD_RESUCE) {
-            if (map_selected_food == null) {
-                map_selected_food = new HashMap<>();
+            List<Float> prices = new ArrayList<>();
+            int count = 0;
+            for (DataBean b : map_selected_food.values()) {
+                count += b.getCount();
+                prices.add(MoneyUtils.mul(b.getPrice(), b.getCount()));
             }
-            DataBean bean = (DataBean)e.obj;
-            if (bean == null) {
-                return;
+            float[] ps = new float[prices.size()];
+            for (int i = 0; i < ps.length; i++) {
+                ps[i] = prices.get(i);
             }
-            String id = bean.getId();
-
-            int count = bean.getCount();
-            if (count <= 0) {
-                map_selected_food.remove(id);
-            }else {
-                map_selected_food.put(id, bean);
-            }
-
-            selected_count_item --;
-            items_count.setText(selected_count_item + " " + getString(R.string.Items));
-
-            BigDecimal d = new BigDecimal(selected_total_price);
-            BigDecimal d2 = new BigDecimal(bean.getPrice());
-            BigDecimal res = d.subtract(d2);
-            res = res.setScale(2, RoundingMode.HALF_UP);
-
-            selected_total_price = res.floatValue();
-
-            total_price.setText(fomcatMoney(selected_total_price));
+            setTextToView(items_count, count + " " + getString(R.string.Items));
+            setTextToView(total_price, fomcatMoney(MoneyUtils.add(ps)));
         }
     }
-
-    private int selected_count_item = 0;
-    private float selected_total_price = 0.00f;
 }

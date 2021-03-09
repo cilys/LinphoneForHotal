@@ -58,12 +58,11 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     count ++;
                     datas.get(i).setCount(count);
 
-                    notifyDataSetChanged();
+                    notifyItemChanged(i);
 
                     Event e = new Event();
-                    e.what = FoodAc.EVENT_SELECTED_FOOD_ADD;
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_CHANGE;
                     e.obj = datas.get(i);
-
                     EventBus.getInstance().postEvent(e);
                 }
             });
@@ -78,12 +77,11 @@ public class DatasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     count --;
                     datas.get(i).setCount(count);
 
-                    notifyDataSetChanged();
+                    notifyItemChanged(i);
 
                     Event e = new Event();
-                    e.what = FoodAc.EVENT_SELECTED_FOOD_RESUCE;
+                    e.what = FoodAc.EVENT_SELECTED_FOOD_CHANGE;
                     e.obj = datas.get(i);
-
                     EventBus.getInstance().postEvent(e);
                 }
             });

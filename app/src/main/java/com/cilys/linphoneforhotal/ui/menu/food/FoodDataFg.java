@@ -99,12 +99,11 @@ public class FoodDataFg extends BaseFg {
         return DetailsDialog.TYPE_REQUESTED;
     }
 
-    public final static int EVENT_FOOD_ADD_TO_CAR = 1011;
 
     @Override
     public void onTrigger(Event event) {
         super.onTrigger(event);
-        if (event.what == EVENT_FOOD_ADD_TO_CAR) {
+        if (event.what == FoodAc.EVENT_SELECTED_FOOD_CHANGE) {
             DataBean b = (DataBean) event.obj;
             if (b == null) {
                 return;
