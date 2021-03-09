@@ -59,7 +59,8 @@
         </activity>
 
         <activity android:name=".ui.msg.MsgDetailsAc" />
-        <activity android:name=".ui.menu.food.MealAc" />
+        <activity android:name=".ui.menu.food.MealAc"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".TAc" />
         <activity android:name=".ui.prom.PromDetailsAc" />
         <activity android:name=".ui.menu.ServiceMenuAc" />

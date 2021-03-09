@@ -47,6 +47,9 @@ public class MealAc extends ServiceParentAc {
         final TextView total_price = findView(R.id.total_price);
         final TextView count = findView(R.id.count);
         num = dataBean.getCount();
+        if (num < 1) {
+            num = 1;
+        }
         setTextToView(count, String.valueOf(num));
         setTextToView(total_price, calTotal(singlePrice, num));
 
@@ -62,6 +65,10 @@ public class MealAc extends ServiceParentAc {
                         return;
                     }
 
+                    if (dataBean.getCount() < 1) {
+                        finish();
+                        return;
+                    }
 
                     if (addOptionNum > 0) {
                         for (int i = 0; i < addOptionNum; i++) {
@@ -100,6 +107,8 @@ public class MealAc extends ServiceParentAc {
             add.setOnClickListener(new SingleClickListener() {
                 @Override
                 public void onSingleClick(View v) {
+
+
                     num ++;
 
                     addOptionNum ++;

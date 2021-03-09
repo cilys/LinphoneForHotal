@@ -105,6 +105,8 @@
             android:layout_marginLeft="@dimen/bg_redius_land"
             android:layout_marginRight="@dimen/bg_redius_land"
             android:gravity="center_vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="horizontal">
             <EditText
                 android:id="@+id/remark"
