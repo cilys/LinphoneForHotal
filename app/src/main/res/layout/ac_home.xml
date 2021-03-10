@@ -104,7 +104,8 @@
 
             <TextView
                 android:id="@+id/tv_custom_name"
-                android:layout_width="@dimen/x250"
+                android:minWidth="@dimen/x250"
+                android:layout_width="wrap_content"
                 android:maxHeight="@dimen/y80"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/x30"

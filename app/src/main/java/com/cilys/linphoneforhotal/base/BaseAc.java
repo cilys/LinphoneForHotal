@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cilys.linphoneforhotal.App;
 import com.cilys.linphoneforhotal.BuildConfig;
 import com.cilys.linphoneforhotal.ui.call.PhoneAc;
 import com.cilys.linphoneforhotal.event.Event;
@@ -61,6 +62,10 @@ public class BaseAc extends AppCompatActivity {
             };
         }
         EventBus.getInstance().onSub(eventImpl);
+
+        if (App.getInstance().getLocalLanguage() != null) {
+            switchLanguage(App.getInstance().getLocalLanguage());
+        }
     }
 
     protected void onEvent(Event e) {
@@ -168,6 +173,8 @@ public class BaseAc extends AppCompatActivity {
         DisplayMetrics dm = getResources().getDisplayMetrics();
 
         config.setLocale(language);
+
+        App.getInstance().setLocalLanguage(language);
 
         getResources().updateConfiguration(config, dm);
     }

@@ -18,7 +18,7 @@
 
     <string name="requested">リクエスト済</string>
     <string name="in_progress">現在進行中</string>
-    <string name="delivered">配達済</string>
+    <string name="delivered">完了</string>
 
     <string name="dessert">デザート</string>
     <string name="international">インターナショナル</string>
@@ -52,7 +52,7 @@
 
     <string name="fan_speed">風量</string>
 
-    <string name="bedding_pillows">ベッドと枕</string>
+    <string name="bedding_pillows">リネン</string>
     <string name="in_room">室内</string>
     <string name="laundries">ランドリー</string>
     <string name="towels">タオル</string>
@@ -95,9 +95,9 @@
     <string name="You_have_2Message">新着のメッセージが2件あります</string>
     <string name="New_York">ニューヨーク</string>
     <string name="DO_NOT_DISTURB">邪魔をしないで下さい</string>
-    <string name="MAKE_UP_ROOM">室内清掃をお願いいたします。</string>
+    <string name="MAKE_UP_ROOM">メイドサービス</string>
     <string name="SERVICE_MENU">サービスメニュー</string>
-    <string name="Our_Promotions">広告</string>
+    <string name="Our_Promotions">プロモーション</string>
     <string name="Tap_QR_code">QRをタップして画面を拡大</string>
     <string name="PHONE">電話</string>
 
@@ -114,7 +114,7 @@
     <string name="MyGallery">ギャラリー</string>
     <string name="To_Admm_Miller">アダム・ミラー様宛</string>
     <string name="Your_card_will_be_charged">お食事代金はクレジットカードに請求されます。</string>
-    <string name="Happy_Hours_2x1">ハッピーアワー　2x1</string>
+    <string name="Happy_Hours_2x1">1つ購入して1つ無料サービス</string>
     <string name="Pasta_Pomodoro">ポモドーロx2</string>
 
     <!-- phone -->
@@ -169,7 +169,7 @@
     <string name="no_permission_audio">Audio permission denied, unable to use app temporarily</string>
     <string name="no_permission_phone">Phone permission denied, unable to use app temporarily</string>
 
-    <string name="Promotions">広告</string>
+    <string name="Promotions">おすすめ</string>
 
     <string name="Room_Control">室内コントロール</string>
 
@@ -195,7 +195,7 @@
     <string name="Wakeup_Call">モーニングコール</string>
     <string name="Late_Checkout">レイトチェックアウト</string>
     <string name="DND">邪魔をしないで下さい</string>
-    <string name="Clean_Room">室内清掃</string>
+    <string name="Clean_Room">メイドサービス</string>
     <string name="Service_Menu">サービスメニュー</string>
 
     <string name="Jacket">ジャケット</string>
