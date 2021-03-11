@@ -57,7 +57,7 @@
             style="@style/style_home_head_action_ll.top">
             <ImageView
                 style="@style/style_home_head_action_ll_img.top"
-                android:src="@mipmap/icon_cell_phone_white" />
+                android:src="@mipmap/icon_line_setting_white" />
 
             <TextView
                 style="@style/style_home_head_action_ll_tv.top"
@@ -72,7 +72,7 @@
             style="@style/style_home_head_action_ll.top">
             <ImageView
                 style="@style/style_home_head_action_ll_img.top"
-                android:src="@mipmap/icon_line_setting_white" />
+                android:src="@mipmap/icon_cell_phone_white" />
 
             <TextView
                 style="@style/style_home_head_action_ll_tv.top"
