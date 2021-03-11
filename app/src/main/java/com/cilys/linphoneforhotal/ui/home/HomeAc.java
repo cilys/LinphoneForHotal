@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cilys.linphoneforhotal.AccountAc;
+import com.cilys.linphoneforhotal.event.Event;
 import com.cilys.linphoneforhotal.pop.SwitchLanguagePopupWindow;
 import com.cilys.linphoneforhotal.ui.menu.amen.AmentiesAc;
 import com.cilys.linphoneforhotal.ui.call.CallNumberAc;
@@ -59,8 +60,8 @@ public class HomeAc extends BaseLinphoneAc {
     protected void initUI(){
         super.initUI();
 
-        L.setLogFilePath(Environment.getExternalStorageDirectory().getAbsolutePath(), "log.txt");
-        L.setWriteLogToFile(true);
+//        L.setLogFilePath(Environment.getExternalStorageDirectory().getAbsolutePath(), "log.txt");
+//        L.setWriteLogToFile(true);
 
         if (TO_TEST_VIEW) {
             startActivity(new Intent(this, AmentiesAc.class));

@@ -11,6 +11,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -143,10 +144,10 @@ public class BaseAc extends AppCompatActivity {
             am.setMode(AudioManager.MODE_IN_CALL);
 //            am.setMode(AudioManager.MODE_NORMAL);
         }
-        int ret = am.requestAudioFocus(null, 2, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
-
-        am.adjustStreamVolume(AudioManager.STREAM_VOICE_CALL, AudioManager.ADJUST_RAISE,
-                AudioManager.FLAG_SHOW_UI);
+//        int ret = am.requestAudioFocus(null, 2, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
+//
+//        am.adjustStreamVolume(AudioManager.STREAM_VOICE_CALL, AudioManager.ADJUST_RAISE,
+//                AudioManager.FLAG_SHOW_UI);
         am.setSpeakerphoneOn(true);
     }
 
@@ -177,5 +178,14 @@ public class BaseAc extends AppCompatActivity {
         App.getInstance().setLocalLanguage(language);
 
         getResources().updateConfiguration(config, dm);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

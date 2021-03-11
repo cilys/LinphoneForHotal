@@ -28,6 +28,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.cilys.linphoneforhotal",
+                JPUSH_APPKEY : "acf044abc47e6b5c1bd6344c", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
@@ -82,4 +88,7 @@ dependencies {
     implementation 'com.github.xiaohaibin:XBanner:1.8.0'
 
     implementation 'com.github.cilys:utils-log-file:1.0.0'
+
+    compile 'cn.jiguang.sdk:jpush:3.3.4'
+    compile 'cn.jiguang.sdk:jcore:2.1.2'
 }

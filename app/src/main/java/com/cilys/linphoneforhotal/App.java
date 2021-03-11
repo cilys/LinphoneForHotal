@@ -4,12 +4,17 @@ import android.app.Application;
 
 import java.util.Locale;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class App extends Application {
     private static App instance;
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
+
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
     }
 
     public static App getInstance() {
