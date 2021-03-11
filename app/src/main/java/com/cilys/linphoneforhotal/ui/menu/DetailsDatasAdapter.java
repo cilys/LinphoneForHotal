@@ -94,7 +94,7 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
 
         private void setData(DataBean bean) {
             if (bean != null) {
-                if (DetailsDialog.TYPE_IN_PROGRESS.equals(bean.getStatus()) || DetailsDialog.TYPE_DELIVERED.equals(bean.getStatus())) {
+                /*if (DetailsDialog.TYPE_IN_PROGRESS.equals(bean.getStatus()) || DetailsDialog.TYPE_DELIVERED.equals(bean.getStatus())) {
                     if (add != null) {
                         add.setVisibility(View.INVISIBLE);
                     }
@@ -108,6 +108,13 @@ public class DetailsDatasAdapter extends RecyclerView.Adapter<DetailsDatasAdapte
                     if (reduce != null) {
                         reduce.setVisibility(View.VISIBLE);
                     }
+                }*/
+
+                if (add != null) {
+                    add.setVisibility(View.INVISIBLE);
+                }
+                if (reduce != null) {
+                    reduce.setVisibility(View.INVISIBLE);
                 }
             }
         }
