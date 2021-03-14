@@ -1,0 +1,236 @@
+<resources>
+    <string name="app_name">Tên ứng dụng</string>
+
+    <string name="mute">Tắt tiếng</string>
+    <string name="home">Màn hình chính</string>
+    <string name="str_return">Quay lại</string>
+
+    <string name="remote">Từ xa</string>
+    <string name="power">Nguồn</string>
+    <string name="cha">CHA</string>
+    <string name="vol">VOL</string>
+
+    <string name="tv_remote">Điểu khiển TV từ xa</string>
+
+    <string name="order_status">Tình trạng đặt hàng</string>
+    <string name="order_details">Chi tiết đơn đặt hàng</string>
+    <string name="food_order">Gọi món</string>
+
+    <string name="requested">Đã yêu cầu</string>
+    <string name="in_progress">Đang thực hiện</string>
+    <string name="delivered">Đã giao</string>
+
+    <string name="dessert">Tráng miệng</string>
+    <string name="international">Quốc tế</string>
+    <string name="italian">Ý</string>
+    <string name="kids_menu">Thực đơn trẻ em</string>
+    <string name="middle_eas">Trung Đông</string>
+
+    <string name="appetizer">Món khai vị</string>
+
+    <string name="all">Tất cả</string>
+    <string name="unread">Chưa đọc</string>
+    <string name="read">Đã đọc</string>
+
+    <string name="curtains">Rèm che</string>
+    <string name="master_light">Đèn tổng</string>
+
+    <string name="open">MỞ</string>
+    <string name="close">ĐÓNG</string>
+
+    <string name="on">BẬT</string>
+    <string name="off">TẮT</string>
+
+    <string name="bathroom_light">Đèn phòng tắm</string>
+
+    <string name="lights">Đèn</string>
+
+    <string name="min">NHỎ NHẤT</string>
+    <string name="max">LỚN NHẤT</string>
+
+    <string name="temperature">Nhiệt độ</string>
+
+    <string name="fan_speed">Tốc độ quạt</string>
+
+    <string name="bedding_pillows">Bộ đồ giường &amp; Gối</string>
+    <string name="in_room">Trong phòng</string>
+    <string name="laundries">Đồ giặt</string>
+    <string name="towels">Khăn</string>
+    <string name="bath">Tắm</string>
+    <string name="drinks">Đồ uống</string>
+
+    <string name="please_input_account">Vui lòng nhập tài khoản</string>
+    <string name="please_input_pwd">Vui lòng nhập mật khẩu</string>
+    <string name="please_input_domain">Vui lòng nhập vùng lãnh thổ</string>
+    <string name="please_input_proxy_server">Vui lòng nhập máy chủ proxy</string>
+    <string name="config">Cấu hình</string>
+
+    <!-- amenities checkout -->
+    <string name="recommendations_for_you">Gợi ý cho bạn</string>
+    <string name="Extra_Towel">Thêm khăn</string>
+    <string name="Dental_Kit">Bộ dụng cụ nha khoa</string>
+    <string name="Bill_Details">Chi tiết hoá đơn</string>
+    <string name="Remark">Ghi chú</string>
+    <string name="Type_your_comment">Gõ bình luận của bạn</string>
+    <string name="Payment_Option">Lựa chọn phương thức thanh toán</string>
+    <string name="Cash">Tiền mặt</string>
+
+    <!-- call number -->
+    <string name="VOICE_MAIL">HỘP THƯ THOẠI</string>
+    <string name="SERVICE_CALL">CUỘC GỌI DỊCH VỤ</string>
+    <string name="SOS">KHẨN CẤP</string>
+
+    <!-- room control -->
+    <string name="room_control_set_your_preferred_temperature">Thiết lập \nnhiệt độ ưa thích bằng di chuyển \nchấm đỏ. \nNhiệt độ thấp sẽ \ngiúp bạn ngủ ngon hơn. \nGhi nhớ.</string>
+    <string name="room_control_set_your_preferred_fan">Thiết lập \ntốc độ quạt ưa thích bằng di chuyển \nchấm đỏ.</string>
+
+    <!-- food checkout -->
+    <string name="Sweet_Potatoes">Khoai lang</string>
+    <string name="Coca_Cola">Coca-Cola</string>
+
+    <!-- home -->
+    <string name="ROOM_CONTROL">Bảng điều khiển phòng</string>
+    <string name="TV_REMOTE">Điểu khiển TV từ xa</string>
+    <string name="Hello_Adam_Miller">Xin chào Adam Miller!</string>
+    <string name="You_have_2Message">Bạn có 2 tin nhắn</string>
+    <string name="New_York">New York</string>
+
+    <string name="DO_NOT_DISTURB">ĐỪNG LÀM PHIỀN</string>
+    <string name="MAKE_UP_ROOM">DỌN PHÒNG</string>
+    <string name="SERVICE_MENU">DANH MỤC DỊCH VỤ</string>
+    <string name="Our_Promotions">Khuyến mãi</string>
+    <string name="Tap_QR_code">Chạm vào mã QR để xem toàn màn hình</string>
+    <string name="PHONE">Điện thoại</string>
+
+    <!-- food meal -->
+    <string name="Pasta_Alla_Filicudara">Mỳ Ý Alla Filicudara</string>
+    <string name="Fresh_pasta">Mỳ Ý tươi với cá ngừ cắt khúc, cà chua bi, hành tây và nụ bạch hoa</string>
+    <string name="Allergens">Gây dị ứng</string>
+    <string name="For_Gluten">Gluten/Lúa mỳ, Trứng, Đậu phộng/Hạt trên cây, Đậu nành</string>
+
+    <!-- Msg -->
+    <string name="Message_2">Tin nhắn(2)</string>
+
+    <!-- msg details -->
+    <string name="MyGallery">Thư viện của tôi</string>
+    <string name="To_Admm_Miller">Gởi tới:Admm Miller</string>
+    <string name="Your_card_will_be_charged">Thẻ của bạn sẽ được thanh toán cho chi phí bữa ăn</string>
+    <string name="Happy_Hours_2x1">Happy Hours 2x1</string>
+    <string name="Pasta_Pomodoro">2x Mỳ Ý Pomodoro</string>
+
+    <!-- phone -->
+    <string name="Rober_Watson">Rober Watson</string>
+    <string name="Housekeeping">Phục vụ phòng</string>
+    <string name="MUTE">TẮT TIẾNG</string>
+    <string name="HOLD">GIỮ MÁY</string>
+    <string name="SPEAKER">LOA NGOÀI</string>
+    <string name="TABLET">TABLET</string>
+
+    <!-- tv remote -->
+    <string name="Channel">Kênh</string>
+
+    <!-- common bill -->
+    <string name="Sub_Total">Tạm tính</string>
+    <string name="VAT_Total">Thuế VAT(7%)</string>
+    <string name="Service_fee">Phí phục vụ(10%)</string>
+    <string name="Tips">Tip</string>
+    <string name="Total">Tổng cộng</string>
+
+    <!-- common bottom -->
+    <string name="Remote">Từ xa</string>
+
+    <!-- common bottom confirm -->
+    <string name="CONFIRM">XÁC NHẬN</string>
+
+    <string name="Food_Order">Gọi món</string>
+
+    <string name="Items_3">3 mục</string>
+    <string name="Items_0">0 mục</string>
+    <string name="Items">mục</string>
+
+    <string name="Available_until">Có hiệu lực đến 3:00</string>
+    <string name="Order_dinner_by">Gọi món bữa tối trước 3:00 và thưởng thức một bữa ăn thêm dành cho người yêu quý của bạn</string>
+
+    <string name="Service">Dịch vụ</string>
+    <string name="order_been_accepted">Đơn gọi món của bạn đã được chấp nhận</string>
+
+    <string name="offer_brief_description">Cung cấp mô tả ngắn gọn</string>
+    <string name="offer_description">Cung cấp mô tả với định dạng</string>
+    <string name="second_offer">Đề nghị thứ hai</string>
+
+    <string name="Scan_to_check_on_mobile">Scan để kiểm tra trên điện thoại</string>
+
+    <string name="without_config">Without configure account</string>
+
+    <string name="please_input_need">Please enter required items </string>
+
+    <string name="config_success">Configure success</string>
+    <string name="please_config_info">please enter account</string>
+
+    <string name="no_permission_camera">Camera permission denied, unable to use app temporarily</string>
+    <string name="no_permission_audio">Audio permission denied, unable to use app temporarily</string>
+    <string name="no_permission_phone">Phone permission denied, unable to use app temporarily</string>
+
+    <string name="Promotions">Khuyến mãi</string>
+
+    <string name="Room_Control">Bảng điều khiển phòng</string>
+
+    <string name="Checkout">Trả phòng</string>
+
+    <string name="Amenties">Đồ dùng sinh hoạt hàng ngày</string>
+
+    <string name="Appetzer">Appetzer</string>
+    <string name="Bruschetta_Pomodoro_e_Aglio">Bruschetta Pomodoro e Aglio</string>
+    <string name="Sapori_di_Sicilia">Sapori di Sicilia</string>
+    <string name="Pizza_Margherita">Pizza Margherita</string>
+    <string name="Main_dish">Món chính</string>
+    <string name="Pizza_Peperoncino">Pizza Peperoncino</string>
+
+    <string name="Pizza_Marghcrita">Pizza Marghcrita</string>
+    <string name="Arancini">Arancini (3 miếng)</string>
+
+    <string name="Amenities">Đồ dùng sinh hoạt hàng ngày</string>
+    <string name="Concierge">Hướng dẫn</string>
+    <string name="Maintenance">Bảo trì</string>
+    <string name="Food">Thức ăn</string>
+    <string name="New">Mới</string>
+    <string name="Wakeup_Call">Báo thức</string>
+    <string name="Late_Checkout">Trả phòng trễ</string>
+    <string name="DND">ĐỪNG LÀM PHIỀN</string>
+    <string name="Clean_Room">Dọn phòng</string>
+    <string name="Service_Menu">DANH MỤC DỊCH VỤ</string>
+
+    <string name="Jacket">Áo khoác</string>
+    <string name="Pizza_Margherta">Pizza Margherta</string>
+    <string name="Overcoat">Áo choàng</string>
+    <string name="Laundry">Đồ giặt ủi</string>
+    <string name="Pyjamas_Silk">Bộ đồ ngủ (lụa)</string>
+    <string name="Necktie">Cà vạt</string>
+    <string name="Dry_Cleaning">Giặt khô</string>
+    <string name="Dressing_Gown_Silk">Áo choàng (lụa)</string>
+
+    <string name="language_english">English</string>
+    <string name="language_chinese">简体中文</string>
+    <string name="language_chinese_tw">繁体中文</string>
+    <string name="language_jpan">日本语</string>
+    <string name="language_th">ไทย</string>
+
+    <string name="ADD_TO_CART">ADD TO CART</string>
+
+    <string name="money_unit">$</string>
+
+    <string name="please_select_food">please choose the food</string>
+    <string name="please_select_amen">please choose the amenities</string>
+    <string name="Hong_kong">HongKong</string>
+
+    <string name="str_location_test">@string/Hong_kong</string>
+
+
+
+
+
+
+
+
+
+</resources>
