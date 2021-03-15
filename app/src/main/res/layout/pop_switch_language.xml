@@ -57,4 +57,15 @@
             android:text="@string/language_th" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/language_vietna"
+        style="@style/style_pop_switch_language_layout" >
+        <ImageView
+            android:src="@mipmap/icon_country_vietna"
+            style="@style/style_pop_switch_language_layout_country_pic" />
+        <TextView
+            style="@style/style_pop_switch_language_layout_country_name"
+            android:text="@string/language_vietna" />
+    </LinearLayout>
+
 </LinearLayout>

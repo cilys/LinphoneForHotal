@@ -22,7 +22,7 @@ public class SwitchLanguagePopupWindow {
         View contentView= LayoutInflater.from(cx).inflate(R.layout.pop_switch_language, null);
         final PopupWindow popupWindow = new PopupWindow(contentView,
                 (int)cx.getResources().getDimension(R.dimen.pop_layout_width),
-                (int)cx.getResources().getDimension(R.dimen.y300), true);
+                (int)cx.getResources().getDimension(R.dimen.y360), true);
         popupWindow.setContentView(contentView);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -65,6 +65,15 @@ public class SwitchLanguagePopupWindow {
             public void onSingleClick(View v) {
                 if (listener != null) {
                     listener.onItemClick(new Locale("th", "TH"));
+                }
+                popupWindow.dismiss();
+            }
+        });
+        contentView.findViewById(R.id.language_vietna).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(new Locale("vi", "VN"));
                 }
                 popupWindow.dismiss();
             }
