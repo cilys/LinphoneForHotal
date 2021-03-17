@@ -15,6 +15,7 @@ import com.cilys.linphoneforhotal.event.LinPhoneBean;
 import com.cilys.linphoneforhotal.utils.L;
 
 import org.linphone.core.Call;
+import org.linphone.core.Content;
 import org.linphone.core.Core;
 import org.linphone.core.CoreListenerStub;
 import org.linphone.core.Factory;
@@ -100,6 +101,42 @@ public class LinphoneService extends Service {
                 e.what = EventImpl.REGISTION_STATE_CHANGED;
                 e.obj = new LinPhoneBean().setProxyConfig(cfg).setRegistrationState(cstate).setMessage(message);
                 EventBus.getInstance().postEvent(e);
+            }
+
+            @Override
+            public void onNotifyReceived(Core core, org.linphone.core.Event event, String eventName, Content content) {
+                super.onNotifyReceived(core, event, eventName, content);
+
+                L.v(TAG, "eventName = " + eventName + "\tcontent = " + content);
+
+                if (!content.getType().equals("application")){
+                    return;
+                }
+                if (!content.getSubtype().equals("simple-message-summary")){
+                    return;
+                }
+
+                if (content.getSize() == 0){
+                    return;
+                }
+
+                int unreadCount = 0;
+                String data = content.getStringBuffer().toLowerCase();
+                String[] voiceMail = data.split("voice-message: ");
+                if (voiceMail.length >= 2) {
+                    final String[] intToParse = voiceMail[1].split("/", 0);
+                    try {
+                        unreadCount = Integer.parseInt(intToParse[0]);
+
+                        Event e = new Event();
+                        e.what = EventImpl.RECEIVE_NOTIFY;
+                        e.obj = unreadCount;
+
+                        EventBus.getInstance().postEvent(e);
+                    } catch (NumberFormatException nfe) {
+                        L.printException(nfe);
+                    }
+                }
             }
         };
 

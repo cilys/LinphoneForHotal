@@ -35,6 +35,7 @@ public class PhoneAc extends BaseLinphoneAc {
     private String outNumber;
 
     private int fromType = -1;
+    private boolean useDtmf = false;    //从主叫页面过来，使用dtmf；否被叫页面过来，不使用dtmf
 
     @Override
     protected int getLayout() {
@@ -52,6 +53,7 @@ public class PhoneAc extends BaseLinphoneAc {
 
         } else {
             showType = getIntent().getIntExtra("SHOW_TYPE", SHOW_TYPE_OUT);
+            useDtmf = true;
             getIntent().putExtra("SHOW_TYPE", 0);
         }
 
@@ -143,6 +145,21 @@ public class PhoneAc extends BaseLinphoneAc {
             @Override
             public void onSingleClick(View v) {
                 endCall();
+            }
+        });
+
+        findView(R.id.call_voice_mail).setOnClickListener(new SingleClickListener() {
+            @Override
+            public void onSingleClick(View v) {
+                Core core = getLinphoneCore();
+                if (core != null) {
+                    core.stopDtmf();
+                }
+
+                Call call = getCurrentCall();
+                if (call != null) {
+                    call.sendDtmf('2');
+                }
             }
         });
     }
@@ -311,6 +328,8 @@ public class PhoneAc extends BaseLinphoneAc {
             if (addressToCall != null) {
                 addressToCall.setDisplayName(phone);
                 core.inviteAddressWithParams(addressToCall, params);
+
+                core.setUseRfc2833ForDtmf(useDtmf);
             }
         }
     }
